@@ -30,7 +30,6 @@ public class SceneSampleEvents : MonoBehaviour
         //this is where the text box would start
         DialogueRunner.StartDialogue(startNode);
         yield return new WaitForSeconds(2);
-
         fadeScreenOut.SetActive(true);
         yield return new WaitForSeconds(2);
     }
