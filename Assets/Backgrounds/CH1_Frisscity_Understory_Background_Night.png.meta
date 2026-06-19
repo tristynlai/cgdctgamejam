@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f9dfa0e2fecd24e4abe26410cc807b8e
+guid: d3afd649d455dae4c833767ec110f4e0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6081253000217835118
-    second: Classroom_0
+      213: -5465465113345521517
+    second: CH1_Frisscity_Understory_Background_Night_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Classroom_0
+      name: CH1_Frisscity_Understory_Background_Night_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 954
-        height: 624
+        width: 1920
+        height: 1280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e6633434263f46450800000000000000
-      internalID: 6081253000217835118
+      spriteID: 39800cacf64c624b0800000000000000
+      internalID: -5465465113345521517
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Classroom_0: 6081253000217835118
+      CH1_Frisscity_Understory_Background_Night_0: -5465465113345521517
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
