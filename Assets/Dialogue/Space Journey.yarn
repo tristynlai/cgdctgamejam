@@ -1,6 +1,7 @@
 ﻿title: SpaceScript
 position: 12,12
 ---
+<<enter Girl>>
 This is an example of a Yarn Spinner script. Write your dialogue here!
 wow, so awesome!
 Narrator: "Having fun?"
@@ -8,5 +9,5 @@ Narrator: "Having fun?"
     Narrator: "YIPPEE!!"
 -> "Nah not really"
     Narrator: "oh.. ur loss ig"
-<<fadeOut>>
+<<fadeOut SceneSampleEvents>>
 ===
