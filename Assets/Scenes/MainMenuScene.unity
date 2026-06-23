@@ -1600,7 +1600,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 637057248}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 661526321}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &637057248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2104,7 +2116,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2x
+  m_text: 1x
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2224,9 +2236,9 @@ RectTransform:
   - {fileID: 1615935243}
   - {fileID: 443262028}
   - {fileID: 303490041}
+  - {fileID: 1592053926}
   - {fileID: 143046412}
   - {fileID: 1345514105}
-  - {fileID: 1592053926}
   m_Father: {fileID: 661526320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2314,6 +2326,7 @@ MonoBehaviour:
   MusicVolumeSlider: {fileID: 1615935244}
   SFXVolumeSlider: {fileID: 143046413}
   MainAudioMixer: {fileID: 24100000, guid: e2f681f526b63964ba98dcdbb498ac73, type: 2}
+  TextSpeedDropdown: {fileID: 1592053927}
 --- !u!1 &882363233
 GameObject:
   m_ObjectHideFlags: 0
@@ -3782,27 +3795,30 @@ MonoBehaviour:
   m_MultiSelect: 0
   m_Options:
     m_Options:
-    - m_Text: 2x
-      m_Image: {fileID: 0}
-      m_Color: {r: 0.21568629, g: 0.21568629, b: 0.21568629, a: 1}
-    - m_Text: 1.5x
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
     - m_Text: 1x
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: 0.75x
+    - m_Text: 1.5x
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: 0.5x
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: 0.25x
+    - m_Text: 2x
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 865581787}
+        m_TargetAssemblyTypeName: SettingsMenuManager, Assembly-CSharp
+        m_MethodName: ApplyTextSpeed
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1592053928
 MonoBehaviour:
