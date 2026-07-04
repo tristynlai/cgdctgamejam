@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 403635bd743894cecb5bad5836f87f53
+guid: 81ea69bed4a574e34a73039becf28992
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1777292848673821640
-    second: Cyberdeck_Skin_Luna_0
+      213: 4665018125022751960
+    second: HistoryButton_Default_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cyberdeck_Skin_Luna_0
+      name: HistoryButton_Default_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2312
-        height: 1666
+        width: 232
+        height: 113
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c39b0bed663aa810800000000000000
-      internalID: 1777292848673821640
+      spriteID: 8dc6db4b4497db040800000000000000
+      internalID: 4665018125022751960
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cyberdeck_Skin_Luna_0: 1777292848673821640
+      HistoryButton_Default_0: 4665018125022751960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
