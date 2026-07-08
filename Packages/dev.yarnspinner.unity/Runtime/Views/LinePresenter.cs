@@ -299,6 +299,13 @@ namespace Yarn.Unity
                     }
                     break;
             }
+            int sizeIndex = PlayerPrefs.GetInt("TextSizeIndex", 1);
+            if (sizeIndex == 0)
+                lineText.fontSize = 24;
+            else if (sizeIndex == 1)
+                lineText.fontSize = 28;
+            else
+                lineText.fontSize = 34;
         }
 
         /// <summary>Presents a line using the configured text view.</summary>

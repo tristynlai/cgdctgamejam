@@ -8,6 +8,8 @@ using TMPro;
 public class MainMenuManager : MonoBehaviour
 {
     public Canvas SettingsMenu;
+    public Canvas CreditsMenu;
+    public Canvas LoadGameMenu;
     //[SerializeField] int sceneToLoad;
     //[SerializeField] int saveTransferValue;
 
@@ -16,14 +18,22 @@ public class MainMenuManager : MonoBehaviour
          if (SettingsMenu != null) {
                 SettingsMenu.gameObject.SetActive(false);
          }
+         if (CreditsMenu != null) {
+                CreditsMenu.gameObject.SetActive(false);
+         }
+         if (LoadGameMenu != null) {
+                LoadGameMenu.gameObject.SetActive(false);
+         }
     }
 
+    /*
     public void StartGame()
     {
         PlayerPrefs.SetInt("LoadState", 0);
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
-    
+    */
+
     /*
     public void LoadGame()
     {
@@ -49,8 +59,23 @@ public class MainMenuManager : MonoBehaviour
          }
     }
 
+    public void EnterCreditsMenu()
+    {
+         if (CreditsMenu != null){
+                CreditsMenu.gameObject.SetActive(true);
+         }
+    }
+
+    public void EnterLoadGameMenu()
+    {
+         if (LoadGameMenu != null){
+                LoadGameMenu.gameObject.SetActive(true);
+         }
+    }
+
     public void ExitGame()
     {
+        // Will need a quit confirmation menu
         Application.Quit();
     }
 
