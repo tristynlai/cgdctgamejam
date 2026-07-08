@@ -9,6 +9,7 @@ public class MainMenuManager : MonoBehaviour
 {
     public Canvas SettingsMenu;
     public Canvas CreditsMenu;
+    public Canvas LoadGameMenu;
     //[SerializeField] int sceneToLoad;
     //[SerializeField] int saveTransferValue;
 
@@ -20,13 +21,18 @@ public class MainMenuManager : MonoBehaviour
          if (CreditsMenu != null) {
                 CreditsMenu.gameObject.SetActive(false);
          }
+         if (LoadGameMenu != null) {
+                LoadGameMenu.gameObject.SetActive(false);
+         }
     }
 
+    /*
     public void StartGame()
     {
         PlayerPrefs.SetInt("LoadState", 0);
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
+    */
 
     /*
     public void LoadGame()
@@ -60,9 +66,17 @@ public class MainMenuManager : MonoBehaviour
          }
     }
 
+    public void EnterLoadGameMenu()
+    {
+         if (LoadGameMenu != null){
+                LoadGameMenu.gameObject.SetActive(true);
+         }
+    }
+
     public void ExitGame()
     {
-        
+        // Will need a quit confirmation menu
+        Application.Quit();
     }
 
     // Update is called once per frame

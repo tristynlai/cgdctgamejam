@@ -72,6 +72,13 @@ namespace Yarn.Unity
                 }
 
                 text.text = line;
+                int sizeIndex = PlayerPrefs.GetInt("TextSizeIndex", 1);
+                if (sizeIndex == 0)
+                    text.fontSize = 24;
+                else if (sizeIndex == 1)
+                    text.fontSize = 28;
+                else
+                    text.fontSize = 34;
                 interactable = value.IsAvailable;
 
                 // we want to apply the default styling to the option item when they are given an option
