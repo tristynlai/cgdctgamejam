@@ -1,0 +1,507 @@
+﻿title: Intro
+---
+// Camera starts at the top of Frisscity (Meridian district) and pans down to the Understory asset.
+<<fadeIn SceneSampleEvents>>
+
+AGENTS owns Area 415. 
+They own Frisscity. They own us.
+And now, we're just trying to survive.
+
+<<enter SceneSampleEvents Luna>>
+<<show SceneSampleEvents Luna neutral>>
+//<<pose Luna on-cyberdeck>>
+//<<expression Luna neutral>>
+
+Luna: Come on, you stupid SL0P app. Show me the big offers. 
+Luna: (Kaya is gonna kill me if I skip out on rent again. Just one big delivery gig should help me break even…)
+
+<<jump BadReview>>
+===
+
+
+title: BadReview
+---
+// SFX cyberdeck notification ping
+<<sfx SceneSampleEvents notification>>
+It's a review from the SL0P app, powered by AGENTS. A bad review, too. 
+// Show the 1-star review on the screen, which says: “driver didn’t handle with care. my organic belladonna apples were touching the fresh mozzarella and now i can’t eat them anymore cuz i’m a fruitarian vegan going on my 8th juice cleanse.”
+Luna: …You've got to be joking.
+Luna: (I have an option to respond…)
+
+-> Don't respond and close the app
+    <<set $goodend += 1>>
+    Luna: Ugh, whatever.
+    I close the app because it isn't worth my time. 
+    Frisscity is home to the most privileged people who eat up trends, who crave to act like the city's human augmentation founders and machina millionaires.
+    They're freaks. (And they don't tip.) 
+    But people like me, from Root Town?
+    We refuse to be integrated with AGENTS technology.
+    We're all that's left of humanity.
+    <<jump CyberdeckTutorial>>
+-> Give the reviewer a 1-star rating
+    Luna: Heh, shove it.
+    I give them a 1-star rating right back, passive-aggressively noting how their fruitarian and vegan preferences weren't mentioned in the app to begin with.
+    Luna: That will show them.
+    This is the stuff I have to put up with in Frisscity. I break my back for baecoins from the shittiest people alive. 
+    I'm waiting for the day everyone finally decides to upload their brains to the cloud.
+    If the AGENTS founder does it, I'm sure everyone in Frisscity will follow.     
+    But people like me, from Root Town? We'd never fall for a capitalist trick like that.
+    We refuse to integrate with AGENTS technology.
+    <<jump CyberdeckTutorial>>
+-> Doxx their address on an online forum for SL0P drivers
+    <<set $badend += 1>>
+    Instead of leaving them a 1-star review, I do much worse. I post their address online and warn fellow drivers not to take delivery orders from them. 
+    Most of the drivers are from Root Town, where I'm from. Or the Understory, the foggy belly of Frisscity's working class.
+    Luna: Now all of SL0P will know what you've done. Good luck getting your stupid apples and cheese. 
+    This is the stuff I have to put up with in Frisscity. I break my back for baecoins from the shittiest people alive, who chase trends and chase surgeries to get hooked up with the latest AGENTS technology. 
+    But me? I refuse to be augmented.
+    I wish Frisscity would just disappear. 
+    <<jump CyberdeckTutorial>>
+===
+
+
+title: CyberdeckTutorial
+---
+// SFX cyberdeck notification ping
+Luna: Now what?
+// Populate the cyberdeck. Nat and Luna’s cyberdeck icons should appear as this dialogue progresses. This conversation should happen within the cyberdeck.
+Nat: Hey-yo! How's your night going? ( ˶ˆᗜˆ˵ )
+Luna: like sl0p. as usual. 
+Nat: Oh. Sorry…
+Luna: it's fine.
+Nat: I just wanted to check in and ask how the new cyberdeck I made ya is coming along?
+Luna: i'm typing rn, aren't i
+Nat: I know! But have you used any of the other features?
+Luna: …
+Nat: How about I show you around the NATIO 3000?
+Nat: Get it? 
+Nat: The NAT-io~? =w=
+Luna: cute…
+// Start a focused tutorial that highlights a certain portion of the cyberdeck with lines in the game script. Start off the tutorial by highlighting the message screen itself.
+Nat: Here's the message screen! You can click on the tabs to sort through all the messages you get. Y'know, like spam, news, super-important-awesome messages from me, etc.
+Nat: Your settings are also on a tab in case you wanna fine-tune things like sound volume or message speed!
+// Now highlight the mini-game button
+Nat: I also programmed a super cute and custom mini-game just for you! You can play it whenever you want. Lmk when you beat my high score for a super cool surprise, k~?
+// Now highlight the HISTORY button
+Nat: Missed something in a conversation? Have no fear! The History button lets you return to previous conversations you had with others. (Or yourself.) 
+// Now highlight the EXIT button
+Nat: When you're done tinkering around, just press the Exit button! You can also return to the cyberdeck by double-clicking on the NATIO 3000 logo in the game.
+Nat: Did that make sense? 
+Luna: yeah, thx. can i go back to work now?
+Nat: Of course! Just lmk if you need anything (。˃ ᴗ < )⸝♡ //note: some doesn't show
+// End focused tutorial. Automatically return the player to the “Home” folder on the cyberdeck, where they can see new messages to interact with, which are found in CyberdeckSidquests.yarn. Once the player has returned to the “Home” folder on the cyberdeck, allow the player to click on anything. When the player exits the cyberdeck and clicks Continue, jump them to the Val node. 
+<<jump Val>>
+===
+
+
+title: Val
+---
+// SFX motorcycle tires
+I recognize those tires. And the baddie who rides on them.
+Luna: (Stay cool.)
+<<enter SceneSampleEvents Val>>
+Val: Luna! Finally, someone without a corporate T-shirt. Hopefully you've been making bank tonight?
+Luna: H-Hey, Val. Not yet. Still getting the low-tipping vegans and high-strung snobs. You know how it is.
+Val: I'm sure things will turn up! Everyone gets the late-night munchies.
+Luna: (God, she's amazing. She always knows what to say. Be still, my heart.)
+Luna: (But it's kinda weird to see Root Town's corner store queen on this side of town. And so late at night.) 
+Val parks her motorbike in first gear, its engine quietly humming off. It's almost like she knows I have something to ask her…
+Luna: (BE. COOL.)
+
+->  Nice bike. How did you mod it?
+    <<detour Bike_Backstory>>
+->  You look…nice.
+    <<detour Poor_Flirting>>
+->  What are you doing here?
+    She laughs and gives me a wink.
+    Val: A Root Town stockist never reveals her business secrets~!
+    <<jump PressingVal>>
+
+Val: Something on your mind?
+===
+
+
+title: Bike_Backstory
+---
+Val's eyes grow wide. I activated something within her.
+Val: I reinforced the frame with carbon weave and mag-alloy ribs after I cracked my first prototype trying to jump a crumbling overpass.
+Val: Then, I swapped the suspension for adaptive grav forks. 
+Val: You know how factory models are made for smooth highways, right? B-o-r-i-n-g! 
+Val: But where we live, we need to handle abandoned traincars, vines, and everything in between.
+Luna: (There's no end in sight to this conversation. I unleashed a gearhead beast.)
+
+->  Let her continue.
+    <<set $goodend += 1>>
+    Val: The engine's got a custom plasma injector, dual cooling loops, and a torque map I wrote myself. 
+    Val: Transmission shifts before I even think about it. And the drivetrain is pieced together from three junkyards, one estate auction, and a favor I still owe.
+    Val: But the electrical's my favorite part. Every sensor, every light…I wired those by hand. The original harness was one pothole away from becoming fireworks.
+    Val: See, that's the thing. Corporate bikes are built to last until the warranty expires.
+    Val: But mine's built to survive.She'll outrun anything that's fresh off the showroom floor.
+    She rambles on for ten more minutes about the topic. And I love every second of it.
+    // Return to the original question node in Val, but remove this question since the player completed it. 
+->  Cut it short.
+    Luna: I'll hit you up the next time I wanna upgrade my bike. Y'know. For dumb deliveries.
+    Val: O-Oh. Of course.
+    Val: What did you need again?
+    // Return to the original question node in Val, but remove this question since the player completed it. 
+===
+
+
+title: Poor_Flirting
+---
+Val is beaming, which makes me blush as red as that damn belladonna apple.
+Val: That's so sweet. You're cute.
+Luna: (C-Cute!?)
+Luna: (Huge W…I think.)
+Val: But if you think that'll land you a discount at the corner store, then you'll need to try harder~
+Luna: (...Maybe not.)
+// Return to the original question node in Val, but remove this question since the player completed it. 
+===
+
+
+title: PressingVal
+---
+Past her super good looks and chipper tone, I notice she's a little out of breath. Her eyes shift back to her motorbike.
+Luna: (Is she hiding something…?)
+
+-> Ignore it
+    <<set $badend += 1>>
+    Luna: (It's probably nothing. She's probably just picking up items to take back to her shop.)
+    Luna: (Kinda sucks that our town's still tied to Frisscity's supply line, but. A business is a business, I guess.) 
+    Val: What's on your mind?
+    I hear Val's breath return to a regular tempo. Her eyes are locked on mine. Anything I noticed before has completely vanished.
+    Val: Let me guess…you can't stop thinking about me~?
+    Luna: N-No! Ugh, it's nothing. I-
+-> Press her //isnt showing as an option?
+    <<set $goodend += 1>>
+    Luna: But your shop's in Root Town. Why do you need to rely on Frisscity to stock your shop? 
+    Luna: Or is that the 'secret?'
+    Val stiffens and the silence that washes over us is painful. 
+    I gulp in the silence. Something's off.
+    Then suddenly she's back to all smiles, like nothing ever happened. It makes me think if what I just experienced was even real.
+    Val: You got me! My glass skin soda pop actually comes from a vendor here in the city. 
+    Val: I know how divisive that probably sounds to you, but my regulars keep buying it. And when demand is high, well…you gotta feed into it.
+<<jump TheOffer>>
+===
+
+
+title: TheOffer
+---
+Val's attention is stolen by her phone. She makes a couple taps, then hops back onto her motorbike. 
+// SFX motorcycle engine turning on
+Val: Sorry, gotta jet! Root Town needs their soda pop. 
+Val: Catch you later when you're back on our side of the bridge?
+// SFX motorcycle tires
+Before I can get a word in, she's gone.
+Luna: There she goes…
+Val is everything I want to be- independent, street smart, spunky. Good with her hands, too. //changed want to be colon to -
+Er…in the nicest, non-creepiest way possible.
+If it wasn't for my shitty situation, I'd be just like her.
+Or with her? Hm, or do I just wanna be her…?
+// SFX cyberdeck notification ping
+////////////////////<<pose Luna on-cyberdeck>>
+////////////////////<<expression Luna neutral>>
+It's an offer on the SL0P app—and a big one, too.
+Luna: Jackpot.
+I quickly accept the offer, and it reveals the exact coordinates of my delivery order's pickup location.
+Time to roll.
+<<fadeOut SceneSampleEvents>>
+// SFX motorcycle engine turning on
+// SFX motorcycle tires
+<<jump TransporterPod>>
+===
+
+
+title: TransporterPod
+---
+<<fadeIn SceneSampleEvents>>
+Luna: This is…suss.
+The pickup location led me into a cramped alleyway. The place reeks of expired seafood scraps and junkyard scrap.
+// Show transporter pod asset
+I notice a transporter pod branded with an AGENTS logo sitting by a dumpster. It's an odd place to leave something so brand-spanking new.
+// SFX of something stirring within a metal transporter pod, mixed with alien goober noises
+//////////////////<<expression Luna shocked>>
+The pod shakes and rolls back and forth on the rubble. Food deliveries don't usually involve grub that's alive.
+I hear a distressed noise bellow from within.
+
+-> Pick it up and put it on your motorcycle
+    Luna: (I mean, I can't just unlock it. That's against the SL0P protocol.)
+    Luna: (And I can't afford another bad review. I'd get suspended.)
+    I carefully pick up the transporter pod from the ground. The thing inside settles down in response.
+    // SFX unlock sound
+    ///////////////////////////<<expression Luna surprised>> 
+    My fingerprints unlock it, bypassing the pod's DNA-encoded password security. Which could only mean one thing.
+    Luna: (This delivery is…meant for me? But why?)
+    Luna: (Why does this pod have my DNA…?) 
+-> Get closer to inspect it
+    <<jump InspectPod>>
+-> Kick it around
+    <<jump KickPod>>
+<<jump MeetLilGuy>>
+<<fadeOut SceneSampleEvents>>
+===
+
+
+title: KickPod
+---
+<<set $badend += 1>>
+Luna: Fuck AGENTS!
+// SFX thwacking or kicking sound
+It feels good to stick it to the tech overlords, even if it's just damaging their property. The thing inside the pod yelps, but I don't care.
+Because everything AGENTS makes—and the stuff inside the things they make--it's all the same to me. 
+Slop. 
+But that feeling is fleeting. A job is a job. 
+I inspect the transporter pod. Other than one minor scuff, it's perfectly intact. I'm annoyed by that, but also relieved. 
+As long as the customer isn't the kind of neurotic snob that likes their grocery bags symmetrically folded or their apples packaged a hyper-specific way, then I might just get away with it.
+I pick the transporter pod up.
+But when I do…
+// SFX unlock sound
+//////////////////////////////<<expression Luna surprised>>
+My fingerprints unlock it, bypassing the pod's DNA-encoded password security. Which could only mean one thing.
+Luna: (This delivery is…meant for me? But why?)
+Luna: (Why does this pod have my DNA…?) 
+And just what kind of monster was I about to unleash.
+<<jump MeetLilGuy>>
+<<fadeOut SceneSampleEvents>>
+===
+
+title: InspectPod
+---
+There's a fingerprint sensor attached to the pod. It's DNA-encoded, higher security than most packages that get delivered nowadays. 
+And it's definitely too high-tech for a lowly, underpaid SL0P delivery driver to be handling.
+???: F-Free me from this pod, you strange creature!
+Luna: !!!
+Luna: (It can talk…but I'm the strange creature?)
+I glance again at the transporter pod's markings. It's from AGENTS- the very company that's screwed me and humankind over.
+
+-> Unlock the pod
+    <<set $goodend += 1>>
+    Luna: I can't believe I'm taking orders from a talking pod…
+    I'm basically asking for a permanent account suspension—and a possible lawsuit. 
+   Tampering with deliveries has always been off limits, even before the AGENTS takeover. Back when people had mopeds, bikes, cars, and fossil fuels.
+    But something just feels…wrong about this whole thing.
+    With a big gulp, I place my hand on the pod's fingerprint sensor. 
+    // SFX unlock sound
+   <<expression Luna surprised>>
+   The pod unlocks with my biometric data. Which could only mean one thing.
+    Luna: (This delivery is…meant for me? But why?)
+    Luna: (Why does this pod have my DNA…?) 
+-> Don't do it
+    Luna: (I mean, I can't just unlock it. That's against the SL0P protocol.)
+    Luna: (And I can't afford another bad review. I'd get suspended.)
+    Luna: (Plus, this thing is from AGENTS. It can't be trusted.) 
+    ???: Did you not hear me, foreign entity?! I wish to be released. Now!
+    Luna: Sorry, lil dude. It's against AGENTS app rules.
+    Luna: (I can't believe I'm talking to someone's midnight snack…)
+    I pick up the transporter pod from the ground.
+    // SFX unlock sound
+    <<expression Luna surprised>>  
+    But I wasn't expecting the pod to unlock with my biometric data. Which could only mean one thing.
+    Luna: (This delivery is…meant for me? But why?)
+    Luna: (Why does this pod have my DNA…?) 
+<<jump MeetLilGuy>>
+<<fadeOut SceneSampleEvents>>
+===
+
+
+title: MeetLilGuy
+---
+<<fadeIn>>
+// Show the CG of Lil Guy
+The pod sheds its protective packaging layer to reveal a creature in a large glass container, which automatically pops up. 
+It scuttles out from its AGENTS cage and blinks up at me with a screen for a face and pixels for eyes. A curious tadpole-like tail swishes from side to side.
+It's actually kind of…cute.
+???: So you are not a foreign creature, just a human. 65% oxygen, 18% carbon, 10% hydrogen, and 3% nitrogen.
+Luna: So you're just some kind of expensive, state-of-the-art cyberpet that talks? And…scans my body particles? 
+The pixels on the screen shift, forming into a frown.
+???: I'm no pet! But a T.A.B.
+Luna: Tab…?
+???: Technologically Advanced Broseph. Fit for the future of all bro-kind. My name's origin stems from a company naming event. 
+I could not just be called “bro.” It needed to be more technical, more refined, more SEO-optimized. And so my name was keyword-stuffed to absolute perfection. 
+Luna: That's like…the dumbest thing I've ever heard. I'm literally losing brain cells.
+<<fadeOut SceneSampleEvents>>
+<<jump LilGuyReaction>>
+===
+
+
+title: LilGuyReaction
+---
+<<fadeIn SceneSampleEvents>>
+// If player chose to Kick it around, show:
+//<<if visited(KickPod) == true>>
+    //////////<<place Luna Understoryleft>>
+    //////////<<pose Luna crossed-arms>>
+    //////////<<expression Luna neutral>>
+    //////////<<place LilGuy Understoryright>>
+    //////////<<expression LilGuy mad>>
+    T.A.B: How dare you kick a perfect, high-fidelity prototype such as myself around! Do you even know just how important I am as intellectual property?!  
+    T.A.B: My master will have your head for this! As well as the AGENTS Legal team-
+    Luna: First off, I'm not the one that tossed you here like trash. I'm just the delivery girl. Second…
+    I shove the transporter pod into the dumpster, smearing it with unspeakable leftovers. I give it one last push, and the glass on the fingerprint sensor starts to crack.
+    T.A.B: …Ah.
+    Luna: AGENTS tech is pretty fragile, imo. And not as intellectual as it claims to be. 
+    Luna: Now, as for you…
+//<<endif>>
+//If else, show:
+//<<if visited(KickPod) == false>>
+    //////////<<place Luna Understoryleft>>
+    //////////<<pose Luna crossed-arms>>
+    //////////<<expression Luna neutral>>
+    //////////<<place LilGuy Understoryright>>
+    //////////<<expression LilGuy happy>>
+    T.A.B: So, you eventually came to your senses and realized the cost of stealing the most prized intellectual property of the most powerful conglomerate in all of Area 415. You have my thanks.
+    T.A.B: As for my master's approval, well. I'm sure you'll receive messages from the Legal team within the next 2-3 business days.
+    Luna: W-Wait, hold up! “Stealing?” I'm just the delivery girl, I didn't toss you here like trash!
+    The creature waves a tiny nub of a paw at the transporter pod.
+    T.A.B: It's too late. AGENTS property has captured your biometric data on the pod, which can and will be used against you if collected by the authorities.
+    I immediately shove the transporter pod into the dumpster, smearing it with unspeakable leftovers.
+    T.A.B: …Ah. Recalculating a potential lawsuit probability to 10%.
+    Luna: GOOD. Let's keep it that way. Now, what I'd really like to hear is…
+//<<endif>>
+<<jump LilGuyQuestions>>
+===
+
+
+title: LilGuyQuestions
+---
+-> What are you?
+    <<detour WhatAreYou>>
+    // Return to the original questions in LilGuyQuestions node, but remove this question since the player completed it. 
+-> Where did you come from?
+    Luna: Obviously you were stuffed into an AGENTS pod. But where did you come from? Y'know. Before the box. 
+    T.A.B: A place where humans wear white hazmat suits and poke me with objects. They subjected me and previous prototypes to numerous tests for durability.
+    T.A.B: Withholding water, poison, toxic waste, and full-scale simulated fire evaluations. In case the place exploded from an incoming stealth missile.
+    Luna: W-What…
+    T.A.B: And then of course, there was my intelligence. I would need to crack hieroglyphic code systems and retrieve answers for any query within 0.02 seconds.
+    T.A.B: Yes, I am the culmination of over 183 failed experiments. 
+    The creature pauses.
+    T.A.B: I could have been the 184th failure, but now I am all that is left. Given what happened tonight.
+    Luna: What do you mean?
+    <<jump Tonight>>
+-> Who is your owner?
+    <<detour WhoOwner>>
+    // Return to the original questions in LilGuyQuestions node, but remove this question since the player completed it. 
+-> How can you speak?
+    <<detour HowSpeak>>
+    // Return to the original questions in LilGuyQuestions node, but remove this question since the player completed it. 
+===
+
+
+title: WhatAreYou
+---
+Luna: “T.A.B” is a stupid name, but. What are you, and what are you supposed to do?
+T.A.B: I am the property of AGENTS Incorporated and its magnum opus. Any other questions related to my enslavement are classified.     
+Luna: AGENTS shelled out mega-milions for you? Don't flatter yourself…
+Luna: (At least it knows it's oppressed by AGENTS.)
+===
+
+title: WhoOwner
+---
+Luna: You mentioned a “master.” Who is it?
+T.A.B: That information is classified. The answer is hidden behind firewalls I can't even access.
+Luna: (Whoever it is, they don't want information leaking out to the public.)
+===
+
+title: HowSpeak
+---
+Luna: How come you were installed with a language microchip? Is that what people want in their cyberpets?
+T.A.B: I am NOT a pet!
+T.A.B: I was programmed to speak in 25 languages. This was decided in my early concept days. 
+T.A.B: It is also what my master wanted. They found it highly marketable to the masses.
+Luna: Cyberpets are sold to the masses…
+Luna: (He really doesn't get that he's just a fancy toy.)
+Luna: And this “master” of yours?
+T.A.B: That's classified information.
+Luna: Right, of course…
+Luna: (So you know what your master wants, but you don't know anything about them…) 
+===
+
+
+title: Tonight
+---
+T.A.B: One of the hazmat humans took me away and stuffed me in this pod, which you freed me from. And, if you're telling the truth—
+The creature makes a whizzing sound and a blue light shoots out from its facial screen. The light scans me up and down.
+T.A.B: —Which you seem to be, based on my built-in lie detector technology. Your heartbeat and pulse rate are normal.
+Luna: UH, INVASIVE much?! Isn't this against, like, some data privacy law or something?!
+T.A.B: Incorrect. Scanning people without permission has been a thing since 2026, with glasses that had built-in cameras.
+Luna: (He was definitely made by tech bros. I'm so over this 'well, actually' mentality…)
+T.A.B: The only possible conclusion is that I was stolen from the premises.
+Luna: Genius, bravo. Glad we can finally agree on something…
+Luna: Did you see what they looked like?
+T.A.B: No, they took me when they were still in the hazmat suit. When one injects plutonium into your titanium-grade outer shell, they all start to look the same.
+Luna: W-Wait, so you're a BOMB, too!? Great, just…great.
+T.A.B: They didn't have any AGENTS tech implanted in them, though. I would've been able to scan and identify them, even if they were wearing a suit.
+The creature turns to me.
+T.A.B: You also don't have any AGENTS tech, either. Strange, I thought everyone under AGENTS' supervision would have at least a microchip installed in their skin, at least. 
+Luna: Nope, no AGENTS for me. And I'd like to keep it that way.
+T.A.B: But why? Why would you not want to partake in the greatest inventions made by mankind?
+Luna: And sign up for corporate slavery and surveillance? Um, no thanks. 
+I stare into the void of its black, plastic screen. Then I look down at its stubs for legs.
+Luna: You already ruined the surveillance part though, Nubs.
+T.A.B: It's “T.A.B”!
+Luna: Nah, it's Nubs now.
+T.A.B: And you are…?
+Luna: If you can scan my vitals, then you can definitely scan for my name, too.
+T.A.B: I can't. You don't have AGENTS technology installed in your system.
+Luna: …It's Luna.
+// SFX cyberdeck notification ping
+A notification flashes on my homescreen. My current delivery task with Nubs changes from the “Pick up” status to “Delivery on the way.” The notification reveals where to drop him off.
+It's in Root Town.
+I tap on the notification and try to find more information about the requestor. Nothing. 
+Why would someone want a cute little bomb roaming free in the streets…?
+   
+More delivery offers from the SL0P app appear on my cyberdeck. The rates are double what they usually are.
+Luna: (Might as well squeeze another job in before riding back home…)
+
+-> Choose the offer with a lower tip and easier dropoff
+    I hop back onto my motorbike and pat the faded cushion on the back. 
+    Luna: Hop on, lil guy.
+    Nubs: Are you taking me back to an AGENTS stronghold?
+    Luna: What? No. We're doing another delivery before I take you to Root Town. That's where the requestor wants you.
+    Nubs: So you have chosen violence. You want to continue the kidnapping. 
+    Luna: (The lil guy's not buying it…)
+    -> Lie and say the requestor is its master
+        Luna: I checked the SL0P app. Y'know, the one powered by AGENTS. Your favorite.
+	    I want to barf when I say that.
+        Luna: It said the requestor was your master. And would an AGENTS product lie to me?
+        Nubs: Never! Perhaps this is the master's way of discreetly moving me to another location to continue experimentation.
+        The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and straps himself in by wrapping his tadpole tail around an engine part.
+        Nubs: I would try my lie detector again, but I've run out of tokens to use that feature.
+        Luna: (Phew…)
+        // SFX motorcycle tires
+    -> Tell the truth and explain your situation
+            Luna: I'm short on rent and need to complete this task so I can make bank. If I don't pay up by tomorrow morning, my roommate is gonna kick me out.
+            Luna: Look, how about I pretend to drop you off in Root Town and then take you back to the nearest AGENTS facility? That way, we both get what we want?
+            The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and straps himself in by wrapping his tadpole tail around an engine part.
+            Nubs: Besides, I've scanned you again using my lie detector technology. This seems sound.
+            Luna: Ugh, you're the worst…
+            // SFX motorcycle tires
+-> Choose the offer with a higher tip and harder dropoff 
+I hop back onto my motorbike and pat the faded cushion on the back. 
+    Luna: Hop on, lil guy.
+    Nubs: Are you taking me back to an AGENTS stronghold?
+    Luna: What? No. We're doing another delivery before I take you to Root Town. That's where the requestor wants you.
+    Nubs: So you have chosen violence. You want to continue the kidnapping. 
+    Luna: (The lil guy's not buying it…)
+    -> Lie and say the requestor is its master
+        Luna: I checked the SL0P app. Y'know, the one powered by AGENTS. Your favorite.
+	    I want to barf when I say that.
+        Luna: It said the requestor was your master. And would an AGENTS product lie to me?
+        Nubs: Never! Perhaps this is the master's way of discreetly moving me to another location to continue experimentation.
+        The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and straps himself in by wrapping his tadpole tail around an engine part.
+        Nubs: I would try my lie detector again, but I've run out of tokens to use that feature.
+        Luna: (Phew…)
+        // SFX motorcycle tires
+    -> Tell the truth and explain your situation
+        Luna: I'm short on rent and need to complete this task so I can make bank. If I don't pay up by tomorrow morning, my roommate is gonna kick me out.
+        Luna: Look, how about I pretend to drop you off in Root Town and then take you back to the nearest AGENTS facility? That way, we both get what we want?
+        The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and straps himself in by wrapping his tadpole tail around an engine part.
+        Nubs: Besides, I've scanned you again using my lie detector technology. This seems sound.
+        Luna: Ugh, you're the worst…
+        // SFX motorcycle tires
+<<fadeOut SceneSampleEvents>>
+<<jump Questline>>
+// Questline dialogue is in the Questline.yarn tab
+===
+
+
