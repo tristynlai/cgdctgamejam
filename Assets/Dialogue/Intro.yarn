@@ -14,7 +14,7 @@ And now, we're just trying to survive.
 
 Luna: Come on, you stupid SL0P app. Show me the big offers. 
 Luna: (Kaya is gonna kill me if I skip out on rent again. Just one big delivery gig should help me break even…)
-
+<<exit SceneSampleEvents Luna>>
 <<jump BadReview>>
 ===
 
@@ -88,7 +88,7 @@ Nat: Missed something in a conversation? Have no fear! The History button lets y
 Nat: When you're done tinkering around, just press the Exit button! You can also return to the cyberdeck by double-clicking on the NATIO 3000 logo in the game.
 Nat: Did that make sense? 
 Luna: yeah, thx. can i go back to work now?
-Nat: Of course! Just lmk if you need anything (。˃ ᴗ < )⸝♡ //note: some doesn't show
+Nat: Of course! Just lmk if you need anything (.˃ ᴗ < ) <3
 // End focused tutorial. Automatically return the player to the “Home” folder on the cyberdeck, where they can see new messages to interact with, which are found in CyberdeckSidquests.yarn. Once the player has returned to the “Home” folder on the cyberdeck, allow the player to click on anything. When the player exits the cyberdeck and clicks Continue, jump them to the Val node. 
 <<jump Val>>
 ===
@@ -107,17 +107,58 @@ Luna: (God, she's amazing. She always knows what to say. Be still, my heart.)
 Luna: (But it's kinda weird to see Root Town's corner store queen on this side of town. And so late at night.) 
 Val parks her motorbike in first gear, its engine quietly humming off. It's almost like she knows I have something to ask her…
 Luna: (BE. COOL.)
+<<jump ValChoices>>
+===
 
-->  Nice bike. How did you mod it?
+title: ValChoices
+---
+Val: Something on your mind?
+-> Nice bike. How did you mod it? <<once>>
     <<detour Bike_Backstory>>
-->  You look…nice.
+    <<jump ValChoices>>
+-> You look...nice. <<once>>
     <<detour Poor_Flirting>>
-->  What are you doing here?
+    <<jump ValChoices>>
+-> What are you doing here?
     She laughs and gives me a wink.
     Val: A Root Town stockist never reveals her business secrets~!
     <<jump PressingVal>>
-
-Val: Something on your mind?
+//<<if visited("Bike_Backstory") == false && visited("Poor_Flirting") == false>>
+//    ->  Nice bike. How did you mod it?
+//        <<detour Bike_Backstory>>
+//        <<jump ValChoices>>
+//    ->  You look…nice.
+//        <<detour Poor_Flirting>>
+//        <<jump ValChoices>>
+//    ->  What are you doing here?
+//        She laughs and gives me a wink.
+//        Val: A Root Town stockist never reveals her business secrets~!
+//        <<jump PressingVal>>
+//<<endif>>
+//<<if visited("Poor_Flirting") == true && visited("Bike_Backstory") == true>>
+//    ->  What are you doing here?
+//        She laughs and gives me a wink.
+//        Val: A Root Town stockist never reveals her business secrets~!
+//        <<jump PressingVal>>
+//<<endif>>
+//<<if visited("Bike_Backstory") == true>>
+//    ->  You look…nice.
+//        <<detour Poor_Flirting>>
+//        <<jump ValChoices>>
+//    ->  What are you doing here?
+//        She laughs and gives me a wink.
+//        Val: A Root Town stockist never reveals her business secrets~!
+//        <<jump PressingVal>>
+//<<endif>>
+//<<if visited("Poor_Flirting") == true>>
+//    ->  Nice bike. How did you mod it?
+//        <<detour Bike_Backstory>>
+//        <<jump ValChoices>>
+//    ->  What are you doing here?
+//        She laughs and gives me a wink.
+//        Val: A Root Town stockist never reveals her business secrets~!
+//        <<jump PressingVal>>
+//<<endif>>
 ===
 
 
@@ -172,7 +213,7 @@ Luna: (Is she hiding something…?)
     I hear Val's breath return to a regular tempo. Her eyes are locked on mine. Anything I noticed before has completely vanished.
     Val: Let me guess…you can't stop thinking about me~?
     Luna: N-No! Ugh, it's nothing. I-
--> Press her //isnt showing as an option?
+-> Press her
     <<set $goodend += 1>>
     Luna: But your shop's in Root Town. Why do you need to rely on Frisscity to stock your shop? 
     Luna: Or is that the 'secret?'
@@ -188,10 +229,10 @@ Luna: (Is she hiding something…?)
 title: TheOffer
 ---
 Val's attention is stolen by her phone. She makes a couple taps, then hops back onto her motorbike. 
-// SFX motorcycle engine turning on
+////////// SFX motorcycle engine turning on
 Val: Sorry, gotta jet! Root Town needs their soda pop. 
 Val: Catch you later when you're back on our side of the bridge?
-// SFX motorcycle tires
+////////// SFX motorcycle tires
 Before I can get a word in, she's gone.
 Luna: There she goes…
 Val is everything I want to be- independent, street smart, spunky. Good with her hands, too. //changed want to be colon to -
@@ -199,6 +240,7 @@ Er…in the nicest, non-creepiest way possible.
 If it wasn't for my shitty situation, I'd be just like her.
 Or with her? Hm, or do I just wanna be her…?
 // SFX cyberdeck notification ping
+<<sfx SceneSampleEvents notification>>
 ////////////////////<<pose Luna on-cyberdeck>>
 ////////////////////<<expression Luna neutral>>
 It's an offer on the SL0P app—and a big one, too.
@@ -206,20 +248,21 @@ Luna: Jackpot.
 I quickly accept the offer, and it reveals the exact coordinates of my delivery order's pickup location.
 Time to roll.
 <<fadeOut SceneSampleEvents>>
-// SFX motorcycle engine turning on
-// SFX motorcycle tires
+/////////// SFX motorcycle engine turning on
+/////////// SFX motorcycle tires
 <<jump TransporterPod>>
 ===
 
 
 title: TransporterPod
 ---
+<<wait 3>>
 <<fadeIn SceneSampleEvents>>
 Luna: This is…suss.
 The pickup location led me into a cramped alleyway. The place reeks of expired seafood scraps and junkyard scrap.
-// Show transporter pod asset
+////////////////// Show transporter pod asset
 I notice a transporter pod branded with an AGENTS logo sitting by a dumpster. It's an odd place to leave something so brand-spanking new.
-// SFX of something stirring within a metal transporter pod, mixed with alien goober noises
+////////////////// SFX of something stirring within a metal transporter pod, mixed with alien goober noises
 //////////////////<<expression Luna shocked>>
 The pod shakes and rolls back and forth on the rubble. Food deliveries don't usually involve grub that's alive.
 I hear a distressed noise bellow from within.
@@ -228,7 +271,7 @@ I hear a distressed noise bellow from within.
     Luna: (I mean, I can't just unlock it. That's against the SL0P protocol.)
     Luna: (And I can't afford another bad review. I'd get suspended.)
     I carefully pick up the transporter pod from the ground. The thing inside settles down in response.
-    // SFX unlock sound
+    /////////////////////////// SFX unlock sound
     ///////////////////////////<<expression Luna surprised>> 
     My fingerprints unlock it, bypassing the pod's DNA-encoded password security. Which could only mean one thing.
     Luna: (This delivery is…meant for me? But why?)
@@ -281,7 +324,7 @@ I glance again at the transporter pod's markings. It's from AGENTS- the very com
    Tampering with deliveries has always been off limits, even before the AGENTS takeover. Back when people had mopeds, bikes, cars, and fossil fuels.
     But something just feels…wrong about this whole thing.
     With a big gulp, I place my hand on the pod's fingerprint sensor. 
-    // SFX unlock sound
+    ///////////////// SFX unlock sound
    <<expression Luna surprised>>
    The pod unlocks with my biometric data. Which could only mean one thing.
     Luna: (This delivery is…meant for me? But why?)
@@ -294,7 +337,7 @@ I glance again at the transporter pod's markings. It's from AGENTS- the very com
     Luna: Sorry, lil dude. It's against AGENTS app rules.
     Luna: (I can't believe I'm talking to someone's midnight snack…)
     I pick up the transporter pod from the ground.
-    // SFX unlock sound
+    /////////////////// SFX unlock sound
     <<expression Luna surprised>>  
     But I wasn't expecting the pod to unlock with my biometric data. Which could only mean one thing.
     Luna: (This delivery is…meant for me? But why?)
@@ -306,8 +349,9 @@ I glance again at the transporter pod's markings. It's from AGENTS- the very com
 
 title: MeetLilGuy
 ---
-<<fadeIn>>
-// Show the CG of Lil Guy
+<<wait 3>>
+<<fadeIn SceneSampleEvents>>
+////////////////// Show the CG of Lil Guy
 The pod sheds its protective packaging layer to reveal a creature in a large glass container, which automatically pops up. 
 It scuttles out from its AGENTS cage and blinks up at me with a screen for a face and pixels for eyes. A curious tadpole-like tail swishes from side to side.
 It's actually kind of…cute.
@@ -326,9 +370,10 @@ Luna: That's like…the dumbest thing I've ever heard. I'm literally losing brai
 
 title: LilGuyReaction
 ---
+<<wait 3>>
 <<fadeIn SceneSampleEvents>>
 // If player chose to Kick it around, show:
-//<<if visited(KickPod) == true>>
+<<if visited("KickPod") == true>>
     //////////<<place Luna Understoryleft>>
     //////////<<pose Luna crossed-arms>>
     //////////<<expression Luna neutral>>
@@ -341,9 +386,9 @@ title: LilGuyReaction
     T.A.B: …Ah.
     Luna: AGENTS tech is pretty fragile, imo. And not as intellectual as it claims to be. 
     Luna: Now, as for you…
-//<<endif>>
+<<endif>>
 //If else, show:
-//<<if visited(KickPod) == false>>
+<<if visited("KickPod") == false>>
     //////////<<place Luna Understoryleft>>
     //////////<<pose Luna crossed-arms>>
     //////////<<expression Luna neutral>>
@@ -357,15 +402,16 @@ title: LilGuyReaction
     I immediately shove the transporter pod into the dumpster, smearing it with unspeakable leftovers.
     T.A.B: …Ah. Recalculating a potential lawsuit probability to 10%.
     Luna: GOOD. Let's keep it that way. Now, what I'd really like to hear is…
-//<<endif>>
+<<endif>>
 <<jump LilGuyQuestions>>
 ===
 
 
 title: LilGuyQuestions
 ---
--> What are you?
+-> What are you? <<once>>
     <<detour WhatAreYou>>
+    <<jump LilGuyQuestions>>
     // Return to the original questions in LilGuyQuestions node, but remove this question since the player completed it. 
 -> Where did you come from?
     Luna: Obviously you were stuffed into an AGENTS pod. But where did you come from? Y'know. Before the box. 
@@ -378,11 +424,13 @@ title: LilGuyQuestions
     T.A.B: I could have been the 184th failure, but now I am all that is left. Given what happened tonight.
     Luna: What do you mean?
     <<jump Tonight>>
--> Who is your owner?
+-> Who is your owner? <<once>>
     <<detour WhoOwner>>
+    <<jump LilGuyQuestions>>
     // Return to the original questions in LilGuyQuestions node, but remove this question since the player completed it. 
--> How can you speak?
+-> How can you speak? <<once>>
     <<detour HowSpeak>>
+    <<jump LilGuyQuestions>>
     // Return to the original questions in LilGuyQuestions node, but remove this question since the player completed it. 
 ===
 
@@ -419,6 +467,7 @@ Luna: (So you know what your master wants, but you don't know anything about the
 
 title: Tonight
 ---
+<<declare $bigJob = false>>
 T.A.B: One of the hazmat humans took me away and stuffed me in this pod, which you freed me from. And, if you're telling the truth—
 The creature makes a whizzing sound and a blue light shoots out from its facial screen. The light scans me up and down.
 T.A.B: —Which you seem to be, based on my built-in lie detector technology. Your heartbeat and pulse rate are normal.
@@ -444,7 +493,7 @@ T.A.B: And you are…?
 Luna: If you can scan my vitals, then you can definitely scan for my name, too.
 T.A.B: I can't. You don't have AGENTS technology installed in your system.
 Luna: …It's Luna.
-// SFX cyberdeck notification ping
+//////////////////// SFX cyberdeck notification ping
 A notification flashes on my homescreen. My current delivery task with Nubs changes from the “Pick up” status to “Delivery on the way.” The notification reveals where to drop him off.
 It's in Root Town.
 I tap on the notification and try to find more information about the requestor. Nothing. 
@@ -468,16 +517,17 @@ Luna: (Might as well squeeze another job in before riding back home…)
         The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and straps himself in by wrapping his tadpole tail around an engine part.
         Nubs: I would try my lie detector again, but I've run out of tokens to use that feature.
         Luna: (Phew…)
-        // SFX motorcycle tires
+        //////////// SFX motorcycle tires
     -> Tell the truth and explain your situation
             Luna: I'm short on rent and need to complete this task so I can make bank. If I don't pay up by tomorrow morning, my roommate is gonna kick me out.
             Luna: Look, how about I pretend to drop you off in Root Town and then take you back to the nearest AGENTS facility? That way, we both get what we want?
             The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and straps himself in by wrapping his tadpole tail around an engine part.
             Nubs: Besides, I've scanned you again using my lie detector technology. This seems sound.
             Luna: Ugh, you're the worst…
-            // SFX motorcycle tires
+            /////////////// SFX motorcycle tires
 -> Choose the offer with a higher tip and harder dropoff 
-I hop back onto my motorbike and pat the faded cushion on the back. 
+    <<set $bigJob = true>>
+    I hop back onto my motorbike and pat the faded cushion on the back. 
     Luna: Hop on, lil guy.
     Nubs: Are you taking me back to an AGENTS stronghold?
     Luna: What? No. We're doing another delivery before I take you to Root Town. That's where the requestor wants you.
@@ -491,14 +541,14 @@ I hop back onto my motorbike and pat the faded cushion on the back.
         The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and straps himself in by wrapping his tadpole tail around an engine part.
         Nubs: I would try my lie detector again, but I've run out of tokens to use that feature.
         Luna: (Phew…)
-        // SFX motorcycle tires
+        //////////////// SFX motorcycle tires
     -> Tell the truth and explain your situation
         Luna: I'm short on rent and need to complete this task so I can make bank. If I don't pay up by tomorrow morning, my roommate is gonna kick me out.
         Luna: Look, how about I pretend to drop you off in Root Town and then take you back to the nearest AGENTS facility? That way, we both get what we want?
         The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and straps himself in by wrapping his tadpole tail around an engine part.
         Nubs: Besides, I've scanned you again using my lie detector technology. This seems sound.
         Luna: Ugh, you're the worst…
-        // SFX motorcycle tires
+        ////////////////// SFX motorcycle tires
 <<fadeOut SceneSampleEvents>>
 <<jump Questline>>
 // Questline dialogue is in the Questline.yarn tab

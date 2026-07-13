@@ -17,6 +17,7 @@ public class SceneSampleEvents : MonoBehaviour
     public AudioSource notificationSource;
     public AudioClip notificationSound;
 
+    private Animation LunaAnimation;
 
     [SerializeField] internal YarnProject yarnProject;
     [SerializeField] internal bool narrativeOver = false;
@@ -28,6 +29,7 @@ public class SceneSampleEvents : MonoBehaviour
     void Start()
     {
         //source = GetComponent<AudioSource>();
+        LunaAnimation = Luna.GetComponent<Animation>();
         PlayerPrefs.SetInt("LoadState", 1);
         StartCoroutine(EventStarter());
         variableStorage = GameObject.FindAnyObjectByType<InMemoryVariableStorage>();
@@ -63,6 +65,16 @@ public class SceneSampleEvents : MonoBehaviour
             Luna.SetActive(true);
         } else if (character == "Val") {
             Val.SetActive(true);
+        }
+    }
+
+    [YarnCommand("exit")]
+    public void Exit(string character) {
+        Debug.Log("Exit CALLED on: " + gameObject.name);
+        if (character == "Luna") {
+            LunaAnimation.Play("LunaFadeOut");
+        } else if (character == "Val") {
+            //Val.SetActive(false);
         }
     }
 
