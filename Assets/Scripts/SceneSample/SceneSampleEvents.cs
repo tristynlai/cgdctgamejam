@@ -17,7 +17,8 @@ public class SceneSampleEvents : MonoBehaviour
     public AudioSource notificationSource;
     public AudioClip notificationSound;
 
-    private Animation LunaAnimation;
+    private Animator lunaAnimator;
+    private Animator valAnimator;
 
     [SerializeField] internal YarnProject yarnProject;
     [SerializeField] internal bool narrativeOver = false;
@@ -29,7 +30,8 @@ public class SceneSampleEvents : MonoBehaviour
     void Start()
     {
         //source = GetComponent<AudioSource>();
-        LunaAnimation = Luna.GetComponent<Animation>();
+        lunaAnimator = Luna.GetComponent<Animator>();
+        valAnimator = Val.GetComponent<Animator>();
         PlayerPrefs.SetInt("LoadState", 1);
         StartCoroutine(EventStarter());
         variableStorage = GameObject.FindAnyObjectByType<InMemoryVariableStorage>();
@@ -62,6 +64,7 @@ public class SceneSampleEvents : MonoBehaviour
     public void Enter(string character) {
         Debug.Log("Enter CALLED on: " + gameObject.name);
         if (character == "Luna") {
+            //lunaAnimator.SetTrigger("FadeIn");
             Luna.SetActive(true);
         } else if (character == "Val") {
             Val.SetActive(true);
@@ -72,9 +75,11 @@ public class SceneSampleEvents : MonoBehaviour
     public void Exit(string character) {
         Debug.Log("Exit CALLED on: " + gameObject.name);
         if (character == "Luna") {
-            LunaAnimation.Play("LunaFadeOut");
+            lunaAnimator.SetTrigger("FadeOut");
+            //Luna.SetActive(false);
         } else if (character == "Val") {
             //Val.SetActive(false);
+            valAnimator.SetTrigger("FadeOut");
         }
     }
 
@@ -89,10 +94,10 @@ public class SceneSampleEvents : MonoBehaviour
             RawImage lunaImage = Luna.GetComponent<RawImage>();
 
             Debug.Log($"Image Component: {lunaImage}");
-            Debug.Log($"Neutral Sprite: {lunaNeutral}");
             
             if (expression == "neutral")
             {
+                Debug.Log($"Neutral Sprite: {lunaNeutral}");
                 lunaImage.texture = lunaNeutral;
             }
         }

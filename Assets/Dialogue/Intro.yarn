@@ -15,6 +15,9 @@ And now, we're just trying to survive.
 Luna: Come on, you stupid SL0P app. Show me the big offers. 
 Luna: (Kaya is gonna kill me if I skip out on rent again. Just one big delivery gig should help me break even…)
 <<exit SceneSampleEvents Luna>>
+<<enter SceneSampleEvents Val>>
+<<wait 3>>
+<<exit SceneSampleEvents Val>>
 <<jump BadReview>>
 ===
 

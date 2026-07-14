@@ -10,7 +10,7 @@ Or the Bay, as we used to call it.
 Back when corporations were run by scrawny, money-grabbing men. When artificial intelligence was sold to us as the savior of humankind.
 They craved power. Craved extraction.
 And they did it. They got what they wanted.
-//<<fadeOut SceneSampleEvents>>
+<<fadeOut SceneSampleEvents>>
 <<wait 2>>
 <<jump Intro>>
 ===
