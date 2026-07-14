@@ -1387,7 +1387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1446, y: -50.878}
+  m_AnchoredPosition: {x: 631, y: -50.878}
   m_SizeDelta: {x: 523.7582, y: 904.9478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1905511144
@@ -1726,7 +1726,6 @@ GameObject:
   - component: {fileID: 2110554844}
   - component: {fileID: 2110554843}
   - component: {fileID: 2110554842}
-  - component: {fileID: 2110554845}
   m_Layer: 5
   m_Name: Luna
   m_TagString: Untagged
@@ -1810,22 +1809,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110554840}
   m_CullTransparentMesh: 1
---- !u!111 &2110554845
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110554840}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 09f04905f717dbf458aa8d1aabfa1c6e, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
