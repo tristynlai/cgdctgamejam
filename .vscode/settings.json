@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "cgdctgamejam.slnx",
+    "dotnet.defaultSolution": "cgdctgamejam-2026-07-15-09-51-46.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
