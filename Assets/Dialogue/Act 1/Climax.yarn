@@ -1,6 +1,4 @@
-﻿title: Questline
+﻿title: LilGuy_Respite
 ---
-<<wait 3>>
-<<fadeIn SceneSampleEvents>>
 This is an example of a Yarn Spinner script. Write your dialogue here!
 ===

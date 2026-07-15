@@ -4,12 +4,14 @@
 <<declare $badend = 0>>
 // Show a map view of the different tech factions that have been carved across the California region and focus on the present-day Bay Area. Luna narrates. Can we have text superimposed on the map graphic that says: “FRISSCITY, AREA 451, YEAR 2056” 
 <<fadeIn SceneSampleEvents>>
+<<wait 2>>
 
 Area 415.
 Or the Bay, as we used to call it. 
 Back when corporations were run by scrawny, money-grabbing men. When artificial intelligence was sold to us as the savior of humankind.
 They craved power. Craved extraction.
 And they did it. They got what they wanted.
+
 <<fadeOut SceneSampleEvents>>
 <<wait 2>>
 <<jump Intro>>

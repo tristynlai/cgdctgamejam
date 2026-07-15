@@ -1,0 +1,633 @@
+﻿title: Questline
+---
+<<wait 2>>
+<<fadeIn SceneSampleEvents>>
+<<wait 2>>
+
+<<if $bigJob == false>>
+    <<jump DivorcedDad>>
+<<else>>
+    <<jump Influencer>>
+<<endif>>
+===
+
+title: DivorcedDad
+---
+The delivery takes me to the Meridian District- home of the tech zillionaires, their corporate underlings, and grifters. 
+I approach a high-end luxury apartment tower and feel its tinted windows judge me as I park my motorbike. I hop off with a bag of hot food and search for its owner, while Nubs scuttles after me.
+Nubs: W-Wait up!
+A man in overpriced polyester pants is waiting outside near the lobby for his food. He waves as soon as he spots me.
+???: Delivery for Benji?
+I look at the receipt attached to the bag.
+Luna: Yeah.
+Benji: Hey, you're from Root Town, right? 
+He gestures at my motorbike's decals, which have the town's official logo of a large gnarled tree. 
+Benji: I am, too. HELLA!
+////////////Change Luna’s pose to crossed arms and expression to annoyed.
+Luna: …
+Luna: (Cringe.)
+I give the man his order without a word and mark my order as complete on the SL0P app.
+He lingers on the curb. It feels like he's REALLY desperate to say something, but has no one to say it to.
+
+-> Tell him you've got 2 minutes
+     Luna: Dude, I've got 2 minutes. Make it quick…
+     Benji: You do? That's awesome! I'm glad the SL0P app pays its employees—er, contractors—fairly so they can take paid breaks in between orders.
+     Luna: …
+     Luna: Time's ticking, by the way. Is there something you need?
+     Benji: O-Oh! Yes…
+-> Ignore him and leave
+    <<set $badend += 1>>
+    I turn around and leave. A job's a job, and I finished it.
+    /////////Change Divorced Dad’s expression to angry/annoyed
+    <<fadeOut SceneSampleEvents>>
+    <<wait 2>>
+    <<fadeIn SceneSampleEvents>>
+    <<wait 2>>
+    //I imagine a black screen and the dialogue box
+    20 minutes later, I get a negative review on the SL0P app AND a violation as the cherry on top. It notes that the food looked like it'd been tampered with…
+    ////////Show Luna and Lil Guy sprites. Luna should have crossed arms with an annoyed expression, and Lil Guy should be in the hands-up pose with a worried look. 
+    Luna: …
+    Nubs: W-What?! I was hungry…
+    But who cares? A person who lives in that building is clearly rich enough to get more food without batting an eye…
+   <<fadeOut SceneSampleEvents>>
+   <<wait 2>>
+   <<jump Bad_Outcome>>
+-> Stare at him, expecting him to talk 
+    <<set $goodend += 1>>
+    I stare blankly at his face. How can someone smile for this long? It's creepy…
+    Benji: You're giving me the Gen Z stare, huh?
+    Luna: …No one says that anymore. That's like 40 years old.
+    Luna: (Which is probably how old he is…)
+    Benji: Well I'm glad the SL0P app pays its employees—er, contractors—fairly so they can take paid breaks in between orders.
+    Luna: …
+    Luna: Time's ticking, by the way. Is there something you need?
+    Benji: O-Oh! Yes…
+
+Benji: I'm just so excited that I HAVE to tell someone. I'm going to get my first AGENTS implant tomorrow! My doc said to be on a liquid diet for a week for best results. 
+Benji: Tomorrow, I'll be a new man that can stop eating sad soups…
+He opens his delivery bag and frowns.
+///////////Change Divorced Dad’s expression to annoyed/angry
+<<set $badend += 1>>
+Benji: Hey! My premium health tonic soup with extra crunchy garlic has been tampered with.
+Benji: Care to explain?
+I look down at my feet, where Nubs is. The creature smiles sheepishly back up at me. Some soup goop is smeared across his screen.
+/////////////Change Luna’s pose to crossed arms and expression to annoyed
+Luna: …
+Nubs: I…was hungry…
+Luna: (How does he even eat?)
+<<jump DivorcedDad_Surgery>>
+===
+
+
+title: DivorcedDad_Surgery
+---
+The man isn't happy—and I can't afford another violation on the SL0P app.
+Luna: (He was yapping about his dumb AGENTS surgery. Maybe I can distract him…)
+
+-> Ask him about the AGENTS implant
+    Luna: So, uh. You were talking about that AGENTS implant. Why are you getting it?
+    The glow in Benji's very annoying face returns.
+    Benji: Oh yes, my surgery! I'm so excited for it!
+-> Congratulate him, but very sarcastically
+    <<set $goodend += 1>>
+    ////////////Change Luna’s pose to hand behind back and neutral expression
+    Luna: Congrats. I'm sure your surgery will be SO life-changing…
+    The glow in Benji's very annoying face returns.
+    Benji: Oh yes, thank you! I'm so excited for it, too!
+    Luna: (This guy is dumb AF. He can't even tell I'm joking.)
+    /////////////Change Lil Guy’s expression to happy
+    I look down at Nubs, who also seems very pleased with my answer.
+    Luna: (Not you, too…)
+-> Leave him and go
+    Luna: My two minutes are up. Time to bounce.
+    Nubs: Huh…? Ah!
+    I scoop up the meddling creature and put him back on my motorbike. 
+    I turn the engine on and ride away, leaving the deadbeat customer in a cloud of smoke to choke on.
+    Because fuck AGENTS. 
+    Nubs: I'm not sure that was a good idea…
+    <<fadeOut SceneSampleEvents>>
+    <<wait 2>>
+    <<fadeIn SceneSampleEvents>>
+    <<wait 2>>
+    <<set $badend += 1>>
+    //I imagine a black screen and the dialogue box
+    20 minutes later, I get a negative review on the SL0P app AND a violation as the cherry on top. It notes how the food looked like it'd been tampered with. Thanks, Nubs…
+    But who cares? A person who lives in that building is clearly rich enough to get more food without batting an eye…
+   <<fadeOut SceneSampleEvents>>
+   <<wait 2>>
+   <<jump Bad_Outcome>>
+Benji: I'm getting my surgery because all the guys I work with already have something augmented.
+Benji: They augment their hands to type faster, or even their brains to sync with our company's internal mainframe.
+Benji: And being from Root Town, this is like a dream job. Everyone wants to be where I'm at now.
+Benji: I need to keep up. I can't fall behind.
+<<jump DivorcedDad_Questions>>
+===
+
+
+title: DivorcedDad_Questions
+---
+-> Why do you feel behind? <<once>>
+    Benji: I'm not getting nearly the same amount of clients as my peers. And I know it's because I'm not optimized with the same implants they are. Clients also take you more seriously too, when you're augmented. 
+    Benji: You feel more confident, you look more confident. You ARE powerful. 
+    Benji: More implants means more clients, which means more money.
+    Luna: And that eventually leads to…?
+    Benji: Financial freedom! And the time to finally do whatever I want. Heck, I might even become the CEO of my own company!
+    Benji: AGENTS takes 75% of my sales from what I make, though…
+    Benji: But that's late-stage capitalism, baby!
+    Luna: (He hasn't even gone through surgery and he's already delusional AF…)
+    //Return to the set of the questions in this mode, but remove this question or block it out since the player has already received the answer for this question.
+    <<jump DivorcedDad_Questions>>
+-> What were you doing in Root Town before this job?
+    Benji: You know the story: a classic low-paying job back in Root Town with grueling work hours.
+    Benji: But once I got this job at AGENTS, everything changed. I got a budget to relocate to a swanky studio in this tower, free food, a 24/7 chauffeur droid to shuttle me back and forth from the office to this tower.
+    Benji: It was all just for me, though. The contract didn't include my family. The company demands everything from me. 80 hour days, seven days a week. But in due time, I thought it'd all pay off.
+    Benji: Not quick enough, though. Divorce papers were mailed to my apartment within months of starting at AGENTS.
+        -> You would put your work before your family? Yikes…
+            <<set $badend += 1>>
+            //////////Set Divorced Dad expression to annoyed/angry
+            Benji: You're one to talk. You don't have a wife and kid.
+            Luna: Pretty rude to assume, unc.
+            Benji: It felt like it was worth the cost. But now…
+        -> That sounds kinda unfair to them, tbh.
+           Benji: Well IMO, it felt like it was worth the cost.
+           Benji: It's easy to take the side you haven't heard. 
+           Benji: But now… 
+        -> And did it feel like the right choice?
+            Benji: At the time, yes. It did feel like it was worth the cost.
+            Benji: But now…
+-> Where do you work now? <<once>>
+    Benji: I work for AGENTS. It'd be weird if I didn't stand by the product I work for, right? It's like a rite of passage.
+    //Return to the set of the questions in this mode, but remove this question or block it out since the player has already received the answer for this question.
+    <<jump DivorcedDad_Questions>>
+
+I hear his voice crack, then taper off into the dead air between us.
+<<jump HelpBenji>>
+===
+
+
+title: HelpBenji
+---
+<<declare $timetime = 0>>
+Benji: Everything I'm doing now…it was to spend more time with them. 
+Benji: You wouldn't understand…
+
+-> If that's what you wanna believe.
+    Luna: Everyone makes choices. You just made yours. 
+    Benji: Yeah…
+    He seems satisfied with my answer, but I still hear doubt in his voice.
+    Luna: (Look at me, talking about choices in life to an ultra-rich sellout. Like I'm one to talk…)
+-> Hope your kid is proud of you for selling your soul.
+    <<set $badend += 1>>
+    /////////////Set Divorced Dad expression to annoyed/angry
+    Benji: Fuck off! I hope you rot like the rest of Root Town.
+    I shrug and get back on my bike. Nubs follows after me.
+    The last thing our town needs is a traitor and a sellout.
+    Nubs: I'm not sure that was a good idea…
+    Luna: Whatever.
+    I rev my bike's engine and ride off. 
+    <<fadeOut SceneSampleEvents>>
+    <<wait 2>>
+    <<fadeIn SceneSampleEvents>>
+    <<wait 2>>
+    //I imagine a black screen and the dialogue box
+    20 minutes later, I get a negative review on the SL0P app AND a violation as the cherry on top. It notes how the food looked like it'd been tampered with. Thanks, Nubs…
+    But who cares? A person who lives in that building and sells his soul to AGENTS is clearly rich enough to get more food…
+    <<fadeOut SceneSampleEvents>>
+    <<wait 2>>
+    <<jump Bad_Outcome>>
+-> You're never gonna get back that time, though.
+    <<set $goodend += 1>>
+    <<set $timetime = 1>>
+    Luna: Spoiler alert, I don't have a wife and kids. But from what I heard you've probably missed out on school performances, birthdays, maybe even a graduation, and all the small wins in between.
+    Nubs: Luna…
+    Benji: …
+    Luna: But that doesn't mean you can't take back time back now. That's a choice. 
+    Benji: And life is full of choices…
+    //////////////Set Divorced Dad expression to happy
+    Benji: You're one wise delivery driver. Have you ever considered becoming a life coach?
+    Luna: I'd probably make millions if it was this easy.
+    Luna: (But it's true. Life is full of choices. This gig job is a choice…and it might not be too late to change it up, I guess.)
+    Benji: I'm gonna call my ex-wife tonight. Hear my daughter's voice. It's time to start making up for all that lost time.
+
+Benji: Thanks for listening to an old, uncool guy like me. I know it was more than a few minutes of your time, and time's precious to SL0P drivers.
+Nubs: Luna…
+Benji: Oh! Is that a talking cyberpet?
+////////////Set Luna’s expression to surprised and Lil Guy’s expression to angry
+Nubs: I am not a pet! I am a super secret weap—!
+Luna: Uhhh yeah! A pet! Did you know they're gonna release microchips so that your pet can speak in over 25 languages? Crazy stuff, right?
+Nubs: Hey! That's proprietary information!
+//////////////Set Divorced Dad’s expression to neutral
+Benji: Where have I heard that before? Wasn't that in an internal post at my company…?
+Luna: (Gah! I can't have an AGENTS peon realize that I'm in possession of his company's little war machine!) 
+Luna: G-Gotta go!
+Before Benji can respond, I scoop up Nubs, dump him onto my motorbike, and ride off into the night. 
+<<fadeOut SceneSampleEvents>>
+<<wait 2>>
+//I imagine a black screen and the dialogue box
+20 minutes later, I get an extra tip notification and a five-star review from Benji. 
+Maybe there's more to Frisscity's people than meets the eye…
+<<jump DivorcedDad_Good_Outcome>>
+===
+
+
+title: DivorcedDad_Good_Outcome
+---
+<<fadeIn SceneSampleEvents>>
+<<wait 2>>
+//////////// Show The Bridge environment art
+I wrap up my delivery job with Nubs and make my way over to The Bridge. 
+The shadow of Root Town lingers in the distance across the ocean.
+///////////// Show new phone message opportunities by showing the new notification status on the cyberdeck’s NATIO 3000 logo
+// If player chose You’re never gonna get back that time, then also show the below:
+<<if $timetime == 1>>
+    Luna: (A life coach, huh? Kaya would laugh if I told her I was gonna become one. She's better at that touchy-feely stuff.)
+    Nubs: So this is the Gen Z stare…
+    Luna: W-What? No. Stop saying that. That's like, SO old. 
+    Luna: He's basically from that generation…
+    Nubs: Yeah. Like, HELLA old.
+    Luna: Can you STOP!? You sound so cringe right now. Remove that from your memory, or hardware, or…whatever it's called!
+    Beeping noises echo from Nubs's miniature metal body.
+
+    ////////// Set Lil Guy’s expression to loading
+    /////////// Set Luna’s expression to annoyed
+    Nubs: I'll archive “hella,” “cringe,” and “Gen Z stare” into my mainframe and categorize them appropriately into their proper usage date and social settings.
+    Luna: We need to program something into you that actually listens to me…
+<<endif>>
+// Continue with the below text. If player didn’t choose You’re never gonna get back that time, then just show the below:
+I notice Nubs is lost in thought.
+Luna: What's wrong?
+Nubs: I'm thinking about what Benji said, about the time he lost because of his job at AGENTS. My emotions radar picked up feelings of sadness and loneliness. 
+Nubs: I can only infer that this sadness is caused by AGENTS.
+///////////// Change Luna’s pose to crossed arms and neutral
+Luna: Well, yeah. AGENTS is bad.
+Nubs: But why is AGENTS bad? Our mission is to help humankind advance towards a new evolutional frontier. Benji was in the process of doing that for him and his family. 
+Luna: Look, I know you've lived in a lab your whole short-lived life, but your company's little “mission statement” is a complete lie. AGENTS doesn't help, it only harms.
+Luna: You heard it from Benji. AGENTS gave him riches and clout, but it shattered his family life into bits. 
+Luna: He couldn't have both, so he chose to sell his soul to AGENTS. That's what AGENTS does. It takes away your humanity. 
+Nubs: I see…
+Luna: And if we wanna keep talking about selling your soul, just look over there.
+I point over to Root Town and the smoke that billows from its buildings in the distance.
+Luna: That's what AGENTS does to my hometown. To me.
+Luna: AGENTS relies on Root Town for its people and its resources to power their services. They take our water to power their big offices. And in return? They force us to rely on them and their low-paying jobs on the apps they built.
+///////////// Change Lil Guy’s pose and expression to worried/sad
+Luna: I'm a prime example of that.
+Nubs: …
+I'm clearly bumming the little guy out. 
+Luna: Obviously you can tell I'm not stoked about it. But…
+////////////// Change Luna’s pose to hand behind her back
+Luna: Meeting Benji got me thinking. Maybe I'm judging everyone who lives here a little too quickly.
+////////////// Change Lil Guy’s pose and expression to neutral
+Luna: That guy's gonna start changing his ways. He said life is full of choices…
+Luna: And choosing to waste my life away on this trashy SL0P app is a choice.
+Luna: I just have to…own it.
+Nubs: Luna…
+/////////////// Change Lil Guy’s pose and expression to happy
+Nubs: You're hella cool right now!
+//////////////// Change Luna’s expression to embarrassed/shy
+Luna: S-Shut up and don't read too much into it! I still hate AGENTS. And what your master does.
+Nubs laughs for the first time and it sounds like a series of high-pitched chirps.
+It's…honestly kind of cute.
+<<jump LilGuy_Respite>>
+// You can find this node in the Climax.yarn tab
+===
+
+
+title: Influencer
+---
+<<fadeIn>>
+The delivery takes me to the Meridian District- home of the tech zillionaires, their corporate underlings, and grifters. 
+I haul a huge catering order through the bulletproof glass doors of a luxury apartment. 
+I trudge past the security team in the lobby, who don't press the elevator button for me. They don't lift a finger.
+They enjoy watching a person from Root Town struggle.
+I'm taken to the top floor and eventually find the apartment number that matches the one on my screen. I finally release the bags from my arms and hear my shoulders sigh in relief.
+I press a button on their intercom's sleek glass pad. Then I wait…
+//////////////////Change Luna’s sprite to a crossed arm pose and with the annoyed expression
+…And wait.
+
+-> Continue to wait
+    I sigh and decide to give it a few more minutes. I wouldn't put it past the neighbors to steal food, even in a ritzy place like this.
+    Nubs frowns and stamps his stubby feet.
+    Nubs: How long do you intend to dally away at the door—ah!
+    His tail thwacks one of the bags and it falls over. Soda and green slush ooze out from the bag and stain a very expensive-looking doormat.
+    Luna: Shit.
+    I try to blot the mess away with a wad of napkins I found hidden in one of the other bags. Now it looks worse, like a muddy mess.
+    Nubs: O-Oops…
+    Luna: …       
+-> Press the button on the intercom again
+    <<set $goodend += 1>>
+    Luna: I don't have all day, divas.
+    Nubs: Ah, so the owners of this abode are female versions of a hustler?
+    Luna: W-What?! No. Where are you even-? Ugh. Nevermind.
+    I press the button again on the glass interface. Time's ticking, and I can feel the little creature's beady little eyes on my back. I know what I promised him.
+    Nubs: How long do we intend to dally away at the door—ah!
+    His tail thwacks one of the bags and it falls over. Soda and green slush ooze out from the bag and stain a very expensive-looking doormat.
+    Luna: Shit.
+    I try to blot the mess away with a wad of napkins I found hidden in one of the other bags. Now it looks worse, like a muddy mess.
+    Nubs: O-Oops…
+    Luna: …       
+-> Take a photo of the order and leave 
+    <<set $badend += 1>>
+    Luna: I don't have time for this.
+    I decide to snap a photo on the SL0P app to prove that I left the catering order at the correct location. I make sure to capture the apartment's number.
+    Nubs: Where are you going—ah! 
+    The creature's tail thwacks one of the bags and it falls over. Soda and green slush ooze out from the bag and stain a very expensive-looking doormat. 
+    Luna: Shit.
+    I try to blot the mess away with a wad of napkins I found hidden in one of the other bags. Now it looks worse, like a muddy mess. 
+    Nubs stands and watches as I try to clean up his mess. He obviously wants to say something, but I don't let him.
+    Luna: Let's just get out of here.
+    <<fadeOut SceneSampleEvents>>
+    <<wait 2>>
+    20 minutes later, I get a negative review on the SL0P app AND a violation as the cherry on top. It notes the doormat stain as damaged property.
+    But who cares? A person who lives in that building is clearly rich enough to buy a replacement without blinking an augmented eye…
+    <<jump Bad_Outcome>>
+<<jump Influencer_Continued>>
+===
+
+
+title: Influencer_Continued
+---
+//////////Change Luna and Lil Guy’s expressions to surprised
+The door clicks open.
+A woman with impeccable hair stands in the doorway. I notice some of her skin has been implanted with AGENTS technology.
+???: Hey-o, followers! Sooo, it looks like my catering order from SL0P just arrived. Powered by AGENTS, of course! 
+
+Her followers get to see the bags—and the stain on her doormat—before her own eyes do. 
+////////////Change Influencer’s expression to angry/annoyed
+Even though she's wearing shades, I can tell she's pissed.
+<<set $badend += 1>>
+///////////Change Luna’s expression to neutral
+But the more I look at her, the more I feel like I've seen her before. She looks familiar…
+
+-> Ask if she's been in an ad before
+    Luna: Have you been in an ad or something? I feel like I…
+    And then it hits me. This woman's face is plastered all over Kaya's makeup products. 
+    She's a beauty influencer.
+    //////////////Change Influencer’s expression to happy
+    ???: Oh, were you talking about my downtown billboard? Or my collaboration with the women's basketball team?
+    She moves her cyberphone so that I'm viewable to her live audience, which makes me freeze in place. 
+    ???: Look, everyone! My delivery gal is a Queenie fan! Part of the royal fam.
+    /////////////Change Luna’s expression to annoyed
+    Luna: (“Fan?” Hell no. And I didn't ask to be on someone's livestream…) 
+-> Ask for her name, using the delivery as an excuse
+    Luna: Just making sure this order is delivered to miss…?
+    //////////////Change Influencer’s expression to happy
+    ???: Queenie! Ohmigods, have you never heard of me before!?
+    She moves her cyberphone so that I'm viewable to her live audience, which makes me freeze in place. 
+    Queenie: Can you believe this, my royal fam? My delivery girl doesn't even know who I am!
+    //Change Luna’s expression to annoyed
+    Luna: (I'm not getting paid to be on someone's livestream…) 
+-> Just take a photo of her and the food, then leave
+    <<set $badend += 1>>
+    I let my thoughts pass and quickly hold up my phone to take a picture of the woman and her food.
+    ???: H-Hey! You need to pay for meet-and-greet photos!
+    Luna: If I don't take a photo, I get fired. Some people have REAL jobs, y'know.
+    ???: Rrrgh! 
+    I can hear notifications and react noises pinging from the woman's phone. But before I can give her and her followers more tea, I turn around and make my way back down to the lobby.
+    Nubs scuttles after me. 
+    Nubs: I'm not sure that was a great idea…
+    He obviously wants to say more, but I don't let him.
+    Luna: Let's just get out of here.
+    <<fadeOut SceneSampleEvents>>
+    <<wait 2>>
+    20 minutes later, I get a negative review on the SL0P app AND a violation as the cherry on top. It notes the doormat stain as damaged property.
+    But who cares? A person who lives in that building is clearly rich enough to buy a replacement without blinking an augmented eye…
+    <<jump Bad_Outcome>>
+
+Queenie looks me over with a vicious side eye. Her eyes eventually find Nubs, who's hiding behind my leg.
+Queenie: Ohmigods, fam! Look at this cute cyberp—
+//////////////Change Luna’s expression to surprised
+I start to panic. I can't have this dumb woman live stream a top secret war machine to the public!
+Luna: No cameras! He's…he's got a location tracker on him. So everyone will know where you live! Turn it off.
+I attempt to take a swipe at the woman's cyberphone.
+Queenie: What the-?! Okay, okay! Geez. Signing off for a bit fam, be back soon~
+She blows a kiss to her followers and ends the stream. 
+//////////////Change Influencer’s expression to neutral
+The smile on her face instantly evaporates, and all that's left is a shell of a human. 
+She continues to look at her reflection on her cyberphone's screen, analyzing every pore on her face.
+Queenie: That was close. I can't let my crazy fans know where I live.
+She looks at me again.
+Queenie: And I can't have a girl from Root Town rat me out.
+Luna: Rat you out…?
+I try to remember why Kaya likes Queenie so much.
+Queenie: Can you finish up and go? My followers need me…
+<<jump Queenie_Questions>>
+===
+
+
+title: Queenie_Questions
+---
+-> Could I get a selfie? <<once>>
+    /////////////Change Influencer’s expression to annoyed
+    The frown says it all- “No.” 
+    //Return back to the set of questions in this node, but remove this question since the player completed it.
+    /////////////Change Influencer's expression back to neutral
+    <<jump Queenie_Questions>>
+-> Aren't you also from Root Town?
+    Her lip stiffens.
+    Queenie: Yeah. So? Are you here to cancel me?
+    -> Why would I cancel you?
+        <<set $goodend += 1>>
+        Luna: I don't even know you. Well, my friend does. But why would I cancel someone I barely know?
+        Luna: (Though, she makes it pretty easy to hate her…)
+        Queenie: True. I guess I'm just a little paranoid.
+    -> (Jokingly) I'll write a scathing post about how awful you are IRL
+        Queenie laughs.
+        Queenie: You wouldn't.
+        Luna: I've seen enough of that stuff, though. Bad reviews. Got some sick disses archived.
+        Queenie: I can only imagine the crazy shit you get dinged for.
+        Luna: (And she wouldn't? I just messed up her doormat…)
+    -> Give me some baecoins and I won't do it.
+        <<set $badend += 1>>
+        ///////////Change Influencer's expression back to annoyed   
+        Queenie: Stop giving Root Town a bad rep like that.
+
+Queenie: I'm used to the hate I get from the town. They call me a “sellout.”
+Queenie: Because I'm from Root Town, got famous for reviewing beauty products, then chameleoned my way into Frisscity.
+Queenie: I started promoting AGENTS makeup more and more. Then…
+She taps her literal porcelain cheeks.
+Queenie: The next step was to become a walking ad for AGENTS implants. The company made it so easy for me, too. But my life isn't as glamorous as it looks.
+Queenie: I'm forced to keep subscriptions so that my skin implants stay silky smooth and shiny. I need my skin to be the latest model. AGENTS keeps 70% of my sales revenue, too.
+Nubs: …
+Queenie: And now, all I do is force discount codes for implant surgeries down everyone's throats. Surgeries I know they can't afford. And the hidden subscriptions? Forget it. 
+Queenie: I want to give back—to actually make a difference. But maybe I really am just a sellout…
+<<jump Queenie_Ideas>>
+===
+
+
+title: Queenie_Ideas
+---
+<<declare $sample = 0>>
+Luna: (She legit seems bothered by it. What should I say?)
+
+-> Maybe instead of selling AGENTS, you can find another way to help the Town? 
+    Queenie: Like what?
+    Luna: Like…don't gatekeep what comes after, about the costs and subscriptions. Be real with them, like how you're being real with me. 
+    Luna: Or, use your money to give back to Root Town.
+    Queenie: Like…for schools?
+    Luna: Yeah. Or for infrastructure. Or food banks. We basically just need anything at this point. But school is a start.
+    Queenie: Maybe like…beauty school?
+    Luna: Yeah! What's the one you went to?
+    Queenie: The one down by Lake M.
+    Luna: Did you ever try Chester's Cheesecakes before he got shut down?
+    Queenie: Girl, the school was right NEXT to his popup.
+    We both find ourselves laughing, sharing a piece of Root Town history that only locals could know.
+    Queenie: God, I miss Root Town. This riffing sesh really helped me remember why I love it.
+    Luna: Yeah, well. Dreaming is all we CAN do at this point.
+    Queenie: Maybe, maybe not. You're the driver of your own life.
+    Luna: …
+    Queenie. Sorry, I won't get philosophical on you.You've give me something to think about.
+    Luna: Pay me in royalties for the idea. Or an extra tip.
+    Queenie: Extra tip, sure. How about a beauty sample, too? A SIGNED beauty sample?
+    Luna: Honestly, just the tip is—
+    Luna: (Wait. I know someone who'd want something like that—and who could possibly knock some coin off my rent if I gave her this!)
+    /////////////Change Luna’s pose to hand behind back 
+    Luna: Actually yeah, I'll take it. Could you address it to Kaya? That's K-A-Y-A.
+    <<set $sample = 1>>
+    ///////////////Show the item asset: beauty sample addressed to Kaya
+    Queenie: Done.
+    I take the beauty product from her porcelain hands and slip it into my back pocket.
+    Queenie: So I know Kaya. But who is my hella mysterious and wise midnight delivery girl?
+    Luna: It's Luna.
+    Queenie: Okay, Luna. And…her cute little sidekick that can track locations.
+    Nubs: I can do a lot more for people who have AGENTS implants, like=
+    //////////////Change Luna’s expression to surprise 
+    Luna: Don't mind him! I installed a new microchip that allows him to talk. It's still a little buggy, haha
+    //Change Lil Guy’s expression and pose to angry
+    Nubs: I'm not buggy! I've been cleared of 31 SEVs and over 2,000 coding errors.
+    Luna: Vaccinations! Sooo many vaccinations. Pets are so expensive, y'know?
+    Nubs: I. AM NOT. A PET!!
+    I laugh it off as I quickly shuffle me and my alien sidekick away from Queenie's door so she doesn't get any ideas. I also make sure to take a picture of the delivery so SL0P doesn't ride my ass. 
+-> Just keep doing you. You need to give people time. 
+    Luna: People will come around. You said it yourself: you're from Root Town. So be tough, then. Stay rooted.
+    Luna: As much as I hate AGENTS, maybe you've changed people's lives. Have those people speak for you, about how much you helped them. You can't fake that.
+    Nubs: Luna…
+    Queenie: That's not a bad idea. Especially from someone who hates AGENTS.
+    Luna: I DO hate them. Just gimme some royalties for the idea. Or an extra tip.
+    Queenie: Extra tip? Can do.
+    Queenie: Thanks, my hella mysterious and wise midnight delivery girl.
+    Luna: Sure. And it's Luna.
+    Queenie: Luna. And…her cute little sidekick that can track locations.
+    Nubs: I can do a lot more for people who have AGENTS implants, like-
+    ////////////////Change Luna’s expression to surprise 
+    Luna: Don't mind him! I installed a new microchip that allows him to talk. It's still a little buggy, haha
+    ///////////////Change Lil Guy’s expression and pose to angry
+    Nubs: I'm not buggy! I've been cleared of 31 SEVs and over 2,000 coding errors.
+    Luna: Vaccinations! Sooo many vaccinations. Pets are so expensive, y'know?
+    Nubs: I. AM NOT. A PET!!
+    I laugh it off as I quickly shuffle me and my alien sidekick away from Queenie's door so she doesn't get any ideas. I also make sure to take a picture of the delivery so SL0P doesn't ride my ass. 
+-> Internet trolls are a small price to pay for your flex city life.
+    <<set $badend += 1>>      
+    Luna: You live in a penthouse suite where everything's delivered to you, and you STILL can't take cancel culture? It's giving privileged sob story.
+    ///////////////Change Influencer's expression back to annoyed   
+    Queenie: And YOU don't have to be a bitch about it!
+    Queenie: Get outta my face. We're done.
+    She slams the door, leaving me and the rest of her food on the stained doormat.
+    Nubs: I-I'm not so sure that was a good idea…
+    I ignore the creature and instead just snap a photo of the delivery to prove I did it correctly. A job's a job.
+    <<fadeOut SceneSampleEvents>>
+    <<wait 2>>
+    20 minutes later, I get a negative review on the SL0P app AND a violation as the cherry on top. It notes the doormat stain as damaged property.
+    But who cares? A person who lives in that building is clearly rich enough to buy a replacement without blinking an augmented eye…
+    <<jump Bad_Outcome>>
+
+<<fadeOut SceneSampleEvents>>
+<<wait 2>>
+20 minutes later, I get an extra tip notification and a five-star review from Queenie. 
+Maybe there's more to Frisscity's people than meets the eye…
+<<jump Influencer_Good_Outcome>>
+===
+
+title: Influencer_Good_Outcome
+---
+//////////// Show The Bridge environment art
+<<fadeIn SceneSampleEvents>>
+<<wait 2>>
+I wrap up my delivery job with Nubs and make my way over to The Bridge. 
+The shadow of Root Town lingers in the distance across the ocean.
+////////// Show new phone message opportunities by showing the new notification status on the cyberdeck’s NATIO 3000 logo
+// If player received the beauty sample addressed to Kaya, then also show the below:
+<<if $sample == 1>>
+    Luna: (I kinda hate to admit it, but riffing with Queenie was kind of cool.)
+    Luna: (And now, Kaya will owe me 1,000 favors.)
+    Nubs: You're hella thinking about Queenie, aren't you?
+    Luna: W-What? No. Also…when did you start saying “hella”?
+    Nubs: I observed your conversation and picked up a few things. Before you rudely called me a pet and pushed me away before I could fully scan her.
+    Luna: You'll pick up more slang when we go to Root Town. The more you become a local, the better.
+    Nubs: This vernacular is much more fascinating and complex than overused acronyms…like T.A.B.
+    Luna: So you admit it was a dumb name!
+    /////////////// Change Nub’s pose and expression to angry/annoyed
+    Nubs: N-No I don't! I would not admit to such a thing.
+    /////////////// Change Nub’s expression back to worried
+<<endif>>
+// Continue with the below text. If the player didn’t receive the beauty sample addressed to Kaya, then just show the below:
+I notice Nubs is lost in thought.
+Luna: What's wrong?
+Nubs: I'm thinking about what Queenie said. My emotions radar picked up feelings of sadness and stress. I could only infer that this sadness came from AGENTS.
+Luna: Well, yeah. AGENTS is bad.
+Nubs: But why is AGENTS bad? Our mission is to help humankind advance towards a new evolutional frontier.
+///////////////// Change Luna’s pose to crossed arms and neutral
+Luna: Look, I know you've lived in a lab your whole short-lived life, but your company's little “mission statement” is a complete lie. AGENTS doesn't help, it only harms.
+Luna: You heard Queenie. She's trapped in a never-ending cycle of subscriptions that AGENTS cornered her into after she got her skin implants. 
+Luna: She relies on AGENTS to live. And relying isn't a choice. It's parasitic.
+Nubs: I see…
+Luna: And if we wanna keep talking about parasites, just look over there.
+I point over to Root Town and the smoke that billows from its buildings in the distance.
+Luna: That's what AGENTS did to my home. To me.
+Luna: Frisscity relies on Root Town for people who will do the dirty work they don't wanna do. Root Town relies on Frisscity for jobs, even if they're at criminal prices.
+////////////// Change Lil Guy’s pose and expression to worried/sad
+Luna: I'm a prime example of that.
+Nubs: …
+I'm clearly bumming the little guy out. 
+Luna: Obviously you can tell I'm not stoked about it. But…
+///////////////// Change Luna’s pose to hand behind her back
+Luna: Meeting Queenie got me thinking. Maybe I'm judging everyone who lives here a little too harshly.
+///////////////// Change Lil Guy’s pose and expression to neutral
+Luna: Queenie actually wants to help Root Town. That's deep. Maybe it's not an “us versus them” kinda mentality.
+Luna: I've always blamed Frisscity for my shitty situation. For my shitty job. But maybe it's not as black and white as that…
+Nubs: Luna…
+///////////////// Change Lil Guy’s pose and expression to happy
+Nubs: Omigod, you're hella cool right now!
+// Change Luna’s expression to embarrassed/shy
+Luna: S-Shut up! And don't read too much into it! I still hate what AGENTS and your master does.
+Nubs laughs for the first time and it sounds like a series of high-pitched chirps. 
+It's…honestly kind of cute.
+<<jump LilGuy_Respite>>
+// You can find this node in the Climax.yarn tab
+===
+
+
+title: Bad_Outcome
+---
+///////////////// Show The Bridge environment art
+<<fadeIn SceneSampleEvents>>
+<<wait 2>>
+I wrap up my delivery job with Nubs and make my way over to The Bridge. 
+The shadow of Root Town lingers in the distance across the ocean.
+I'm one step closer to sending this little guy off back to where he came from.
+////////////////// Show new phone message opportunities by showing the new notification status on the cyberdeck’s NATIO 3000 logo
+
+I notice Nubs is lost in thought.
+Luna: What's wrong?
+Nubs: I'm thinking about the delivery. The emotions my mood radar could pick up during it all. 
+Nubs: I was getting readings of sadness. And…anger.
+Nubs: From you.
+////////////////// Change Luna’s pose to crossed arms and expression to annoyed
+Luna: Duh. That whole job was a hassle. I hate it.
+Nubs: Then…why do you do it? Why do you work for AGENTS, when you hate it so much?
+I could feel my face getting redder, getting hotter.
+Luna: Why do I do it? Because I HAVE to. Look.
+I point over to Root Town and the smoke that billows from its buildings in the distance.
+Luna: I know you've lived in a lab your whole short-lived life, so I'll get you up to speed.
+Luna: Frisscity relies on Root Town for people who will do the dirty work they don't wanna do. Root Town relies on Frisscity for jobs, even if they're at criminal prices.
+Luna: That's what AGENTS does to my home. To me.
+////////////////// Change Lil Guy’s pose and expression to worried/sad
+Luna: I don't have a degree, the backdoor connections, or the money to get in. Heck, I'm barely able to keep a room in a crappy warehouse.
+Luna: There's nothing I can do. These were the cards AGENTS and life dealt me.
+Nubs: …
+Luna: Congrats on illegally scanning me, by the way. Again. 
+I was clearly bumming the little guy out. But I didn't care.
+Nubs: Our mission is to help humankind advance towards a new evolutionary frontier, not to hinder it. I don't understand.
+Nubs: Despite this…
+<<jump LilGuy_Respite>>
+// You can find this node in the Climax.yarn tab
+===

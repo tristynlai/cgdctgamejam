@@ -1273,6 +1273,7 @@ MonoBehaviour:
   lunaNeutral: {fileID: 2800000, guid: 0fdd316a050aa89429932bd03d26d131, type: 3}
   notificationSource: {fileID: 1981392157}
   notificationSound: {fileID: 8300000, guid: e9dcf3b0ccefc69469ef92397fa31ba0, type: 3}
+  tiresSound: {fileID: 8300000, guid: 96fee5dc733211b4a809bab4e305ddef, type: 3}
   yarnProject: {fileID: 7545569452688597077, guid: d2fbccd61c2f7a14bad11629cb5e71c4, type: 3}
   narrativeOver: 0
   startNode: Start
@@ -1710,6 +1711,7 @@ MonoBehaviour:
   lunaNeutral: {fileID: 0}
   notificationSource: {fileID: 0}
   notificationSound: {fileID: 0}
+  tiresSound: {fileID: 0}
   yarnProject: {fileID: 7545569452688597077, guid: d2fbccd61c2f7a14bad11629cb5e71c4, type: 3}
   narrativeOver: 0
   startNode: Start

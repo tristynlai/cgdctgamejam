@@ -16,6 +16,7 @@ public class SceneSampleEvents : MonoBehaviour
 
     public AudioSource notificationSource;
     public AudioClip notificationSound;
+    public AudioClip tiresSound;
 
     private Animator lunaAnimator;
     private Animator valAnimator;
@@ -65,9 +66,21 @@ public class SceneSampleEvents : MonoBehaviour
         Debug.Log("Enter CALLED on: " + gameObject.name);
         if (character == "Luna") {
             //lunaAnimator.SetTrigger("FadeIn");
-            Luna.SetActive(true);
+            if (Luna.activeSelf == false) {
+                Luna.SetActive(true);
+            }
+            else
+            {
+                lunaAnimator.SetTrigger("FadeIn");
+            }
         } else if (character == "Val") {
-            Val.SetActive(true);
+            if (Val.activeSelf == false) {
+                Val.SetActive(true);
+            }
+            else
+            {
+                valAnimator.SetTrigger("FadeIn");
+            }
         }
     }
 
@@ -78,8 +91,8 @@ public class SceneSampleEvents : MonoBehaviour
             lunaAnimator.SetTrigger("FadeOut");
             //Luna.SetActive(false);
         } else if (character == "Val") {
-            //Val.SetActive(false);
             valAnimator.SetTrigger("FadeOut");
+            //Val.SetActive(false);
         }
     }
 
@@ -110,6 +123,10 @@ public class SceneSampleEvents : MonoBehaviour
         if (sfxName == "notification")
         {
             notificationSource.PlayOneShot(notificationSound);
+        }
+        if (sfxName == "tires")
+        {
+            notificationSource.PlayOneShot(tiresSound);
         }
     }
 }
