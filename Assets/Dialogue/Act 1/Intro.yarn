@@ -24,9 +24,11 @@ title: BadReview
 // SFX cyberdeck notification ping
 <<sfx SceneSampleEvents notification>>
 It's a review from the SL0P app, powered by AGENTS. A bad review, too. 
-/////////////////// Show the 1-star review on the screen, which says: “driver didn’t handle with care. my organic belladonna apples were touching the fresh mozzarella and now i can’t eat them anymore cuz i’m a fruitarian vegan going on my 8th juice cleanse.”
+// Show the 1-star review on the screen, which says: “driver didn’t handle with care. my organic belladonna apples were touching the fresh mozzarella and now i can’t eat them anymore cuz i’m a fruitarian vegan going on my 8th juice cleanse.”
+<<enter SceneSampleEvents Review>>
 Luna: …You've got to be joking.
 Luna: (I have an option to respond…)
+<<exit SceneSampleEvents Review>>
 
 -> Don't respond and close the app
     <<set $goodend += 1>>

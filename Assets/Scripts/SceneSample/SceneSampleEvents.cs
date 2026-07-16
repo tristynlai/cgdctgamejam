@@ -12,6 +12,8 @@ public class SceneSampleEvents : MonoBehaviour
     public GameObject Val;
     public GameObject Nubs;
 
+    public GameObject Review;
+
     public VariableStorageBehaviour variableStorage;
 
     public Texture2D lunaNeutral;
@@ -29,6 +31,7 @@ public class SceneSampleEvents : MonoBehaviour
     private Animator lunaAnimator;
     private Animator valAnimator;
     private Animator nubsAnimator;
+    private Animator reviewAnimator;
 
     [SerializeField] internal YarnProject yarnProject;
     [SerializeField] internal bool narrativeOver = false;
@@ -43,6 +46,7 @@ public class SceneSampleEvents : MonoBehaviour
         lunaAnimator = Luna.GetComponent<Animator>();
         valAnimator = Val.GetComponent<Animator>();
         nubsAnimator = Nubs.GetComponent<Animator>();
+        reviewAnimator = Review.GetComponent<Animator>();
 
         PlayerPrefs.SetInt("LoadState", 1);
         StartCoroutine(EventStarter());
@@ -102,6 +106,16 @@ public class SceneSampleEvents : MonoBehaviour
             {
                 nubsAnimator.SetTrigger("FadeIn");
             }
+        } else if (character == "Review")
+        {
+            if (Review.activeSelf == false)
+            {
+                Review.SetActive(true);
+            }
+            else
+            {
+                reviewAnimator.SetTrigger("FadeIn");
+            }
         }
         
     }
@@ -119,6 +133,10 @@ public class SceneSampleEvents : MonoBehaviour
         {
             nubsAnimator.SetTrigger("FadeOut");
             //Nubs.SetActive(false);
+        } else if (character == "Review")
+        {
+            reviewAnimator.SetTrigger("FadeOut");
+            //Review.SetActive(false);
         }
     }
 

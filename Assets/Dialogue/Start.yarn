@@ -12,13 +12,6 @@ Back when corporations were run by scrawny, money-grabbing men. When artificial 
 They craved power. Craved extraction.
 And they did it. They got what they wanted.
 
-//<<enter SceneSampleEvents Nubs>>
-//<<show SceneSampleEvents Nubs podNeutral>>
-//<<wait 2>>
-//<<show SceneSampleEvents Nubs podClosed>>
-//<<wait 2>>
-//<<exit SceneSampleEvents Nubs>>
-
 <<fadeOut SceneSampleEvents>>
 <<wait 2>>
 <<jump Intro>>
