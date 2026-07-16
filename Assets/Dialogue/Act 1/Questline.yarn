@@ -30,11 +30,11 @@ I give the man his order without a word and mark my order as complete on the SL0
 He lingers on the curb. It feels like he's REALLY desperate to say something, but has no one to say it to.
 
 -> Tell him you've got 2 minutes
-     Luna: Dude, I've got 2 minutes. Make it quick…
-     Benji: You do? That's awesome! I'm glad the SL0P app pays its employees—er, contractors—fairly so they can take paid breaks in between orders.
-     Luna: …
-     Luna: Time's ticking, by the way. Is there something you need?
-     Benji: O-Oh! Yes…
+    Luna: Dude, I've got 2 minutes. Make it quick…
+    Benji: You do? That's awesome! I'm glad the SL0P app pays its employees—er, contractors—fairly so they can take paid breaks in between orders.
+    Luna: …
+    Luna: Time's ticking, by the way. Is there something you need?
+    Benji: O-Oh! Yes…
 -> Ignore him and leave
     <<set $badend += 1>>
     I turn around and leave. A job's a job, and I finished it.
@@ -49,10 +49,10 @@ He lingers on the curb. It feels like he's REALLY desperate to say something, bu
     Luna: …
     Nubs: W-What?! I was hungry…
     But who cares? A person who lives in that building is clearly rich enough to get more food without batting an eye…
-   <<fadeOut SceneSampleEvents>>
-   <<wait 2>>
-   <<jump Bad_Outcome>>
--> Stare at him, expecting him to talk 
+    <<fadeOut SceneSampleEvents>>
+    <<wait 2>>
+    <<jump Bad_Outcome>>
+-> Stare at him, expecting him to talk
     <<set $goodend += 1>>
     I stare blankly at his face. How can someone smile for this long? It's creepy…
     Benji: You're giving me the Gen Z stare, huh?
@@ -113,9 +113,9 @@ Luna: (He was yapping about his dumb AGENTS surgery. Maybe I can distract him…
     //I imagine a black screen and the dialogue box
     20 minutes later, I get a negative review on the SL0P app AND a violation as the cherry on top. It notes how the food looked like it'd been tampered with. Thanks, Nubs…
     But who cares? A person who lives in that building is clearly rich enough to get more food without batting an eye…
-   <<fadeOut SceneSampleEvents>>
-   <<wait 2>>
-   <<jump Bad_Outcome>>
+    <<fadeOut SceneSampleEvents>>
+    <<wait 2>>
+    <<jump Bad_Outcome>>
 Benji: I'm getting my surgery because all the guys I work with already have something augmented.
 Benji: They augment their hands to type faster, or even their brains to sync with our company's internal mainframe.
 Benji: And being from Root Town, this is like a dream job. Everyone wants to be where I'm at now.

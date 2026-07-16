@@ -89,7 +89,7 @@ Nat: Missed something in a conversation? Have no fear! The History button lets y
 Nat: When you're done tinkering around, just press the Exit button! You can also return to the cyberdeck by double-clicking on the NATIO 3000 logo in the game.
 Nat: Did that make sense? 
 Luna: yeah, thx. can i go back to work now?
-Nat: Of course! Just lmk if you need anything (.˃ ᴗ < ) <3
+Nat: Of course! Just lmk if you need anything (.> ᴗ < ) <3
 ////////////////// End focused tutorial. Automatically return the player to the “Home” folder on the cyberdeck, where they can see new messages to interact with, which are found in CyberdeckSidquests.yarn. Once the player has returned to the “Home” folder on the cyberdeck, allow the player to click on anything. When the player exits the cyberdeck and clicks Continue, jump them to the Val node. 
 <<jump Val>>
 ===
@@ -231,7 +231,8 @@ Luna: (Is she hiding something…?)
 title: TheOffer
 ---
 Val's attention is stolen by her phone. She makes a couple taps, then hops back onto her motorbike. 
-////////// SFX motorcycle engine turning on
+// SFX motorcycle engine turning on
+<<sfx SceneSampleEvents engine>>
 Val: Sorry, gotta jet! Root Town needs their soda pop. 
 Val: Catch you later when you're back on our side of the bridge?
 // Val leaves
@@ -255,7 +256,8 @@ Time to roll.
 // Luna leaves
 <<exit SceneSampleEvents Luna>>
 <<fadeOut SceneSampleEvents>>
-/////////// SFX motorcycle engine turning on
+// SFX motorcycle engine turning on
+<<sfx SceneSampleEvents engine>>
 // SFX motorcycle tires
 <<sfx SceneSampleEvents tires>>
 <<jump TransporterPod>>
@@ -265,13 +267,15 @@ Time to roll.
 title: TransporterPod
 ---
 <<wait 2>>
+<<enter SceneSampleEvents Nubs>>
+// Show transporter pod asset
+<<show SceneSampleEvents Nubs podClosed>>
 <<fadeIn SceneSampleEvents>>
 <<wait 2>>
 
 <<enter SceneSampleEvents Luna>>
 Luna: This is…suss.
 The pickup location led me into a cramped alleyway. The place reeks of expired seafood scraps and junkyard scrap.
-////////////////// Show transporter pod asset
 I notice a transporter pod branded with an AGENTS logo sitting by a dumpster. It's an odd place to leave something so brand-spanking new.
 ////////////////// SFX of something stirring within a metal transporter pod, mixed with alien goober noises
 //////////////////<<expression Luna shocked>>
@@ -300,7 +304,7 @@ title: KickPod
 ---
 <<set $badend += 1>>
 Luna: Fuck AGENTS!
-// SFX thwacking or kicking sound
+//////////////// SFX thwacking or kicking sound
 It feels good to stick it to the tech overlords, even if it's just damaging their property. The thing inside the pod yelps, but I don't care.
 Because everything AGENTS makes—and the stuff inside the things they make--it's all the same to me. 
 Slop. 
@@ -309,7 +313,7 @@ I inspect the transporter pod. Other than one minor scuff, it's perfectly intact
 As long as the customer isn't the kind of neurotic snob that likes their grocery bags symmetrically folded or their apples packaged a hyper-specific way, then I might just get away with it.
 I pick the transporter pod up.
 But when I do…
-// SFX unlock sound
+///////////////// SFX unlock sound
 //////////////////////////////<<expression Luna surprised>>
 My fingerprints unlock it, bypassing the pod's DNA-encoded password security. Which could only mean one thing.
 Luna: (This delivery is…meant for me? But why?)
@@ -361,9 +365,10 @@ I glance again at the transporter pod's markings. It's from AGENTS- the very com
 title: MeetLilGuy
 ---
 <<wait 2>>
+// Show the CG of Lil Guy
+<<show SceneSampleEvents Nubs podNeutral>>
 <<fadeIn SceneSampleEvents>>
 <<wait 2>>
-////////////////// Show the CG of Lil Guy
 The pod sheds its protective packaging layer to reveal a creature in a large glass container, which automatically pops up. 
 It scuttles out from its AGENTS cage and blinks up at me with a screen for a face and pixels for eyes. A curious tadpole-like tail swishes from side to side.
 It's actually kind of…cute.
@@ -390,12 +395,14 @@ title: LilGuyReaction
     //////////<<place Luna Understoryleft>>
     //////////<<pose Luna crossed-arms>>
     //////////<<expression Luna neutral>>
-    //////////<<place LilGuy Understoryright>>
-    //////////<<expression LilGuy mad>>
+    //<<place LilGuy Understoryright>>
+    //<<expression LilGuy mad>>
+    <<show SceneSampleEvents Nubs podAngry>>
     T.A.B: How dare you kick a perfect, high-fidelity prototype such as myself around! Do you even know just how important I am as intellectual property?!  
     T.A.B: My master will have your head for this! As well as the AGENTS Legal team-
     Luna: First off, I'm not the one that tossed you here like trash. I'm just the delivery girl. Second…
     I shove the transporter pod into the dumpster, smearing it with unspeakable leftovers. I give it one last push, and the glass on the fingerprint sensor starts to crack.
+    <<show SceneSampleEvents Nubs podNeutral>>
     T.A.B: …Ah.
     Luna: AGENTS tech is pretty fragile, imo. And not as intellectual as it claims to be. 
     Luna: Now, as for you…
@@ -405,8 +412,8 @@ title: LilGuyReaction
     //////////<<place Luna Understoryleft>>
     //////////<<pose Luna crossed-arms>>
     //////////<<expression Luna neutral>>
-    //////////<<place LilGuy Understoryright>>
-    //////////<<expression LilGuy happy>>
+    //<<place LilGuy Understoryright>>
+    //<<expression LilGuy pod neutral>>
     T.A.B: So, you eventually came to your senses and realized the cost of stealing the most prized intellectual property of the most powerful conglomerate in all of Area 415. You have my thanks.
     T.A.B: As for my master's approval, well. I'm sure you'll receive messages from the Legal team within the next 2-3 business days.
     Luna: W-Wait, hold up! “Stealing?” I'm just the delivery girl, I didn't toss you here like trash!
@@ -481,6 +488,7 @@ Luna: (So you know what your master wants, but you don't know anything about the
 title: Tonight
 ---
 <<declare $bigJob = false>>
+<<declare $tellTruth = false>>
 T.A.B: One of the hazmat humans took me away and stuffed me in this pod, which you freed me from. And, if you're telling the truth—
 The creature makes a whizzing sound and a blue light shoots out from its facial screen. The light scans me up and down.
 T.A.B: —Which you seem to be, based on my built-in lie detector technology. Your heartbeat and pulse rate are normal.
@@ -534,6 +542,7 @@ Luna: (Might as well squeeze another job in before riding back home…)
         // SFX motorcycle tires
         <<sfx SceneSampleEvents tires>>
     -> Tell the truth and explain your situation
+            <<set $tellTruth = true>>
             Luna: I'm short on rent and need to complete this task so I can make bank. If I don't pay up by tomorrow morning, my roommate is gonna kick me out.
             Luna: Look, how about I pretend to drop you off in Root Town and then take you back to the nearest AGENTS facility? That way, we both get what we want?
             The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and straps himself in by wrapping his tadpole tail around an engine part.
@@ -560,6 +569,7 @@ Luna: (Might as well squeeze another job in before riding back home…)
         // SFX motorcycle tires
         <<sfx SceneSampleEvents tires>>
     -> Tell the truth and explain your situation
+        <<set $tellTruth = true>>
         Luna: I'm short on rent and need to complete this task so I can make bank. If I don't pay up by tomorrow morning, my roommate is gonna kick me out.
         Luna: Look, how about I pretend to drop you off in Root Town and then take you back to the nearest AGENTS facility? That way, we both get what we want?
         The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and straps himself in by wrapping his tadpole tail around an engine part.

@@ -10,16 +10,24 @@ public class SceneSampleEvents : MonoBehaviour
     public GameObject fadeScreenOut;
     public GameObject Luna;
     public GameObject Val;
+    public GameObject Nubs;
+
     public VariableStorageBehaviour variableStorage;
 
     public Texture2D lunaNeutral;
+    public Texture2D valNeutral;
+    public Sprite podNeutral;
+    public Sprite podClosed;
+    public Sprite podAngry;
 
     public AudioSource notificationSource;
     public AudioClip notificationSound;
     public AudioClip tiresSound;
+    public AudioClip engineSound;
 
     private Animator lunaAnimator;
     private Animator valAnimator;
+    private Animator nubsAnimator;
 
     [SerializeField] internal YarnProject yarnProject;
     [SerializeField] internal bool narrativeOver = false;
@@ -33,6 +41,8 @@ public class SceneSampleEvents : MonoBehaviour
         //source = GetComponent<AudioSource>();
         lunaAnimator = Luna.GetComponent<Animator>();
         valAnimator = Val.GetComponent<Animator>();
+        nubsAnimator = Nubs.GetComponent<Animator>();
+
         PlayerPrefs.SetInt("LoadState", 1);
         StartCoroutine(EventStarter());
         variableStorage = GameObject.FindAnyObjectByType<InMemoryVariableStorage>();
@@ -81,7 +91,18 @@ public class SceneSampleEvents : MonoBehaviour
             {
                 valAnimator.SetTrigger("FadeIn");
             }
+        } else if (character == "Nubs")
+        {
+            if (Nubs.activeSelf == false)
+            {
+                Nubs.SetActive(true);
+            }
+            else
+            {
+                nubsAnimator.SetTrigger("FadeIn");
+            }
         }
+        
     }
 
     [YarnCommand("exit")]
@@ -93,6 +114,10 @@ public class SceneSampleEvents : MonoBehaviour
         } else if (character == "Val") {
             valAnimator.SetTrigger("FadeOut");
             //Val.SetActive(false);
+        } else if (character == "Nubs")
+        {
+            nubsAnimator.SetTrigger("FadeOut");
+            //Nubs.SetActive(false);
         }
     }
 
@@ -112,6 +137,51 @@ public class SceneSampleEvents : MonoBehaviour
             {
                 Debug.Log($"Neutral Sprite: {lunaNeutral}");
                 lunaImage.texture = lunaNeutral;
+
+            }
+        }
+        else if (character == "Val")
+        {
+            Debug.Log($"Val GameObject: {Val}");
+            
+            RawImage valImage = Val.GetComponent<RawImage>();
+
+            Debug.Log($"Image Component: {valImage}");
+            
+            if (expression == "neutral")
+            {
+                Debug.Log($"Neutral Sprite: {valNeutral}");
+                valImage.texture = valNeutral;
+
+            }
+        }
+        else if (character == "Nubs")
+        {
+            Debug.Log($"Nubs GameObject: {Nubs}");
+            
+            //RawImage nubsImage = Nubs.GetComponent<RawImage>();
+            Image nubsImage = Nubs.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {nubsImage}");
+            
+            if (expression == "podNeutral")
+            {
+                Debug.Log($"Pod Neutral Sprite: {podNeutral}");
+                //nubsImage.texture = nubsNeutral;
+                nubsImage.sprite = podNeutral;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "podClosed")
+            {
+                Debug.Log($"Pod Closed Sprite: {podClosed}");
+                nubsImage.sprite = podClosed;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "podAngry")
+            {
+                Debug.Log($"Pod Angry Sprite: {podAngry}");
+                nubsImage.sprite = podAngry;
+                nubsImage.SetNativeSize();
             }
         }
     }
@@ -127,6 +197,10 @@ public class SceneSampleEvents : MonoBehaviour
         if (sfxName == "tires")
         {
             notificationSource.PlayOneShot(tiresSound);
+        }
+        if (sfxName == "engine")
+        {
+            notificationSource.PlayOneShot(engineSound);
         }
     }
 }
