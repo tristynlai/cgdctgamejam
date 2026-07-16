@@ -65,7 +65,8 @@ title: LilGuy_Day
 
 title: MaxxIntro
 ---
-/////////////// Play JunkYard music track
+// Play JunkYard music track
+<<play SceneSampleEvents junkyard>>
 /////////////// Slide Maxx sprite with neutral expression in from the right
 ???: Straight to jail.
 // ///////////// Set Luna’s pose to annoyedCrossed-Arms

@@ -258,6 +258,7 @@ Time to roll.
 <<fadeOut SceneSampleEvents>>
 // SFX motorcycle engine turning on
 <<sfx SceneSampleEvents engine>>
+<<wait 2>>
 // SFX motorcycle tires
 <<sfx SceneSampleEvents tires>>
 <<jump TransporterPod>>

@@ -21,6 +21,7 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite podAngry;
 
     public AudioSource notificationSource;
+    public AudioSource junkyardSource;
     public AudioClip notificationSound;
     public AudioClip tiresSound;
     public AudioClip engineSound;
@@ -201,6 +202,16 @@ public class SceneSampleEvents : MonoBehaviour
         if (sfxName == "engine")
         {
             notificationSource.PlayOneShot(engineSound);
+        }
+    }
+
+    [YarnCommand("play")]
+    public void Play(string audioName)
+    {
+        Debug.Log("Play CALLED on: " + gameObject.name);
+        if (audioName == "junkyard")
+        {
+            junkyardSource.Play();
         }
     }
 }
