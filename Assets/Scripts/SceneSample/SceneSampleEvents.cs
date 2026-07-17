@@ -15,6 +15,8 @@ public class SceneSampleEvents : MonoBehaviour
     public GameObject Review;
 
     public VariableStorageBehaviour variableStorage;
+    public LineAdvancer lineAdvancer;
+    private bool dialoguePaused = false;
 
     public Texture2D lunaNeutral;
     public Texture2D valNeutral;
@@ -76,6 +78,14 @@ public class SceneSampleEvents : MonoBehaviour
         yield return new WaitUntil(() => variableStorage.TryGetValue("$testVariable", out narrativeOver) == true);
         yield return new WaitForSeconds(2);
         Debug.Log("Narrative over!");
+    }
+
+    public void ToggleDialoguePause()
+    {
+        Debug.Log("ToggleDialoguePause CALLED");
+        
+        dialoguePaused = !dialoguePaused;
+        lineAdvancer.enabled = !dialoguePaused;
     }
 
     [YarnCommand("fadeOut")]

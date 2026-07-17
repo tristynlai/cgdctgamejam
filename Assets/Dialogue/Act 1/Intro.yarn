@@ -127,42 +127,6 @@ Val: Something on your mind?
     She laughs and gives me a wink.
     Val: A Root Town stockist never reveals her business secrets~!
     <<jump PressingVal>>
-//<<if visited("Bike_Backstory") == false && visited("Poor_Flirting") == false>>
-//    ->  Nice bike. How did you mod it?
-//        <<detour Bike_Backstory>>
-//        <<jump ValChoices>>
-//    ->  You look…nice.
-//        <<detour Poor_Flirting>>
-//        <<jump ValChoices>>
-//    ->  What are you doing here?
-//        She laughs and gives me a wink.
-//        Val: A Root Town stockist never reveals her business secrets~!
-//        <<jump PressingVal>>
-//<<endif>>
-//<<if visited("Poor_Flirting") == true && visited("Bike_Backstory") == true>>
-//    ->  What are you doing here?
-//        She laughs and gives me a wink.
-//        Val: A Root Town stockist never reveals her business secrets~!
-//        <<jump PressingVal>>
-//<<endif>>
-//<<if visited("Bike_Backstory") == true>>
-//    ->  You look…nice.
-//        <<detour Poor_Flirting>>
-//        <<jump ValChoices>>
-//    ->  What are you doing here?
-//        She laughs and gives me a wink.
-//        Val: A Root Town stockist never reveals her business secrets~!
-//        <<jump PressingVal>>
-//<<endif>>
-//<<if visited("Poor_Flirting") == true>>
-//    ->  Nice bike. How did you mod it?
-//        <<detour Bike_Backstory>>
-//        <<jump ValChoices>>
-//    ->  What are you doing here?
-//        She laughs and gives me a wink.
-//        Val: A Root Town stockist never reveals her business secrets~!
-//        <<jump PressingVal>>
-//<<endif>>
 ===
 
 
