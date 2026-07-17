@@ -1633,9 +1633,9 @@ RectTransform:
   - {fileID: 2110554841}
   - {fileID: 1905511143}
   - {fileID: 804673876}
-  - {fileID: 2045352586}
   - {fileID: 1943952411}
   - {fileID: 261972150}
+  - {fileID: 2045352586}
   - {fileID: 700154720}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 26.955, y: 0, z: 0}
@@ -1737,6 +1737,22 @@ MonoBehaviour:
   podNeutral: {fileID: 9004985149374680108, guid: 7e77e6b1a2fd2214eb2ba0e6718e7469, type: 3}
   podClosed: {fileID: 4544243647438601231, guid: d5c6e00c99be8e740913269b3cf0d394, type: 3}
   podAngry: {fileID: -6969882302047619831, guid: 9c7a201dd4a12324a8541fcfae352103, type: 3}
+  nubsWorried: {fileID: -4125503204209978723, guid: 3807a4ae513588b46ad68970ab7615c7, type: 3}
+  nubsWorriedWave: {fileID: 1610693778359590475, guid: b9134c8b78bc04d4387e505eb1474c63, type: 3}
+  nubsNeutralWave: {fileID: -8102978577268903235, guid: 4e826160d86d9184f9cbe2eb42de7ffc, type: 3}
+  nubsHappyWave: {fileID: 7368628057135483789, guid: 1bf14108378cc944aab6ab7968df0572, type: 3}
+  nubsErrorWave: {fileID: -9043058629234118315, guid: 97201e0c177c3f84193062fa0874d803, type: 3}
+  nubsConfusedWave: {fileID: 1193261224794433507, guid: 4a318e43f6dfa2248a8d5f0c0e1b0438, type: 3}
+  nubsNeutral: {fileID: 2430757066697684363, guid: 4453b6008ce05b14e9312c3999e9bb66, type: 3}
+  nubsLoading: {fileID: 7758288783579432565, guid: 9a2135d3d5b54584fa4c667043ef0303, type: 3}
+  nubsHappy: {fileID: 3747339042692325380, guid: 0a3a1270af316bc46ba9d19d52ad3dae, type: 3}
+  nubsError: {fileID: 5615815216715721761, guid: 0da0d7b34ed89d74cb435fab62cda38f, type: 3}
+  nubsConfused: {fileID: 7144922111400190768, guid: 930f077cd128e5148b3acdd594a0c320, type: 3}
+  nubsWorriedArms: {fileID: 2090453523910777667, guid: adf42cf0982b0d844802b7956f6bef11, type: 3}
+  nubsNeutralArms: {fileID: 1598147254451629371, guid: 9f3dc185eb62c154e9757b78f4e9b88a, type: 3}
+  nubsHappyArms: {fileID: -3873096187696482045, guid: a65f181fe0dc3e74c88787032209f58a, type: 3}
+  nubsConfusedArms: {fileID: -4068659042341220735, guid: 6f97ee6ee53b693478d22f2fc1cb3cdd, type: 3}
+  nubsAgents: {fileID: -5874817892992855081, guid: 2778b4262e065ce499425946b71e8bce, type: 3}
   notificationSource: {fileID: 1981392157}
   junkyardSource: {fileID: 461320879}
   notificationSound: {fileID: 8300000, guid: e9dcf3b0ccefc69469ef92397fa31ba0, type: 3}

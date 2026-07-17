@@ -21,6 +21,22 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite podNeutral;
     public Sprite podClosed;
     public Sprite podAngry;
+    public Sprite nubsWorried;
+    public Sprite nubsWorriedWave;
+    public Sprite nubsNeutralWave;
+    public Sprite nubsHappyWave;
+    public Sprite nubsErrorWave;
+    public Sprite nubsConfusedWave;
+    public Sprite nubsNeutral;
+    public Sprite nubsLoading;
+    public Sprite nubsHappy;
+    public Sprite nubsError;
+    public Sprite nubsConfused;
+    public Sprite nubsWorriedArms;
+    public Sprite nubsNeutralArms;
+    public Sprite nubsHappyArms;
+    public Sprite nubsConfusedArms;
+    public Sprite nubsAgents;
 
     public AudioSource notificationSource;
     public AudioSource junkyardSource;
@@ -202,6 +218,102 @@ public class SceneSampleEvents : MonoBehaviour
                 nubsImage.sprite = podAngry;
                 nubsImage.SetNativeSize();
             }
+            else if (expression == "nubsWorried")
+            {
+                Debug.Log($"Nubs Worried Sprite: {nubsWorried}");
+                nubsImage.sprite = nubsWorried;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsWorriedWave")
+            {
+                Debug.Log($"Nubs Worried Wave Sprite: {nubsWorriedWave}");
+                nubsImage.sprite = nubsWorriedWave;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsNeutralWave")
+            {
+                Debug.Log($"Nubs Neutral Wave Sprite: {nubsNeutralWave}");
+                nubsImage.sprite = nubsNeutralWave;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsHappyWave")
+            {
+                Debug.Log($"Nubs Happy Wave Sprite: {nubsHappyWave}");
+                nubsImage.sprite = nubsHappyWave;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsErrorWave")
+            {
+                Debug.Log($"Nubs Error Wave Sprite: {nubsErrorWave}");
+                nubsImage.sprite = nubsErrorWave;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsConfusedWave")
+            {
+                Debug.Log($"Nubs Confused Wave Sprite: {nubsConfusedWave}");
+                nubsImage.sprite = nubsConfusedWave;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsNeutral")
+            {
+                Debug.Log($"Nubs Neutral Sprite: {nubsNeutral}");
+                nubsImage.sprite = nubsNeutral;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsLoading")
+            {
+                Debug.Log($"Nubs Loading Sprite: {nubsLoading}");
+                nubsImage.sprite = nubsLoading;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsHappy")
+            {
+                Debug.Log($"Nubs Happy Sprite: {nubsHappy}");
+                nubsImage.sprite = nubsHappy;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsError")
+            {
+                Debug.Log($"Nubs Error Sprite: {nubsError}");
+                nubsImage.sprite = nubsError;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsConfused")
+            {
+                Debug.Log($"Nubs Confused Sprite: {nubsConfused}");
+                nubsImage.sprite = nubsConfused;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsWorriedArms")
+            {
+                Debug.Log($"Nubs Worried Arms Sprite: {nubsWorriedArms}");
+                nubsImage.sprite = nubsWorriedArms;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsNeutralArms")
+            {
+                Debug.Log($"Nubs Neutral Arms Sprite: {nubsNeutralArms}");
+                nubsImage.sprite = nubsNeutralArms;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsHappyArms")
+            {
+                Debug.Log($"Nubs Happy Arms Sprite: {nubsHappyArms}");
+                nubsImage.sprite = nubsHappyArms;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsConfusedArms")
+            {
+                Debug.Log($"Nubs Confused Arms Sprite: {nubsConfusedArms}");
+                nubsImage.sprite = nubsConfusedArms;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsAgents")
+            {
+                Debug.Log($"Nubs Agents Sprite: {nubsAgents}");
+                nubsImage.sprite = nubsAgents;
+                nubsImage.SetNativeSize();
+            }
         }
     }
 
@@ -230,6 +342,16 @@ public class SceneSampleEvents : MonoBehaviour
         if (audioName == "junkyard")
         {
             junkyardSource.Play();
+        }
+    }
+
+    [YarnCommand("stop")]
+    public void Stop(string audioName)
+    {
+        Debug.Log("Stop CALLED on: " + gameObject.name);
+        if (audioName == "junkyard")
+        {
+            junkyardSource.Stop();
         }
     }
 }

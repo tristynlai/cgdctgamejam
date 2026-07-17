@@ -119,7 +119,9 @@ Nubs: …
 He's shriveling up in fear at the fate that awaits him back at AGENTS headquarters.
 Maxx: So what'll it be, little lady?
 Luna: (This might be my last chance to bargain…)
+<<jump MaxxChoices>>
 ===
+
 
 title: MaxxChoices
 ---
@@ -157,10 +159,11 @@ title: MaxxChoices
     The guy was so into himself, making it easy for me to escape and leave him in the dust.
     I was already hauling my ass back to Root Town.
 
-// Set Maxx’s expression to angry
+///////////// Set Maxx’s expression to angry
 Maxx: Ugh. Didn't think I'd need to use this.
 <<fadeOut SceneSampleEvents>>
-////////////// Stop Junk Yard music track
+// Stop Junk Yard music track
+<<stop SceneSampleEvents junkyard>>
 ////////////// SFX beep
 <<jump LilGuyBrainwashed>>
 ===
