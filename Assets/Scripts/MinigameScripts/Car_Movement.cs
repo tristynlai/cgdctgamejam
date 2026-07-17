@@ -25,7 +25,7 @@ public class Car_Movement : MonoBehaviour
     IEnumerator IncreaseSpeed() {
         while (true) {
             yield return new WaitForSeconds(5);
-            Speed += 0.4f;
+            Speed += 1f;
         }
     }
 }
