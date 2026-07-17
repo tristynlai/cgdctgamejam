@@ -1,0 +1,531 @@
+﻿title: LilGuy_Respite
+---
+// Change Luna’s expression back to neutral 
+<<show SceneSampleEvents Luna neutral>>
+//////////////// Change Lil Guy’s expression back to neutral
+His electric eyes wander, and become mesmerized by the sky's dusky colors.
+Nubs: Today is the best day ever.
+<<declare $lilday = 0>>
+<<jump LilGuy_Day>>
+===
+
+title: LilGuy_Day
+---
+-> What are your days usually like? <<once>>
+    <<set $lilday += 1>>
+    Nubs: Undergoing 20-30 tests a day, with constant pokings and samplings of my DNA code. Then I get squeezed back into a capsule that's smaller than the pod you freed me from. 
+    ///////////////// Change Lil Guy’s expression to worried
+    Nubs: It was kind of hard to breathe in there, now that I think about it.
+    Luna: That's…so cruel. Isn't that like, a violation of your rights and against federal law?
+    ///////////////////// Change Lil Guy’s expression to loading
+    Nubs: Title XVI, Section 23, Clause 8: It is not considered cruelty if the organism was not constructed with a bladder.
+    ///////////////////// Change Lil Guy’s expression to neutral
+    Nubs: I don't have one. So I guess there really is no logical reason for me to leave my capsule, after all.
+    Luna: I…don't think that's the point.
+    <<jump LilGuy_Day>>
+-> Why? What made today so great? <<once>>
+    <<set $lilday += 1>>
+    Nubs: Meeting you. And getting to see how humans live.
+    // If player’s $badend score is >= 5, then show this line of text and expression below:
+    <<if $badend >= 5>>
+        /////////////Change Lil Guy’s expression to angry
+        Nubs: Even if you were inhospitable at times…
+        ///////////////Change Lil Guy’s expression to neutral
+    <<else>>
+    // If player’s $badend score is <=4, then continue with the text below:
+        Nubs: You have a good life.
+        Luna: Don't bullshit me.
+        Luna: There's nothing “good” about my life at all! Especially with the cards I've been dealt with.
+        Nubs: Sure it is. You have all the time in the world to define how you want to spend your life. You can go anywhere you want, and know every street that runs through this city by heart.
+        Nubs: And you're responsible, too—because you promised to take me back to my master once you were done with this delivery!
+        Luna: …
+        Nubs: You don't have to be poked and stuffed into a capsule, only to wait for the same thing to happen to you the next day. At least you have a purpose…
+    <<endif>>
+// When the two questions above have been played through, reveal this choice:
+<<if $lilday == 2>>
+    -> What is your purpose?
+        Luna: So what is your purpose? Why were YOU created?
+        Luna: And don't give me that firewall crap.
+        Nubs: But, I really can't access those files…
+        Luna: Then what do YOU want your purpose to be?
+        Nubs: …!
+        Luna: Okay, so you can't access it. So what? What do YOU want to do?
+        Nubs seems stumped. Nothing in his database is able to retrieve a clear answer.
+        Luna: I know I'm supposed to drop you off at your master's, but…it doesn't seem like you even want to go back to pokes.
+        Luna: You… deserve to live....
+        Nubs: Luna…
+        Luna: (Why am I even saying this? It's like I'm trying to give myself a pep talk…)
+        ///////////////// Set Luna and Lil Guy’s expressions to surprised
+        ///////////////// Is it possible to stop the current music track so that there’s complete silence? IDK 
+        ???: You deserve JAIL TIME.
+<<endif>>
+<<jump MaxxIntro>>
+===
+
+
+title: MaxxIntro
+---
+// Play JunkYard music track
+<<play SceneSampleEvents junkyard>>
+/////////////// Slide Maxx sprite with neutral expression in from the right
+???: Straight to jail.
+// ///////////// Set Luna’s pose to annoyedCrossed-Arms
+An augmented man with the shiniest jaw and motorcycle rolls up next to me. I press my weight deeper into my motorbike, ready to bounce at any moment. 
+Luna: Who the hell are you?
+//////////////// Set Maxx’s expression to intrigued
+Maxx: The one true ascended adonis of AGENTS, Maxx.
+Nubs: That's the guy who named me T.A.B!
+Luna: …Makes sense.
+Maxx: Lanklets refer to me as their Chief Product Officer, but our elevated CEO prefers the new-age term “Disciple” for his executive C-suite. 
+///////////////// Set Maxx’s expression to neutral
+Maxx: But I digress. I finally found you after combing through hours of traffic footage from AGENTS security cameras.
+Maxx: You've been driving around town with company property. If you're a smart girl, you'll hand that pillbug over and continue with your extremely jester life.
+//////////////// Set Nub’s expression and pose to worried
+Nubs: …
+
+-> Over your gigachad body.
+    <<set $goodend += 1>>
+    /////////////// Set Maxx’s expression to intrigued
+    Maxx: Flame me all you want, but everyone wishes they had my body and brain chemistry. 
+    Maxx: My jaw is cut from diamonds sourced in Area 27. No amount of mewing and semaglutides could ever get you to this level.
+-> And what do I get in return for handing him over?
+    <<set $badend += 1>>
+    ///////////////// Set Maxx’s expression to intrigued
+    Maxx: Good strategy! I admire your business mindset. 
+    Maxx: But the only ROI you'll get is a life behind bars for stealing AGENTS property!
+-> And if I don't?
+    Maxx: A life behind bars for stealing AGENTS property!
+
+Nubs: …
+<<jump MaxxThreat>>
+===
+
+
+title: MaxxThreat
+---
+Maxx: Don't act innocent, little pillbug. I overheard your non-compliant drivel with the girl. 
+Maxx: You, having a life of your own?
+Maxx: Once I take you back, you'll be torn apart to build Prototype 185! Though given your recent acts of sacrilege, I doubt we'll keep any of your existing parts…
+Maxx: As for you.
+His eyes and glass jaw glow as his system scans me and my motorbike over.
+Maxx: A fake license plate, multiple accounts of going over Frisscity speed limits, and stealing intellectual property from an AGENTS lab.
+Luna: (He seems to be confusing me with the person who stole Nubs from the lab.)
+Maxx: I'm recording your facial data as we speak. Not only will we deactivate your SL0P account, but we'll process a warrant for your arrest and assign a century's worth of debt to your bank account. 
+Luna: (I'm already swimming in debt! I can't afford any more…)
+Maxx: Buuuuut if you let the pillbug go now, I GUESS I'll let you and your busted bike continue to use the SL0P app. 
+Maxx: And, as an add-on, I'll drop the debt charges. Because I'm such a forgiving, ascended god.
+/////////////////// Set Nub’s expression and pose to worried
+Nubs: …
+He's shriveling up in fear at the fate that awaits him back at AGENTS headquarters.
+Maxx: So what'll it be, little lady?
+Luna: (This might be my last chance to bargain…)
+<<jump MaxxChoices>>
+===
+
+
+title: MaxxChoices
+---
+-> Take the deal.
+    <<jump BadEnding1>>
+-> Don't take the deal. 
+    <<set $goodend += 1>>
+    Luna: (Do it scared. Even if it fucks me over.)
+    Luna: No deal. I'm keeping this guy. 
+    /////////////// Set Maxx’s expression to angry
+    Maxx: WHAT? Are you stupid!?
+    //////////////// Set Lil Guy’s expression to surprised
+    Nubs: L-Luna! But why—? Ah!
+    I scoop him up and finally put the pedal to the metal. It was time to haul ass back to Root Town.
+    // Motorcycle SFX sound
+    <<sfx SceneSampleEvents tires>>
+    Luna: If you want him, then you're gonna have to get him!
+-> Tell him you're not the person he's looking for. <<once>>
+    <<set $badend += 1>>
+    Luna: Someone gave me this task. That's the real perp you're after. 
+    Maxx: Doesn't matter. You still unlocked AGENTS-sanctioned property and that's against SL0P app policy.
+    Maxx: And thanks for the tip! I'll make sure to lock you BOTH up!
+    Luna: (That didn't work.)
+    Nubs: Luna…
+    <<jump MaxxChoices>>
+-> Flirt and distract him before you make a run for it. 
+    ////////////// Set Maxx’s expression to intrigued
+    Maxx: Thanks, but you're not my type. I know Asian girls can't get enough of me, but they confuse me with white mediocrity.
+    Maxx: Sports, beer, and women are what separate me from the average man who is ladaring. Dating would keep me from being my true, elevated self. 
+    Maxx: And there's no ROI in love. 
+    /////////////// Set Maxx’s expression to neutral
+    Maxx: …
+    /////////////// Set Maxx’s expression to angry
+    Maxx: Tch!
+    The guy was so into himself, making it easy for me to escape and leave him in the dust.
+    I was already hauling my ass back to Root Town.
+
+///////////// Set Maxx’s expression to angry
+Maxx: Ugh. Didn't think I'd need to use this.
+<<fadeOut SceneSampleEvents>>
+// Stop Junk Yard music track
+<<stop SceneSampleEvents junkyard>>
+////////////// SFX beep
+<<jump LilGuyBrainwashed>>
+===
+
+
+title: BadEnding1
+---
+//////////////// Set Luna’s pose to crossed arms with neutral expression 
+Luna: (The stakes are too high. I don't want to owe anyone anything. Not anymore.)
+Luna: Fine.  
+Nubs: L-Luna!
+I hand over Nubs without any regrets. He's just the 184th prototype, after all.
+///////////////// Set Maxx’s expression to intrigued 
+Maxx: Smart girl. I knew you'd make the right choice.
+Nubs: N-No…!
+Maxx: To the scrapyard, pillbug!
+////////////////// SFX beeping
+////////////////// Set Lil Guy’s expression to AGENTS mode
+Nubs: …
+///////////////// Slide Maxx and Lil Guy sprites out of the scene 
+I block out the gigachad's annoying laughter as I lean fully back into my motorbike and ride off as if nothing ever happened tonight.
+Because nothing did.
+AGENTS owns Area 415. 
+And I'm just trying to survive. 
+<<fadeOut SceneSampleEvents>>
+<<wait 2>>
+// Show a screen with THE END text, and an option to Load Game or Return to Title Screen
+// Play “To Be Continued” music track
+<<fadeIn SceneSampleEvents>>
+<<wait 2>>
+===
+
+
+title: LilGuyBrainwashed
+---
+<<wait 2>>
+<<fadeIn SceneSampleEvents>>
+<<wait 2>>
+// Still same Bridge environment bridge asset
+//////////////////// Play Ascension track
+I speed my way onto The Bridge's onramp, weaving through self-driving cars and a corporate megabus. 
+It's just a few miles before I reach Root Town, where Frisscity's high-tech gadgets lose signal and hold no power over me.
+///////////////// Slide in Lil Guy’s character on right and set his expression in AGENTS-mode
+Nubs: …
+///////////////// Slide in Luna from left and set her pose to neutral and her expression to surprised
+Luna: W-What the hell?!
+The AGENTS logo dominates Nub's screen as his lifeless body continues to cling onto my neck as I race past another bus.
+Luna: Nubs!? Hey, buddy, wake up!
+The all-seeing eye bares holes into the back of my head. A new voice takes over Nub's.
+// Is there a way NOT to call Maxx’s sprite to appear when he says the following stuff? Just show the dialogue box and then label it as “Maxx” speaking?
+Maxx: There you are.
+Luna: Shit, he can track me…!
+I hear a motor roar in the distance—it could only be one gigachad.
+Maxx: Won't be long before I catch up.  
+My breath stalls, and sweat starts rolling down my neck.
+Luna: (I knew there was a cost to shoving it to Maxx and those corporate assholes.)
+Luna: (But I'm basically screwed!)
+Luna: (Was this choice even worth it…?)
+<<jump Cybergulls>>
+===
+
+
+title: Cybergulls
+---
+//////////////// SFX gulls short version and let it play in its entirety, but don't loop it. 
+Luna: !!!
+It's the cybergull gang. Only the most notorious animals to have evolved from Frisscity's chemical runoff and swallowing metal scraps whole. 
+Their shrieks ring out as I approach Root Town. 
+They're like the first line of defense from letting outsiders into the town…
+/////////////// Change Luna’s expression to happy (?) depends on the art 
+…And they're the key to ditching Maxx for good.
+I hear tires screeching and then, in a blink of an eye, I see Maxx riding right beside me.
+Maxx: Boo. 
+Luna: …
+We're both speeding down the road, neck and neck.
+///////////////// Change Maxx’s expression to angry
+Maxx: Aren't you gonna pull over now? I got you! 
+Luna: Not yet.
+Suddenly, I veer off and make a hard left turn onto another highway. It's the turn only a local would know. 
+////////////////// SFX gulls long version and let it play in its entirety, but don’t loop it.
+Maxx: Tch!
+Maxx doesn't make the turn in time and continues straight…right into the cybergulls' lair.
+I stop my bike at the edge of the shoulder lane, watching as the birds descend on him on the highway below.
+////////////////// Can we animate jiggling the sprite somehow? Even if it’s up and down like a jump. Something to imply that he’s struggling 
+Maxx: No no no no NOOOOO! Not the face! Not the JAW!!
+The birds continue to pick at him and anything that glows, which includes both Maxx and his precious state-of-the-art motorcycle.
+////////////////// More animation jiggling/jumping of the sprite
+Maxx: AHHHHHHHHHHHHRRRRGHHHH!!!
+////////////////// Fade Maxx’s sprite slowly away, like a dissolve or opacity effect
+Whatever is left of Maxx and his motorcycle remains on the highway, like roadkill. The cybergulls slowly disperse back into dusk.
+A sharp noise buzzes from Nubs and I turn to look at him.
+/////////////////// Show Lil Guy pose and expression as worried
+Nubs: H-Huh? 
+Luna: Nubs! You're back!
+Nubs: What happened…?
+<<fadeOut SceneSampleEvents>>
+<<jump BridgeResolution>>
+===
+
+
+title: BridgeResolution
+---
+<<wait 2>>
+<<fadeIn SceneSampleEvents>>
+<<wait 2>>
+/////////////// Set Luna as neutralCrossed-arms
+/////////////// Set Lil Guy as neutralNeutral
+We make it safely into the outskirts of Root Town. I park on the side of the road, and we watch Frisscity's lights glitter from the other side of the bridge. 
+Nubs: There's something I don't understand, though.
+Luna: What is it?
+Nubs: Why did you decide to take me across The Bridge? To keep me?
+Luna: …
+<<if $goodend >= 4>>
+    <<jump GoodPath>>
+<<else>>
+    <<jump BadEnding2>>
+<<endif>>
+===
+
+
+title: BadEnding2
+---
+Luna: You're worth a lot, so it was better to keep you close.
+//////////////// Set Lil Guy as worried
+Nubs: Oh…
+Luna: But when Maxx said how precious you were, I thought about ransom for a hot sec. But I did the math, and it wasn't worth the trouble you've been. 
+I was clearly lying out of my ass, but the little guy had been brainwashed during the whole thing. What was one more harmless little lie?
+Nubs: R-Right, of course. That makes sense…
+I hear dismay in the experiment's voice.
+///////////////////// Set Luna’s pose to arms behind back and expression to annoyed 
+Luna: I still need to drop you off too, if I want to get paid. A job's a job, and I gotta finish it.
+Luna: Even if today's been a huge pain in the ass….
+Luna: (And how much I hate Frisscity.)
+<<fadeOut SceneSampleEvents>>
+<<wait 2>>
+// I imagine just the dialogue box, with no sprites appearing
+I drive off into Root Town to complete the delivery. The SL0P app tells me to drop off the experiment near Val's corner store, which seems suss at first…
+But I don't care. It's not worth my time to think about it right now.
+I'm just trying to survive.
+//////////////////////// Show a screen with THE END text, and an option to Load Game or Return to Title Screen
+===
+
+
+title: GoodPath
+---
+Luna: You're worth a lot, so it's better to keep you close.
+/////////////////// Set Lil Guy as worried
+Nubs: Oh…
+/////////////////// Set Luna’s expression as happy
+Luna: I'm joking, dummy. Maxx was an asshole. 
+Luna: And nothing good would be waiting for you back at AGENTS. You don't want to go back to that life of poking, do you?
+Nubs: No, I don't want to…
+////////////////// Set Luna’s pose to hand behind back
+Luna: Honestly, I haven't felt this way in a long time. It almost makes me…giddy? I don't know how to describe it. 
+Nubs: Luna…
+Luna: Now, as for where to take you…
+
+//If player selected Tell the truth and explain your situation from Intro.yarn file, show this:
+<<if $tellTruth == true>>
+    //////////////// Set Lil Guy’s expression to neutral
+    Nubs: I don't want to go back. And I don't want to get dropped off. 
+    Nubs: I want to stay with you. If that's okay…
+    Luna: You'll have to get permission from my roommates first. 
+    /////////////// Set Luna’s expression to shy
+    Luna: I know one will be a solid yes. As for the other one…you'll get the chance to make your case to her.
+//If player selected Lie and say the requestor is its master from the Intro.yarn file, show this:
+<<else>>
+    Luna: I…might've lied to you when I said the delivery's requestor was your master. 
+    //////////////// Set Lil Guy’s expression to worried
+    Nubs: I kinda figured. I secretly scanned you when we went on your delivery.
+    ////////////////// Set Luna’s expression to neutral
+    Luna: Rude. 
+    ////////////////// Set Lil Guy’s expression to neutral
+    Nubs: But I don't want to go back. And I don't want to get dropped off. 
+    Nubs: I want to stay with you. If that's okay…
+    Luna: You'll have to get permission from my roommates first. 
+    ///////////////// Set Luna’s expression to shy
+    Luna: I know one will be a solid yes. As for the other one…you'll get the chance to make your case to her.
+<<endif>>
+
+//////////// Set Luna’s expression to neutral
+Luna: (The girls are in for one wild ride tonight…I hope they don't kick me out for good.)
+We take one last look at Frisscity together. Nubs looks just as mesmerized as he was when we were on the other side.
+Luna: What do you think about the views from here? 
+Nubs: It's different.
+//////////// Set Lil Guy’s expression to happy
+Nubs: But I think it looks cooler from this side.
+//////////// Set Luna’s expression to happy
+<<fadeOut SceneSampleEvents>>
+<<jump TheArrival>>
+===
+
+
+title: TheArrival
+---
+<<wait 2>>
+<<fadeIn SceneSampleEvents>>
+<<wait 2>>
+/////////////// Show girls’ apartment background asset
+/////////////// Place Luna on left, set with neutral pose and neutral expression
+I park my motorbike on the curb with Nubs on my shoulder. A few jumps through some overgrown weed patches, and I'm finally at the doorstep of the abandoned warehouse I call home.
+/////////////// Slide Lil Guy sprite in from right, with the neutral-with-ears pose and neutral expression
+Nubs: What is this place made of?
+I hear him over my shoulder. He feels a little heavier, but I don't think too much about it. The weight of tonight has taken a toll on me.
+Luna: A few train cars we cobbled together after Frisscity closed the train station nearby. They said there was “too much riffraff from this side of town.” Or whatever shit excuse that means. 
+///////////// Set Lil Guy’s expression to worried
+Nubs: …
+Luna: (Here goes nothing…)
+I take a deep breath and step inside.
+Luna: Yo, I'm back.
+///////////// Slide Kaya in from right with a neutral expression
+Kaya: Hey, welcome—
+///////////// Set Kaya’s expression to surprised
+Kaya: W-What is that?!
+Luna: Yeah, so his name's Nubs and he's a cyberpet.
+////////////// Set Lil Guy’s expression to angry 
+Nubs: We've been over this. I am not a pet!
+Luna: And he's gotten sassier, apparently…
+Kaya: I-It can talk?!
+////////////// Slide Nat’s sprite in from right with a neutral expression 
+Nat: Oooh, a talking cyberpet? Finally, they're working on something USEFUL!
+/////////////// Set Kaya’s expression to annoyed 
+Kaya: No pets. We've been through this before, when Nat wanted to adopt that tripod tomcat.
+Nat: But he was such a cutie pie. And cats are like one of the 24.5 things I'm not allergic to…
+Kaya: How are you gonna pay for this thing, anyway? You're already waaaaay behind on rent.
+/////////////// Set Luna’s expression to annoyed 
+Luna: Thanks for the reminder…
+Kaya: That thing's gonna take up half of your room anyway. You'll need a crate for that thing, it's so big.
+Luna: Big…?
+/////////////// Set Luna’s expression to surprised
+I turn around and finally take a look at just how massive Nubs has grown. 
+He's grown into a full chonker.
+Luna: W-What the hell!? He didn't look like that just a few minutes ago, I swear!
+Kaya: SEE? We can't trust him. He's gonna grow, and shed, and leave molts everywhere. Can't have that in my witch's brew. 
+Nubs wriggles off my shoulder and onto the floor.
+//////////////// Set Nat’s expression to cute aggression
+Nat: What a good chonky boy. I say yes to keeping him! Now lemme at him! 
+Luna: 1 vote yes, 1 vote no. Called it. 
+///////////////// Is there some animation we can do where Nat overlaps everyone and moves across the screen to “take” Lil Guy’s sprite back over to her side of the screen?
+//////////////// Set Nubs’s expression to angry
+Nubs: Unhand me, you strange scaly humanoid!
+Nat: Never seen a half-lizard before, eh? Well now you have! And here's to more firsts~!
+Nat starts fiddling around with his metal body in true scientific fashion. 
+Nubs: N-No! No more pokes…!
+She presses something near his tadpole tail.
+//////////////// SFX detonation noise
+///////////////// Set all the girls’ expressions to surprised or scared, and Nubs’s expression to error
+Chaos ensues.
+Luna: What the hell did you press!?
+Nat: I-I don't know! I was just tinkering around, and—
+Kaya: You brought a BOMB into the house?! 
+Luna: He was just a normal little guy before y'all screwed with him!
+Nat: W-Wait, I don't think—
+Kaya: Get him out. NOW!!
+Nat: Just let me see…
+<<fadeOut SceneSampleEvents>>
+<<jump RoommateDiscussion>>
+===
+
+
+title: RoommateDiscussion
+---
+<<wait 2>>
+<<fadeIn SceneSampleEvents>>
+<<wait 2>>
+/////////////// Show girls’ apartment background asset. Nubs’s expression is back to neutral.
+Kaya: So he IS a bomb.
+Luna: “AGENTS' magnum opus.” But yeah.
+Kaya: Of all the things you had to bring back home, you brought a top-secret weapon. Unbelievable.
+Nat was able to deactivate Nubs's detonation mode. His body is covered in wires as he's hooked up to her computer.
+Nat: I was able to pass through a few firewalls, but not much. 
+Nat: But from what I can tell, my suspicions were correct—my family has something to do with this little guy's creation.
+//////////////// Set both Luna’s and Kaya’s expressions to surprised. Set Lil Guy’s to neutralArms (neutral expression, arms pose).
+Nubs: You're related to the gigachad?
+Nat: Huh? What gigachad?
+Luna: Oh god…
+//////////////// Set Kaya’s expression to annoyed
+Kaya: Luna, spill.
+
+-> Keep the story short
+    //////////////// Set Luna’s expression to neutral
+    Luna: Soooo, I might've run into an AGENTS employee. But it was no biggie, 'cause he didn't realize who or what Nubs was. He didn't have the right clearance, or whatever. 
+    Luna: So he let us go. 
+    Nubs: Let us GO? Luna, you're missing out on the best part!
+    //////////////// Set Lil Guy’s expression to happy
+    Nubs: Luna saved me from absolute peril and destruction! She told me about her exhilarating chase across The Bridge. My estimations determine that she was going well over 100 miles per hour! 
+    Nub: She didn't just face off any corporate loser—she duked it out with a Disciple of AGENTS. The company's top brass! 
+    Nat: …
+    Kaya: …
+-> Tell them everything that happened
+     I tell them about the mysterious delivery offer, the encounter with Maxx, the threat, and the fact that I was going way over the speed limit. 
+     They sit in shock.
+     Nubs: Luna saved me! She defeated a Disciple of AGENTS, part of the company's top brass! 
+     Nubs: His remains are probably still on the road as we speak. May he rest in peace, the guy who named me T.A.B.
+     Nat: T.A.B?
+     Nubs: Technologically Advanced Broseph. Fit for the future of all bro-kind.
+     Nat: …Ew.
+     Nubs: Yeah, Luna said the same thing.
+     Kaya: Uh, excuse me? “REMAINS!?”
+     Luna: He's still alive…I think.
+
+/////////////// Set Luna’s expression to annoyed
+Luna: You're not helping your case, lil guy…
+Luna: (And why is he sounding more like me?)
+//////////////// Set Kaya’s expression to neutral
+Kaya: Is it true? 
+Kaya: Despite all the risks, you still chose to save him?
+Luna: …
+Luna: Yes.
+//////////////// Set Kaya’s expression to happy
+Kaya: Then he stays.
+//////////////// Set Luna’s and Nat’s expressions to surprised. Set Lil Guy to happyArms (happy expression, arms pose)
+Luna: R-Really?
+Nat: Yeah, really? I thought you'd never say yes.
+Kaya: There's something about your energy. It feels…lighter. Like something's shifted.
+Kaya: We'll talk more about it in the morning. You've definitely given us all a LOT of trouble to think through. But for now, it's a unanimous vote. 
+//////////////// Set Nat’s expression to neutral
+Nat: YAY!
+Nat: Hopefully I'll be able to find more answers, too. I can continue inspecting the little guy's code tomorrow and see what else I can find.
+Nubs: I'd like to know what's beyond those firewalls. And what my purpose was…
+Nat: Yes!
+//////////////// Set Nat’s expression to cute aggression
+Nat: Which means more time for t-i-n-k-e-r-i-n-g~
+//////////////// Set Lil Guy’s expression to worried
+Nubs: …
+//////////////// Set Luna’s expression to neutral
+Luna: Great. Well, I'm ready to bed rot for the next three days.
+// SFX notification ping
+<<sfx SceneSampleEvents notification>>
+<<sfx SceneSampleEvents notification>>
+Two notifications pop onto my screen. 
+The first one is about an incomplete delivery order. 
+The second one is information about my now-suspended account on the SL0P app.
+Luna: (Just as promised…)
+Luna: (Looks like I've gotta find another way to make money.)
+///////////////// Set Luna’s pose to hand behind back
+Luna: (Let's hope that part about AGENTS finding where I live isn't true…)
+<<fadeOut SceneSampleEvents>>
+<<jump Foreshadowing>>
+===
+
+
+title: Foreshadowing
+---
+<<fadeIn>>
+/////////////////// Show a black screen. TBD if we’ll have character sprites that we can shroud or if we’ll have no sprites at all and instead it’s just the dialogue box that switches between different colored labels for the character names. ??? is The Creative Director, and ??? is Vic Maximillion, but the player shouldn’t know their names yet.
+???: Dammit! The failsafe switch for Experiment 184 was destroyed.  
+???: In due time, master. We'll find it. It's most likely hiding away in Root Town.
+???: SOMEONE is hiding him. And if they get their hands on its code…
+???: They won't. It's behind 8,000 unique firewalls. 
+???: I'll find it in Root Town. It's under my supervision, after all. 
+???: Go there NOW. I can't afford having that thing on the loose.
+???: Yes, master.
+???: Er, as for Maxx…
+//////////////////SFX metal grinding in the background
+???: He's being returned to a more…useful form. 
+<<fadeOut SceneSampleEvents>>
+<<wait 2>>
+<<fadeIn SceneSampleEvents>>
+<<wait 2>>
+// Show a screen with “TO BE CONTINUED…” text, then automatically take them back to the game’s Title Screen
+<<fadeOut SceneSampleEvents>>
+<<wait 2>>
+===
+

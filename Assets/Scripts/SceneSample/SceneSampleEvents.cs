@@ -10,14 +10,46 @@ public class SceneSampleEvents : MonoBehaviour
     public GameObject fadeScreenOut;
     public GameObject Luna;
     public GameObject Val;
+    public GameObject Nubs;
+
+    public GameObject Review;
+
     public VariableStorageBehaviour variableStorage;
+    public LineAdvancer lineAdvancer;
+    private bool dialoguePaused = false;
 
     public Texture2D lunaNeutral;
+    public Texture2D valNeutral;
+    public Sprite podNeutral;
+    public Sprite podClosed;
+    public Sprite podAngry;
+    public Sprite nubsWorried;
+    public Sprite nubsWorriedWave;
+    public Sprite nubsNeutralWave;
+    public Sprite nubsHappyWave;
+    public Sprite nubsErrorWave;
+    public Sprite nubsConfusedWave;
+    public Sprite nubsNeutral;
+    public Sprite nubsLoading;
+    public Sprite nubsHappy;
+    public Sprite nubsError;
+    public Sprite nubsConfused;
+    public Sprite nubsWorriedArms;
+    public Sprite nubsNeutralArms;
+    public Sprite nubsHappyArms;
+    public Sprite nubsConfusedArms;
+    public Sprite nubsAgents;
 
     public AudioSource notificationSource;
+    public AudioSource junkyardSource;
     public AudioClip notificationSound;
+    public AudioClip tiresSound;
+    public AudioClip engineSound;
 
-    private Animation LunaAnimation;
+    private Animator lunaAnimator;
+    private Animator valAnimator;
+    private Animator nubsAnimator;
+    private Animator reviewAnimator;
 
     [SerializeField] internal YarnProject yarnProject;
     [SerializeField] internal bool narrativeOver = false;
@@ -29,7 +61,11 @@ public class SceneSampleEvents : MonoBehaviour
     void Start()
     {
         //source = GetComponent<AudioSource>();
-        LunaAnimation = Luna.GetComponent<Animation>();
+        lunaAnimator = Luna.GetComponent<Animator>();
+        valAnimator = Val.GetComponent<Animator>();
+        nubsAnimator = Nubs.GetComponent<Animator>();
+        reviewAnimator = Review.GetComponent<Animator>();
+
         PlayerPrefs.SetInt("LoadState", 1);
         StartCoroutine(EventStarter());
         variableStorage = GameObject.FindAnyObjectByType<InMemoryVariableStorage>();
@@ -42,6 +78,14 @@ public class SceneSampleEvents : MonoBehaviour
         yield return new WaitUntil(() => variableStorage.TryGetValue("$testVariable", out narrativeOver) == true);
         yield return new WaitForSeconds(2);
         Debug.Log("Narrative over!");
+    }
+
+    public void ToggleDialoguePause()
+    {
+        Debug.Log("ToggleDialoguePause CALLED");
+        
+        dialoguePaused = !dialoguePaused;
+        lineAdvancer.enabled = !dialoguePaused;
     }
 
     [YarnCommand("fadeOut")]
@@ -62,19 +106,63 @@ public class SceneSampleEvents : MonoBehaviour
     public void Enter(string character) {
         Debug.Log("Enter CALLED on: " + gameObject.name);
         if (character == "Luna") {
-            Luna.SetActive(true);
+            //lunaAnimator.SetTrigger("FadeIn");
+            if (Luna.activeSelf == false) {
+                Luna.SetActive(true);
+            }
+            else
+            {
+                lunaAnimator.SetTrigger("FadeIn");
+            }
         } else if (character == "Val") {
-            Val.SetActive(true);
+            if (Val.activeSelf == false) {
+                Val.SetActive(true);
+            }
+            else
+            {
+                valAnimator.SetTrigger("FadeIn");
+            }
+        } else if (character == "Nubs")
+        {
+            if (Nubs.activeSelf == false)
+            {
+                Nubs.SetActive(true);
+            }
+            else
+            {
+                nubsAnimator.SetTrigger("FadeIn");
+            }
+        } else if (character == "Review")
+        {
+            if (Review.activeSelf == false)
+            {
+                Review.SetActive(true);
+            }
+            else
+            {
+                reviewAnimator.SetTrigger("FadeIn");
+            }
         }
+        
     }
 
     [YarnCommand("exit")]
     public void Exit(string character) {
         Debug.Log("Exit CALLED on: " + gameObject.name);
         if (character == "Luna") {
-            LunaAnimation.Play("LunaFadeOut");
+            lunaAnimator.SetTrigger("FadeOut");
+            //Luna.SetActive(false);
         } else if (character == "Val") {
+            valAnimator.SetTrigger("FadeOut");
             //Val.SetActive(false);
+        } else if (character == "Nubs")
+        {
+            nubsAnimator.SetTrigger("FadeOut");
+            //Nubs.SetActive(false);
+        } else if (character == "Review")
+        {
+            reviewAnimator.SetTrigger("FadeOut");
+            //Review.SetActive(false);
         }
     }
 
@@ -89,11 +177,152 @@ public class SceneSampleEvents : MonoBehaviour
             RawImage lunaImage = Luna.GetComponent<RawImage>();
 
             Debug.Log($"Image Component: {lunaImage}");
-            Debug.Log($"Neutral Sprite: {lunaNeutral}");
             
             if (expression == "neutral")
             {
+                Debug.Log($"Neutral Sprite: {lunaNeutral}");
                 lunaImage.texture = lunaNeutral;
+
+            }
+        }
+        else if (character == "Val")
+        {
+            Debug.Log($"Val GameObject: {Val}");
+            
+            RawImage valImage = Val.GetComponent<RawImage>();
+
+            Debug.Log($"Image Component: {valImage}");
+            
+            if (expression == "neutral")
+            {
+                Debug.Log($"Neutral Sprite: {valNeutral}");
+                valImage.texture = valNeutral;
+
+            }
+        }
+        else if (character == "Nubs")
+        {
+            Debug.Log($"Nubs GameObject: {Nubs}");
+            
+            //RawImage nubsImage = Nubs.GetComponent<RawImage>();
+            Image nubsImage = Nubs.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {nubsImage}");
+            
+            if (expression == "podNeutral")
+            {
+                Debug.Log($"Pod Neutral Sprite: {podNeutral}");
+                //nubsImage.texture = nubsNeutral;
+                nubsImage.sprite = podNeutral;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "podClosed")
+            {
+                Debug.Log($"Pod Closed Sprite: {podClosed}");
+                nubsImage.sprite = podClosed;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "podAngry")
+            {
+                Debug.Log($"Pod Angry Sprite: {podAngry}");
+                nubsImage.sprite = podAngry;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsWorried")
+            {
+                Debug.Log($"Nubs Worried Sprite: {nubsWorried}");
+                nubsImage.sprite = nubsWorried;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsWorriedWave")
+            {
+                Debug.Log($"Nubs Worried Wave Sprite: {nubsWorriedWave}");
+                nubsImage.sprite = nubsWorriedWave;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsNeutralWave")
+            {
+                Debug.Log($"Nubs Neutral Wave Sprite: {nubsNeutralWave}");
+                nubsImage.sprite = nubsNeutralWave;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsHappyWave")
+            {
+                Debug.Log($"Nubs Happy Wave Sprite: {nubsHappyWave}");
+                nubsImage.sprite = nubsHappyWave;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsErrorWave")
+            {
+                Debug.Log($"Nubs Error Wave Sprite: {nubsErrorWave}");
+                nubsImage.sprite = nubsErrorWave;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsConfusedWave")
+            {
+                Debug.Log($"Nubs Confused Wave Sprite: {nubsConfusedWave}");
+                nubsImage.sprite = nubsConfusedWave;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsNeutral")
+            {
+                Debug.Log($"Nubs Neutral Sprite: {nubsNeutral}");
+                nubsImage.sprite = nubsNeutral;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsLoading")
+            {
+                Debug.Log($"Nubs Loading Sprite: {nubsLoading}");
+                nubsImage.sprite = nubsLoading;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsHappy")
+            {
+                Debug.Log($"Nubs Happy Sprite: {nubsHappy}");
+                nubsImage.sprite = nubsHappy;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsError")
+            {
+                Debug.Log($"Nubs Error Sprite: {nubsError}");
+                nubsImage.sprite = nubsError;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsConfused")
+            {
+                Debug.Log($"Nubs Confused Sprite: {nubsConfused}");
+                nubsImage.sprite = nubsConfused;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsWorriedArms")
+            {
+                Debug.Log($"Nubs Worried Arms Sprite: {nubsWorriedArms}");
+                nubsImage.sprite = nubsWorriedArms;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsNeutralArms")
+            {
+                Debug.Log($"Nubs Neutral Arms Sprite: {nubsNeutralArms}");
+                nubsImage.sprite = nubsNeutralArms;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsHappyArms")
+            {
+                Debug.Log($"Nubs Happy Arms Sprite: {nubsHappyArms}");
+                nubsImage.sprite = nubsHappyArms;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsConfusedArms")
+            {
+                Debug.Log($"Nubs Confused Arms Sprite: {nubsConfusedArms}");
+                nubsImage.sprite = nubsConfusedArms;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsAgents")
+            {
+                Debug.Log($"Nubs Agents Sprite: {nubsAgents}");
+                nubsImage.sprite = nubsAgents;
+                nubsImage.SetNativeSize();
             }
         }
     }
@@ -105,6 +334,34 @@ public class SceneSampleEvents : MonoBehaviour
         if (sfxName == "notification")
         {
             notificationSource.PlayOneShot(notificationSound);
+        }
+        if (sfxName == "tires")
+        {
+            notificationSource.PlayOneShot(tiresSound);
+        }
+        if (sfxName == "engine")
+        {
+            notificationSource.PlayOneShot(engineSound);
+        }
+    }
+
+    [YarnCommand("play")]
+    public void Play(string audioName)
+    {
+        Debug.Log("Play CALLED on: " + gameObject.name);
+        if (audioName == "junkyard")
+        {
+            junkyardSource.Play();
+        }
+    }
+
+    [YarnCommand("stop")]
+    public void Stop(string audioName)
+    {
+        Debug.Log("Stop CALLED on: " + gameObject.name);
+        if (audioName == "junkyard")
+        {
+            junkyardSource.Stop();
         }
     }
 }
