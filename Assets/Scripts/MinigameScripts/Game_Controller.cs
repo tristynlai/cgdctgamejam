@@ -7,15 +7,18 @@ public class Game_Controller : MonoBehaviour
 {
     public TextMeshProUGUI HighestTimeText;
     public TextMeshProUGUI CurrentTimeText;
+    public TextMeshProUGUI PreviousHighestTimeText;
 
     public int HighestTime;
     public int CurrentTime;
+    public int PreviousHighestTime;
 
     public Time_Manager Time_Manager;
     public GameObject PauseScreen;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
         PauseScreen.SetActive(false);
+        PreviousHighestTime = PlayerPrefs.GetInt("HighestTime");
         
     }
 
@@ -33,6 +36,11 @@ public class Game_Controller : MonoBehaviour
         Time.timeScale = 0f;
         PauseScreen.SetActive(true);
 
+        int Minutes = Mathf.FloorToInt(PreviousHighestTime / 60);
+        int Seconds = Mathf.FloorToInt(PreviousHighestTime % 60);
+
+        PreviousHighestTimeText.text = "Highest Time: " + string.Format("{0:00}:{1:00}", Minutes, Seconds);
+
     }
 
     public void QuitGame() {
@@ -42,9 +50,13 @@ public class Game_Controller : MonoBehaviour
     // Update is called once per frame
     void Update() {
         HighestTime = PlayerPrefs.GetInt("HighestTime");
-        CurrentTime = Mathf.FloorToInt(Time_Manager.CurrentTime);
+        int Minutes = Mathf.FloorToInt(HighestTime / 60);
+        int Seconds = Mathf.FloorToInt(HighestTime % 60);
+        HighestTimeText.text = "Highest Time: " + string.Format("{0:00}:{1:00}", Minutes, Seconds);
 
-        HighestTimeText.text = "Highest Time: " + HighestTime.ToString();
-        CurrentTimeText.text = "Time: " + CurrentTime.ToString();
+        CurrentTime = Mathf.FloorToInt(Time_Manager.CurrentTime);
+        Minutes = Mathf.FloorToInt(CurrentTime / 60);
+        Seconds = Mathf.FloorToInt(CurrentTime % 60);
+        CurrentTimeText.text = "Time: " + string.Format("{0:00}:{1:00}", Minutes, Seconds);
     }
 }
