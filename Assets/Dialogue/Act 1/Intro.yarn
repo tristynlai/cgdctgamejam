@@ -9,7 +9,9 @@ They own Frisscity. They own us.
 And now, we're just trying to survive.
 
 <<enter SceneSampleEvents Luna>>
-<<show SceneSampleEvents Luna neutral>>
+<<show SceneSampleEvents Luna lunaNeutral>>
+<<wait 2>>
+<<show SceneSampleEvents Luna lunaShy>>
 //////////<<pose Luna on-cyberdeck>>
 //////////<<expression Luna neutral>>
 

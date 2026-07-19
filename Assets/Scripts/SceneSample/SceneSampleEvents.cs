@@ -18,7 +18,18 @@ public class SceneSampleEvents : MonoBehaviour
     public LineAdvancer lineAdvancer;
     private bool dialoguePaused = false;
 
-    public Texture2D lunaNeutral;
+    public Sprite lunaNeutral;
+    public Sprite lunaAnnoyed;
+    public Sprite lunaHappy;
+    public Sprite lunaAnnoyedArms;
+    public Sprite lunaHappyArms;
+    public Sprite lunaShyArms;
+    public Sprite lunaNeutralArms;
+    public Sprite lunaShyAnnoyed;
+    public Sprite lunaShyHappy;
+    public Sprite lunaShyNeutral;
+    public Sprite lunaShy;
+
     public Texture2D valNeutral;
     public Sprite podNeutral;
     public Sprite podClosed;
@@ -39,6 +50,9 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite nubsHappyArms;
     public Sprite nubsConfusedArms;
     public Sprite nubsAgents;
+    public Sprite nubsAngry;
+    public Sprite nubsAngryArms;
+    public Sprite nubsAngryWave;
 
     public AudioSource notificationSource;
     public AudioSource junkyardSource;
@@ -174,15 +188,75 @@ public class SceneSampleEvents : MonoBehaviour
         {
             Debug.Log($"Luna GameObject: {Luna}");
             
-            RawImage lunaImage = Luna.GetComponent<RawImage>();
+            Image lunaImage = Luna.GetComponent<Image>();
 
             Debug.Log($"Image Component: {lunaImage}");
             
-            if (expression == "neutral")
+            if (expression == "lunaNeutral")
             {
                 Debug.Log($"Neutral Sprite: {lunaNeutral}");
-                lunaImage.texture = lunaNeutral;
-
+                lunaImage.sprite = lunaNeutral;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaAnnoyed")
+            {
+                Debug.Log($"Annoyed Sprite: {lunaAnnoyed}");
+                lunaImage.sprite = lunaAnnoyed;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaHappy")
+            {
+                Debug.Log($"Happy Sprite: {lunaHappy}");
+                lunaImage.sprite = lunaHappy;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaAnnoyedArms")
+            {
+                Debug.Log($"Annoyed Arms Sprite: {lunaAnnoyedArms}");
+                lunaImage.sprite = lunaAnnoyedArms;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaHappyArms")
+            {
+                Debug.Log($"Happy Arms Sprite: {lunaHappyArms}");
+                lunaImage.sprite = lunaHappyArms;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaShyArms")
+            {
+                Debug.Log($"Shy Arms Sprite: {lunaShyArms}");
+                lunaImage.sprite = lunaShyArms;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaNeutralArms")
+            {
+                Debug.Log($"Neutral Arms Sprite: {lunaNeutralArms}");
+                lunaImage.sprite = lunaNeutralArms;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaShyAnnoyed")
+            {
+                Debug.Log($"Shy Annoyed Sprite: {lunaShyAnnoyed}");
+                lunaImage.sprite = lunaShyAnnoyed;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaShyHappy")
+            {
+                Debug.Log($"Shy Happy Sprite: {lunaShyHappy}");
+                lunaImage.sprite = lunaShyHappy;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaShyNeutral")
+            {
+                Debug.Log($"Shy Neutral Sprite: {lunaShyNeutral}");
+                lunaImage.sprite = lunaShyNeutral;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaShy")
+            {
+                Debug.Log($"Shy Sprite: {lunaShy}");
+                lunaImage.sprite = lunaShy;
+                lunaImage.SetNativeSize();
             }
         }
         else if (character == "Val")
@@ -322,6 +396,24 @@ public class SceneSampleEvents : MonoBehaviour
             {
                 Debug.Log($"Nubs Agents Sprite: {nubsAgents}");
                 nubsImage.sprite = nubsAgents;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsAngry")
+            {
+                Debug.Log($"Nubs Angry Sprite: {nubsAngry}");
+                nubsImage.sprite = nubsAngry;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsAngryArms")
+            {
+                Debug.Log($"Nubs Angry Arms Sprite: {nubsAngryArms}");
+                nubsImage.sprite = nubsAngryArms;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsAngryWave")
+            {
+                Debug.Log($"Nubs Angry Wave Sprite: {nubsAngryWave}");
+                nubsImage.sprite = nubsAngryWave;
                 nubsImage.SetNativeSize();
             }
         }

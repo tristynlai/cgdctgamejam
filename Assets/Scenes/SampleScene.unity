@@ -1926,7 +1926,17 @@ MonoBehaviour:
   Review: {fileID: 700154719}
   variableStorage: {fileID: 0}
   lineAdvancer: {fileID: 612810745}
-  lunaNeutral: {fileID: 2800000, guid: 0fdd316a050aa89429932bd03d26d131, type: 3}
+  lunaNeutral: {fileID: 7317746589584645918, guid: 55b0b3fa154e8f74eb96238ff03abcaf, type: 3}
+  lunaAnnoyed: {fileID: -102966323386635079, guid: 7f3b144c9db78e04fae23940585645c6, type: 3}
+  lunaHappy: {fileID: -6610942447195032752, guid: fb6c6992e429f6345908d6650805dd6e, type: 3}
+  lunaAnnoyedArms: {fileID: -3913711595442833640, guid: f547e773a6022d240a727190462db68f, type: 3}
+  lunaHappyArms: {fileID: -8363435569815735140, guid: 31e32967f053c584494258eb87f3079b, type: 3}
+  lunaShyArms: {fileID: 6437260477629746134, guid: c0b65665b060b6746956ffdee643a138, type: 3}
+  lunaNeutralArms: {fileID: 9006500220446670860, guid: b299c7cad1650404e8ac1a9ede902cea, type: 3}
+  lunaShyAnnoyed: {fileID: -2236228899488720052, guid: 10aac4d53e10ee44fadf1ab336845973, type: 3}
+  lunaShyHappy: {fileID: -2427487580877198553, guid: d9a92c5cbb533524c8ea879933f27d13, type: 3}
+  lunaShyNeutral: {fileID: -4285538171116803512, guid: ae3ed13eb713b4b4aa71248c6b06d1bc, type: 3}
+  lunaShy: {fileID: -8957327360862691225, guid: 3d363a571d40289479f0fc127bfac8aa, type: 3}
   valNeutral: {fileID: 2800000, guid: 166bd5fd1dddba24fa86b6fa194e6ac1, type: 3}
   podNeutral: {fileID: 9004985149374680108, guid: 7e77e6b1a2fd2214eb2ba0e6718e7469, type: 3}
   podClosed: {fileID: 4544243647438601231, guid: d5c6e00c99be8e740913269b3cf0d394, type: 3}
@@ -1947,6 +1957,9 @@ MonoBehaviour:
   nubsHappyArms: {fileID: -3873096187696482045, guid: a65f181fe0dc3e74c88787032209f58a, type: 3}
   nubsConfusedArms: {fileID: -4068659042341220735, guid: 6f97ee6ee53b693478d22f2fc1cb3cdd, type: 3}
   nubsAgents: {fileID: -5874817892992855081, guid: 2778b4262e065ce499425946b71e8bce, type: 3}
+  nubsAngry: {fileID: 7300176357626858338, guid: 77512df7076619740b59577cc5ee12f5, type: 3}
+  nubsAngryArms: {fileID: -8407966466241614922, guid: b6097302cb3ff9044965fd09eb511386, type: 3}
+  nubsAngryWave: {fileID: -5947986552613002513, guid: 39cff30edcacd81419ad4afe31ab3d2a, type: 3}
   notificationSource: {fileID: 1981392157}
   junkyardSource: {fileID: 461320879}
   notificationSound: {fileID: 8300000, guid: e9dcf3b0ccefc69469ef92397fa31ba0, type: 3}
@@ -2512,8 +2525,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2110554841}
   - component: {fileID: 2110554844}
-  - component: {fileID: 2110554843}
   - component: {fileID: 2110554842}
+  - component: {fileID: 2110554845}
   m_Layer: 5
   m_Name: Luna
   m_TagString: Untagged
@@ -2530,7 +2543,7 @@ RectTransform:
   m_GameObject: {fileID: 2110554840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.20456, y: 0.20456, z: 0.20456}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1029314486}
@@ -2538,7 +2551,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -275, y: 450}
-  m_SizeDelta: {x: 2766, y: 4492}
+  m_SizeDelta: {x: 1200, y: 2048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2110554842
 Animator:
@@ -2562,33 +2575,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2110554843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110554840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 0fdd316a050aa89429932bd03d26d131, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!222 &2110554844
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2597,6 +2583,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110554840}
   m_CullTransparentMesh: 1
+--- !u!114 &2110554845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110554840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7317746589584645918, guid: 55b0b3fa154e8f74eb96238ff03abcaf, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

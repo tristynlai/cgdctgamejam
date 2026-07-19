@@ -508,7 +508,6 @@ Luna: (Let's hope that part about AGENTS finding where I live isn't true…)
 
 title: Foreshadowing
 ---
-<<fadeIn>>
 /////////////////// Show a black screen. TBD if we’ll have character sprites that we can shroud or if we’ll have no sprites at all and instead it’s just the dialogue box that switches between different colored labels for the character names. ??? is The Creative Director, and ??? is Vic Maximillion, but the player shouldn’t know their names yet.
 ???: Dammit! The failsafe switch for Experiment 184 was destroyed.  
 ???: In due time, master. We'll find it. It's most likely hiding away in Root Town.
@@ -520,11 +519,9 @@ title: Foreshadowing
 ???: Er, as for Maxx…
 //////////////////SFX metal grinding in the background
 ???: He's being returned to a more…useful form. 
-<<fadeOut SceneSampleEvents>>
-<<wait 2>>
 <<fadeIn SceneSampleEvents>>
 <<wait 2>>
-// Show a screen with “TO BE CONTINUED…” text, then automatically take them back to the game’s Title Screen
+//////////////// Show a screen with “TO BE CONTINUED…” text, then automatically take them back to the game’s Title Screen
 <<fadeOut SceneSampleEvents>>
 <<wait 2>>
 ===
