@@ -8,6 +8,8 @@ public class SceneSampleEvents : MonoBehaviour
 {
     public GameObject fadeScreenIn;
     public GameObject fadeScreenOut;
+    public GameObject frissCity;
+    public GameObject alleyway;
     public GameObject Luna;
     public GameObject Val;
     public GameObject Nubs;
@@ -454,6 +456,20 @@ public class SceneSampleEvents : MonoBehaviour
         if (audioName == "junkyard")
         {
             junkyardSource.Stop();
+        }
+    }
+
+    [YarnCommand("background")]
+    public void Background(string backgroundName)
+    {
+        Debug.Log("Background CALLED on: " + gameObject.name);
+        if (backgroundName == "frissCity")
+        {
+            frissCity.SetActive(true);
+        }
+        else if (backgroundName == "alleyway")
+        {
+            alleyway.SetActive(true);
         }
     }
 }

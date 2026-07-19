@@ -1,6 +1,7 @@
 ﻿title: Intro
 ---
 // Camera starts at the top of Frisscity (Meridian district) and pans down to the Understory asset.
+<<background SceneSampleEvents frissCity>>
 <<fadeIn SceneSampleEvents>>
 <<wait 2>>
 
@@ -10,8 +11,6 @@ And now, we're just trying to survive.
 
 <<enter SceneSampleEvents Luna>>
 <<show SceneSampleEvents Luna lunaNeutral>>
-<<wait 2>>
-<<show SceneSampleEvents Luna lunaShy>>
 //////////<<pose Luna on-cyberdeck>>
 //////////<<expression Luna neutral>>
 
@@ -236,6 +235,8 @@ Time to roll.
 title: TransporterPod
 ---
 <<wait 2>>
+// Show alleyway
+<<background SceneSampleEvents alleyway>>
 <<enter SceneSampleEvents Nubs>>
 // Show transporter pod asset
 <<show SceneSampleEvents Nubs podClosed>>
