@@ -817,8 +817,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Game_Controller
   HighestTimeText: {fileID: 1941531452}
   CurrentTimeText: {fileID: 1162691629}
+  PreviousHighestTimeText: {fileID: 2069925823}
   HighestTime: 0
   CurrentTime: 0
+  PreviousHighestTime: 0
   Time_Manager: {fileID: 871961450}
   PauseScreen: {fileID: 668245446}
 --- !u!4 &407508073
@@ -1320,7 +1322,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63.3, y: 15.2}
+  m_AnchoredPosition: {x: -63.3, y: 1.25}
   m_SizeDelta: {x: 208.59, y: 14.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &871961448
@@ -1345,8 +1347,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 977d8c608a717fa4180305cb42400079, type: 2}
-  m_sharedMaterial: {fileID: 5934487553812106726, guid: 977d8c608a717fa4180305cb42400079, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 693a9ed05cbb02e44a0b18371006bb0c, type: 2}
+  m_sharedMaterial: {fileID: -572654923624510676, guid: 693a9ed05cbb02e44a0b18371006bb0c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
