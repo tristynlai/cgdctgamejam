@@ -1,0 +1,20 @@
+title: Rent
+---
+<<wait 0.5>>
+// A is Kaya (@KAYATOAST) and B is Luna (@LUNETTE), the player
+A: helllooooo! rent is due tomorrow. don’t forget!
+-> B: waiting for one last big order. then i’ll pay up!
+     <<set $goodend += 1>>
+    A: phew, thanks…that’s great to hear! and that's a good strategy.
+-> B: how much is rent again?
+    A: smh
+    A: it’s 1,500 baecoins…and don’t forget this time!
+-> B: buzz off or i might get into an accident
+    <<set $badend += 1>>
+    B: i can’t be found texting and driving
+    A: WOW, you’re one to talk about rules!!
+    A: you don’t even wear a helmet
+    A: look, i just need you to come thru this time. 
+A: i need your share by tomorrow morning 
+A: or our landlord might really kick us out this time!
+===
