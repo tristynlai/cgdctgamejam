@@ -32,7 +32,10 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite lunaShyNeutral;
     public Sprite lunaShy;
 
-    public Texture2D valNeutral;
+    public Sprite valNeutral;
+    public Sprite valSerious;
+    public Sprite valFlirty;
+
     public Sprite podNeutral;
     public Sprite podClosed;
     public Sprite podAngry;
@@ -163,22 +166,24 @@ public class SceneSampleEvents : MonoBehaviour
     }
 
     [YarnCommand("exit")]
-    public void Exit(string character) {
+    public void Exit(string character) 
+    {
         Debug.Log("Exit CALLED on: " + gameObject.name);
-        if (character == "Luna") {
+        if (character == "Luna") 
+        {
             lunaAnimator.SetTrigger("FadeOut");
-            //Luna.SetActive(false);
-        } else if (character == "Val") {
+        } 
+        else if (character == "Val") 
+        {
             valAnimator.SetTrigger("FadeOut");
-            //Val.SetActive(false);
-        } else if (character == "Nubs")
+        } 
+        else if (character == "Nubs")
         {
             nubsAnimator.SetTrigger("FadeOut");
-            //Nubs.SetActive(false);
-        } else if (character == "Review")
+        } 
+        else if (character == "Review")
         {
             reviewAnimator.SetTrigger("FadeOut");
-            //Review.SetActive(false);
         }
     }
 
@@ -265,15 +270,27 @@ public class SceneSampleEvents : MonoBehaviour
         {
             Debug.Log($"Val GameObject: {Val}");
             
-            RawImage valImage = Val.GetComponent<RawImage>();
+            Image valImage = Val.GetComponent<Image>();
 
             Debug.Log($"Image Component: {valImage}");
             
-            if (expression == "neutral")
+            if (expression == "valNeutral")
             {
                 Debug.Log($"Neutral Sprite: {valNeutral}");
-                valImage.texture = valNeutral;
-
+                valImage.sprite = valNeutral;
+                valImage.SetNativeSize();
+            }
+            else if (expression == "valSerious")
+            {
+                Debug.Log($"Serious Sprite: {valSerious}");
+                valImage.sprite = valSerious;
+                valImage.SetNativeSize();
+            }
+            else if (expression == "valFlirty")
+            {
+                Debug.Log($"Flirty Sprite: {valFlirty}");
+                valImage.sprite = valFlirty;
+                valImage.SetNativeSize();
             }
         }
         else if (character == "Nubs")
