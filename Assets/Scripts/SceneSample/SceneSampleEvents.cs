@@ -8,9 +8,14 @@ public class SceneSampleEvents : MonoBehaviour
 {
     public GameObject fadeScreenIn;
     public GameObject fadeScreenOut;
+    public GameObject frissCity;
+    public GameObject alleyway;
     public GameObject Luna;
     public GameObject Val;
     public GameObject Nubs;
+    public GameObject Influencer;
+    public GameObject Maxx;
+    public GameObject Kaya;
 
     public GameObject Review;
 
@@ -18,8 +23,22 @@ public class SceneSampleEvents : MonoBehaviour
     public LineAdvancer lineAdvancer;
     private bool dialoguePaused = false;
 
-    public Texture2D lunaNeutral;
-    public Texture2D valNeutral;
+    public Sprite lunaNeutral;
+    public Sprite lunaAnnoyed;
+    public Sprite lunaHappy;
+    public Sprite lunaAnnoyedArms;
+    public Sprite lunaHappyArms;
+    public Sprite lunaShyArms;
+    public Sprite lunaNeutralArms;
+    public Sprite lunaShyAnnoyed;
+    public Sprite lunaShyHappy;
+    public Sprite lunaShyNeutral;
+    public Sprite lunaShy;
+
+    public Sprite valNeutral;
+    public Sprite valSerious;
+    public Sprite valFlirty;
+
     public Sprite podNeutral;
     public Sprite podClosed;
     public Sprite podAngry;
@@ -39,6 +58,21 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite nubsHappyArms;
     public Sprite nubsConfusedArms;
     public Sprite nubsAgents;
+    public Sprite nubsAngry;
+    public Sprite nubsAngryArms;
+    public Sprite nubsAngryWave;
+
+    public Sprite influencerNeutral;
+    public Sprite influencerHappy;
+    public Sprite influencerAnnoyed;
+
+    public Sprite maxxNeutral;
+    public Sprite maxxIntrigued;
+    public Sprite maxxAnnoyed;
+
+    public Sprite kayaNeutral;
+    public Sprite kayaHappy;
+    public Sprite kayaAnnoyed;
 
     public AudioSource notificationSource;
     public AudioSource junkyardSource;
@@ -49,7 +83,10 @@ public class SceneSampleEvents : MonoBehaviour
     private Animator lunaAnimator;
     private Animator valAnimator;
     private Animator nubsAnimator;
+    private Animator influencerAnimator;
     private Animator reviewAnimator;
+    private Animator maxxAnimator;
+    private Animator kayaAnimator;
 
     [SerializeField] internal YarnProject yarnProject;
     [SerializeField] internal bool narrativeOver = false;
@@ -64,7 +101,10 @@ public class SceneSampleEvents : MonoBehaviour
         lunaAnimator = Luna.GetComponent<Animator>();
         valAnimator = Val.GetComponent<Animator>();
         nubsAnimator = Nubs.GetComponent<Animator>();
+        influencerAnimator = Influencer.GetComponent<Animator>();
         reviewAnimator = Review.GetComponent<Animator>();
+        maxxAnimator = Maxx.GetComponent<Animator>();
+        kayaAnimator = Kaya.GetComponent<Animator>();
 
         PlayerPrefs.SetInt("LoadState", 1);
         StartCoroutine(EventStarter());
@@ -142,27 +182,71 @@ public class SceneSampleEvents : MonoBehaviour
             {
                 reviewAnimator.SetTrigger("FadeIn");
             }
+        } else if (character == "Influencer")
+        {
+            if (Influencer.activeSelf == false)
+            {
+                Influencer.SetActive(true);
+            }
+            else
+            {
+                influencerAnimator.SetTrigger("FadeIn");
+            }
+        } else if (character == "Maxx")
+        {
+            if (Maxx.activeSelf == false)
+            {
+                Maxx.SetActive(true);
+            }
+            else
+            {
+                maxxAnimator.SetTrigger("FadeIn");
+            }
+        } else if (character == "Kaya")
+        {
+            if (Kaya.activeSelf == false)
+            {
+                Kaya.SetActive(true);
+            }
+            else
+            {
+                kayaAnimator.SetTrigger("FadeIn");
+            }
         }
         
     }
 
     [YarnCommand("exit")]
-    public void Exit(string character) {
+    public void Exit(string character) 
+    {
         Debug.Log("Exit CALLED on: " + gameObject.name);
-        if (character == "Luna") {
+        if (character == "Luna") 
+        {
             lunaAnimator.SetTrigger("FadeOut");
-            //Luna.SetActive(false);
-        } else if (character == "Val") {
+        } 
+        else if (character == "Val") 
+        {
             valAnimator.SetTrigger("FadeOut");
-            //Val.SetActive(false);
-        } else if (character == "Nubs")
+        } 
+        else if (character == "Nubs")
         {
             nubsAnimator.SetTrigger("FadeOut");
-            //Nubs.SetActive(false);
-        } else if (character == "Review")
+        } 
+        else if (character == "Review")
         {
             reviewAnimator.SetTrigger("FadeOut");
-            //Review.SetActive(false);
+        }
+        else if (character == "Influencer")
+        {
+            influencerAnimator.SetTrigger("FadeOut");
+        }
+        else if (character == "Maxx")
+        {
+            maxxAnimator.SetTrigger("FadeOut");
+        }
+        else if (character == "Kaya")
+        {
+            kayaAnimator.SetTrigger("FadeOut");
         }
     }
 
@@ -174,30 +258,102 @@ public class SceneSampleEvents : MonoBehaviour
         {
             Debug.Log($"Luna GameObject: {Luna}");
             
-            RawImage lunaImage = Luna.GetComponent<RawImage>();
+            Image lunaImage = Luna.GetComponent<Image>();
 
             Debug.Log($"Image Component: {lunaImage}");
             
-            if (expression == "neutral")
+            if (expression == "lunaNeutral")
             {
                 Debug.Log($"Neutral Sprite: {lunaNeutral}");
-                lunaImage.texture = lunaNeutral;
-
+                lunaImage.sprite = lunaNeutral;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaAnnoyed")
+            {
+                Debug.Log($"Annoyed Sprite: {lunaAnnoyed}");
+                lunaImage.sprite = lunaAnnoyed;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaHappy")
+            {
+                Debug.Log($"Happy Sprite: {lunaHappy}");
+                lunaImage.sprite = lunaHappy;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaAnnoyedArms")
+            {
+                Debug.Log($"Annoyed Arms Sprite: {lunaAnnoyedArms}");
+                lunaImage.sprite = lunaAnnoyedArms;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaHappyArms")
+            {
+                Debug.Log($"Happy Arms Sprite: {lunaHappyArms}");
+                lunaImage.sprite = lunaHappyArms;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaShyArms")
+            {
+                Debug.Log($"Shy Arms Sprite: {lunaShyArms}");
+                lunaImage.sprite = lunaShyArms;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaNeutralArms")
+            {
+                Debug.Log($"Neutral Arms Sprite: {lunaNeutralArms}");
+                lunaImage.sprite = lunaNeutralArms;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaShyAnnoyed")
+            {
+                Debug.Log($"Shy Annoyed Sprite: {lunaShyAnnoyed}");
+                lunaImage.sprite = lunaShyAnnoyed;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaShyHappy")
+            {
+                Debug.Log($"Shy Happy Sprite: {lunaShyHappy}");
+                lunaImage.sprite = lunaShyHappy;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaShyNeutral")
+            {
+                Debug.Log($"Shy Neutral Sprite: {lunaShyNeutral}");
+                lunaImage.sprite = lunaShyNeutral;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaShy")
+            {
+                Debug.Log($"Shy Sprite: {lunaShy}");
+                lunaImage.sprite = lunaShy;
+                lunaImage.SetNativeSize();
             }
         }
         else if (character == "Val")
         {
             Debug.Log($"Val GameObject: {Val}");
             
-            RawImage valImage = Val.GetComponent<RawImage>();
+            Image valImage = Val.GetComponent<Image>();
 
             Debug.Log($"Image Component: {valImage}");
             
-            if (expression == "neutral")
+            if (expression == "valNeutral")
             {
                 Debug.Log($"Neutral Sprite: {valNeutral}");
-                valImage.texture = valNeutral;
-
+                valImage.sprite = valNeutral;
+                valImage.SetNativeSize();
+            }
+            else if (expression == "valSerious")
+            {
+                Debug.Log($"Serious Sprite: {valSerious}");
+                valImage.sprite = valSerious;
+                valImage.SetNativeSize();
+            }
+            else if (expression == "valFlirty")
+            {
+                Debug.Log($"Flirty Sprite: {valFlirty}");
+                valImage.sprite = valFlirty;
+                valImage.SetNativeSize();
             }
         }
         else if (character == "Nubs")
@@ -324,6 +480,105 @@ public class SceneSampleEvents : MonoBehaviour
                 nubsImage.sprite = nubsAgents;
                 nubsImage.SetNativeSize();
             }
+            else if (expression == "nubsAngry")
+            {
+                Debug.Log($"Nubs Angry Sprite: {nubsAngry}");
+                nubsImage.sprite = nubsAngry;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsAngryArms")
+            {
+                Debug.Log($"Nubs Angry Arms Sprite: {nubsAngryArms}");
+                nubsImage.sprite = nubsAngryArms;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsAngryWave")
+            {
+                Debug.Log($"Nubs Angry Wave Sprite: {nubsAngryWave}");
+                nubsImage.sprite = nubsAngryWave;
+                nubsImage.SetNativeSize();
+            }
+        }
+        else if (character == "Influencer")
+        {
+            Debug.Log($"Influencer GameObject: {Influencer}");
+            
+            Image influencerImage = Influencer.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {influencerImage}");
+            
+            if (expression == "influencerNeutral")
+            {
+                Debug.Log($"Influencer Neutral Sprite: {influencerNeutral}");
+                influencerImage.sprite = influencerNeutral;
+                influencerImage.SetNativeSize();
+            }
+            else if (expression == "influencerHappy")
+            {
+                Debug.Log($"Influencer Happy Sprite: {influencerHappy}");
+                influencerImage.sprite = influencerHappy;
+                influencerImage.SetNativeSize();
+            }
+            else if (expression == "influencerAnnoyed")
+            {
+                Debug.Log($"Influencer Annoyed Sprite: {influencerAnnoyed}");
+                influencerImage.sprite = influencerAnnoyed;
+                influencerImage.SetNativeSize();
+            }
+        }
+        else if (character == "Maxx")
+        {
+            Debug.Log($"Maxx GameObject: {Maxx}");
+            
+            Image maxxImage = Maxx.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {maxxImage}");
+            
+            if (expression == "maxxNeutral")
+            {
+                Debug.Log($"Maxx Neutral Sprite: {maxxNeutral}");
+                maxxImage.sprite = maxxNeutral;
+                maxxImage.SetNativeSize();
+            }
+            else if (expression == "maxxIntrigued")
+            {
+                Debug.Log($"Maxx Intrigued Sprite: {maxxIntrigued}");
+                maxxImage.sprite = maxxIntrigued;
+                maxxImage.SetNativeSize();
+            }
+            else if (expression == "maxxAnnoyed")
+            {
+                Debug.Log($"Maxx Annoyed Sprite: {maxxAnnoyed}");
+                maxxImage.sprite = maxxAnnoyed;
+                maxxImage.SetNativeSize();
+            }
+        }
+        else if (character == "Kaya")
+        {
+            Debug.Log($"Kaya GameObject: {Kaya}");
+            
+            Image kayaImage = Kaya.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {kayaImage}");
+            
+            if (expression == "kayaNeutral")
+            {
+                Debug.Log($"Kaya Neutral Sprite: {kayaNeutral}");
+                kayaImage.sprite = kayaNeutral;
+                kayaImage.SetNativeSize();
+            }
+            else if (expression == "kayaHappy")
+            {
+                Debug.Log($"Kaya Happy Sprite: {kayaHappy}");
+                kayaImage.sprite = kayaHappy;
+                kayaImage.SetNativeSize();
+            }
+            else if (expression == "kayaAnnoyed")
+            {
+                Debug.Log($"Kaya Annoyed Sprite: {kayaAnnoyed}");
+                kayaImage.sprite = kayaAnnoyed;
+                kayaImage.SetNativeSize();
+            }
         }
     }
 
@@ -362,6 +617,20 @@ public class SceneSampleEvents : MonoBehaviour
         if (audioName == "junkyard")
         {
             junkyardSource.Stop();
+        }
+    }
+
+    [YarnCommand("background")]
+    public void Background(string backgroundName)
+    {
+        Debug.Log("Background CALLED on: " + gameObject.name);
+        if (backgroundName == "frissCity")
+        {
+            frissCity.SetActive(true);
+        }
+        else if (backgroundName == "alleyway")
+        {
+            alleyway.SetActive(true);
         }
     }
 }

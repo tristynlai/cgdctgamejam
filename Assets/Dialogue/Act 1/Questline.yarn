@@ -13,6 +13,9 @@
 
 title: DivorcedDad
 ---
+<<enter SceneSampleEvents Luna>>
+<<enter SceneSampleEvents Nubs>>
+<<show SceneSampleEvents Nubs nubsNeutral>>
 The delivery takes me to the Meridian District- home of the tech zillionaires, their corporate underlings, and grifters. 
 I approach a high-end luxury apartment tower and feel its tinted windows judge me as I park my motorbike. I hop off with a bag of hot food and search for its owner, while Nubs scuttles after me.
 Nubs: W-Wait up!
@@ -24,6 +27,7 @@ Benji: Hey, you're from Root Town, right?
 He gestures at my motorbike's decals, which have the town's official logo of a large gnarled tree. 
 Benji: I am, too. HELLA!
 ////////////Change Luna’s pose to crossed arms and expression to annoyed.
+<<show SceneSampleEvents Luna lunaAnnoyedArms>>
 Luna: …
 Luna: (Cringe.)
 I give the man his order without a word and mark my order as complete on the SL0P app.
@@ -41,11 +45,12 @@ He lingers on the curb. It feels like he's REALLY desperate to say something, bu
     /////////Change Divorced Dad’s expression to angry/annoyed
     <<fadeOut SceneSampleEvents>>
     <<wait 2>>
-    <<fadeIn SceneSampleEvents>>
-    <<wait 2>>
     //I imagine a black screen and the dialogue box
     20 minutes later, I get a negative review on the SL0P app AND a violation as the cherry on top. It notes that the food looked like it'd been tampered with…
+    <<fadeIn SceneSampleEvents>>
+    <<wait 2>>
     ////////Show Luna and Lil Guy sprites. Luna should have crossed arms with an annoyed expression, and Lil Guy should be in the hands-up pose with a worried look. 
+    <<show SceneSampleEvents Nubs nubsWorriedWave>>
     Luna: …
     Nubs: W-What?! I was hungry…
     But who cares? A person who lives in that building is clearly rich enough to get more food without batting an eye…
