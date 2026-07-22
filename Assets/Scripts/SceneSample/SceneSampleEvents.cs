@@ -13,6 +13,9 @@ public class SceneSampleEvents : MonoBehaviour
     public GameObject Luna;
     public GameObject Val;
     public GameObject Nubs;
+    public GameObject Influencer;
+    public GameObject Maxx;
+    public GameObject Kaya;
 
     public GameObject Review;
 
@@ -59,6 +62,18 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite nubsAngryArms;
     public Sprite nubsAngryWave;
 
+    public Sprite influencerNeutral;
+    public Sprite influencerHappy;
+    public Sprite influencerAnnoyed;
+
+    public Sprite maxxNeutral;
+    public Sprite maxxIntrigued;
+    public Sprite maxxAnnoyed;
+
+    public Sprite kayaNeutral;
+    public Sprite kayaHappy;
+    public Sprite kayaAnnoyed;
+
     public AudioSource notificationSource;
     public AudioSource junkyardSource;
     public AudioClip notificationSound;
@@ -68,7 +83,10 @@ public class SceneSampleEvents : MonoBehaviour
     private Animator lunaAnimator;
     private Animator valAnimator;
     private Animator nubsAnimator;
+    private Animator influencerAnimator;
     private Animator reviewAnimator;
+    private Animator maxxAnimator;
+    private Animator kayaAnimator;
 
     [SerializeField] internal YarnProject yarnProject;
     [SerializeField] internal bool narrativeOver = false;
@@ -83,7 +101,10 @@ public class SceneSampleEvents : MonoBehaviour
         lunaAnimator = Luna.GetComponent<Animator>();
         valAnimator = Val.GetComponent<Animator>();
         nubsAnimator = Nubs.GetComponent<Animator>();
+        influencerAnimator = Influencer.GetComponent<Animator>();
         reviewAnimator = Review.GetComponent<Animator>();
+        maxxAnimator = Maxx.GetComponent<Animator>();
+        kayaAnimator = Kaya.GetComponent<Animator>();
 
         PlayerPrefs.SetInt("LoadState", 1);
         StartCoroutine(EventStarter());
@@ -161,6 +182,36 @@ public class SceneSampleEvents : MonoBehaviour
             {
                 reviewAnimator.SetTrigger("FadeIn");
             }
+        } else if (character == "Influencer")
+        {
+            if (Influencer.activeSelf == false)
+            {
+                Influencer.SetActive(true);
+            }
+            else
+            {
+                influencerAnimator.SetTrigger("FadeIn");
+            }
+        } else if (character == "Maxx")
+        {
+            if (Maxx.activeSelf == false)
+            {
+                Maxx.SetActive(true);
+            }
+            else
+            {
+                maxxAnimator.SetTrigger("FadeIn");
+            }
+        } else if (character == "Kaya")
+        {
+            if (Kaya.activeSelf == false)
+            {
+                Kaya.SetActive(true);
+            }
+            else
+            {
+                kayaAnimator.SetTrigger("FadeIn");
+            }
         }
         
     }
@@ -184,6 +235,18 @@ public class SceneSampleEvents : MonoBehaviour
         else if (character == "Review")
         {
             reviewAnimator.SetTrigger("FadeOut");
+        }
+        else if (character == "Influencer")
+        {
+            influencerAnimator.SetTrigger("FadeOut");
+        }
+        else if (character == "Maxx")
+        {
+            maxxAnimator.SetTrigger("FadeOut");
+        }
+        else if (character == "Kaya")
+        {
+            kayaAnimator.SetTrigger("FadeOut");
         }
     }
 
@@ -434,6 +497,87 @@ public class SceneSampleEvents : MonoBehaviour
                 Debug.Log($"Nubs Angry Wave Sprite: {nubsAngryWave}");
                 nubsImage.sprite = nubsAngryWave;
                 nubsImage.SetNativeSize();
+            }
+        }
+        else if (character == "Influencer")
+        {
+            Debug.Log($"Influencer GameObject: {Influencer}");
+            
+            Image influencerImage = Influencer.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {influencerImage}");
+            
+            if (expression == "influencerNeutral")
+            {
+                Debug.Log($"Influencer Neutral Sprite: {influencerNeutral}");
+                influencerImage.sprite = influencerNeutral;
+                influencerImage.SetNativeSize();
+            }
+            else if (expression == "influencerHappy")
+            {
+                Debug.Log($"Influencer Happy Sprite: {influencerHappy}");
+                influencerImage.sprite = influencerHappy;
+                influencerImage.SetNativeSize();
+            }
+            else if (expression == "influencerAnnoyed")
+            {
+                Debug.Log($"Influencer Annoyed Sprite: {influencerAnnoyed}");
+                influencerImage.sprite = influencerAnnoyed;
+                influencerImage.SetNativeSize();
+            }
+        }
+        else if (character == "Maxx")
+        {
+            Debug.Log($"Maxx GameObject: {Maxx}");
+            
+            Image maxxImage = Maxx.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {maxxImage}");
+            
+            if (expression == "maxxNeutral")
+            {
+                Debug.Log($"Maxx Neutral Sprite: {maxxNeutral}");
+                maxxImage.sprite = maxxNeutral;
+                maxxImage.SetNativeSize();
+            }
+            else if (expression == "maxxIntrigued")
+            {
+                Debug.Log($"Maxx Intrigued Sprite: {maxxIntrigued}");
+                maxxImage.sprite = maxxIntrigued;
+                maxxImage.SetNativeSize();
+            }
+            else if (expression == "maxxAnnoyed")
+            {
+                Debug.Log($"Maxx Annoyed Sprite: {maxxAnnoyed}");
+                maxxImage.sprite = maxxAnnoyed;
+                maxxImage.SetNativeSize();
+            }
+        }
+        else if (character == "Kaya")
+        {
+            Debug.Log($"Kaya GameObject: {Kaya}");
+            
+            Image kayaImage = Kaya.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {kayaImage}");
+            
+            if (expression == "kayaNeutral")
+            {
+                Debug.Log($"Kaya Neutral Sprite: {kayaNeutral}");
+                kayaImage.sprite = kayaNeutral;
+                kayaImage.SetNativeSize();
+            }
+            else if (expression == "kayaHappy")
+            {
+                Debug.Log($"Kaya Happy Sprite: {kayaHappy}");
+                kayaImage.sprite = kayaHappy;
+                kayaImage.SetNativeSize();
+            }
+            else if (expression == "kayaAnnoyed")
+            {
+                Debug.Log($"Kaya Annoyed Sprite: {kayaAnnoyed}");
+                kayaImage.sprite = kayaAnnoyed;
+                kayaImage.SetNativeSize();
             }
         }
     }
