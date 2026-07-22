@@ -1940,9 +1940,9 @@ MonoBehaviour:
   lunaShyHappy: {fileID: -2427487580877198553, guid: d9a92c5cbb533524c8ea879933f27d13, type: 3}
   lunaShyNeutral: {fileID: -4285538171116803512, guid: ae3ed13eb713b4b4aa71248c6b06d1bc, type: 3}
   lunaShy: {fileID: -8957327360862691225, guid: 3d363a571d40289479f0fc127bfac8aa, type: 3}
-  valNeutral: {fileID: 2800000, guid: 166bd5fd1dddba24fa86b6fa194e6ac1, type: 3}
-  valSerious: {fileID: 0}
-  valFlirty: {fileID: 0}
+  valNeutral: {fileID: -626016994845543117, guid: a19cb11890a3d75418d4e35c29a2752e, type: 3}
+  valSerious: {fileID: -7018569358158547895, guid: 5e5b6c619b96ab04a877f893ea75db29, type: 3}
+  valFlirty: {fileID: 8931884285673452393, guid: 2c4813fe264b6c54c84c4744ab70bdbe, type: 3}
   podNeutral: {fileID: 9004985149374680108, guid: 7e77e6b1a2fd2214eb2ba0e6718e7469, type: 3}
   podClosed: {fileID: 4544243647438601231, guid: d5c6e00c99be8e740913269b3cf0d394, type: 3}
   podAngry: {fileID: -6969882302047619831, guid: 9c7a201dd4a12324a8541fcfae352103, type: 3}
@@ -2139,7 +2139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1905511143
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2149,7 +2149,7 @@ RectTransform:
   m_GameObject: {fileID: 1905511142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1029314486}
@@ -2157,7 +2157,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 631, y: -50.878}
-  m_SizeDelta: {x: 523.7582, y: 904.9478}
+  m_SizeDelta: {x: 1131, y: 2037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1905511144
 MonoBehaviour:
@@ -2628,7 +2628,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -275, y: 450}
-  m_SizeDelta: {x: 1200, y: 2048}
+  m_SizeDelta: {x: 1031, y: 2036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2110554842
 Animator:
