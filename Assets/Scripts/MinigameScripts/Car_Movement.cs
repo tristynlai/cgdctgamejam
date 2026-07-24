@@ -5,12 +5,11 @@ using UnityEngine;
 public class Car_Movement : MonoBehaviour
 {
     public Transform transform;
-    public float Speed = 4f;
+    public static float Speed = 4f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
         //Speed = 4f;
          transform = GetComponent<Transform>();
-         StartCoroutine(IncreaseSpeed());
     }
 
     // Update is called once per frame
@@ -19,13 +18,6 @@ public class Car_Movement : MonoBehaviour
 
         if(transform.position.y < -6) {
             Destroy(gameObject);
-        }
-    }
-
-    IEnumerator IncreaseSpeed() {
-        while (true) {
-            yield return new WaitForSeconds(5);
-            Speed += 1f;
         }
     }
 }

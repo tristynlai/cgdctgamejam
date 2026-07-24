@@ -12,14 +12,32 @@ public class Player_Movement : MonoBehaviour
     public AudioClip Low, Medium, High;
     public AudioSource AudioSource;
 
-    public GameObject GameOverScreen;
+    private Vector3 StartPosition;
+    private Quaternion StartRotation;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
-        GameOverScreen.SetActive(false);
+
+        StartPosition = transform.position;
+        StartRotation = transform.rotation;
+        //GameOverScreen.SetActive(false);
     }
 
     // Update is called once per frame
     void Update() {
+        
+        if (Time.timeScale == 0f) {
+            AudioSource.Pause();
+            return;
+        } else {
+            if (AudioSource.clip != Medium) {
+                AudioSource.clip = Medium;
+            }
+            if (!AudioSource.isPlaying) {
+                AudioSource.Play();
+            }
+        }
+
         //player movement
         if(Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed) {
             transform.position += Vector3.right * Speed * Time.deltaTime;
@@ -33,27 +51,22 @@ public class Player_Movement : MonoBehaviour
 
         if(Keyboard.current.upArrowKey.isPressed || Keyboard.current.wKey.isPressed) {
             transform.position += Vector3.up * Speed * Time.deltaTime;
-            //AudioSource.pitch = 1.05f;
+            AudioSource.pitch = 1.05f;
         }
 
         if(Keyboard.current.downArrowKey.isPressed || Keyboard.current.sKey.isPressed) {
             transform.position += Vector3.down * Speed * Time.deltaTime;
-            //AudioSource.pitch = .95f;
+            AudioSource.pitch = .95f;
         }
 
         if(transform.rotation.z != 90) {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0,0,0), 10f * Time.deltaTime);
         }
 
-        /*
+        
         if (!(Keyboard.current.downArrowKey.isPressed || Keyboard.current.sKey.isPressed) && !(Keyboard.current.upArrowKey.isPressed || Keyboard.current.wKey.isPressed))
         {
             AudioSource.pitch = 1f;
-        }*/
-
-        if (AudioSource.clip != Medium){
-            AudioSource.clip = Medium;
-            //AudioSource.Play();
         }
 
         //screen bounds
@@ -68,8 +81,19 @@ public class Player_Movement : MonoBehaviour
         if (collision.gameObject.tag == "Cars")
         {
             Debug.Log("You hit the car smh");
-            Time.timeScale = 0f;
-            GameOverScreen.SetActive(true);
+            AudioSource.Stop();
+            Game_Controller.Instance.GameOver();
+        }
+    }
+
+    public void ResetPlayer() {
+        transform.position = StartPosition;
+        transform.rotation = StartRotation;
+        AudioSource.pitch = 1f;
+
+        if (AudioSource != null && !AudioSource.isPlaying){
+            AudioSource.clip = Medium;
+            AudioSource.Play();
         }
     }
 }
