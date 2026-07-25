@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: ab316805ed6b1437182b5275dec1b831
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6838961463801791825
+    second: BikerBabe9000Title_0
+  - first:
+      213: -919424181069820775
+    second: BikerBabe9000Title_1
+  - first:
+      213: -5478974198956480050
+    second: BikerBabe9000Title_2
+  - first:
+      213: -275128880973792012
+    second: BikerBabe9000Title_3
+  - first:
+      213: -44389990319802931
+    second: BikerBabe9000Title_4
+  - first:
+      213: 9130824020614889184
+    second: BikerBabe9000Title_5
+  - first:
+      213: 5885107543866882139
+    second: BikerBabe9000Title_6
+  - first:
+      213: -6993793580679244823
+    second: BikerBabe9000Title_7
+  - first:
+      213: 2109185937939082174
+    second: BikerBabe9000Title_8
+  - first:
+      213: 1931660552803570477
+    second: BikerBabe9000Title_9
+  - first:
+      213: 4116880718054960038
+    second: BikerBabe9000Title_10
+  - first:
+      213: 7900924246215069802
+    second: BikerBabe9000Title_11
+  - first:
+      213: -5354618586418616259
+    second: BikerBabe9000Title_12
+  - first:
+      213: 2095011509994978471
+    second: BikerBabe9000Title_13
+  - first:
+      213: 1686738035523372134
+    second: BikerBabe9000Title_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BikerBabe9000Title_0
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 255
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa328578c02711a0800000000000000
+      internalID: -6838961463801791825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_1
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 255
+        width: 111
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99ccd61249c8d33f0800000000000000
+      internalID: -919424181069820775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_2
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 255
+        width: 125
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec92ba1bef5c6f3b0800000000000000
+      internalID: -5478974198956480050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_3
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 255
+        width: 125
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fc3b1e8dbb8e2cf0800000000000000
+      internalID: -275128880973792012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_4
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 255
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc5b76bf98b426ff0800000000000000
+      internalID: -44389990319802931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_5
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 255
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eeba5fc11437be70800000000000000
+      internalID: 9130824020614889184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_6
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 255
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b583829612a1ca150800000000000000
+      internalID: 5885107543866882139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_7
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 255
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e3d4370bcd01fe90800000000000000
+      internalID: -6993793580679244823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_8
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 255
+        width: 125
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebbab148f65554d10800000000000000
+      internalID: 2109185937939082174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_9
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 112
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d23dd74d903aeca10800000000000000
+      internalID: 1931660552803570477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_10
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 112
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ab225e6339122930800000000000000
+      internalID: 4116880718054960038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_11
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 112
+        width: 125
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a609be4bdb8b5ad60800000000000000
+      internalID: 7900924246215069802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_12
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 112
+        width: 125
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3860d004c290b5b0800000000000000
+      internalID: -5354618586418616259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_13
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 171
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7acfa955ed9f21d10800000000000000
+      internalID: 2095011509994978471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BikerBabe9000Title_14
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 171
+        width: 60
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 664c28c7e4f786710800000000000000
+      internalID: 1686738035523372134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BikerBabe9000Title_0: -6838961463801791825
+      BikerBabe9000Title_1: -919424181069820775
+      BikerBabe9000Title_10: 4116880718054960038
+      BikerBabe9000Title_11: 7900924246215069802
+      BikerBabe9000Title_12: -5354618586418616259
+      BikerBabe9000Title_13: 2095011509994978471
+      BikerBabe9000Title_14: 1686738035523372134
+      BikerBabe9000Title_2: -5478974198956480050
+      BikerBabe9000Title_3: -275128880973792012
+      BikerBabe9000Title_4: -44389990319802931
+      BikerBabe9000Title_5: 9130824020614889184
+      BikerBabe9000Title_6: 5885107543866882139
+      BikerBabe9000Title_7: -6993793580679244823
+      BikerBabe9000Title_8: 2109185937939082174
+      BikerBabe9000Title_9: 1931660552803570477
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

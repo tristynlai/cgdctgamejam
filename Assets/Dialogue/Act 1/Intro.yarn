@@ -1,6 +1,7 @@
 ﻿title: Intro
 ---
 // Camera starts at the top of Frisscity (Meridian district) and pans down to the Understory asset.
+<<background SceneSampleEvents frissCity>>
 <<fadeIn SceneSampleEvents>>
 <<wait 2>>
 
@@ -9,7 +10,7 @@ They own Frisscity. They own us.
 And now, we're just trying to survive.
 
 <<enter SceneSampleEvents Luna>>
-<<show SceneSampleEvents Luna neutral>>
+<<show SceneSampleEvents Luna lunaNeutral>>
 //////////<<pose Luna on-cyberdeck>>
 //////////<<expression Luna neutral>>
 
@@ -158,12 +159,14 @@ Luna: (There's no end in sight to this conversation. I unleashed a gearhead beas
 
 title: Poor_Flirting
 ---
+<<show SceneSampleEvents Val valFlirty>>
 Val is beaming, which makes me blush as red as that damn belladonna apple.
 Val: That's so sweet. You're cute.
 Luna: (C-Cute!?)
 Luna: (Huge W…I think.)
 Val: But if you think that'll land you a discount at the corner store, then you'll need to try harder~
 Luna: (...Maybe not.)
+<<show SceneSampleEvents Val valNeutral>>
 // Return to the original question node in Val, but remove this question since the player completed it. 
 ===
 
@@ -179,14 +182,18 @@ Luna: (Is she hiding something…?)
     Luna: (Kinda sucks that our town's still tied to Frisscity's supply line, but. A business is a business, I guess.) 
     Val: What's on your mind?
     I hear Val's breath return to a regular tempo. Her eyes are locked on mine. Anything I noticed before has completely vanished.
+    <<show SceneSampleEvents Val valFlirty>>
     Val: Let me guess…you can't stop thinking about me~?
     Luna: N-No! Ugh, it's nothing. I-
+    <<show SceneSampleEvents Val valNeutral>>
 -> Press her
     <<set $goodend += 1>>
     Luna: But your shop's in Root Town. Why do you need to rely on Frisscity to stock your shop? 
     Luna: Or is that the 'secret?'
+    <<show SceneSampleEvents Val valSerious>>
     Val stiffens and the silence that washes over us is painful. 
     I gulp in the silence. Something's off.
+    <<show SceneSampleEvents Val valNeutral>>
     Then suddenly she's back to all smiles, like nothing ever happened. It makes me think if what I just experienced was even real.
     Val: You got me! My glass skin soda pop actually comes from a vendor here in the city. 
     Val: I know how divisive that probably sounds to you, but my regulars keep buying it. And when demand is high, well…you gotta feed into it.
@@ -207,7 +214,7 @@ Val: Catch you later when you're back on our side of the bridge?
 <<sfx SceneSampleEvents tires>>
 Before I can get a word in, she's gone.
 Luna: There she goes…
-Val is everything I want to be- independent, street smart, spunky. Good with her hands, too. //changed want to be colon to -
+Val is everything I want to be- independent, street smart, spunky. Good with her hands, too.
 Er…in the nicest, non-creepiest way possible.
 If it wasn't for my shitty situation, I'd be just like her.
 Or with her? Hm, or do I just wanna be her…?
@@ -234,6 +241,8 @@ Time to roll.
 title: TransporterPod
 ---
 <<wait 2>>
+// Show alleyway
+<<background SceneSampleEvents alleyway>>
 <<enter SceneSampleEvents Nubs>>
 // Show transporter pod asset
 <<show SceneSampleEvents Nubs podClosed>>
@@ -359,9 +368,10 @@ title: LilGuyReaction
 <<wait 2>>
 // If player chose to Kick it around, show:
 <<if visited("KickPod") == true>>
-    //////////<<place Luna Understoryleft>>
-    //////////<<pose Luna crossed-arms>>
-    //////////<<expression Luna neutral>>
+    //<<place Luna Understoryleft>>
+    //<<pose Luna crossed-arms>>
+    //<<expression Luna neutral>>
+    <<show SceneSampleEvents Luna lunaNeutralArms>>
     //<<place LilGuy Understoryright>>
     //<<expression LilGuy mad>>
     <<show SceneSampleEvents Nubs podAngry>>
@@ -376,9 +386,10 @@ title: LilGuyReaction
 <<endif>>
 //If else, show:
 <<if visited("KickPod") == false>>
-    //////////<<place Luna Understoryleft>>
-    //////////<<pose Luna crossed-arms>>
-    //////////<<expression Luna neutral>>
+    //<<place Luna Understoryleft>>
+    //<<pose Luna crossed-arms>>
+    //<<expression Luna neutral>>
+    <<show SceneSampleEvents Luna lunaNeutralArms>>
     //<<place LilGuy Understoryright>>
     //<<expression LilGuy pod neutral>>
     T.A.B: So, you eventually came to your senses and realized the cost of stealing the most prized intellectual property of the most powerful conglomerate in all of Area 415. You have my thanks.
@@ -545,6 +556,7 @@ Luna: (Might as well squeeze another job in before riding back home…)
         // SFX motorcycle tires
         <<sfx SceneSampleEvents tires>>
 <<exit SceneSampleEvents Luna>>
+<<exit SceneSampleEvents Nubs>>
 <<fadeOut SceneSampleEvents>>
 <<jump Questline>>
 // Questline dialogue is in the Questline.yarn tab
