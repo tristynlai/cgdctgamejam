@@ -63,7 +63,7 @@ public class SettingsMenuManager : MonoBehaviour
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    /*void Start()
     {
         CreditsContents.SetActive(false);
         SettingsContents.SetActive(true);
@@ -71,6 +71,19 @@ public class SettingsMenuManager : MonoBehaviour
         ShowSettingsContents();
 
         LoadSettings();
+    }*/
+
+    private void OnEnable()
+    {
+        LoadSettings();
+    }
+
+    private void Start()
+    {
+        if (CreditsContents != null && SettingsContents != null)
+        {
+            ShowSettingsContents();
+        }
     }
 
     public void ShowSettingsContents()
@@ -82,7 +95,7 @@ public class SettingsMenuManager : MonoBehaviour
         CreditsButton.GetComponent<Image>().sprite = CreditsUnselected;
     }
 
-    public void ShowCreditsContents()
+/*    public void ShowCreditsContents()
     {
         RevertUnsavedChanges();
         
@@ -91,6 +104,17 @@ public class SettingsMenuManager : MonoBehaviour
 
         SettingsButton.GetComponent<Image>().sprite = SettingsUnselected;
         CreditsButton.GetComponent<Image>().sprite = CreditsSelected;
+    }*/
+
+    public void ShowCreditsContents()
+    {
+        RevertUnsavedChanges();
+        
+        if (CreditsContents != null) CreditsContents.SetActive(true);
+        if (SettingsContents != null) SettingsContents.SetActive(false);
+
+        if (SettingsButton != null) SettingsButton.GetComponent<Image>().sprite = SettingsUnselected;
+        if (CreditsButton != null) CreditsButton.GetComponent<Image>().sprite = CreditsSelected;
     }
 
     public void TextSizeSmallPressed()
@@ -158,9 +182,16 @@ public class SettingsMenuManager : MonoBehaviour
     }
 
     //Volume
-    public void ChangeMasterVolume()
+
+    /*public void ChangeMasterVolume()
     {
         MainAudioMixer.SetFloat("MasterVolume", MasterVolumeSlider.value);
+    }*/
+
+    public void ChangeMasterVolume()
+    {
+        if (MasterVolumeSlider != null)
+            MainAudioMixer.SetFloat("MasterVolume", MasterVolumeSlider.value);
     }
 
     public void ChangeMusicVolume()
@@ -183,6 +214,20 @@ public class SettingsMenuManager : MonoBehaviour
     public void SaveSettings()
     {
         //Volume
+        if (MasterVolumeSlider != null) PlayerPrefs.SetFloat("MasterVolume", MasterVolumeSlider.value);
+        if (MusicVolumeSlider != null) PlayerPrefs.SetFloat("MusicVolume", MusicVolumeSlider.value);
+        if (SFXVolumeSlider != null) PlayerPrefs.SetFloat("SFXVolume", SFXVolumeSlider.value);
+
+        //Text Speed
+        PlayerPrefs.SetInt("TextSpeedIndex", TextSpeedIndex);
+
+        //Text Size
+        PlayerPrefs.SetInt("TextSizeIndex", TextSizeIndex);
+
+        PlayerPrefs.Save();
+        Debug.Log("Settings saved!");
+        /*
+        //Volume
         PlayerPrefs.SetFloat("MasterVolume", MasterVolumeSlider.value);
         PlayerPrefs.SetFloat("MusicVolume", MusicVolumeSlider.value);
         PlayerPrefs.SetFloat("SFXVolume", SFXVolumeSlider.value);
@@ -195,20 +240,39 @@ public class SettingsMenuManager : MonoBehaviour
         
         PlayerPrefs.Save();
 
-        Debug.Log("Settings saved!");
+        Debug.Log("Settings saved!");*/
 
     }
+
+
 
     public void LoadSettings()
     {
         //Volume
-        MasterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 0f);
+        if (MasterVolumeSlider != null)
+        {
+            MasterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 0f);
+            MainAudioMixer.SetFloat("MasterVolume", MasterVolumeSlider.value);
+        }
+
+        if (MusicVolumeSlider != null)
+        {
+            MusicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0f);
+            MainAudioMixer.SetFloat("MusicVolume", MusicVolumeSlider.value);
+        }
+
+        if (SFXVolumeSlider != null)
+        {
+            SFXVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0f);
+            MainAudioMixer.SetFloat("SFXVolume", SFXVolumeSlider.value);
+        }
+        /*MasterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 0f);
         MusicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0f);
         SFXVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0f);
 
         MainAudioMixer.SetFloat("MasterVolume", MasterVolumeSlider.value);
         MainAudioMixer.SetFloat("MusicVolume", MusicVolumeSlider.value);
-        MainAudioMixer.SetFloat("SFXVolume", SFXVolumeSlider.value);
+        MainAudioMixer.SetFloat("SFXVolume", SFXVolumeSlider.value);*/
 
         //Text Speed
         TextSpeedIndex = PlayerPrefs.GetInt("TextSpeedIndex", 0);

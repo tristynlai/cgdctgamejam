@@ -88,6 +88,8 @@ public class SceneSampleEvents : MonoBehaviour
     private Animator maxxAnimator;
     private Animator kayaAnimator;
 
+    //public GameObject cyberdeck;
+
     [SerializeField] internal YarnProject yarnProject;
     [SerializeField] internal bool narrativeOver = false;
     //[YarnNode(nameof(yarnProject))]
@@ -126,6 +128,7 @@ public class SceneSampleEvents : MonoBehaviour
         
         dialoguePaused = !dialoguePaused;
         lineAdvancer.enabled = !dialoguePaused;
+        //cyberdeck.SetActive(true);
     }
 
     [YarnCommand("fadeOut")]
