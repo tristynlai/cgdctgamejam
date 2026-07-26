@@ -31,4 +31,11 @@ public class Time_Manager : MonoBehaviour {
         }
         
     }
+
+    public void ResetTime() {
+        CurrentTime = 0f;
+        TimeText.text = "00:00";
+    }
+
+
 }

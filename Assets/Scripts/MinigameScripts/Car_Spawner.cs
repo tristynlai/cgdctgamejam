@@ -10,14 +10,25 @@ public class Car_Spawner : MonoBehaviour
     private int RandomInt;
     private int LastRandomInt;
 
+    public float Max_Speed = 10f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
         StartCoroutine(SpawnCars());
+        StartCoroutine(IncreaseSpeed());
+        Car_Movement.Speed = 4f;
     }
 
     // Update is called once per frame
     void Update() {
         
+    }
+
+    public void ResetSpawner() {
+        LockInCounter = 0;
+        StopAllCoroutines();
+        StartCoroutine(SpawnCars());
+        StartCoroutine(IncreaseSpeed());
     }
 
     void Cars() {
@@ -59,9 +70,7 @@ public class Car_Spawner : MonoBehaviour
         for (int i = 0; i < 5; i++) {
             if (RandomInt == LastRandomInt) {
                 RandomInt = Random.Range(0, 4);
-                print("Roll Again.");
             } else {
-                print("New Number");
                 break;
             }
         }
@@ -91,6 +100,16 @@ public class Car_Spawner : MonoBehaviour
                 Cars();
             }
 
+        }
+    }
+
+    IEnumerator IncreaseSpeed() {
+        while (true) {
+            yield return new WaitForSeconds(5);
+            if (Max_Speed > Car_Movement.Speed ) {
+                Car_Movement.Speed += 0.3f;
+            } 
+            print("Car Speed: " + Car_Movement.Speed);
         }
     }
 }
