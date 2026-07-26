@@ -11,5 +11,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenuScene.unity
     guid: ae2fb8c3af7b04ff1906c105bb178fe2
+  - enabled: 1
+    path: Assets/Scenes/IntroScene.unity
+    guid: c3dd317f15e0f4950b4869f3aedc9676
+  - enabled: 1
+    path: Assets/Scenes/Cyberdeck.unity
+    guid: 531ae98fdccb0485e8bffd3bddaede9f
+  - enabled: 1
+    path: Assets/Scenes/PhoneChat.unity
+    guid: 6d9e8b531acf94d42b2861431f5e3820
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
