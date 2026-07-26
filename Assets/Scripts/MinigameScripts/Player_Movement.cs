@@ -23,7 +23,6 @@ public class Player_Movement : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
-
         StartPosition = transform.position;
         StartRotation = transform.rotation;
         //GameOverScreen.SetActive(false);
@@ -56,8 +55,7 @@ public class Player_Movement : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0,0,47), RotationSpeed * Time.deltaTime);
         }
 
-        bool IsTurning = (Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed) ||
-                          (Keyboard.current.leftArrowKey.isPressed || Keyboard.current.aKey.isPressed);
+        bool IsTurning = (Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed) || (Keyboard.current.leftArrowKey.isPressed || Keyboard.current.aKey.isPressed);
 
         if (IsTurning && !WasTurning) {
             BikeSkid.Play();
@@ -79,8 +77,7 @@ public class Player_Movement : MonoBehaviour
         }
 
         
-        if (!(Keyboard.current.downArrowKey.isPressed || Keyboard.current.sKey.isPressed) && !(Keyboard.current.upArrowKey.isPressed || Keyboard.current.wKey.isPressed))
-        {
+        if (!(Keyboard.current.downArrowKey.isPressed || Keyboard.current.sKey.isPressed) && !(Keyboard.current.upArrowKey.isPressed || Keyboard.current.wKey.isPressed)) {
             TargetPitch = 1f;
         }
         AudioSource.pitch = Mathf.SmoothDamp(AudioSource.pitch, TargetPitch, ref PitchVelocity, PitchSmoothTime);
@@ -94,8 +91,7 @@ public class Player_Movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.tag == "Cars")
-        {
+        if (collision.gameObject.tag == "Cars") {
             Debug.Log("You hit the car smh");
             AudioSource.Stop();
             Game_Controller.Instance.GameOver();
