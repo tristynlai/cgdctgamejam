@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d70fc1bbe39074bd1a9016bc40a2e019
+guid: 00c9af72646b04f7399402ef8b37597c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1187696382121346395
-    second: draft_cg_lilguy_alleyway_0
+      213: 1411943815748376771
+    second: cg_lilguy_alleyway_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: draft_cg_lilguy_alleyway_0
+      name: cg_lilguy_alleyway_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5aaf3a2ee64748fe0800000000000000
-      internalID: -1187696382121346395
+      spriteID: 3c8dd7c6b6b389310800000000000000
+      internalID: 1411943815748376771
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      draft_cg_lilguy_alleyway_0: -1187696382121346395
+      cg_lilguy_alleyway_0: 1411943815748376771
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
