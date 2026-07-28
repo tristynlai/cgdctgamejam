@@ -109,8 +109,10 @@ public class SceneSampleEvents : MonoBehaviour
         kayaAnimator = Kaya.GetComponent<Animator>();
 
         PlayerPrefs.SetInt("LoadState", 1);
-        StartCoroutine(EventStarter());
+        //StartCoroutine(EventStarter());
         variableStorage = GameObject.FindAnyObjectByType<InMemoryVariableStorage>();
+        StartCoroutine(EventStarter());
+
         //DialogueRunner.AddCommandHandler<string>("enter", Enter);
     }
     

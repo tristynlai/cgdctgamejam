@@ -26,13 +26,13 @@ public class MainMenuManager : MonoBehaviour
          }
     }
 
-    /*
+
     public void StartGame()
     {
         PlayerPrefs.SetInt("LoadState", 0);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("IntroScene");
     }
-    */
+
 
     /*
     public void LoadGame()
