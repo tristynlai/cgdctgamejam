@@ -88,6 +88,8 @@ public class SceneSampleEvents : MonoBehaviour
     private Animator maxxAnimator;
     private Animator kayaAnimator;
 
+    //public GameObject cyberdeck;
+
     [SerializeField] internal YarnProject yarnProject;
     [SerializeField] internal bool narrativeOver = false;
     //[YarnNode(nameof(yarnProject))]
@@ -107,8 +109,10 @@ public class SceneSampleEvents : MonoBehaviour
         kayaAnimator = Kaya.GetComponent<Animator>();
 
         PlayerPrefs.SetInt("LoadState", 1);
-        StartCoroutine(EventStarter());
+        //StartCoroutine(EventStarter());
         variableStorage = GameObject.FindAnyObjectByType<InMemoryVariableStorage>();
+        StartCoroutine(EventStarter());
+
         //DialogueRunner.AddCommandHandler<string>("enter", Enter);
     }
     
@@ -126,6 +130,7 @@ public class SceneSampleEvents : MonoBehaviour
         
         dialoguePaused = !dialoguePaused;
         lineAdvancer.enabled = !dialoguePaused;
+        //cyberdeck.SetActive(true);
     }
 
     [YarnCommand("fadeOut")]

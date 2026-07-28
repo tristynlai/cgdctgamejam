@@ -19,8 +19,9 @@ public class LoadGameMenuManager : MonoBehaviour
 
     public void NewGame()
     {
+         Debug.Log("NewGame called - attempting to load IntroScene");
         PlayerPrefs.SetInt("LoadState", 0);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+         UnityEngine.SceneManagement.SceneManager.LoadScene("IntroScene");
     }
 
     public void LoadGame()
