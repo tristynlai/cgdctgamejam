@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5bc1ffbd0e4484995a8a6add6d2425c1
+guid: 6e8a518cceb2d415d9d84d7d502bf0ec
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 959806427178522838
-    second: char_lilguy_ears_angry_0
+      213: -2223282209473634256
+    second: char_nat_chibi_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char_lilguy_ears_angry_0
+      name: char_nat_chibi_0
       rect:
         serializedVersion: 2
-        x: 378
-        y: 625
-        width: 429
-        height: 962
+        x: 17
+        y: 32
+        width: 1162
+        height: 1162
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d8dc193cdae15d00800000000000000
-      internalID: 959806427178522838
+      spriteID: 030e0e42c905521e0800000000000000
+      internalID: -2223282209473634256
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      char_lilguy_ears_angry_0: 959806427178522838
+      char_nat_chibi_0: -2223282209473634256
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
