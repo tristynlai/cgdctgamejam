@@ -16,6 +16,8 @@ public class SceneSampleEvents : MonoBehaviour
     public GameObject Influencer;
     public GameObject Maxx;
     public GameObject Kaya;
+    public GameObject Nat;
+    public GameObject Cybergull;
 
     public GameObject Review;
 
@@ -26,13 +28,16 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite lunaNeutral;
     public Sprite lunaAnnoyed;
     public Sprite lunaHappy;
+    public Sprite lunaSurprised;
     public Sprite lunaAnnoyedArms;
     public Sprite lunaHappyArms;
     public Sprite lunaShyArms;
+    public Sprite lunaSurprisedArms;
     public Sprite lunaNeutralArms;
     public Sprite lunaShyAnnoyed;
     public Sprite lunaShyHappy;
     public Sprite lunaShyNeutral;
+    public Sprite lunaShySurprised;
     public Sprite lunaShy;
 
     public Sprite valNeutral;
@@ -61,6 +66,10 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite nubsAngry;
     public Sprite nubsAngryArms;
     public Sprite nubsAngryWave;
+    public Sprite nubsAngryEars;
+    public Sprite nubsNeutralEars;
+    public Sprite nubsHappyEars;
+    public Sprite nubsErrorEars;
 
     public Sprite influencerNeutral;
     public Sprite influencerHappy;
@@ -73,6 +82,14 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite kayaNeutral;
     public Sprite kayaHappy;
     public Sprite kayaAnnoyed;
+
+    public Sprite natNeutral;
+    public Sprite natCute;
+    public Sprite natScared;
+
+    public Sprite cybergullCog;
+    public Sprite cybergullCogless;
+    public Sprite cybergullFreed;
 
     public AudioSource notificationSource;
     public AudioSource junkyardSource;
@@ -87,6 +104,8 @@ public class SceneSampleEvents : MonoBehaviour
     private Animator reviewAnimator;
     private Animator maxxAnimator;
     private Animator kayaAnimator;
+    private Animator natAnimator;
+    private Animator cybergullAnimator;
 
     //public GameObject cyberdeck;
 
@@ -107,6 +126,8 @@ public class SceneSampleEvents : MonoBehaviour
         reviewAnimator = Review.GetComponent<Animator>();
         maxxAnimator = Maxx.GetComponent<Animator>();
         kayaAnimator = Kaya.GetComponent<Animator>();
+        natAnimator = Nat.GetComponent<Animator>();
+        cybergullAnimator = Cybergull.GetComponent<Animator>();
 
         PlayerPrefs.SetInt("LoadState", 1);
         //StartCoroutine(EventStarter());
@@ -253,6 +274,14 @@ public class SceneSampleEvents : MonoBehaviour
         {
             kayaAnimator.SetTrigger("FadeOut");
         }
+        else if (character == "Nat")
+        {
+            natAnimator.SetTrigger("FadeOut");
+        }
+        else if (character == "Cybergull")
+        {
+            cybergullAnimator.SetTrigger("FadeOut");
+        }
     }
 
     [YarnCommand("show")]
@@ -283,6 +312,24 @@ public class SceneSampleEvents : MonoBehaviour
             {
                 Debug.Log($"Happy Sprite: {lunaHappy}");
                 lunaImage.sprite = lunaHappy;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaSurprised")
+            {
+                Debug.Log($"Surprised Sprite: {lunaSurprised}");
+                lunaImage.sprite = lunaSurprised;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaSurprisedArms")
+            {
+                Debug.Log($"Surprised Arms Sprite: {lunaSurprisedArms}");
+                lunaImage.sprite = lunaSurprisedArms;
+                lunaImage.SetNativeSize();
+            }
+            else if (expression == "lunaShySurprised")
+            {
+                Debug.Log($"Shy Surprised Sprite: {lunaShySurprised}");
+                lunaImage.sprite = lunaShySurprised;
                 lunaImage.SetNativeSize();
             }
             else if (expression == "lunaAnnoyedArms")
@@ -503,6 +550,30 @@ public class SceneSampleEvents : MonoBehaviour
                 nubsImage.sprite = nubsAngryWave;
                 nubsImage.SetNativeSize();
             }
+            else if (expression == "nubsNeutralEars")
+            {
+                Debug.Log($"Nubs Neutral Ears Sprite: {nubsNeutralEars}");
+                nubsImage.sprite = nubsNeutralEars;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsHappyEars")
+            {
+                Debug.Log($"Nubs Happy Ears Sprite: {nubsHappyEars}");
+                nubsImage.sprite = nubsHappyEars;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsAngryEars")
+            {
+                Debug.Log($"Nubs Angry Ears Sprite: {nubsAngryEars}");
+                nubsImage.sprite = nubsAngryEars;
+                nubsImage.SetNativeSize();
+            }
+            else if (expression == "nubsErrorEars")
+            {
+                Debug.Log($"Nubs Error Ears Sprite: {nubsErrorEars}");
+                nubsImage.sprite = nubsErrorEars;
+                nubsImage.SetNativeSize();
+            }
         }
         else if (character == "Influencer")
         {
@@ -585,6 +656,62 @@ public class SceneSampleEvents : MonoBehaviour
                 kayaImage.SetNativeSize();
             }
         }
+        else if (character == "Nat")
+        {
+            Debug.Log($"Nat GameObject: {Nat}");
+            
+            Image natImage = Nat.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {natImage}");
+            
+            if (expression == "natNeutral")
+            {
+                Debug.Log($"Nat Neutral Sprite: {natNeutral}");
+                natImage.sprite = natNeutral;
+                natImage.SetNativeSize();
+            }
+            else if (expression == "natCute")
+            {
+                Debug.Log($"Nat Cute Sprite: {natCute}");
+                natImage.sprite = natCute;
+                natImage.SetNativeSize();
+            }
+            else if (expression == "natScared")
+            {
+                Debug.Log($"Nat Annoyed Sprite: {natScared}");
+                natImage.sprite = natScared;
+                natImage.SetNativeSize();
+            }
+            
+        }
+        else if (character == "Cybergull")
+        {
+            Debug.Log($"Cybergull GameObject: {Cybergull}");
+            
+            Image cybergullImage = Cybergull.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {cybergullImage}");
+            
+            if (expression == "cybergullCog")
+            {
+                Debug.Log($"Cybergull Cog Sprite: {cybergullCog}");
+                cybergullImage.sprite = cybergullCog;
+                cybergullImage.SetNativeSize();
+            }
+            else if (expression == "cybergullCogless")
+            {
+                Debug.Log($"Cybergull Cogless Sprite: {cybergullCogless}");
+                cybergullImage.sprite = cybergullCogless;
+                cybergullImage.SetNativeSize();
+            }
+            else if (expression == "cybergullFreed")
+            {
+                Debug.Log($"Cybergull Freed Sprite: {cybergullFreed}");
+                cybergullImage.sprite = cybergullFreed;
+                cybergullImage.SetNativeSize();
+            }
+        }
+        
     }
 
     [YarnCommand("sfx")]
