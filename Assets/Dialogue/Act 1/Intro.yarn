@@ -87,24 +87,32 @@ Nat: Of course! Just lmk if you need anything (.> ᴗ < ) <3
 
 title: Val
 ---
+<<enter SceneSampleEvents Luna>>
+<<show SceneSampleEvents Luna lunaNeutralArms>>
+<<fadeIn SceneSampleEvents>>
+Luna: The only thing I need is a big offer so I can get the hell home.
 // SFX motorcycle tires
 <<sfx SceneSampleEvents tires>>
+<<show SceneSampleEvents Luna lunaSurprisedArms>>
 I recognize those tires. And the baddie who rides on them.
 Luna: (Stay cool.)
 <<enter SceneSampleEvents Val>>
-Val: Luna! Finally, someone without a corporate T-shirt. Hopefully you've been making bank tonight?
-Luna: H-Hey, Val. Not yet. Still getting the low-tipping vegans and high-strung snobs. You know how it is.
-Val: I'm sure things will turn up! Everyone gets the late-night munchies.
-Luna: (God, she's amazing. She always knows what to say. Be still, my heart.)
+Val: Luna! Finally, someone without a corporate T-shirt. Have you been making bank today?
+<<show SceneSampleEvents Luna lunaShyArms>>
+Luna: H-Hey, Val. No, not yet. Still getting the low-tipping vegans and high-strung snobs. Y'know how it is.
+I hold my breath as Val walks over. She laughs and it's a bright, bubbly sound that goes straight to my heart while her hand goes straight to my head for a gentle pat.
+<<show SceneSampleEvents Val valFlirty>>
+Val: I'm sure things will turn up by nighttime. All the overworked techies get the late-night munchies.
+Luna: (God, she's amazing. She always knows what to say.)
 Luna: (But it's kinda weird to see Root Town's corner store queen on this side of town. And so late at night.) 
-Val parks her motorbike in first gear, its engine quietly humming off. It's almost like she knows I have something to ask her…
+<<show SceneSampleEvents Val valNeutral>>
+Val: Something on your mind?
 Luna: (BE. COOL.)
 <<jump ValChoices>>
 ===
 
 title: ValChoices
 ---
-Val: Something on your mind?
 -> Nice bike. How did you mod it? <<once>>
     <<detour Bike_Backstory>>
     <<jump ValChoices>>
@@ -112,6 +120,7 @@ Val: Something on your mind?
     <<detour Poor_Flirting>>
     <<jump ValChoices>>
 -> What are you doing here?
+    <<show SceneSampleEvents Val valFlirty>>
     She laughs and gives me a wink.
     Val: A Root Town stockist never reveals her business secrets~!
     <<jump PressingVal>>
