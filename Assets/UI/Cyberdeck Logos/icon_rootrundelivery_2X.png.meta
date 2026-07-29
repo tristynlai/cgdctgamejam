@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: eabe1791b14724d02b409469c422fbd0
+guid: ebf0b899cf479409bb13ab365e5ccff3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9111067078637902148
-    second: char_lilguy_ears_happy_0
+      213: 3243398581919291313
+    second: icon_rootrundelivery_2X_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char_lilguy_ears_happy_0
+      name: icon_rootrundelivery_2X_0
       rect:
         serializedVersion: 2
-        x: 383
-        y: 625
-        width: 424
-        height: 975
+        x: 0
+        y: 0
+        width: 138
+        height: 138
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb62805b3ccfe8180800000000000000
-      internalID: -9111067078637902148
+      spriteID: 1b71e4473ddd20d20800000000000000
+      internalID: 3243398581919291313
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      char_lilguy_ears_happy_0: -9111067078637902148
+      icon_rootrundelivery_2X_0: 3243398581919291313
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

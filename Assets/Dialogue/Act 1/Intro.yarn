@@ -1,18 +1,5 @@
 ﻿title: Intro
 ---
-// Camera starts at the top of Frisscity (Meridian district) and pans down to the Understory asset.
-<<background SceneSampleEvents frissCity>>
-<<fadeIn SceneSampleEvents>>
-<<wait 2>>
-
-AGENTS owns Area 415. 
-They own Frisscity. They own us.
-And now, we're just trying to survive.
-
-<<enter SceneSampleEvents Luna>>
-<<show SceneSampleEvents Luna lunaNeutral>>
-//////////<<pose Luna on-cyberdeck>>
-//////////<<expression Luna neutral>>
 
 Luna: Come on, you stupid SL0P app. Show me the big offers. 
 Luna: (Kaya is gonna kill me if I skip out on rent again. Just one big delivery gig should help me break even…)
