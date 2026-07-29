@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: beda2c9197b424437b35f3fc8538bd43
+guid: 4920e01fc521c4b409d16a56f74f9249
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4529742607129794570
-    second: bg_understoryalleyway 1_0
+      213: -3233133167715661553
+    second: char_cybergull_leader_cogless_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg_understoryalleyway 1_0
+      name: char_cybergull_leader_cogless_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 32
+        y: 31
+        width: 270
+        height: 223
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f7a312391f1321c0800000000000000
-      internalID: -4529742607129794570
+      spriteID: f0946ca838a9123d0800000000000000
+      internalID: -3233133167715661553
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bg_understoryalleyway 1_0: -4529742607129794570
+      char_cybergull_leader_cogless_0: -3233133167715661553
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
