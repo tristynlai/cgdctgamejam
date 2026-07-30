@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 635f890cdae2d3843b39be63b47b0ba7
+guid: 9d2d05e16d1a44631a9a2a3b7c58f86d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5912089624622532744
-    second: btn_exit_pressed_0
+      213: 7630937745540716363
+    second: btn_exit_onPressed_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,16 +96,29 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: btn_exit_pressed_0
+      name: btn_exit_onPressed_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 4
-        width: 358
+        x: 51
+        y: 37
+        width: 360
         height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88806e3a036fb0250800000000000000
-      internalID: 5912089624622532744
+      spriteID: b47131af27986e960800000000000000
+      internalID: 7630937745540716363
       vertices: []
       indices: 
       edges: []
@@ -125,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      btn_exit_pressed_0: 5912089624622532744
+      btn_exit_onPressed_0: 7630937745540716363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
