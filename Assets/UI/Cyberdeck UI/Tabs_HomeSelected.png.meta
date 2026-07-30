@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1442653a4430244fca13bcaa2f698087
+guid: 49b70acc07a1544e1b2b0bd527aea1ce
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5186815152045063761
-    second: Tabs_HomeSelected_0
+      213: 8130218103436578189
+    second: tabs_home_selected_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tabs_HomeSelected_0
+      name: tabs_home_selected_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1164
-        height: 86
+        width: 582
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 15e724d56e44bf740800000000000000
-      internalID: 5186815152045063761
+      spriteID: d8d89c11a4654d070800000000000000
+      internalID: 8130218103436578189
       vertices: []
       indices: 
       edges: []
@@ -151,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tabs_HomeSelected_0: 5186815152045063761
+      tabs_home_selected_0: 8130218103436578189
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
