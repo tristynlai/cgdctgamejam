@@ -9,16 +9,46 @@ public class VideoToDialogue : MonoBehaviour
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private DialogueRunner dialogueRunner;
     
-    [Header("Fade Aspects")]
+    [Header("Environment")]
+    [SerializeField] private GameObject gameEnvironment; 
+
+    [Header("Fade Function")]
     [SerializeField] private CanvasGroup fadeOverlay;
-    [SerializeField] private float fadeOutDuration = 1f;
-    [SerializeField] private float fadeInDuration = 2.5f;
+    [SerializeField] private float fadeOutDuration = 1f; 
+    [SerializeField] private float fadeInDuration = 2.5f; 
 
     [Header("UI Elements")]
     [SerializeField] private GameObject dialogueUI; 
 
     [Header("Dialogue Node")]
     [SerializeField] private string startingNode = "Intro";
+
+    private void Start()
+    {
+        if (fadeOverlay != null)
+        {
+            fadeOverlay.alpha = 1f; 
+        }
+
+        if (videoPlayer != null)
+        {
+            videoPlayer.Play();
+            StartCoroutine(WaitForVideoToStart());
+        }
+    }
+
+    private IEnumerator WaitForVideoToStart()
+    {
+        while (videoPlayer != null && !videoPlayer.isPlaying)
+        {
+            yield return null;
+        }
+
+        if (fadeOverlay != null)
+        {
+            StartCoroutine(Fade(1f, 0f, fadeOutDuration)); 
+        }
+    }
 
     private void OnEnable()
     {
@@ -48,6 +78,11 @@ public class VideoToDialogue : MonoBehaviour
         if (videoPlayer != null)
         {
             videoPlayer.gameObject.SetActive(false); 
+        }
+        
+        if (gameEnvironment != null)
+        {
+            gameEnvironment.SetActive(true); 
         }
 
         yield return StartCoroutine(Fade(1f, 0f, fadeInDuration));

@@ -145,13 +145,20 @@ public class SceneSampleEvents : MonoBehaviour
         Debug.Log("Narrative over!");
     }
 
-    public void ToggleDialoguePause()
+    public void SetDialoguePause(bool isPaused)
     {
-        Debug.Log("ToggleDialoguePause CALLED");
+        Debug.Log("Forcing Dialogue Pause State to: " + isPaused);
+        dialoguePaused = isPaused;
         
-        dialoguePaused = !dialoguePaused;
-        lineAdvancer.enabled = !dialoguePaused;
-        //cyberdeck.SetActive(true);
+        if (lineAdvancer != null)
+        {
+            lineAdvancer.enabled = !dialoguePaused;
+
+            if (!isPaused)
+            {
+                lineAdvancer.RequestNextLine();
+            }
+        }
     }
 
     [YarnCommand("fadeOut")]
