@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 81ea69bed4a574e34a73039becf28992
+guid: 5823a3b1ac4c443e9b7ad8048daaa6a0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4665018125022751960
-    second: HistoryButton_Default_0
+      213: 6282611396590301971
+    second: btn_exit_onHover_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 150
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HistoryButton_Default_0
+      name: btn_exit_onHover_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 232
-        height: 113
+        x: 25
+        y: 33
+        width: 384
+        height: 114
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8dc6db4b4497db040800000000000000
-      internalID: 4665018125022751960
+      spriteID: 313f59b47c1503750800000000000000
+      internalID: 6282611396590301971
       vertices: []
       indices: 
       edges: []
@@ -151,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HistoryButton_Default_0: 4665018125022751960
+      btn_exit_onHover_0: 6282611396590301971
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
