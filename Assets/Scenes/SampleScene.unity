@@ -177,7 +177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1277866567730687615, guid: b9a83d94280cf4da8a8bae4931b4bab8, type: 3}
+  m_Sprite: {fileID: -6560981123314358429, guid: 2e597b44ef27045989e7c49d535fd55c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1164,7 +1164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 631, y: -50.878}
+  m_AnchoredPosition: {x: 631, y: -50.87805}
   m_SizeDelta: {x: 1031, y: 2036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512607592
@@ -2544,9 +2544,9 @@ MonoBehaviour:
   natNeutral: {fileID: -3827035281743654988, guid: eab426be2a60a4c54b4400b09dca5fd9, type: 3}
   natCute: {fileID: 6279107307825703924, guid: 57ed7008d189443409fe0d44a6a0dd64, type: 3}
   natScared: {fileID: -3982113179949459859, guid: 20a73f8aeefdf4d09b96a6d2051ac5aa, type: 3}
-  cybergullCog: {fileID: -1277866567730687615, guid: b9a83d94280cf4da8a8bae4931b4bab8, type: 3}
-  cybergullCogless: {fileID: -3233133167715661553, guid: 4920e01fc521c4b409d16a56f74f9249, type: 3}
-  cybergullFreed: {fileID: -8019378665130733049, guid: 4ba46ff37cd7d4647b473e686d29901e, type: 3}
+  cybergullCog: {fileID: -6560981123314358429, guid: 2e597b44ef27045989e7c49d535fd55c, type: 3}
+  cybergullCogless: {fileID: 8885266363115407543, guid: 8e5be04a5c445474296c0ee16b7fe84b, type: 3}
+  cybergullFreed: {fileID: 8885266363115407543, guid: 8e5be04a5c445474296c0ee16b7fe84b, type: 3}
   notificationSource: {fileID: 1981392157}
   junkyardSource: {fileID: 461320879}
   notificationSound: {fileID: 8300000, guid: d4a92af5bacd04bf09b5d7fa9e3da19e, type: 3}
