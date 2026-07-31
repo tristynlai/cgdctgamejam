@@ -1,20 +1,29 @@
-title: Rent
+title: CyberdeckTutorialPhone
 ---
-<<wait 0.10>>
-// A is Kaya (@KAYATOAST) and B is Luna (@LUNETTE), the player
-B: helllooooo! rent is due tomorrow. don’t forget!
--> A: waiting for one last big order. then i’ll pay up!
-    <<set $goodend += 1>>
-    B: phew, thanks…that’s great to hear! and that's a good strategy.
--> A: how much is rent again?
-    B: smh
-    B: it’s 1,500 baecoins…and don’t forget this time!
--> A: buzz off or i might get into an accident
-    <<set $badend += 1>>
-    A: i can’t be found texting and driving
-    B: WOW, you’re one to talk about rules!!
-    B: you don’t even wear a helmet
-    B: look, i just need you to come thru this time.
-B: i need your share by tomorrow morning 
-B: or our landlord might really kick us out this time!
+<<set_view chat>>
+<<wait 0.5>>
+
+Nat: Hey-yo! How’s your night going? ( ˶ˆᗜˆ˵ )
+Luna: like slop. as usual. 
+Nat: Ooo, bummer. Well I wanted to ask how you’re liking the cyberdeck I made ya?
+Luna: i’m typing rn, aren’t i?
+Nat: I know! But have you used any of the other features?
+Luna: …
+Nat: How about I show you around the NATIO 3000?
+Nat: Get it? 
+Nat: The NAT-io~? =w=
+Luna: cute…
+Nat: You’re currently on the message screen! Click on the tabs to sort through all the messages you get. Like spam, news, and super-important messages from me ;)
+Nat: Your settings are also in the cyberdeck in case you wanna fine-tune things like sound volume or message speed!
+Nat: You can also quit the game using the Settings tab on your cyberdeck.
+Nat: I also programmed a super cute mini game just for you! Play it whenever you want. 
+Nat: Lemme know when you get a new high score, k~?
+Nat: The History button also lets you peep at previous conversations you had with others. (Or yourself.) 
+Nat: And when you’re done tinkering around, just press the Exit button! You can return to the cyberdeck by clicking on the NATIO 3000 logo in the game.
+Nat: Did that make sense? 
+Luna: yeah, thx. can i go back to work now?
+Nat: Of course! Just let me know if you need anything (。˃ ᴗ ˂ )⸝<3
+
+<<set_view main>>
+<<set_cyberdeck_state 0>>
 ===
