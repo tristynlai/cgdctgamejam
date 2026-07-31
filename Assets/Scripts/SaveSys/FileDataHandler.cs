@@ -9,7 +9,7 @@ public class FileDataHandler : MonoBehaviour
     private string DataFileName = "";
 
     private bool UseEncryption = false;
-    private readonly string EncrptionCodeWord = "Ghastly4EvaThatsMe^.^";
+    private readonly string EncryptionCodeWord = "Ghastly4EvaThatsMe^.^";
 
     public FileDataHandler(string DataDirPath, string DataFileName, bool UseEncryption) {
         this.DataDirPath = DataDirPath;
@@ -66,7 +66,7 @@ public class FileDataHandler : MonoBehaviour
         }
     }
 
-    private stringEncryptDecrypt(string data) {
+    private string EncryptDecrypt(string data) {
         string ModifiedData = "";
         for (int i = 0; i < data.Length; i++) {
             ModifiedData +=(char) (data[i] ^ EncryptionCodeWord[i % EncryptionCodeWord.Length]);

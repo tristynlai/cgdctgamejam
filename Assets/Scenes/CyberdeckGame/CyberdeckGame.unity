@@ -3110,7 +3110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c9453d00ee468d499c78d8cf3a34b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DataPersistentManager
-  FileName: ss1.save
+  FileName: ss1.sav
+  UseEncryption: 1
 --- !u!4 &1324458170
 Transform:
   m_ObjectHideFlags: 0
