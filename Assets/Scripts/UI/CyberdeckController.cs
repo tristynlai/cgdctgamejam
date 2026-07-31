@@ -1,26 +1,19 @@
 using UnityEngine;
-using Yarn.Unity;
 
 public class CyberdeckController : MonoBehaviour
 {
     public GameObject[] topBarTabs;
     public GameObject[] pageTabs;
-    
-    [Header("Narrative States")]
-    public GameObject[] homeStates;
-    
-    public GameObject[] messageStates;
-
-    [Header("UI Indicators")]
-    public GameObject messagesNotificationDot;
-
-    [Header("References")]
-    [SerializeField] private GameObject cyberdeckParentCanvas;
-    private DialogueRunner? dialogueRunner;
-
-    private void Awake()
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        dialogueRunner = DialogueRunner.FindRunner(this);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
     public void selectTab(int index)
@@ -29,47 +22,6 @@ public class CyberdeckController : MonoBehaviour
         {
             topBarTabs[i].SetActive(i == index);
             pageTabs[i].SetActive(i == index);
-        }
-        
-        if (index == 1 && messagesNotificationDot != null)
-        {
-            messagesNotificationDot.SetActive(false);
-        }
-    }
-
-    public void SetCyberdeckState(int stateIndex)
-    {
-        for (int i = 0; i < homeStates.Length; i++)
-        {
-            if (homeStates[i] != null) homeStates[i].SetActive(i == stateIndex);
-        }
-
-        for (int i = 0; i < messageStates.Length; i++)
-        {
-            if (messageStates[i] != null) messageStates[i].SetActive(i == stateIndex);
-        }
-
-        if (messagesNotificationDot != null)
-        {
-            messagesNotificationDot.SetActive(true);
-        }
-    }
-
-    public void ExitCyberdeck()
-    {
-        if (cyberdeckParentCanvas != null)
-        {
-            cyberdeckParentCanvas.SetActive(false);
-        }
-        else
-        {
-            gameObject.SetActive(false);
-        }
-
-        var advancer = FindFirstObjectByType<LineAdvancer>();
-        if (advancer != null)
-        {
-            advancer.RequestNextLine();
         }
     }
 }
