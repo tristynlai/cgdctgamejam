@@ -245,8 +245,27 @@ public class SceneSampleEvents : MonoBehaviour
             {
                 kayaAnimator.SetTrigger("FadeIn");
             }
-        }
-        
+        } else if (character == "Nat")
+        {
+            if (Nat.activeSelf == false)
+            {
+                Nat.SetActive(true);
+            }
+            else
+            {
+                natAnimator.SetTrigger("FadeIn");
+            }
+        } else if (character == "Cybergull")
+        {
+            if (Cybergull.activeSelf == false)
+            {
+                Cybergull.SetActive(true);
+            }
+            else
+            {
+                cybergullAnimator.SetTrigger("FadeIn");
+            }
+        }  
     }
 
     [YarnCommand("exit")]
@@ -685,7 +704,7 @@ public class SceneSampleEvents : MonoBehaviour
             }
             else if (expression == "natScared")
             {
-                Debug.Log($"Nat Annoyed Sprite: {natScared}");
+                Debug.Log($"Nat Scared Sprite: {natScared}");
                 natImage.sprite = natScared;
                 natImage.SetNativeSize();
             }
