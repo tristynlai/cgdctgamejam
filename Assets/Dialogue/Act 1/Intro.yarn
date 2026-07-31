@@ -57,8 +57,10 @@ title: CyberdeckTutorial
 <<sfx SceneSampleEvents notification>>
 <<show_notification 1>>
 Luna: Now what?
+//<<jump Val>>
+<<jump Tutorial_Phone_Chat>>
 ////////////////// End focused tutorial. Automatically return the player to the “Home” folder on the cyberdeck, where they can see new messages to interact with, which are found in CyberdeckSidquests.yarn. Once the player has returned to the “Home” folder on the cyberdeck, allow the player to click on anything. When the player exits the cyberdeck and clicks Continue, jump them to the Val node. 
-<<jump Val>>
+// <<jump Val>>
 ===
 
 

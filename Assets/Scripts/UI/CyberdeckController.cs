@@ -1,4 +1,5 @@
 using UnityEngine;
+using Yarn.Unity;
 
 public class CyberdeckController : MonoBehaviour
 {
@@ -12,6 +13,15 @@ public class CyberdeckController : MonoBehaviour
 
     [Header("UI Indicators")]
     public GameObject messagesNotificationDot;
+
+    [Header("References")]
+    [SerializeField] private GameObject cyberdeckParentCanvas;
+    private DialogueRunner? dialogueRunner;
+
+    private void Awake()
+    {
+        dialogueRunner = DialogueRunner.FindRunner(this);
+    }
 
     public void selectTab(int index)
     {
@@ -42,6 +52,24 @@ public class CyberdeckController : MonoBehaviour
         if (messagesNotificationDot != null)
         {
             messagesNotificationDot.SetActive(true);
+        }
+    }
+
+    public void ExitCyberdeck()
+    {
+        if (cyberdeckParentCanvas != null)
+        {
+            cyberdeckParentCanvas.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+
+        var advancer = FindFirstObjectByType<LineAdvancer>();
+        if (advancer != null)
+        {
+            advancer.RequestNextLine();
         }
     }
 }
