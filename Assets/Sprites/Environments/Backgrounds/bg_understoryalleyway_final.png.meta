@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f381d6d2f73304a30bfd630b92dada0d
+guid: beda2c9197b424437b35f3fc8538bd43
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6291666326070941206
-    second: bg_understoryalleyway_cybergull_placement1_0
+      213: -4529742607129794570
+    second: bg_understoryalleyway 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,11 +96,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg_understoryalleyway_cybergull_placement1_0
+      name: bg_understoryalleyway 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ae92145afc28fa8a0800000000000000
-      internalID: -6291666326070941206
+      spriteID: 6f7a312391f1321c0800000000000000
+      internalID: -4529742607129794570
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bg_understoryalleyway_cybergull_placement1_0: -6291666326070941206
+      bg_understoryalleyway 1_0: -4529742607129794570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
