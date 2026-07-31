@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 49b70acc07a1544e1b2b0bd527aea1ce
+guid: 222fecf3ea3684722a7fdfc602136980
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8130218103436578189
-    second: tabs_home_selected_0
+      213: 4815578654012682183
+    second: btn_cyberdeeck_asobi_default_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,10 +48,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tabs_home_selected_0
+      name: btn_cyberdeeck_asobi_default_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 582
-        height: 43
+        width: 1480
+        height: 230
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d8d89c11a4654d070800000000000000
-      internalID: 8130218103436578189
+      spriteID: 7cf2164954f54d240800000000000000
+      internalID: 4815578654012682183
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tabs_home_selected_0: 8130218103436578189
+      btn_cyberdeeck_asobi_default_0: 4815578654012682183
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
