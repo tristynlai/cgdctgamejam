@@ -133,7 +133,7 @@ Luna: (I've unleashed a gearhead beast. There's no end to this conversation.)
     // Return to the original question node in Val, but remove this question since the player completed it. 
 ->  Cut it short.
     <<show SceneSampleEvents Luna lunaNeutralArms>>
-    <<show SceneSampleEvents Val valneutral>>
+    <<show SceneSampleEvents Val valNeutral>>
     Luna: I'll hit you up the next time I wanna upgrade my bike. Y'know. For dumb deliveries.
     Val: O-Oh. Of course.
     // Return to the original question node in Val, but remove this question since the player completed it. 
@@ -231,6 +231,84 @@ Luna: Time to roll.
 <<wait 2>>
 // SFX motorcycle tires
 <<sfx SceneSampleEvents tires>>
+<<jump Alleyway>>
+===
+
+
+title: Alleyway
+---
+///////////////// Play Frisscity calm music track
+///////////////// Show alleyway environment art
+<<background SceneSampleEvents alleyway>>
+<<fadeIn SceneSampleEvents>>
+<<wait 2>>
+<<enter SceneSampleEvents Luna>>
+<<show SceneSampleEvents Luna lunaNeutralArms>>
+Luna: This is…suss.
+The pickup location is in a cramped alleyway. The place reeks of expired seafood scraps and junkyard scrap.
+////////////////// SFX of gull noise, short version
+<<show SceneSampleEvents Luna lunaSurprisedArms>>
+Luna: What the…?!
+////////////////// Enter Cybergull Leader sprite, with cog on
+<<enter SceneSampleEvents Cybergull>>
+<<show SceneSampleEvents Cybergull cybergullCog>>
+<<show SceneSampleEvents Luna lunaNeutralArms>>
+It's a cybergull, the result of chemical runoff mixed with all the shiny stuff they've swallowed—and evolved from. 
+The creature grunts as he tries to free himself from an object that's bound to his neck.
+Luna: (It must be so heavy that he can't even fly. Which is a shame, 'cause the look kinda fits him…)
+<<show SceneSampleEvents Luna lunaSurprisedArms>>
+A shiny cog glimmers back at me. It looks like it'd fit one lucky engine.
+// If player completed the Poor_Flirting node, then show the below
+<<if visited("Poor_Flirting") == true>>
+Luna: (Shiny. Powerful. Expensive-looking. This could be the flux ring Val was talking about.)
+Luna: (If I can get this thing for her, she'll give me something REAL nice…)
+<<endif>>
+<<if visited("Poor_Flirting") == false>>
+// If else, show:
+Luna: (Looks expensive—and like a real part I could use to upgrade my shitty bike! Maybe Val can help me…)
+<<endif>>  
+<<jump Cybergull>>
+===
+
+
+title: Cybergull
+---
+<<declare $withCog = true>>
+////////////////// SFX of gull noise, short version
+The cybergull's wings flap furiously as he screeches, almost like a warning.
+Luna: (But damn, this guy is a TANK! And FERAL! Do I risk it?)
+
+-> Help the cybergull
+    <<set $goodend += 1>>
+    <<set $withCog = false>>
+    <<show SceneSampleEvents Luna lunaNeutral>>
+    Luna: If you bite me, you die. 
+    There's a glint through the gull's glasses, and I can feel his scarred eye tracking me as I tip-toe towards him.
+    Luna: Nice…mutant…seagull…thing…
+    I squat down to his level and reach my arm out to grab the gear.
+    ////////////////// SFX of gull noise, short version
+    <<show SceneSampleEvents Luna lunaSurprised>>
+    The cybergull instinctively recoils, his webbed feet digging into the handle of his extremely shiny knife.
+    <<show SceneSampleEvents Luna lunaNeutral>>
+    Luna: B-Bro! I don't have all day. Do you wanna become roadkill or not?!
+    He puffs his chest before he reluctantly holds still. I manage to wriggle the piece off his beefy neck.
+    <<show SceneSampleEvents Cybergull cybergullFreed>>
+    ////////////////// Show Cybergull Leader sprite, now freed
+    The gull ruffles his feathers to collect himself. Then, he stares into my soul. 
+    <<show SceneSampleEvents Luna lunaSurprised>>
+    Is he…aura farming?
+    <<exit SceneSampleEvents Cybergull>>
+    But then, he flies away.
+    <<show SceneSampleEvents Luna lunaNeutralArms>>
+    Luna: You're welcome.
+    I tuck the flux ring away for safe-keeping.
+-> Don't help the cybergull
+    <<set $badend += 1>>
+    <<show SceneSampleEvents Luna lunaNeutralArms>>
+    Luna: I can't risk getting rabies, or whatever chemical disease you have.
+    The cybergull scowls as I walk past him and look around to see what package I need to pick up around this disgusting trashpile. 
+    A grudge brews from beyond the gull's glasses. 
+<<fadeOut SceneSampleEvents>>
 <<jump TransporterPod>>
 ===
 
@@ -245,15 +323,10 @@ title: TransporterPod
 <<show SceneSampleEvents Nubs podClosed>>
 <<fadeIn SceneSampleEvents>>
 <<wait 2>>
-
-<<enter SceneSampleEvents Luna>>
-Luna: This is…suss.
-The pickup location led me into a cramped alleyway. The place reeks of expired seafood scraps and junkyard scrap.
-I notice a transporter pod branded with an AGENTS logo sitting by a dumpster. It's an odd place to leave something so brand-spanking new.
-////////////////// SFX of something stirring within a metal transporter pod, mixed with alien goober noises
-//////////////////<<expression Luna shocked>>
-The pod shakes and rolls back and forth on the rubble. Food deliveries don't usually involve grub that's alive.
-I hear a distressed noise bellow from within.
+<<show SceneSampleEvents Luna lunaNeutralArms>>
+I finally notice a transporter pod branded with the AGENTS logo sitting by the dumpster. It's an odd place to leave something so brand-spanking new.
+<<show SceneSampleEvents Luna lunaSurprised>>
+The pod rattles on the rubble. Usually, food deliveries don't involve LIVING CREATURES!
 
 -> Pick it up and put it on your motorcycle
     Luna: (I mean, I can't just unlock it. That's against the SL0P protocol.)
