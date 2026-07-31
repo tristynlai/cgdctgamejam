@@ -11,8 +11,16 @@ Vector2 startPos;
         startPos = rt.anchoredPosition;
     }
 
-    void Update()
+void Update()
     {
+        Vector2 pos = rt.anchoredPosition;
+        pos.x += 10f * Time.deltaTime;
 
+        if (pos.x >= startPos.x + 1920f)
+        {
+            pos.x -= 1920f;
+        }
+
+        rt.anchoredPosition = pos;
     }
 }
