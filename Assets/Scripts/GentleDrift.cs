@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GentleDrift : MonoBehaviour
 {
-
+    public float speed = 10f; 
   RectTransform rt;
 Vector2 startPos;
     void Start()

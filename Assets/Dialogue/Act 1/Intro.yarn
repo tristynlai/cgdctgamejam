@@ -66,6 +66,7 @@ Luna: Now what?
 
 title: Val
 ---
+<<background SceneSampleEvents frissCity>>
 <<enter SceneSampleEvents Luna>>
 <<show SceneSampleEvents Luna lunaNeutralArms>>
 <<fadeIn SceneSampleEvents>>
@@ -108,26 +109,33 @@ title: ValChoices
 
 title: Bike_Backstory
 ---
-Val's eyes grow wide. I activated something within her.
-Val: I reinforced the frame with carbon weave and mag-alloy ribs after I cracked my first prototype trying to jump a crumbling overpass.
-Val: Then, I swapped the suspension for adaptive grav forks. 
-Val: You know how factory models are made for smooth highways, right? B-o-r-i-n-g! 
-Val: But where we live, we need to handle abandoned traincars, vines, and everything in between.
-Luna: (There's no end in sight to this conversation. I unleashed a gearhead beast.)
+<<show SceneSampleEvents Val valFlirty>>
+Val: So, you know how factory models are made for smooth highways, right? B-o-r-i-n-g!
+<<show SceneSampleEvents Val valNeutral>>
+Val: That's why I reinforced the frame with carbon weave and mag-alloy ribs. Because where we live in Root Town, we need to handle abandoned traincars, vines, and everything in between.
+<<show SceneSampleEvents Val valFlirty>>
+Val: I cracked my first prototype trying to jump a crumbling overpass!
+Luna: (I've unleashed a gearhead beast. There's no end to this conversation.)
+
 
 ->  Let her continue.
     <<set $goodend += 1>>
-    Val: The engine's got a custom plasma injector, dual cooling loops, and a torque map I wrote myself. 
+    Val: The engine's got a custom plasma injector, dual cooling loops, and a torque map I programmed myself.
+    <<show SceneSampleEvents Val valNeutral>>
     Val: Transmission shifts before I even think about it. And the drivetrain is pieced together from three junkyards, one estate auction, and a favor I still owe.
-    Val: But the electrical's my favorite part. Every sensor, every light…I wired those by hand. The original harness was one pothole away from becoming fireworks.
+    <<show SceneSampleEvents Val valFlirty>>
+    Val: But the electrical's my favorite part. Every sensor, every light…I wired those by hand. The original harness was one pothole away from becoming fireworks!
+    <<show SceneSampleEvents Val valNeutral>>
     Val: See, that's the thing. Corporate bikes are built to last until the warranty expires.
-    Val: But mine's built to survive.She'll outrun anything that's fresh off the showroom floor.
-    She rambles on for ten more minutes about the topic. And I love every second of it.
+    <<show SceneSampleEvents Val valFlirty>>
+    Val: But mine's built to survive. She'll outrun anything that's fresh off the showroom floor!
+    She rambles on for ten more minutes about her motorbike. And I love every second of it.
     // Return to the original question node in Val, but remove this question since the player completed it. 
 ->  Cut it short.
+    <<show SceneSampleEvents Luna lunaNeutralArms>>
+    <<show SceneSampleEvents Val valNeutral>>
     Luna: I'll hit you up the next time I wanna upgrade my bike. Y'know. For dumb deliveries.
     Val: O-Oh. Of course.
-    Val: What did you need again?
     // Return to the original question node in Val, but remove this question since the player completed it. 
 ===
 
@@ -135,12 +143,19 @@ Luna: (There's no end in sight to this conversation. I unleashed a gearhead beas
 title: Poor_Flirting
 ---
 <<show SceneSampleEvents Val valFlirty>>
-Val is beaming, which makes me blush as red as that damn belladonna apple.
-Val: That's so sweet. You're cute.
+<<show SceneSampleEvents Luna lunaShy>>
+Val is beaming, which makes me blush redder than that damn belladonna apple.
+Val: That's so sweet! You're cute.
 Luna: (C-Cute!?)
-Luna: (Huge W…I think.)
-Val: But if you think that'll land you a discount at the corner store, then you'll need to try harder~
-Luna: (...Maybe not.)
+Val: But if you think that'll land you a discount at the shop, then you'll need to try harder~
+<<show SceneSampleEvents Luna lunaShyArms>>
+Luna: L-Like what?
+<<show SceneSampleEvents Val valNeutral>>
+Val: Like getting your hands on a flux ring. They're the first thing to get swiped off a new bike because it's so expensive—and so shiny to the city creatures.
+Val: If you get one, I can hook you up with something.
+<<show SceneSampleEvents Val valFlirty>>
+Val: Something REAL nice~
+Luna: !!!
 <<show SceneSampleEvents Val valNeutral>>
 // Return to the original question node in Val, but remove this question since the player completed it. 
 ===
@@ -153,54 +168,61 @@ Luna: (Is she hiding something…?)
 
 -> Ignore it
     <<set $badend += 1>>
-    Luna: (It's probably nothing. She's probably just picking up items to take back to her shop.)
-    Luna: (Kinda sucks that our town's still tied to Frisscity's supply line, but. A business is a business, I guess.) 
-    Val: What's on your mind?
-    I hear Val's breath return to a regular tempo. Her eyes are locked on mine. Anything I noticed before has completely vanished.
+    Luna: (It's nothing. She's probably picking up items to take back to her shop.)
+    Luna: (Kinda sucks that our town still depends on Frisscity for supplies. But a business is a business, I guess.)
+    Val: You're so lost in thought that I'm feeling left out. Let me guess…    
     <<show SceneSampleEvents Val valFlirty>>
-    Val: Let me guess…you can't stop thinking about me~?
-    Luna: N-No! Ugh, it's nothing. I-
-    <<show SceneSampleEvents Val valNeutral>>
+    Val: You're thinking about me~?
+    <<show SceneSampleEvents Luna lunaShyArms>>    
+    Luna: W-What!? N-no! Ugh, it's nothing.
+    Anything I noticed before has completely vanished.
 -> Press her
     <<set $goodend += 1>>
-    Luna: But your shop's in Root Town. Why do you need to rely on Frisscity to stock your shop? 
-    Luna: Or is that the 'secret?'
+    <<show SceneSampleEvents Luna lunaNeutralArms>> 
+    Luna: But your shop's IN Root Town. And aren't you supposed to be open right now? You wouldn't close the shop and come to Frisscity unless it was something important.
+    Luna: Is that the 'secret?'
     <<show SceneSampleEvents Val valSerious>>
-    Val stiffens and the silence that washes over us is painful. 
-    I gulp in the silence. Something's off.
+    Val: …
+    The silence that washes over us is painful. Something is off.
+    <<show SceneSampleEvents Val valFlirty>>
+    Val: Boooo, you got me! My glass skin soda pop actually comes from a vendor in Frisscity.
     <<show SceneSampleEvents Val valNeutral>>
-    Then suddenly she's back to all smiles, like nothing ever happened. It makes me think if what I just experienced was even real.
-    Val: You got me! My glass skin soda pop actually comes from a vendor here in the city. 
-    Val: I know how divisive that probably sounds to you, but my regulars keep buying it. And when demand is high, well…you gotta feed into it.
+    Val: You probably think I'm a sellout to Frisscity. But my regulars keep buying the stuff. And when demand is high, well…you gotta feed into it!
+    Luna: (Val's back to all smiles. But I still feel like she's hiding something.)
+
 <<jump TheOffer>>
 ===
 
 
 title: TheOffer
 ---
-Val's attention is stolen by her phone. She makes a couple taps, then hops back onto her motorbike. 
+<<show SceneSampleEvents Val valSerious>>
+Val's attention is suddenly stolen by her phone. She smears her thumb across her screen, makes a couple of taps, then hops back onto her motorbike.
+<<show SceneSampleEvents Luna lunaNeutral>>
+<<show SceneSampleEvents Val valNeutral>>
 // SFX motorcycle engine turning on
 <<sfx SceneSampleEvents engine>>
-Val: Sorry, gotta jet! Root Town needs their soda pop. 
-Val: Catch you later when you're back on our side of the bridge?
+Val: Sorry, gotta jet! Root Town needs their soda pop.
+Val: Stop by tonight, if you're free. I'll be open.
 // Val leaves
 <<exit SceneSampleEvents Val>>
 // SFX motorcycle tires
 <<sfx SceneSampleEvents tires>>
-Before I can get a word in, she's gone.
 Luna: There she goes…
-Val is everything I want to be- independent, street smart, spunky. Good with her hands, too.
-Er…in the nicest, non-creepiest way possible.
+Val is everything I want to be. Independent, spunky. And good with her hands, too.
+<<show SceneSampleEvents Luna lunaShyArms>> 
+Uh. In the nicest, non-creepiest way possible.
+<<show SceneSampleEvents Luna lunaNeutralArms>> 
 If it wasn't for my shitty situation, I'd be just like her.
-Or with her? Hm, or do I just wanna be her…?
+<<show SceneSampleEvents Luna lunaShyArms>> 
+Or WITH her? Hm, which is it…?
 // SFX cyberdeck notification ping
 <<sfx SceneSampleEvents notification>>
-////////////////////<<pose Luna on-cyberdeck>>
-////////////////////<<expression Luna neutral>>
-It's an offer on the SL0P app—and a big one, too.
+<<show SceneSampleEvents Luna lunaNeutralArms>> 
 Luna: Jackpot.
-I quickly accept the offer, and it reveals the exact coordinates of my delivery order's pickup location.
-Time to roll.
+A big offer on the SL0P app finally lands on my screen.
+I quickly accept the offer. It reveals the coordinates of my delivery order's pickup location.
+Luna: Time to roll.
 // Luna leaves
 <<exit SceneSampleEvents Luna>>
 <<fadeOut SceneSampleEvents>>
@@ -209,6 +231,84 @@ Time to roll.
 <<wait 2>>
 // SFX motorcycle tires
 <<sfx SceneSampleEvents tires>>
+<<jump Alleyway>>
+===
+
+
+title: Alleyway
+---
+///////////////// Play Frisscity calm music track
+///////////////// Show alleyway environment art
+<<background SceneSampleEvents alleyway>>
+<<fadeIn SceneSampleEvents>>
+<<wait 2>>
+<<enter SceneSampleEvents Luna>>
+<<show SceneSampleEvents Luna lunaNeutralArms>>
+Luna: This is…suss.
+The pickup location is in a cramped alleyway. The place reeks of expired seafood scraps and junkyard scrap.
+////////////////// SFX of gull noise, short version
+<<show SceneSampleEvents Luna lunaSurprisedArms>>
+Luna: What the…?!
+////////////////// Enter Cybergull Leader sprite, with cog on
+<<enter SceneSampleEvents Cybergull>>
+<<show SceneSampleEvents Cybergull cybergullCog>>
+<<show SceneSampleEvents Luna lunaNeutralArms>>
+It's a cybergull, the result of chemical runoff mixed with all the shiny stuff they've swallowed—and evolved from. 
+The creature grunts as he tries to free himself from an object that's bound to his neck.
+Luna: (It must be so heavy that he can't even fly. Which is a shame, 'cause the look kinda fits him…)
+<<show SceneSampleEvents Luna lunaSurprisedArms>>
+A shiny cog glimmers back at me. It looks like it'd fit one lucky engine.
+// If player completed the Poor_Flirting node, then show the below
+<<if visited("Poor_Flirting") == true>>
+Luna: (Shiny. Powerful. Expensive-looking. This could be the flux ring Val was talking about.)
+Luna: (If I can get this thing for her, she'll give me something REAL nice…)
+<<endif>>
+<<if visited("Poor_Flirting") == false>>
+// If else, show:
+Luna: (Looks expensive—and like a real part I could use to upgrade my shitty bike! Maybe Val can help me…)
+<<endif>>  
+<<jump Cybergull>>
+===
+
+
+title: Cybergull
+---
+<<declare $withCog = true>>
+////////////////// SFX of gull noise, short version
+The cybergull's wings flap furiously as he screeches, almost like a warning.
+Luna: (But damn, this guy is a TANK! And FERAL! Do I risk it?)
+
+-> Help the cybergull
+    <<set $goodend += 1>>
+    <<set $withCog = false>>
+    <<show SceneSampleEvents Luna lunaNeutral>>
+    Luna: If you bite me, you die. 
+    There's a glint through the gull's glasses, and I can feel his scarred eye tracking me as I tip-toe towards him.
+    Luna: Nice…mutant…seagull…thing…
+    I squat down to his level and reach my arm out to grab the gear.
+    ////////////////// SFX of gull noise, short version
+    <<show SceneSampleEvents Luna lunaSurprised>>
+    The cybergull instinctively recoils, his webbed feet digging into the handle of his extremely shiny knife.
+    <<show SceneSampleEvents Luna lunaNeutral>>
+    Luna: B-Bro! I don't have all day. Do you wanna become roadkill or not?!
+    He puffs his chest before he reluctantly holds still. I manage to wriggle the piece off his beefy neck.
+    <<show SceneSampleEvents Cybergull cybergullFreed>>
+    ////////////////// Show Cybergull Leader sprite, now freed
+    The gull ruffles his feathers to collect himself. Then, he stares into my soul. 
+    <<show SceneSampleEvents Luna lunaSurprised>>
+    Is he…aura farming?
+    <<exit SceneSampleEvents Cybergull>>
+    But then, he flies away.
+    <<show SceneSampleEvents Luna lunaNeutralArms>>
+    Luna: You're welcome.
+    I tuck the flux ring away for safe-keeping.
+-> Don't help the cybergull
+    <<set $badend += 1>>
+    <<show SceneSampleEvents Luna lunaNeutralArms>>
+    Luna: I can't risk getting rabies, or whatever chemical disease you have.
+    The cybergull scowls as I walk past him and look around to see what package I need to pick up around this disgusting trashpile. 
+    A grudge brews from beyond the gull's glasses. 
+<<fadeOut SceneSampleEvents>>
 <<jump TransporterPod>>
 ===
 
@@ -223,15 +323,10 @@ title: TransporterPod
 <<show SceneSampleEvents Nubs podClosed>>
 <<fadeIn SceneSampleEvents>>
 <<wait 2>>
-
-<<enter SceneSampleEvents Luna>>
-Luna: This is…suss.
-The pickup location led me into a cramped alleyway. The place reeks of expired seafood scraps and junkyard scrap.
-I notice a transporter pod branded with an AGENTS logo sitting by a dumpster. It's an odd place to leave something so brand-spanking new.
-////////////////// SFX of something stirring within a metal transporter pod, mixed with alien goober noises
-//////////////////<<expression Luna shocked>>
-The pod shakes and rolls back and forth on the rubble. Food deliveries don't usually involve grub that's alive.
-I hear a distressed noise bellow from within.
+<<show SceneSampleEvents Luna lunaNeutralArms>>
+I finally notice a transporter pod branded with the AGENTS logo sitting by the dumpster. It's an odd place to leave something so brand-spanking new.
+<<show SceneSampleEvents Luna lunaSurprised>>
+The pod rattles on the rubble. Usually, food deliveries don't involve LIVING CREATURES!
 
 -> Pick it up and put it on your motorcycle
     Luna: (I mean, I can't just unlock it. That's against the SL0P protocol.)
