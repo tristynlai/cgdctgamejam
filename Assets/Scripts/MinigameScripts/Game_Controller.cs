@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class Game_Controller : MonoBehaviour
+public class Game_Controller : MonoBehaviour, IDataPersistence
 {
     public static Game_Controller Instance;
 
@@ -35,7 +35,7 @@ public class Game_Controller : MonoBehaviour
     void Start() {
         PauseScreen.SetActive(false);
         GameOverScreen.SetActive(false);
-        PreviousHighestTime = PlayerPrefs.GetInt("HighestTime");
+        PreviousHighestTime = HighestTime;
 
         Time.timeScale = 0f;
 
@@ -90,6 +90,14 @@ public class Game_Controller : MonoBehaviour
         Time.timeScale = 0f;
         GameOverScreen.SetActive(true);
         Music.Stop();
+
+        if (CurrentTime > HighestTime) {
+            HighestTime = CurrentTime;
+        }
+
+        if (DataPersistenceManager.instance != null) {
+            DataPersistenceManager.instance.SaveGame();
+        }
     }
 
     public void ResumeGame() {
@@ -123,7 +131,6 @@ public class Game_Controller : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        HighestTime = PlayerPrefs.GetInt("HighestTime");
         int Minutes = Mathf.FloorToInt(HighestTime / 60);
         int Seconds = Mathf.FloorToInt(HighestTime % 60);
         HighestTimeText.text = "Highest Time: " + string.Format("{0:00}:{1:00}", Minutes, Seconds);
@@ -132,5 +139,14 @@ public class Game_Controller : MonoBehaviour
         Minutes = Mathf.FloorToInt(CurrentTime / 60);
         Seconds = Mathf.FloorToInt(CurrentTime % 60);
         CurrentTimeText.text = "Time: " + string.Format("{0:00}:{1:00}", Minutes, Seconds);
+    }
+
+    public void LoadData(GameData Data) {
+        this.HighestTime = Data.MinigameHighestTime;
+        this.PreviousHighestTime = Data.MinigameHighestTime;
+    }
+
+    public void SaveData(ref GameData Data) {
+        Data.MinigameHighestTime = this.HighestTime;
     }
 }
