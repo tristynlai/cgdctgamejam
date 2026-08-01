@@ -3542,6 +3542,10 @@ MonoBehaviour:
   - {fileID: 2060716019}
   - {fileID: 1495032009}
   - {fileID: 770806970}
+  homeStates: []
+  messageStates: []
+  messagesNotificationDot: {fileID: 0}
+  cyberdeckParentCanvas: {fileID: 0}
 --- !u!1 &2060716019
 GameObject:
   m_ObjectHideFlags: 0
@@ -3576,7 +3580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -151, y: -66}
+  m_AnchoredPosition: {x: -151, y: -5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
