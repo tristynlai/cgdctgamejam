@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 25d1f722c8e25e44aaf67735ec227bf4
+guid: 74e29fff696274b529b02b80e7104f38
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2132485167679555606
-    second: dialoguebox_top_blank_0
+      213: -5296640318305725329
+    second: Continue Arrow_00039_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,10 +48,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialoguebox_top_blank_0
+      name: Continue Arrow_00039_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2200
-        height: 154
+        width: 200
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ae7bba3d904e762e0800000000000000
-      internalID: -2132485167679555606
+      spriteID: f64106c71bd8e76b0800000000000000
+      internalID: -5296640318305725329
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dialoguebox_top_blank_0: -2132485167679555606
+      Continue Arrow_00039_0: -5296640318305725329
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
