@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Time_Manager : MonoBehaviour {
+public class Time_Manager : MonoBehaviour, IDataPersistence {
     public float CurrentTime = 0;
     public TextMeshProUGUI TimeText;
 
@@ -14,7 +14,6 @@ public class Time_Manager : MonoBehaviour {
     void Start() {
         TimeText.text = "0";
         LastTime = HighestTime;
-        HighestTime = PlayerPrefs.GetInt("HighestTime");
     }
 
     // Update is called once per frame
@@ -27,7 +26,6 @@ public class Time_Manager : MonoBehaviour {
 
         if (CurrentTime > HighestTime) {
             HighestTime = Mathf.FloorToInt(CurrentTime);
-            PlayerPrefs.SetInt("HighestTime", HighestTime);
         }
         
     }
@@ -37,5 +35,11 @@ public class Time_Manager : MonoBehaviour {
         TimeText.text = "00:00";
     }
 
+    public void LoadData(GameData Data) {
+        this.HighestTime = Data.MinigameHighestTime;
+    }
 
+    public void SaveData(ref GameData Data) {
+        Data.MinigameHighestTime = this.HighestTime;
+    }
 }

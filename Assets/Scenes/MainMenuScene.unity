@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ARTIST
+  m_text: SPECIAL THANKS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 977d8c608a717fa4180305cb42400079, type: 2}
   m_sharedMaterial: {fileID: 5934487553812106726, guid: 977d8c608a717fa4180305cb42400079, type: 2}
@@ -2032,7 +2032,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -750}
+  m_AnchoredPosition: {x: 200, y: -650}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305336770
@@ -2950,7 +2950,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -950}
+  m_AnchoredPosition: {x: 200, y: -850}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &524257251
@@ -6565,7 +6565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -650}
+  m_AnchoredPosition: {x: 200, y: -550}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1093563449
@@ -7442,7 +7442,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <insert>
+  m_text: Mikella Nuzen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1cb82b2be450d2a439072b515ea4b7a1, type: 2}
   m_sharedMaterial: {fileID: 5094964408643464552, guid: 1cb82b2be450d2a439072b515ea4b7a1, type: 2}
@@ -8178,7 +8178,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -1050}
+  m_AnchoredPosition: {x: 200, y: -950}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1392456716
@@ -8242,7 +8242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -550}
+  m_AnchoredPosition: {x: 200, y: -1050}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1406134940
@@ -9171,12 +9171,12 @@ RectTransform:
   - {fileID: 1765474948}
   - {fileID: 1497748817}
   - {fileID: 652402282}
-  - {fileID: 1406134939}
   - {fileID: 1093563448}
   - {fileID: 305336769}
   - {fileID: 1647017882}
   - {fileID: 524257250}
   - {fileID: 1392456715}
+  - {fileID: 1406134939}
   m_Father: {fileID: 2097486626}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -10138,7 +10138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -850}
+  m_AnchoredPosition: {x: 200, y: -750}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1647017883
@@ -12162,7 +12162,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MINIGAME PROGRAMMER
+  m_text: GENERAL PROGRAMMER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 977d8c608a717fa4180305cb42400079, type: 2}
   m_sharedMaterial: {fileID: 5934487553812106726, guid: 977d8c608a717fa4180305cb42400079, type: 2}
@@ -12874,8 +12874,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 88377846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.3887186}
+  m_AnchorMin: {x: 0, y: 0.6112814}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12999,7 +12999,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2005264468}
   m_HandleRect: {fileID: 2005264467}
   m_Direction: 2
-  m_Value: -0.000000056479525
+  m_Value: 1
   m_Size: 0.3887186
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -13289,8 +13289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0002414129, y: 1080.66}
-  m_SizeDelta: {x: 73.1017, y: 1767.86}
+  m_AnchoredPosition: {x: 0.0002414129, y: 0}
+  m_SizeDelta: {x: 18.199759, y: 1767.86}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2097486627
 MonoBehaviour:
@@ -13359,10 +13359,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ScrollRect
   m_Content: {fileID: 2097486626}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
-  m_Elasticity: 0.1
+  m_MovementType: 2
+  m_Elasticity: 0
   m_Inertia: 1
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 3
