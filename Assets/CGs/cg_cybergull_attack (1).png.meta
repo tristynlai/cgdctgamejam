@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4417ee276a2264bbd9ab9a2c63703b48
+guid: d050a7859f02a47bf831fbe02f1ae00a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6639023754004727534
-    second: cg_cybergull_attack_0
+      213: -5187538671027027801
+    second: cg_cybergull_attack (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cg_cybergull_attack_0
+      name: cg_cybergull_attack (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 219fa2f12137dd3a0800000000000000
-      internalID: -6639023754004727534
+      spriteID: 7a005de30192208b0800000000000000
+      internalID: -5187538671027027801
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cg_cybergull_attack_0: -6639023754004727534
+      cg_cybergull_attack (1)_0: -5187538671027027801
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
