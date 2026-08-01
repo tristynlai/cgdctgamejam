@@ -1,6 +1,7 @@
 ﻿title: Intro
 ---
-
+<<declare $goodend = 0>>
+<<declare $badend = 0>>
 Luna: Come on, you stupid SL0P app. Show me the big offers. 
 Luna: (Kaya is gonna kill me if I skip out on rent again. Just one big delivery gig should help me break even…)
 <<jump BadReview>>
@@ -12,7 +13,7 @@ title: BadReview
 // SFX cyberdeck notification ping
 <<sfx SceneSampleEvents notification>>
 <<show_notification 0>>
-It's a review from the SL0P app, powered by AGENTS. A bad review, too. 
+(Huh? It’s a new customer rating on the SL0P app. I better tap it and check it out…)
 // Show the 1-star review on the screen, which says: “driver didn’t handle with care. my organic belladonna apples were touching the fresh mozzarella and now i can’t eat them anymore cuz i’m a fruitarian vegan going on my 8th juice cleanse.”
 <<enter SceneSampleEvents Review>>
 Luna: …You've got to be joking.
@@ -22,31 +23,26 @@ Luna: (I have an option to respond…)
 -> Don't respond and close the app
     <<set $goodend += 1>>
     Luna: Ugh, whatever.
-    I close the app because it isn't worth my time. 
-    Frisscity is home to the most privileged people who eat up trends, who crave to act like the city's human augmentation founders and machina millionaires.
-    They're freaks. (And they don't tip.) 
-    But people like me, from Root Town?
-    We refuse to be integrated with AGENTS technology.
-    We're all that's left of humanity.
+    I close the app because these people aren't worth my time.
+    Frisscity is home to the ultra-rich who eat up trends and who want to discover the next worst thing for society.
+    They're freaks. (And they don't tip.)
+    But I refuse to integrate with AGENTS technology.
+    Me and Root Town are all that's left of humanity.
     <<jump CyberdeckTutorial>>
 -> Give the reviewer a 1-star rating
     Luna: Heh, shove it.
-    I give them a 1-star rating right back, passive-aggressively noting how their fruitarian and vegan preferences weren't mentioned in the app to begin with.
-    Luna: That will show them.
-    This is the stuff I have to put up with in Frisscity. I break my back for baecoins from the shittiest people alive. 
-    I'm waiting for the day everyone finally decides to upload their brains to the cloud.
-    If the AGENTS founder does it, I'm sure everyone in Frisscity will follow.     
-    But people like me, from Root Town? We'd never fall for a capitalist trick like that.
-    We refuse to integrate with AGENTS technology.
+    I give Karen a 1-star rating right back, noting how her fruitarian and vegan preferences were never mentioned in the app.
+    I'm waiting for the day everyone in Frisscity finally decides to upload their brains to the cloud. If the AGENTS founder does it, I'm sure they'll do it.    
+    But me? I'd never fall for a capitalist trick like that.
+    Me and Root Town refuse to integrate with AGENTS technology.
     <<jump CyberdeckTutorial>>
 -> Doxx their address on an online forum for SL0P drivers
     <<set $badend += 1>>
-    Instead of leaving them a 1-star review, I do much worse. I post their address online and warn fellow drivers not to take delivery orders from them. 
-    Most of the drivers are from Root Town, where I'm from. Or the Understory, the foggy belly of Frisscity's working class.
-    Luna: Now all of SL0P will know what you've done. Good luck getting your stupid apples and cheese. 
-    This is the stuff I have to put up with in Frisscity. I break my back for baecoins from the shittiest people alive, who chase trends and chase surgeries to get hooked up with the latest AGENTS technology. 
+    Instead of leaving them a review, I do much worse. I post their address on a public online forum and warn fellow drivers from Root Town not to take delivery orders from them.
+    Luna: Now all of SL0P will know what you have done. Good luck getting your stupid apples and cheese.
+    This is the shit I put up with in Frisscity. I break my back for baecoins for people who chase trends and chase surgeries to get hooked up with the latest AGENTS technology.
     But me? I refuse to be augmented.
-    I wish Frisscity would just disappear. 
+    I wish Frisscity would just disappear.
     <<jump CyberdeckTutorial>>
 ===
 
