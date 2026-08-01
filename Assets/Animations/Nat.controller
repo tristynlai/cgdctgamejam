@@ -59,7 +59,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SceneSample_LunaFadeOut
+  m_Name: SceneSample_NatFadeOut
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -72,7 +72,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 113ada2327f12364898bd81b7e8d2bee, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7d45f57270939401cb130d2ba79b92e1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -145,7 +145,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SceneSample_LunaFadeIn
+  m_Name: SceneSample_NatFadeIn
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -158,7 +158,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3576561a01ea4224badc1c78ae670976, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5cd50aa690daf4c5e9b5c1c5e33abf8c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
