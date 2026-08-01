@@ -99,7 +99,15 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite dadAnnoyed;
 
     public AudioSource notificationSource;
+    public AudioSource frisscitySource;
+    public AudioSource luxapt02Source;
+    public AudioSource sundayneonsSource;
     public AudioSource junkyardSource;
+    public AudioSource deadroomSource;
+    public AudioSource ascensionmellowSource;
+    public AudioSource loungelizardsSource;
+    public AudioSource undergroundlabSource;
+    public AudioSource errorofourwaysSource;
     public AudioClip notificationSound;
     public AudioClip tiresSound;
     public AudioClip engineSound;
@@ -817,6 +825,38 @@ public class SceneSampleEvents : MonoBehaviour
         {
             junkyardSource.Play();
         }
+        if (audioName == "frisscity")
+        {
+            frisscitySource.Play();
+        }
+        if (audioName == "luxapt02")
+        {
+            luxapt02Source.Play();
+        }
+        if (audioName == "sundayneons")
+        {
+            sundayneonsSource.Play();
+        }
+        if (audioName == "deadroom")
+        {
+            deadroomSource.Play();
+        }
+        if (audioName == "ascensionmellow")
+        {
+            ascensionmellowSource.Play();
+        }
+        if (audioName == "loungelizards")
+        {
+            loungelizardsSource.Play();
+        }
+        if (audioName == "undergroundlab")
+        {
+            undergroundlabSource.Play();
+        }
+        if (audioName == "errorofourways")
+        {
+            errorofourwaysSource.Play();
+        }
     }
 
     [YarnCommand("stop")]
@@ -826,6 +866,38 @@ public class SceneSampleEvents : MonoBehaviour
         if (audioName == "junkyard")
         {
             junkyardSource.Stop();
+        }
+        if (audioName == "frisscity")
+        {
+            frisscitySource.Stop();
+        }
+        if (audioName == "luxapt02")
+        {
+            luxapt02Source.Stop();
+        }
+        if (audioName == "sundayneons")
+        {
+            sundayneonsSource.Stop();
+        }
+        if (audioName == "deadroom")
+        {
+            deadroomSource.Stop();
+        }
+        if (audioName == "ascensionmellow")
+        {
+            ascensionmellowSource.Stop();
+        }
+        if (audioName == "loungelizards")
+        {
+            loungelizardsSource.Stop();
+        }
+        if (audioName == "undergroundlab")
+        {
+            undergroundlabSource.Stop();
+        }
+        if (audioName == "errorofourways")
+        {
+            errorofourwaysSource.Stop();
         }
     }
 
