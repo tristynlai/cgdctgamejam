@@ -93,12 +93,6 @@ title: Val
 <<show SceneSampleEvents Luna lunaNeutralArms>>
 <<fadeIn SceneSampleEvents>>
 
-<<enter SceneSampleEvents Dad>>
-<<show SceneSampleEvents Dad dadAnnoyed>>
-<<wait 2>>
-<<show SceneSampleEvents Dad dadHappy>>
-<<exit SceneSampleEvents Dad>>
-
 Luna: The only thing I need is a big offer so I can get the hell home.
 // SFX motorcycle tires
 <<sfx SceneSampleEvents tires>>

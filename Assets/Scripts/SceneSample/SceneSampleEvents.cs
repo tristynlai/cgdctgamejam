@@ -10,6 +10,8 @@ public class SceneSampleEvents : MonoBehaviour
     public GameObject fadeScreenOut;
     public GameObject frissCity;
     public GameObject alleyway;
+    public GameObject lilguyCG;
+    public GameObject cybergullsCG;
     public GameObject Luna;
     public GameObject Val;
     public GameObject Nubs;
@@ -838,6 +840,16 @@ public class SceneSampleEvents : MonoBehaviour
         else if (backgroundName == "alleyway")
         {
             alleyway.SetActive(true);
+            lilguyCG.SetActive(false);
+        }
+        else if (backgroundName == "lilguyCG")
+        {
+            lilguyCG.SetActive(true);
+            alleyway.SetActive(false);
+        }
+        else if (backgroundName == "cybergullsCG")
+        {
+            cybergullsCG.SetActive(true);
         }
     }
 }
