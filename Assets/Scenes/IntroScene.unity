@@ -300,6 +300,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109367634}
   m_CullTransparentMesh: 1
+--- !u!114 &123861413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2958262987206614838, guid: 52571f68872914e24837210513edea1d, type: 3}
+  m_PrefabInstance: {fileID: 203256154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &137142773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 267536091228655976, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
@@ -555,11 +566,11 @@ PrefabInstance:
     - target: {fileID: 2958262985454349548, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: characterNameText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 123861413}
     - target: {fileID: 2958262985454349548, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: characterNameContainer
       value: 
-      objectReference: {fileID: 1103266657}
+      objectReference: {fileID: 0}
     - target: {fileID: 2958262985454349548, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: showCharacterNameInLine
       value: 0
@@ -702,7 +713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2958262987206614836, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2958262987206614837, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -727,6 +738,10 @@ PrefabInstance:
     - target: {fileID: 2958262987206614837, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -51.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958262987206614838, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2958262987206614838, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_fontSize
@@ -1039,6 +1054,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7262066351540048079, guid: 52571f68872914e24837210513edea1d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 235549327}
+    - targetCorrespondingSourceObject: {fileID: 7262066351540048079, guid: 52571f68872914e24837210513edea1d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 235549330}
     - targetCorrespondingSourceObject: {fileID: 2958262986393358530, guid: 52571f68872914e24837210513edea1d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1944450614}
@@ -1109,6 +1127,26 @@ MonoBehaviour:
   mainDialogueView: {fileID: 203256156}
   chatDialogueView: {fileID: 492938957}
   runner: {fileID: 203256155}
+--- !u!114 &235549330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235549326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e5ce715aa704c368b8e92679832508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NameplateSwitch
+  yarnNameText: {fileID: 123861413}
+  nameplateObject: {fileID: 1103266657}
+  nameplateImage: {fileID: 1162308081}
+  nameplates:
+  - characterName: Luna
+    nameplateSprite: {fileID: 21300000, guid: bd68317deaed0e54c9c1fdc718ada065, type: 3}
+  - characterName: Val
+    nameplateSprite: {fileID: 21300000, guid: f41a5dd94fc1d8b49b5971c80528143e, type: 3}
 --- !u!1 &261397512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,8 +1773,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
     m_keys:
-    - Nat
     - Luna
+    - Nat
     - System
     m_values:
     - {fileID: 8730193813269988746, guid: 8b77140dc34294ccba299acdc3adc1a9, type: 3}
@@ -2563,6 +2601,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5929890310284692484, guid: 52571f68872914e24837210513edea1d, type: 3}
   m_PrefabInstance: {fileID: 203256154}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1162308081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1939406627257307189, guid: 52571f68872914e24837210513edea1d, type: 3}
+  m_PrefabInstance: {fileID: 203256154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1176942175
 GameObject:
   m_ObjectHideFlags: 0
