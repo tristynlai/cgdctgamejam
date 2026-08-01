@@ -18,6 +18,7 @@ public class SceneSampleEvents : MonoBehaviour
     public GameObject Kaya;
     public GameObject Nat;
     public GameObject Cybergull;
+    public GameObject Dad;
 
     public GameObject Review;
 
@@ -91,6 +92,10 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite cybergullCogless;
     public Sprite cybergullFreed;
 
+    public Sprite dadNeutral;
+    public Sprite dadHappy;
+    public Sprite dadAnnoyed;
+
     public AudioSource notificationSource;
     public AudioSource junkyardSource;
     public AudioClip notificationSound;
@@ -106,6 +111,7 @@ public class SceneSampleEvents : MonoBehaviour
     private Animator kayaAnimator;
     private Animator natAnimator;
     private Animator cybergullAnimator;
+    private Animator dadAnimator;
 
     //public GameObject cyberdeck;
 
@@ -128,6 +134,7 @@ public class SceneSampleEvents : MonoBehaviour
         kayaAnimator = Kaya.GetComponent<Animator>();
         natAnimator = Nat.GetComponent<Animator>();
         cybergullAnimator = Cybergull.GetComponent<Animator>();
+        dadAnimator = Dad.GetComponent<Animator>();
 
         PlayerPrefs.SetInt("LoadState", 1);
         //StartCoroutine(EventStarter());
@@ -265,7 +272,18 @@ public class SceneSampleEvents : MonoBehaviour
             {
                 cybergullAnimator.SetTrigger("FadeIn");
             }
-        }  
+        }
+        else if (character == "Dad")
+        {
+            if (Dad.activeSelf == false)
+            {
+                Dad.SetActive(true);
+            }
+            else
+            {
+                dadAnimator.SetTrigger("FadeIn");
+            }
+        }
     }
 
     [YarnCommand("exit")]
@@ -307,6 +325,10 @@ public class SceneSampleEvents : MonoBehaviour
         else if (character == "Cybergull")
         {
             cybergullAnimator.SetTrigger("FadeOut");
+        }
+        else if (character == "Dad")
+        {
+            dadAnimator.SetTrigger("FadeOut");
         }
     }
 
@@ -735,6 +757,33 @@ public class SceneSampleEvents : MonoBehaviour
                 Debug.Log($"Cybergull Freed Sprite: {cybergullFreed}");
                 cybergullImage.sprite = cybergullFreed;
                 cybergullImage.SetNativeSize();
+            }
+        }
+        else if (character == "Dad")
+        {
+            Debug.Log($"Dad GameObject: {Dad}");
+            
+            Image dadImage = Dad.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {dadImage}");
+            
+            if (expression == "dadNeutral")
+            {
+                Debug.Log($"Dad Neutral Sprite: {dadNeutral}");
+                dadImage.sprite = dadNeutral;
+                dadImage.SetNativeSize();
+            }
+            else if (expression == "dadHappy")
+            {
+                Debug.Log($"Dad Happy Sprite: {dadHappy}");
+                dadImage.sprite = dadHappy;
+                dadImage.SetNativeSize();
+            }
+            else if (expression == "dadAnnoyed")
+            {
+                Debug.Log($"Dad Annoyed Sprite: {dadAnnoyed}");
+                dadImage.sprite = dadAnnoyed;
+                dadImage.SetNativeSize();
             }
         }
         

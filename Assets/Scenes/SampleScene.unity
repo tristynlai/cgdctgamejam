@@ -2377,6 +2377,7 @@ RectTransform:
   - {fileID: 155984879}
   - {fileID: 1905511143}
   - {fileID: 350356953}
+  - {fileID: 1280616234}
   - {fileID: 512607591}
   - {fileID: 345061309}
   - {fileID: 759902328}
@@ -2425,6 +2426,104 @@ Transform:
   - {fileID: 1981392156}
   m_Father: {fileID: 217478034}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1280616233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1280616234}
+  - component: {fileID: 1280616237}
+  - component: {fileID: 1280616236}
+  - component: {fileID: 1280616235}
+  m_Layer: 5
+  m_Name: Dad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1280616234
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280616233}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1029314486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 631, y: -50.878}
+  m_SizeDelta: {x: 1055, y: 2018}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1280616235
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280616233}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f81571626392fd641a9080a88521751a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1280616236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280616233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 216696147124767370, guid: cc6496d8855cb4be8b8c704e33839b38, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1280616237
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280616233}
+  m_CullTransparentMesh: 1
 --- !u!224 &1587760085 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2958262987206614837, guid: 52571f68872914e24837210513edea1d, type: 3}
@@ -2486,6 +2585,7 @@ MonoBehaviour:
   Kaya: {fileID: 350356952}
   Nat: {fileID: 512607590}
   Cybergull: {fileID: 155984878}
+  Dad: {fileID: 1280616233}
   Review: {fileID: 700154719}
   variableStorage: {fileID: 0}
   lineAdvancer: {fileID: 612810745}
@@ -2547,6 +2647,9 @@ MonoBehaviour:
   cybergullCog: {fileID: -6560981123314358429, guid: 2e597b44ef27045989e7c49d535fd55c, type: 3}
   cybergullCogless: {fileID: 8885266363115407543, guid: 8e5be04a5c445474296c0ee16b7fe84b, type: 3}
   cybergullFreed: {fileID: 8885266363115407543, guid: 8e5be04a5c445474296c0ee16b7fe84b, type: 3}
+  dadNeutral: {fileID: 216696147124767370, guid: cc6496d8855cb4be8b8c704e33839b38, type: 3}
+  dadHappy: {fileID: -2706448426169035124, guid: 323a97e8eac08489c999c105a981d3da, type: 3}
+  dadAnnoyed: {fileID: -4184868570760043709, guid: f404f67ac9eb74f448ce77cf93f744e3, type: 3}
   notificationSource: {fileID: 1981392157}
   junkyardSource: {fileID: 461320879}
   notificationSound: {fileID: 8300000, guid: d4a92af5bacd04bf09b5d7fa9e3da19e, type: 3}
