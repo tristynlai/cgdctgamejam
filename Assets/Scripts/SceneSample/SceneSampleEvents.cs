@@ -111,6 +111,13 @@ public class SceneSampleEvents : MonoBehaviour
     public AudioClip notificationSound;
     public AudioClip tiresSound;
     public AudioClip engineSound;
+    public AudioClip podOpen;
+    public AudioClip shortgull;
+    public AudioClip longgull;
+    public AudioClip beep;
+    public AudioClip maxxMotorcycle;
+    public AudioClip gullBattle;
+    public AudioClip metalGrinding;
 
     private Animator lunaAnimator;
     private Animator valAnimator;
@@ -814,6 +821,34 @@ public class SceneSampleEvents : MonoBehaviour
         if (sfxName == "engine")
         {
             notificationSource.PlayOneShot(engineSound);
+        }
+        if (sfxName == "podOpen")
+        {
+            notificationSource.PlayOneShot(podOpen);
+        }
+        if (sfxName == "shortgull")
+        {
+            notificationSource.PlayOneShot(shortgull);
+        }
+        if (sfxName == "longgull")
+        {
+            notificationSource.PlayOneShot(longgull);
+        }
+        if (sfxName == "beep")
+        {
+            notificationSource.PlayOneShot(beep);
+        }
+        if (sfxName == "maxxMotorcycle")
+        {
+            notificationSource.PlayOneShot(maxxMotorcycle);
+        }
+        if (sfxName == "gullBattle")
+        {
+            notificationSource.PlayOneShot(gullBattle);
+        }
+        if (sfxName == "metalGrinding")
+        {
+            notificationSource.PlayOneShot(metalGrinding);
         }
     }
 

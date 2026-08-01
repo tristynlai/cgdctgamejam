@@ -3463,7 +3463,7 @@ GameObject:
   - component: {fileID: 1476233781}
   - component: {fileID: 1476233782}
   m_Layer: 0
-  m_Name: Error Of Our Ways
+  m_Name: Error Of Ways
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3722,6 +3722,13 @@ MonoBehaviour:
   notificationSound: {fileID: 8300000, guid: d4a92af5bacd04bf09b5d7fa9e3da19e, type: 3}
   tiresSound: {fileID: 8300000, guid: 96fee5dc733211b4a809bab4e305ddef, type: 3}
   engineSound: {fileID: 8300000, guid: 4209402ed7507a548bbb38c362348f97, type: 3}
+  podOpen: {fileID: 8300000, guid: dbf75426b41c44ed38c311842548f971, type: 3}
+  shortgull: {fileID: 8300000, guid: dcd8a0db76a1242a2ba8cb180f0452e5, type: 3}
+  longgull: {fileID: 8300000, guid: 8b84b4accc5814d0ab1321fe9bdc3a82, type: 3}
+  beep: {fileID: 8300000, guid: 85a75e6e440194f74ba6afaa53b75217, type: 3}
+  maxxMotorcycle: {fileID: 8300000, guid: 2ab2be3145cc74b9b8d623f1a07a8d91, type: 3}
+  gullBattle: {fileID: 8300000, guid: 11cc6dcfe6d0145f4938e82b2a0d6f2c, type: 3}
+  metalGrinding: {fileID: 8300000, guid: 547793eaf9d164efb9da0e1f4dd9aade, type: 3}
   yarnProject: {fileID: 7545569452688597077, guid: d2fbccd61c2f7a14bad11629cb5e71c4, type: 3}
   narrativeOver: 0
   startNode: Val
