@@ -10,14 +10,18 @@ public class SceneSampleEvents : MonoBehaviour
     public GameObject fadeScreenOut;
     public GameObject frissCity;
     public GameObject alleyway;
+    public GameObject lilguyCG;
+    public GameObject cybergullsCG;
     public GameObject Luna;
     public GameObject Val;
+    public GameObject Pod;
     public GameObject Nubs;
     public GameObject Influencer;
     public GameObject Maxx;
     public GameObject Kaya;
     public GameObject Nat;
     public GameObject Cybergull;
+    public GameObject Dad;
 
     public GameObject Review;
 
@@ -47,6 +51,7 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite podNeutral;
     public Sprite podClosed;
     public Sprite podAngry;
+
     public Sprite nubsWorried;
     public Sprite nubsWorriedWave;
     public Sprite nubsNeutralWave;
@@ -91,14 +96,34 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite cybergullCogless;
     public Sprite cybergullFreed;
 
+    public Sprite dadNeutral;
+    public Sprite dadHappy;
+    public Sprite dadAnnoyed;
+
     public AudioSource notificationSource;
+    public AudioSource frisscitySource;
+    public AudioSource luxapt02Source;
+    public AudioSource sundayneonsSource;
     public AudioSource junkyardSource;
+    public AudioSource deadroomSource;
+    public AudioSource ascensionmellowSource;
+    public AudioSource loungelizardsSource;
+    public AudioSource undergroundlabSource;
+    public AudioSource errorofourwaysSource;
     public AudioClip notificationSound;
     public AudioClip tiresSound;
     public AudioClip engineSound;
+    public AudioClip podOpen;
+    public AudioClip shortgull;
+    public AudioClip longgull;
+    public AudioClip beep;
+    public AudioClip maxxMotorcycle;
+    public AudioClip gullBattle;
+    public AudioClip metalGrinding;
 
     private Animator lunaAnimator;
     private Animator valAnimator;
+    private Animator podAnimator;
     private Animator nubsAnimator;
     private Animator influencerAnimator;
     private Animator reviewAnimator;
@@ -106,6 +131,7 @@ public class SceneSampleEvents : MonoBehaviour
     private Animator kayaAnimator;
     private Animator natAnimator;
     private Animator cybergullAnimator;
+    private Animator dadAnimator;
 
     //public GameObject cyberdeck;
 
@@ -121,6 +147,7 @@ public class SceneSampleEvents : MonoBehaviour
         //source = GetComponent<AudioSource>();
         lunaAnimator = Luna.GetComponent<Animator>();
         valAnimator = Val.GetComponent<Animator>();
+        podAnimator = Pod.GetComponent<Animator>();
         nubsAnimator = Nubs.GetComponent<Animator>();
         influencerAnimator = Influencer.GetComponent<Animator>();
         reviewAnimator = Review.GetComponent<Animator>();
@@ -128,6 +155,7 @@ public class SceneSampleEvents : MonoBehaviour
         kayaAnimator = Kaya.GetComponent<Animator>();
         natAnimator = Nat.GetComponent<Animator>();
         cybergullAnimator = Cybergull.GetComponent<Animator>();
+        dadAnimator = Dad.GetComponent<Animator>();
 
         PlayerPrefs.SetInt("LoadState", 1);
         //StartCoroutine(EventStarter());
@@ -194,6 +222,16 @@ public class SceneSampleEvents : MonoBehaviour
             else
             {
                 valAnimator.SetTrigger("FadeIn");
+            }
+        } else if (character == "Pod")
+        {
+            if (Pod.activeSelf == false)
+            {
+                Pod.SetActive(true);
+            }
+            else
+            {
+                podAnimator.SetTrigger("FadeIn");
             }
         } else if (character == "Nubs")
         {
@@ -265,7 +303,18 @@ public class SceneSampleEvents : MonoBehaviour
             {
                 cybergullAnimator.SetTrigger("FadeIn");
             }
-        }  
+        }
+        else if (character == "Dad")
+        {
+            if (Dad.activeSelf == false)
+            {
+                Dad.SetActive(true);
+            }
+            else
+            {
+                dadAnimator.SetTrigger("FadeIn");
+            }
+        }
     }
 
     [YarnCommand("exit")]
@@ -280,6 +329,10 @@ public class SceneSampleEvents : MonoBehaviour
         {
             valAnimator.SetTrigger("FadeOut");
         } 
+        else if (character == "Pod")
+        {
+            podAnimator.SetTrigger("FadeOut");
+        }
         else if (character == "Nubs")
         {
             nubsAnimator.SetTrigger("FadeOut");
@@ -307,6 +360,10 @@ public class SceneSampleEvents : MonoBehaviour
         else if (character == "Cybergull")
         {
             cybergullAnimator.SetTrigger("FadeOut");
+        }
+        else if (character == "Dad")
+        {
+            dadAnimator.SetTrigger("FadeOut");
         }
     }
 
@@ -434,6 +491,33 @@ public class SceneSampleEvents : MonoBehaviour
                 valImage.SetNativeSize();
             }
         }
+        else if (character == "Pod")
+        {
+            Debug.Log($"Pod GameObject: {Nubs}");
+            
+            Image podImage = Nubs.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {podImage}");
+            
+            if (expression == "podNeutral")
+            {
+                Debug.Log($"Pod Neutral Sprite: {podNeutral}");
+                podImage.sprite = podNeutral;
+                podImage.SetNativeSize();
+            }
+            else if (expression == "podClosed")
+            {
+                Debug.Log($"Pod Closed Sprite: {podClosed}");
+                podImage.sprite = podClosed;
+                podImage.SetNativeSize();
+            }
+            else if (expression == "podAngry")
+            {
+                Debug.Log($"Pod Angry Sprite: {podAngry}");
+                podImage.sprite = podAngry;
+                podImage.SetNativeSize();
+            }
+        }
         else if (character == "Nubs")
         {
             Debug.Log($"Nubs GameObject: {Nubs}");
@@ -443,26 +527,7 @@ public class SceneSampleEvents : MonoBehaviour
 
             Debug.Log($"Image Component: {nubsImage}");
             
-            if (expression == "podNeutral")
-            {
-                Debug.Log($"Pod Neutral Sprite: {podNeutral}");
-                //nubsImage.texture = nubsNeutral;
-                nubsImage.sprite = podNeutral;
-                nubsImage.SetNativeSize();
-            }
-            else if (expression == "podClosed")
-            {
-                Debug.Log($"Pod Closed Sprite: {podClosed}");
-                nubsImage.sprite = podClosed;
-                nubsImage.SetNativeSize();
-            }
-            else if (expression == "podAngry")
-            {
-                Debug.Log($"Pod Angry Sprite: {podAngry}");
-                nubsImage.sprite = podAngry;
-                nubsImage.SetNativeSize();
-            }
-            else if (expression == "nubsWorried")
+            if (expression == "nubsWorried")
             {
                 Debug.Log($"Nubs Worried Sprite: {nubsWorried}");
                 nubsImage.sprite = nubsWorried;
@@ -737,6 +802,33 @@ public class SceneSampleEvents : MonoBehaviour
                 cybergullImage.SetNativeSize();
             }
         }
+        else if (character == "Dad")
+        {
+            Debug.Log($"Dad GameObject: {Dad}");
+            
+            Image dadImage = Dad.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {dadImage}");
+            
+            if (expression == "dadNeutral")
+            {
+                Debug.Log($"Dad Neutral Sprite: {dadNeutral}");
+                dadImage.sprite = dadNeutral;
+                dadImage.SetNativeSize();
+            }
+            else if (expression == "dadHappy")
+            {
+                Debug.Log($"Dad Happy Sprite: {dadHappy}");
+                dadImage.sprite = dadHappy;
+                dadImage.SetNativeSize();
+            }
+            else if (expression == "dadAnnoyed")
+            {
+                Debug.Log($"Dad Annoyed Sprite: {dadAnnoyed}");
+                dadImage.sprite = dadAnnoyed;
+                dadImage.SetNativeSize();
+            }
+        }
         
     }
 
@@ -756,6 +848,34 @@ public class SceneSampleEvents : MonoBehaviour
         {
             notificationSource.PlayOneShot(engineSound);
         }
+        if (sfxName == "podOpen")
+        {
+            notificationSource.PlayOneShot(podOpen);
+        }
+        if (sfxName == "shortgull")
+        {
+            notificationSource.PlayOneShot(shortgull);
+        }
+        if (sfxName == "longgull")
+        {
+            notificationSource.PlayOneShot(longgull);
+        }
+        if (sfxName == "beep")
+        {
+            notificationSource.PlayOneShot(beep);
+        }
+        if (sfxName == "maxxMotorcycle")
+        {
+            notificationSource.PlayOneShot(maxxMotorcycle);
+        }
+        if (sfxName == "gullBattle")
+        {
+            notificationSource.PlayOneShot(gullBattle);
+        }
+        if (sfxName == "metalGrinding")
+        {
+            notificationSource.PlayOneShot(metalGrinding);
+        }
     }
 
     [YarnCommand("play")]
@@ -766,6 +886,38 @@ public class SceneSampleEvents : MonoBehaviour
         {
             junkyardSource.Play();
         }
+        if (audioName == "frisscity")
+        {
+            frisscitySource.Play();
+        }
+        if (audioName == "luxapt02")
+        {
+            luxapt02Source.Play();
+        }
+        if (audioName == "sundayneons")
+        {
+            sundayneonsSource.Play();
+        }
+        if (audioName == "deadroom")
+        {
+            deadroomSource.Play();
+        }
+        if (audioName == "ascensionmellow")
+        {
+            ascensionmellowSource.Play();
+        }
+        if (audioName == "loungelizards")
+        {
+            loungelizardsSource.Play();
+        }
+        if (audioName == "undergroundlab")
+        {
+            undergroundlabSource.Play();
+        }
+        if (audioName == "errorofourways")
+        {
+            errorofourwaysSource.Play();
+        }
     }
 
     [YarnCommand("stop")]
@@ -775,6 +927,38 @@ public class SceneSampleEvents : MonoBehaviour
         if (audioName == "junkyard")
         {
             junkyardSource.Stop();
+        }
+        if (audioName == "frisscity")
+        {
+            frisscitySource.Stop();
+        }
+        if (audioName == "luxapt02")
+        {
+            luxapt02Source.Stop();
+        }
+        if (audioName == "sundayneons")
+        {
+            sundayneonsSource.Stop();
+        }
+        if (audioName == "deadroom")
+        {
+            deadroomSource.Stop();
+        }
+        if (audioName == "ascensionmellow")
+        {
+            ascensionmellowSource.Stop();
+        }
+        if (audioName == "loungelizards")
+        {
+            loungelizardsSource.Stop();
+        }
+        if (audioName == "undergroundlab")
+        {
+            undergroundlabSource.Stop();
+        }
+        if (audioName == "errorofourways")
+        {
+            errorofourwaysSource.Stop();
         }
     }
 
@@ -789,6 +973,16 @@ public class SceneSampleEvents : MonoBehaviour
         else if (backgroundName == "alleyway")
         {
             alleyway.SetActive(true);
+            lilguyCG.SetActive(false);
+        }
+        else if (backgroundName == "lilguyCG")
+        {
+            lilguyCG.SetActive(true);
+            alleyway.SetActive(false);
+        }
+        else if (backgroundName == "cybergullsCG")
+        {
+            cybergullsCG.SetActive(true);
         }
     }
 }
