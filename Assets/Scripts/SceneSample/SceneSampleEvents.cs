@@ -14,6 +14,7 @@ public class SceneSampleEvents : MonoBehaviour
     public GameObject cybergullsCG;
     public GameObject Luna;
     public GameObject Val;
+    public GameObject Pod;
     public GameObject Nubs;
     public GameObject Influencer;
     public GameObject Maxx;
@@ -50,6 +51,7 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite podNeutral;
     public Sprite podClosed;
     public Sprite podAngry;
+
     public Sprite nubsWorried;
     public Sprite nubsWorriedWave;
     public Sprite nubsNeutralWave;
@@ -121,6 +123,7 @@ public class SceneSampleEvents : MonoBehaviour
 
     private Animator lunaAnimator;
     private Animator valAnimator;
+    private Animator podAnimator;
     private Animator nubsAnimator;
     private Animator influencerAnimator;
     private Animator reviewAnimator;
@@ -144,6 +147,7 @@ public class SceneSampleEvents : MonoBehaviour
         //source = GetComponent<AudioSource>();
         lunaAnimator = Luna.GetComponent<Animator>();
         valAnimator = Val.GetComponent<Animator>();
+        podAnimator = Pod.GetComponent<Animator>();
         nubsAnimator = Nubs.GetComponent<Animator>();
         influencerAnimator = Influencer.GetComponent<Animator>();
         reviewAnimator = Review.GetComponent<Animator>();
@@ -218,6 +222,16 @@ public class SceneSampleEvents : MonoBehaviour
             else
             {
                 valAnimator.SetTrigger("FadeIn");
+            }
+        } else if (character == "Pod")
+        {
+            if (Pod.activeSelf == false)
+            {
+                Pod.SetActive(true);
+            }
+            else
+            {
+                podAnimator.SetTrigger("FadeIn");
             }
         } else if (character == "Nubs")
         {
@@ -315,6 +329,10 @@ public class SceneSampleEvents : MonoBehaviour
         {
             valAnimator.SetTrigger("FadeOut");
         } 
+        else if (character == "Pod")
+        {
+            podAnimator.SetTrigger("FadeOut");
+        }
         else if (character == "Nubs")
         {
             nubsAnimator.SetTrigger("FadeOut");
@@ -473,6 +491,33 @@ public class SceneSampleEvents : MonoBehaviour
                 valImage.SetNativeSize();
             }
         }
+        else if (character == "Pod")
+        {
+            Debug.Log($"Pod GameObject: {Nubs}");
+            
+            Image podImage = Nubs.GetComponent<Image>();
+
+            Debug.Log($"Image Component: {podImage}");
+            
+            if (expression == "podNeutral")
+            {
+                Debug.Log($"Pod Neutral Sprite: {podNeutral}");
+                podImage.sprite = podNeutral;
+                podImage.SetNativeSize();
+            }
+            else if (expression == "podClosed")
+            {
+                Debug.Log($"Pod Closed Sprite: {podClosed}");
+                podImage.sprite = podClosed;
+                podImage.SetNativeSize();
+            }
+            else if (expression == "podAngry")
+            {
+                Debug.Log($"Pod Angry Sprite: {podAngry}");
+                podImage.sprite = podAngry;
+                podImage.SetNativeSize();
+            }
+        }
         else if (character == "Nubs")
         {
             Debug.Log($"Nubs GameObject: {Nubs}");
@@ -482,26 +527,7 @@ public class SceneSampleEvents : MonoBehaviour
 
             Debug.Log($"Image Component: {nubsImage}");
             
-            if (expression == "podNeutral")
-            {
-                Debug.Log($"Pod Neutral Sprite: {podNeutral}");
-                //nubsImage.texture = nubsNeutral;
-                nubsImage.sprite = podNeutral;
-                nubsImage.SetNativeSize();
-            }
-            else if (expression == "podClosed")
-            {
-                Debug.Log($"Pod Closed Sprite: {podClosed}");
-                nubsImage.sprite = podClosed;
-                nubsImage.SetNativeSize();
-            }
-            else if (expression == "podAngry")
-            {
-                Debug.Log($"Pod Angry Sprite: {podAngry}");
-                nubsImage.sprite = podAngry;
-                nubsImage.SetNativeSize();
-            }
-            else if (expression == "nubsWorried")
+            if (expression == "nubsWorried")
             {
                 Debug.Log($"Nubs Worried Sprite: {nubsWorried}");
                 nubsImage.sprite = nubsWorried;
