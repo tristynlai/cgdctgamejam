@@ -3290,6 +3290,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1597898610}
+        m_TargetAssemblyTypeName: NotificationController, Assembly-CSharp
+        m_MethodName: AdvanceDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1179807411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4591,13 +4603,13 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.6132076, g: 0.6045301, b: 0.6045301, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -4918,6 +4930,7 @@ MonoBehaviour:
   notificationGroup: {fileID: 1717459801}
   dialogueRunner: {fileID: 203256155}
   cyberdeckController: {fileID: 146273346}
+  workingAdvancer: {fileID: 203256158}
   onNotificationShown:
     m_PersistentCalls:
       m_Calls:
@@ -6461,6 +6474,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2321714709468061196, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
+      propertyPath: exitButton
+      value: 
+      objectReference: {fileID: 1590252114}
+    - target: {fileID: 2321714709468061196, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
       propertyPath: cyberdeckParentCanvas
       value: 
       objectReference: {fileID: 2006275598}
@@ -6731,6 +6748,10 @@ PrefabInstance:
     - target: {fileID: 7041184246718327899, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -59.8764
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064500300247248138, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
+      propertyPath: m_text
+      value: Nat Horne
       objectReference: {fileID: 0}
     - target: {fileID: 7167585027255348693, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
       propertyPath: m_AnchorMax.y

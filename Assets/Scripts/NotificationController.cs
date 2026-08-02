@@ -6,10 +6,14 @@ public class NotificationController : MonoBehaviour
 {
     public GameObject notificationGroup;
     public DialogueRunner dialogueRunner;
-    
     public CyberdeckController cyberdeckController; 
 
+    [Header("Dialogue Advancer")]
+    public LineAdvancer workingAdvancer;
+
     public UnityEvent onNotificationShown; 
+
+    private int currentNotificationState = -1;
 
     void Awake()
     {
@@ -21,6 +25,8 @@ public class NotificationController : MonoBehaviour
 
     public void ShowNotification(int stateID) 
     {
+        currentNotificationState = stateID;
+
         if (notificationGroup != null)
         {
             notificationGroup.SetActive(true);
@@ -29,8 +35,31 @@ public class NotificationController : MonoBehaviour
         if (cyberdeckController != null)
         {
             cyberdeckController.SetCyberdeckState(stateID);
+            
+            if (stateID == 1)
+            {
+                cyberdeckController.selectTab(1); 
+            }
         }
 
         onNotificationShown.Invoke();
+    }
+
+    public void AdvanceDialogue()
+    {
+        if (currentNotificationState == 1)
+        {
+            if (workingAdvancer != null)
+            {
+                workingAdvancer.RequestNextLine();
+            }
+            
+            if (notificationGroup != null)
+            {
+                notificationGroup.SetActive(false);
+            }
+            
+            currentNotificationState = -1;
+        }
     }
 }

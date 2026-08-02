@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using Yarn.Unity;
 
 public class CyberdeckController : MonoBehaviour
@@ -8,11 +9,13 @@ public class CyberdeckController : MonoBehaviour
     
     [Header("Narrative States")]
     public GameObject[] homeStates;
-    
     public GameObject[] messageStates;
 
     [Header("UI Indicators")]
     public GameObject messagesNotificationDot;
+    
+    [Header("Buttons")]
+    public GameObject exitButton;
 
     [Header("References")]
     [SerializeField] private GameObject cyberdeckParentCanvas;
@@ -53,6 +56,15 @@ public class CyberdeckController : MonoBehaviour
         {
             messagesNotificationDot.SetActive(true);
         }
+        
+        if (exitButton != null)
+        {
+            Button btn = exitButton.GetComponent<Button>();
+            if (btn != null)
+            {
+                btn.interactable = (stateIndex != 1);
+            }
+        }
     }
 
     public void ExitCyberdeck()
@@ -64,12 +76,6 @@ public class CyberdeckController : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-        }
-
-        var advancer = FindFirstObjectByType<LineAdvancer>();
-        if (advancer != null)
-        {
-            advancer.RequestNextLine();
         }
     }
 }
