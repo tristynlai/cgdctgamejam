@@ -76,12 +76,14 @@ title: CyberdeckTutorial
 // SFX cyberdeck notification ping
 <<sfx SceneSampleEvents notification>>
 <<show SceneSampleEvents Luna lunaAnnoyedArms>>
+<<show_notification 1>>
 Luna: Now what?
-<<inspect CyberdeckTutorial>>
-<<enter SceneSampleEvents Tutorial>>
+<<jump Tutorial_Phone_Chat>>
+//<<inspect CyberdeckTutorial>>
+//<<enter SceneSampleEvents Tutorial>>
 ////////////////////////// Populate the cyberdeck. Nat and Luna’s cyberdeck icons should appear as this dialogue progresses. This conversation should happen within the cyberdeck.
-<<exit SceneSampleEvents Tutorial>>
-<<jump Val>>
+//<<exit SceneSampleEvents Tutorial>>
+//<<jump Val>>
 ===
 
 
