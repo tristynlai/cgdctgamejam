@@ -29,8 +29,20 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        PlayerPrefs.SetInt("LoadState", 0);
-        SceneManager.LoadScene("IntroScene");
+        //PlayerPrefs.SetInt("LoadState", 0);
+        //SceneManager.LoadScene("IntroScene");
+
+        if (!DataPersistenceManager.instance.SaveFileExists()) {
+            PlayerPrefs.SetInt("LoadState", 0);
+            DataPersistenceManager.instance.NewGame();
+            UnityEngine.SceneManagement.SceneManager.LoadScene("IntroScene");
+        } else {
+            PlayerPrefs.SetInt("LoadState", 0);
+            string sceneToLoad = DataPersistenceManager.instance.GetSavedScene();
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
+        }
+
+
     }
 
 

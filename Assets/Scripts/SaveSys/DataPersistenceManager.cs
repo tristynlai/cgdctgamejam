@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Linq;
 
 public class DataPersistenceManager : MonoBehaviour
@@ -18,21 +19,38 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void Awake() {
         if (instance != null) {
-            Debug.LogError("More than one Data Persistence Manager in this scene.");
+            Destroy(this.gameObject);
+            return;
         }
         instance = this;
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void OnEnable() {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable() {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    public bool SaveFileExists() {
+        return DataHandler.SaveFileExists();
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        this.DataPersistenceObjects = FindAllDataPersistenceObjects();
+        foreach (IDataPersistence DataPersistenceObj in DataPersistenceObjects) {
+            DataPersistenceObj.LoadData(GameData);
+        }
     }
 
     private void Start() {
         this.DataHandler = new FileDataHandler(Application.persistentDataPath, FileName, UseEncryption);
-        this.DataPersistenceObjects = FindAllDataPersistenceObjects();
-
-        //remove load game function later
         LoadGame();
     }
 
     private void OnApplicationQuit() {
-        //remove this function later
         SaveGame();
     }
 
@@ -46,30 +64,27 @@ public class DataPersistenceManager : MonoBehaviour
     }
 
     public void LoadGame() {
-        //Load saved data
         this.GameData = DataHandler.Load();
 
-        if (this.GameData == null ) {
+        if (this.GameData == null) {
             NewGame();
         }
+    }
 
-        //push loaded data to all scripts that need it
-        foreach (IDataPersistence DataPersistenceObj in DataPersistenceObjects) {
-            DataPersistenceObj.LoadData(GameData);
-        }
-
-        Debug.Log("Loaded Minigame's Highest Time: " + GameData.MinigameHighestTime);
+    public string GetSavedScene() {
+        return string.IsNullOrEmpty(GameData.CurrentScene) ? "SampleScene" : GameData.CurrentScene;
     }
 
     public void SaveGame() {
-        //pass data to other scripts
+        GameData.CurrentScene = SceneManager.GetActiveScene().name;
+
+        this.DataPersistenceObjects = FindAllDataPersistenceObjects();
         foreach (IDataPersistence DataPersistenceObj in DataPersistenceObjects) {
             DataPersistenceObj.SaveData(ref GameData);
         }
 
         Debug.Log("Saved Minigame's Highest Time: " + GameData.MinigameHighestTime);
 
-        //save data to file using data handler
         DataHandler.Save(GameData);
     }
 }

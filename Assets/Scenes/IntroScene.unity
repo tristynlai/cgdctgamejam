@@ -1277,6 +1277,52 @@ MonoBehaviour:
     nameplateSprite: {fileID: 21300000, guid: bd68317deaed0e54c9c1fdc718ada065, type: 3}
   - characterName: Val
     nameplateSprite: {fileID: 21300000, guid: f41a5dd94fc1d8b49b5971c80528143e, type: 3}
+--- !u!1 &259528011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 259528013}
+  - component: {fileID: 259528012}
+  m_Layer: 0
+  m_Name: DataPersistenceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &259528012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259528011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c9453d00ee468d499c78d8cf3a34b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataPersistentManager
+  FileName: ss1.sav
+  UseEncryption: 0
+--- !u!4 &259528013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259528011}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 638.7599, y: 66.46224, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &261397512
 GameObject:
   m_ObjectHideFlags: 0
@@ -7722,3 +7768,4 @@ SceneRoots:
   - {fileID: 1654769770}
   - {fileID: 980729471}
   - {fileID: 1202688889}
+  - {fileID: 259528013}

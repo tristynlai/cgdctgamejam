@@ -19,15 +19,17 @@ public class LoadGameMenuManager : MonoBehaviour
 
     public void NewGame()
     {
-         Debug.Log("NewGame called - attempting to load IntroScene");
+        Debug.Log("NewGame called - attempting to load IntroScene");
         PlayerPrefs.SetInt("LoadState", 0);
-         UnityEngine.SceneManagement.SceneManager.LoadScene("IntroScene");
+        DataPersistenceManager.instance.NewGame();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("IntroScene");
     }
 
     public void LoadGame()
     {
         PlayerPrefs.SetInt("LoadState", 0);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        string sceneToLoad = DataPersistenceManager.instance.GetSavedScene();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
     }
 
     // Update is called once per frame

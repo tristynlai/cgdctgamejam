@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using Yarn.Unity;
 
-public class VideoToDialogue : MonoBehaviour
+public class VideoToDialogue : MonoBehaviour, IDataPersistence
 {
     [Header("Video and Dialogue")]
     [SerializeField] private VideoPlayer videoPlayer;
@@ -23,8 +23,34 @@ public class VideoToDialogue : MonoBehaviour
     [Header("Dialogue Node")]
     [SerializeField] private string startingNode = "Intro";
 
+    private bool hasSeenCutscene = false;
+
+    public void LoadData(GameData data) {
+        hasSeenCutscene = data.HasSeenIntroCutscene;
+
+        if (hasSeenCutscene) {
+            StopAllCoroutines();
+            SkipToEnvironment();
+        }
+    }
+
+    public void SaveData(ref GameData data) {
+        data.HasSeenIntroCutscene = hasSeenCutscene;
+    }
+
     private void Start()
     {
+        StartCoroutine(StartAfterLoadCheck());
+    }
+
+    private IEnumerator StartAfterLoadCheck()
+{
+        yield return null;
+
+        if (hasSeenCutscene) {
+            yield break;
+        }
+
         if (fadeOverlay != null)
         {
             fadeOverlay.alpha = 1f; 
@@ -34,6 +60,20 @@ public class VideoToDialogue : MonoBehaviour
         {
             videoPlayer.Play();
             StartCoroutine(WaitForVideoToStart());
+        }
+    }
+
+    private void SkipToEnvironment() {
+        if (videoPlayer != null) {
+            videoPlayer.gameObject.SetActive(false);
+        }
+
+        if (gameEnvironment != null) {
+            gameEnvironment.SetActive(true);
+        }
+
+        if (fadeOverlay != null) {
+            fadeOverlay.alpha = 0f;
         }
     }
 
@@ -68,6 +108,12 @@ public class VideoToDialogue : MonoBehaviour
 
     private void OnVideoFinished(VideoPlayer vp)
     {
+        hasSeenCutscene = true;
+
+        if (DataPersistenceManager.instance != null) {
+            DataPersistenceManager.instance.SaveGame();
+        }
+
         StartCoroutine(ExecuteStoryboardSequence());
     }
 

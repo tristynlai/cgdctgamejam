@@ -73,4 +73,9 @@ public class FileDataHandler : MonoBehaviour
         }
         return ModifiedData;
     }
+    
+    public bool SaveFileExists() {
+        string FullPath = Path.Combine(DataDirPath, DataFileName);
+        return File.Exists(FullPath);
+    }
 }
