@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
 using Yarn.Unity;
+using UnityEngine.SceneManagement;
+
 
 public class SettingsMenuManager : MonoBehaviour
 {
@@ -20,6 +22,8 @@ public class SettingsMenuManager : MonoBehaviour
 
     public Sprite CreditsSelected;
     public Sprite CreditsUnselected;
+
+    public Button exitToTitleButton;
 
 
     [Header("Volume Sliders")]
@@ -62,17 +66,6 @@ public class SettingsMenuManager : MonoBehaviour
     private int TextSpeedIndex = 0;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    /*void Start()
-    {
-        CreditsContents.SetActive(false);
-        SettingsContents.SetActive(true);
-
-        ShowSettingsContents();
-
-        LoadSettings();
-    }*/
-
     private void OnEnable()
     {
         LoadSettings();
@@ -88,23 +81,12 @@ public class SettingsMenuManager : MonoBehaviour
 
     public void ShowSettingsContents()
     {
-        CreditsContents.SetActive(false);
-        SettingsContents.SetActive(true);
+        if (CreditsContents != null) CreditsContents.SetActive(false);
+        if (SettingsContents != null) SettingsContents.SetActive(true);
 
-        SettingsButton.GetComponent<Image>().sprite = SettingsSelected;
-        CreditsButton.GetComponent<Image>().sprite = CreditsUnselected;
+        if (SettingsButton != null) SettingsButton.GetComponent<Image>().sprite = SettingsSelected;
+        if (CreditsButton != null) CreditsButton.GetComponent<Image>().sprite = CreditsUnselected;
     }
-
-/*    public void ShowCreditsContents()
-    {
-        RevertUnsavedChanges();
-        
-        CreditsContents.SetActive(true);
-        SettingsContents.SetActive(false);
-
-        SettingsButton.GetComponent<Image>().sprite = SettingsUnselected;
-        CreditsButton.GetComponent<Image>().sprite = CreditsSelected;
-    }*/
 
     public void ShowCreditsContents()
     {
@@ -117,91 +99,86 @@ public class SettingsMenuManager : MonoBehaviour
         if (CreditsButton != null) CreditsButton.GetComponent<Image>().sprite = CreditsSelected;
     }
 
+    //TEXT SIZE
     public void TextSizeSmallPressed()
     {
-        SmallButton.GetComponent<Image>().sprite = SelectedSmallButton;
-
-        MidButton.GetComponent<Image>().sprite = UnselectedMidButton;
-        BigButton.GetComponent<Image>().sprite = UnselectedBigButton;
+        if (SmallButton != null) SmallButton.GetComponent<Image>().sprite = SelectedSmallButton;
+        if (MidButton != null) MidButton.GetComponent<Image>().sprite = UnselectedMidButton;
+        if (BigButton != null) BigButton.GetComponent<Image>().sprite = UnselectedBigButton;
 
         TextSizeIndex = 0;
     }
     public void TextSizeMidPressed()
     {
-        MidButton.GetComponent<Image>().sprite = SelectedMidButton;
-
-        SmallButton.GetComponent<Image>().sprite = UnselectedSmallButton;
-        BigButton.GetComponent<Image>().sprite = UnselectedBigButton;
+        if (MidButton != null) MidButton.GetComponent<Image>().sprite = SelectedMidButton;
+        if (SmallButton != null) SmallButton.GetComponent<Image>().sprite = UnselectedSmallButton;
+        if (BigButton != null) BigButton.GetComponent<Image>().sprite = UnselectedBigButton;
 
         TextSizeIndex = 1;
     }
     public void TextSizeBigPressed()
     {
-        BigButton.GetComponent<Image>().sprite = SelectedBigButton;
-
-        MidButton.GetComponent<Image>().sprite = UnselectedMidButton;
-        SmallButton.GetComponent<Image>().sprite = UnselectedSmallButton;
+        if (BigButton != null) BigButton.GetComponent<Image>().sprite = SelectedBigButton;
+        if (MidButton != null) MidButton.GetComponent<Image>().sprite = UnselectedMidButton;
+        if (SmallButton != null) SmallButton.GetComponent<Image>().sprite = UnselectedSmallButton;
 
         TextSizeIndex = 2;
     }
 
+    //TEXT SPEED
     public void ApplyTextSpeed()
     {
-        int index = TextSpeedDropdown.value;
-        PlayerPrefs.SetInt("TextSpeedIndex", index);
-        PlayerPrefs.Save();
-        Debug.Log("TextSpeedIndex: " + index);
+        if (TextSpeedDropdown != null)
+        {
+            int index = TextSpeedDropdown.value;
+            PlayerPrefs.SetInt("TextSpeedIndex", index);
+            PlayerPrefs.Save();
+            Debug.Log("TextSpeedIndex: " + index);
+        }
     }
 
     public void TextSpeed1XPressed()
     {
-        TSp1Button.GetComponent<Image>().sprite = Selected1XButton;
-
-        TSp15Button.GetComponent<Image>().sprite = Unselected15XButton;
-        TSp2Button.GetComponent<Image>().sprite = Unselected2XButton;
+        if (TSp1Button != null) TSp1Button.GetComponent<Image>().sprite = Selected1XButton;
+        if (TSp15Button != null) TSp15Button.GetComponent<Image>().sprite = Unselected15XButton;
+        if (TSp2Button != null) TSp2Button.GetComponent<Image>().sprite = Unselected2XButton;
 
         TextSpeedIndex = 0;
     }
     public void TextSpeed15XPressed()
     {
-        TSp15Button.GetComponent<Image>().sprite = Selected15XButton;
-
-        TSp1Button.GetComponent<Image>().sprite = Unselected1XButton;
-        TSp2Button.GetComponent<Image>().sprite = Unselected2XButton;
+        if (TSp15Button != null) TSp15Button.GetComponent<Image>().sprite = Selected15XButton;
+        if (TSp1Button != null) TSp1Button.GetComponent<Image>().sprite = Unselected1XButton;
+        if (TSp2Button != null) TSp2Button.GetComponent<Image>().sprite = Unselected2XButton;
 
         TextSpeedIndex = 1;
     }
     public void TextSpeed2XPressed()
     {
-        TSp2Button.GetComponent<Image>().sprite = Selected2XButton;
-
-        TSp1Button.GetComponent<Image>().sprite = Unselected1XButton;
-        TSp15Button.GetComponent<Image>().sprite = Unselected15XButton;
+        if (TSp2Button != null) TSp2Button.GetComponent<Image>().sprite = Selected2XButton;
+        if (TSp1Button != null) TSp1Button.GetComponent<Image>().sprite = Unselected1XButton;
+        if (TSp15Button != null) TSp15Button.GetComponent<Image>().sprite = Unselected15XButton;
 
         TextSpeedIndex = 2;
     }
 
-    //Volume
-
-    /*public void ChangeMasterVolume()
-    {
-        MainAudioMixer.SetFloat("MasterVolume", MasterVolumeSlider.value);
-    }*/
-
+    //VOLUME
     public void ChangeMasterVolume()
     {
-        if (MasterVolumeSlider != null)
+        if (MasterVolumeSlider != null && MainAudioMixer != null)
             MainAudioMixer.SetFloat("MasterVolume", MasterVolumeSlider.value);
     }
 
     public void ChangeMusicVolume()
     {
-        MainAudioMixer.SetFloat("MusicVolume", MusicVolumeSlider.value);
+        if (MusicVolumeSlider != null && MainAudioMixer != null)
+            MainAudioMixer.SetFloat("MusicVolume", MusicVolumeSlider.value);
     }
 
     public void ChangeSFXVolume()
     {
-        MainAudioMixer.SetFloat("SFXVolume", SFXVolumeSlider.value);
+        if (SFXVolumeSlider != null && MainAudioMixer != null)
+            MainAudioMixer.SetFloat("SFXVolume", SFXVolumeSlider.value);
     }
 
     public void ExitSettingsMenu()
@@ -226,53 +203,28 @@ public class SettingsMenuManager : MonoBehaviour
 
         PlayerPrefs.Save();
         Debug.Log("Settings saved!");
-        /*
-        //Volume
-        PlayerPrefs.SetFloat("MasterVolume", MasterVolumeSlider.value);
-        PlayerPrefs.SetFloat("MusicVolume", MusicVolumeSlider.value);
-        PlayerPrefs.SetFloat("SFXVolume", SFXVolumeSlider.value);
-
-        //Text Speed
-        PlayerPrefs.SetInt("TextSpeedIndex", TextSpeedIndex);
-
-        //Text Size
-        PlayerPrefs.SetInt("TextSizeIndex", TextSizeIndex);
-        
-        PlayerPrefs.Save();
-
-        Debug.Log("Settings saved!");*/
-
     }
-
-
 
     public void LoadSettings()
     {
         //Volume
-        if (MasterVolumeSlider != null)
+        if (MasterVolumeSlider != null && MainAudioMixer != null)
         {
             MasterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 0f);
             MainAudioMixer.SetFloat("MasterVolume", MasterVolumeSlider.value);
         }
 
-        if (MusicVolumeSlider != null)
+        if (MusicVolumeSlider != null && MainAudioMixer != null)
         {
             MusicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0f);
             MainAudioMixer.SetFloat("MusicVolume", MusicVolumeSlider.value);
         }
 
-        if (SFXVolumeSlider != null)
+        if (SFXVolumeSlider != null && MainAudioMixer != null)
         {
             SFXVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0f);
             MainAudioMixer.SetFloat("SFXVolume", SFXVolumeSlider.value);
         }
-        /*MasterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 0f);
-        MusicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0f);
-        SFXVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0f);
-
-        MainAudioMixer.SetFloat("MasterVolume", MasterVolumeSlider.value);
-        MainAudioMixer.SetFloat("MusicVolume", MusicVolumeSlider.value);
-        MainAudioMixer.SetFloat("SFXVolume", SFXVolumeSlider.value);*/
 
         //Text Speed
         TextSpeedIndex = PlayerPrefs.GetInt("TextSpeedIndex", 0);
@@ -305,8 +257,8 @@ public class SettingsMenuManager : MonoBehaviour
         }
 
         Debug.Log("Settings loaded!");
-
     }
+
     private void RevertUnsavedChanges()
     {
         //Volume
@@ -314,13 +266,16 @@ public class SettingsMenuManager : MonoBehaviour
         float musicVolume = PlayerPrefs.GetFloat("MusicVolume", 0f);
         float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 0f);
 
-        MasterVolumeSlider.SetValueWithoutNotify(masterVolume);
-        MusicVolumeSlider.SetValueWithoutNotify(musicVolume);
-        SFXVolumeSlider.SetValueWithoutNotify(sfxVolume);
+        if (MasterVolumeSlider != null) MasterVolumeSlider.SetValueWithoutNotify(masterVolume);
+        if (MusicVolumeSlider != null) MusicVolumeSlider.SetValueWithoutNotify(musicVolume);
+        if (SFXVolumeSlider != null) SFXVolumeSlider.SetValueWithoutNotify(sfxVolume);
 
-        MainAudioMixer.SetFloat("MasterVolume", masterVolume);
-        MainAudioMixer.SetFloat("MusicVolume", musicVolume);
-        MainAudioMixer.SetFloat("SFXVolume", sfxVolume);
+        if (MainAudioMixer != null)
+        {
+            MainAudioMixer.SetFloat("MasterVolume", masterVolume);
+            MainAudioMixer.SetFloat("MusicVolume", musicVolume);
+            MainAudioMixer.SetFloat("SFXVolume", sfxVolume);
+        }
 
         //Text Speed
         TextSpeedIndex = PlayerPrefs.GetInt("TextSpeedIndex", 0);
@@ -353,9 +308,8 @@ public class SettingsMenuManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void exitToTitle()
     {
-        
+        if (exitToTitleButton != null) SceneManager.LoadScene("MainMenuScene");
     }
 }
