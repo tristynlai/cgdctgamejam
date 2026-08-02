@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
@@ -21,9 +22,60 @@ public class CyberdeckController : MonoBehaviour
     [SerializeField] private GameObject cyberdeckParentCanvas;
     private DialogueRunner? dialogueRunner;
 
+    private bool isWaitingForExit = false;
+    private LineAdvancer[] activeLineAdvancers;
+
     private void Awake()
     {
         dialogueRunner = DialogueRunner.FindRunner(this);
+        
+        if (dialogueRunner != null)
+        {
+            dialogueRunner.AddCommandHandler("wait_for_cyberdeck_exit", WaitForCyberdeckExit);
+        }
+    }
+
+    private void OnEnable()
+    {
+        activeLineAdvancers = FindObjectsByType<LineAdvancer>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        
+        foreach (var advancer in activeLineAdvancers)
+        {
+            if (advancer != null)
+            {
+                advancer.enabled = false;
+            }
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (activeLineAdvancers != null)
+        {
+            foreach (var advancer in activeLineAdvancers)
+            {
+                if (advancer != null)
+                {
+                    advancer.enabled = true;
+                }
+            }
+        }
+    }
+
+    private IEnumerator WaitForCyberdeckExit()
+    {
+        isWaitingForExit = true;
+        
+        if (exitButton != null)
+        {
+            Button btn = exitButton.GetComponent<Button>();
+            if (btn != null) btn.interactable = true;
+        }
+
+        while (isWaitingForExit)
+        {
+            yield return null;
+        }
     }
 
     public void selectTab(int index)
@@ -69,6 +121,13 @@ public class CyberdeckController : MonoBehaviour
 
     public void ExitCyberdeck()
     {
+        StartCoroutine(ExecuteDelayedExit());
+    }
+
+    private IEnumerator ExecuteDelayedExit()
+    {
+        yield return new WaitForSeconds(0.1f);
+
         if (cyberdeckParentCanvas != null)
         {
             cyberdeckParentCanvas.SetActive(false);
@@ -76,6 +135,11 @@ public class CyberdeckController : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+        }
+
+        if (isWaitingForExit)
+        {
+            isWaitingForExit = false;
         }
     }
 }
