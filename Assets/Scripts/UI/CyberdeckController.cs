@@ -48,20 +48,6 @@ public class CyberdeckController : MonoBehaviour
         }
     }
 
-    private void OnDisable()
-    {
-        if (activeLineAdvancers != null)
-        {
-            foreach (var advancer in activeLineAdvancers)
-            {
-                if (advancer != null)
-                {
-                    advancer.enabled = true;
-                }
-            }
-        }
-    }
-
     private IEnumerator WaitForCyberdeckExit()
     {
         isWaitingForExit = true;
@@ -121,13 +107,18 @@ public class CyberdeckController : MonoBehaviour
 
     public void ExitCyberdeck()
     {
-        StartCoroutine(ExecuteDelayedExit());
+        if (dialogueRunner != null)
+        {
+            dialogueRunner.StartCoroutine(DelayedReenableAndExit());
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
-    private IEnumerator ExecuteDelayedExit()
+    private IEnumerator DelayedReenableAndExit()
     {
-        yield return new WaitForSeconds(0.1f);
-
         if (cyberdeckParentCanvas != null)
         {
             cyberdeckParentCanvas.SetActive(false);
@@ -135,6 +126,20 @@ public class CyberdeckController : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+        }
+
+        yield return null;
+        yield return null;
+
+        if (activeLineAdvancers != null)
+        {
+            foreach (var advancer in activeLineAdvancers)
+            {
+                if (advancer != null)
+                {
+                    advancer.enabled = true;
+                }
+            }
         }
 
         if (isWaitingForExit)

@@ -181,11 +181,6 @@ public class SceneSampleEvents : MonoBehaviour
         if (lineAdvancer != null)
         {
             lineAdvancer.enabled = !dialoguePaused;
-
-            if (!isPaused)
-            {
-                lineAdvancer.RequestNextLine();
-            }
         }
     }
 
