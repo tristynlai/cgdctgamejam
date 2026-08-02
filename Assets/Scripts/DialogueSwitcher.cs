@@ -7,7 +7,10 @@ public class DialogueSwitcher : MonoBehaviour
     public GameObject mainDialogueView;
     public GameObject chatDialogueView;
     public DialogueRunner runner;
+    
     private ChatDialogueView chatViewComponent;
+    private DialoguePresenterBase mainViewComponent; 
+    private CanvasGroup chatCanvasGroup;
 
     void Start()
     {
@@ -20,6 +23,12 @@ public class DialogueSwitcher : MonoBehaviour
         if (chatDialogueView != null)
         {
             chatViewComponent = chatDialogueView.GetComponent<ChatDialogueView>();
+            chatCanvasGroup = chatDialogueView.GetComponent<CanvasGroup>();
+        }
+
+        if (mainDialogueView != null)
+        {
+            mainViewComponent = mainDialogueView.GetComponent<DialoguePresenterBase>();
         }
     }
 
@@ -33,36 +42,48 @@ public class DialogueSwitcher : MonoBehaviour
         Debug.Log("SetView command called with type: " + viewType);
 
         if (runner == null) return;
+        
+        var views = runner.DialogueViews.ToList();
 
         if (viewType == "chat")
         {
-            if (mainDialogueView != null) mainDialogueView.SetActive(false);
-            if (chatDialogueView != null) chatDialogueView.SetActive(true);
-
-            if (chatViewComponent != null)
+            if (mainViewComponent != null && views.Contains(mainViewComponent))
             {
-                var views = runner.DialogueViews.ToList();
-                if (!views.Contains(chatViewComponent))
-                {
-                    views.Add(chatViewComponent);
-                    runner.DialogueViews = views.ToArray();
-                }
+                views.Remove(mainViewComponent);
+            }
+
+            if (chatCanvasGroup != null)
+            {
+                chatCanvasGroup.alpha = 1f;
+                chatCanvasGroup.interactable = true;
+                chatCanvasGroup.blocksRaycasts = true;
+            }
+
+            if (chatViewComponent != null && !views.Contains(chatViewComponent))
+            {
+                views.Add(chatViewComponent);
             }
         }
         else if (viewType == "main")
         {
-            if (chatViewComponent != null)
+            if (chatViewComponent != null && views.Contains(chatViewComponent))
             {
-                var views = runner.DialogueViews.ToList();
-                if (views.Contains(chatViewComponent))
-                {
-                    views.Remove(chatViewComponent);
-                    runner.DialogueViews = views.ToArray();
-                }
+                views.Remove(chatViewComponent);
             }
 
-            if (chatDialogueView != null) chatDialogueView.SetActive(false);
-            if (mainDialogueView != null) mainDialogueView.SetActive(true);
+            if (chatCanvasGroup != null)
+            {
+                chatCanvasGroup.alpha = 0f;
+                chatCanvasGroup.interactable = false;
+                chatCanvasGroup.blocksRaycasts = false;
+            }
+
+            if (mainViewComponent != null && !views.Contains(mainViewComponent))
+            {
+                views.Add(mainViewComponent);
+            }
         }
+        
+        runner.DialogueViews = views.ToArray();
     }
 }
