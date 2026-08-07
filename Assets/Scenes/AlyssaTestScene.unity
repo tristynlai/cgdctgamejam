@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 550, y: -571.12}
+  m_AnchoredPosition: {x: 550, y: -243.76}
   m_SizeDelta: {x: 1100, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1189700930
@@ -594,21 +594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' Here is some test text Here is some test text Here is some test text
-    Here is some test text Here is some test text Here is some test text Here is
-    some test text Here is some test text Here is some test text Here is some test
-    text Here is some test text Here is some test text Here is some test text Here
-    is some test text Here is some test text Here is some test text Here is some
-    test text Here is some test text Here is some test text Here is some test text
-    Here is some test text Here is some test text Here is some test text Here is
-    some test text Here is some test text Here is some test text Here is some test
-    text Here is some test text Here is some test text Here is some test text Here
-    is some test text Here is some test text Here is some test text Here is some
-    test text Here is some test text Here is some test text Here is some test text
-    Here is some test text Here is some test text Here is some test text Here is
-    some test text Here is some test text Here is some test text Here is some test
-    text Here is some test text Here is some test text Here is some test text Here
-    is some test text Here is some test text '
+  m_text: Yaaaaay Dynamic Text box! Works!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1cb82b2be450d2a439072b515ea4b7a1, type: 2}
   m_sharedMaterial: {fileID: 5094964408643464552, guid: 1cb82b2be450d2a439072b515ea4b7a1, type: 2}
@@ -931,6 +917,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7483087867778082572, guid: 0116cd796c87a4a908bcc362fd852794, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483087867778082572, guid: 0116cd796c87a4a908bcc362fd852794, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b4d08ecc2082bc3468f8eaee3184c66a, type: 3}
     - target: {fileID: 9082025211846998761, guid: 0116cd796c87a4a908bcc362fd852794, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
