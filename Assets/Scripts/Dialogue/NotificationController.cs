@@ -8,6 +8,8 @@ public class NotificationController : MonoBehaviour
     public DialogueRunner dialogueRunner;
     public CyberdeckController cyberdeckController; 
 
+     public GameObject alertIndicator;
+
     [Header("Dialogue Advancer")]
     public LineAdvancer workingAdvancer;
 
