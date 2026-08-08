@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1654576362402737294}
   - component: {fileID: 6554434564285123210}
   - component: {fileID: 4932452977405571653}
+  - component: {fileID: 602795726068081791}
   m_Layer: 5
   m_Name: Skip Button
   m_TagString: Untagged
@@ -120,7 +121,37 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6554434564285123210}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 602795726068081791}
+        m_TargetAssemblyTypeName: SkipModeController, Assembly-CSharp
+        m_MethodName: ToggleSkip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &602795726068081791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351091256795244966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca68893e945346c1a921fbe7b8b15ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkipModeController
+  dialogueRunner: {fileID: 0}
+  linePresenter: {fileID: 7925467270727130405}
+  skipButtonImage: {fileID: 6554434564285123210}
+  skipOnTint: {r: 0.45, g: 1, b: 0.85, a: 1}
+  autoModeController: {fileID: 145764926311469338}
+  continueButton: {fileID: 9206948837144769268}
 --- !u!1 &918523220205245369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,6 +1230,7 @@ MonoBehaviour:
   autoOnSprite: {fileID: 21300000, guid: bfbc095bcffc0834ca24104d528a7971, type: 3}
   autoOffSprite: {fileID: 21300000, guid: cff99a626ba9fec46afdd9f6c304b9d6, type: 3}
   continueButton: {fileID: 9206948837144769268}
+  skipModeController: {fileID: 602795726068081791}
 --- !u!1 &8048917017963232644
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,15 +15,19 @@ public class AutoModeController : MonoBehaviour {
 
   [Header("Continue button (hidden when auto is on)")]
   [SerializeField] private GameObject continueButton;
+  [SerializeField] private SkipModeController skipModeController;
 
   private bool isAuto = false;
+  public bool IsAuto => isAuto;
 
   void Start() {
     UpdateVisuals();
   }
 
-  public void ToggleAuto() {
+public void ToggleAuto() {
     isAuto = !isAuto;
+
+    if (isAuto && skipModeController != null) skipModeController.ForceOff();
 
     if (linePresenter != null)
       linePresenter.autoAdvance = isAuto;
@@ -34,13 +38,19 @@ public class AutoModeController : MonoBehaviour {
       dialogueRunner.RequestNextLine();
   }
 
-  private void UpdateVisuals() {
-    if (autoButtonImage != null) {
-      autoButtonImage.sprite = isAuto ? autoOnSprite : autoOffSprite;
-    }
+  public void ForceOff() {
+    if (!isAuto) return;
+    isAuto = false;
+    if (linePresenter != null) linePresenter.autoAdvance = false;
+    UpdateVisuals();
+  }
 
-    if (continueButton != null) {
-      continueButton.SetActive(!isAuto);
-    }
+  private void UpdateVisuals() {
+    if (autoButtonImage != null)
+      autoButtonImage.sprite = isAuto ? autoOnSprite : autoOffSprite;
+
+    bool skipIsOn = skipModeController != null && skipModeController.IsSkip;
+    if (continueButton != null)
+      continueButton.SetActive(!isAuto && !skipIsOn);
   }
 }
