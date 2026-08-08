@@ -17,6 +17,7 @@ public class SkipModeController : MonoBehaviour {
   [Header("Coordination")]
   [SerializeField] private AutoModeController autoModeController;
   [SerializeField] private GameObject continueButton;
+  [SerializeField] private CanvasGroup optionsCanvasGroup;
 
   private bool isSkip = false;
     private Color skipOffTint = Color.white;
@@ -24,6 +25,8 @@ public class SkipModeController : MonoBehaviour {
     private bool originalUseFade;
 
     public bool IsSkip => isSkip;
+    private bool OptionsAreShowing =>
+  optionsCanvasGroup != null && optionsCanvasGroup.interactable;
 
     void Start() {
     if (skipButtonImage != null) skipOffTint = skipButtonImage.color;
@@ -34,18 +37,26 @@ public class SkipModeController : MonoBehaviour {
     UpdateVisuals();
   }
 
-  void Update() {
-    if (!isSkip) return;
+void Update() {
+  if (!isSkip) return;
 
-    if (dialogueRunner == null || !dialogueRunner.IsDialogueRunning) {
-      ForceOff();
-      return;
-    }
-
-    dialogueRunner.RequestHurryUpLine();
+  if (dialogueRunner == null || !dialogueRunner.IsDialogueRunning) {
+    ForceOff();
+    return;
   }
 
-  public void ToggleSkip() => SetSkip(!isSkip);
+  if (OptionsAreShowing) {
+    ForceOff();
+    return;
+  }
+
+  dialogueRunner.RequestHurryUpLine();
+}
+
+public void ToggleSkip() {
+  if (!isSkip && OptionsAreShowing) return;
+  SetSkip(!isSkip);
+}
 
   public void ForceOff() {
     if (isSkip) SetSkip(false);
