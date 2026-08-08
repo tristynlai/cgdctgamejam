@@ -13,6 +13,7 @@ public class SceneSampleEvents : MonoBehaviour
     public GameObject lilguyCG;
     public GameObject cybergullsCG;
     public GameObject Luna;
+    public GameObject LunaOnBike;
     public GameObject Val;
     public GameObject Pod;
     public GameObject Nubs;
@@ -22,6 +23,9 @@ public class SceneSampleEvents : MonoBehaviour
     public GameObject Nat;
     public GameObject Cybergull;
     public GameObject Dad;
+    public GameObject lunaBike;
+    public GameObject maxxBike;
+    public GameObject valBike;
 
     public GameObject Review;
 
@@ -43,6 +47,10 @@ public class SceneSampleEvents : MonoBehaviour
     public Sprite lunaShyNeutral;
     public Sprite lunaShySurprised;
     public Sprite lunaShy;
+    public Sprite lunaAngryOnBike;
+    public Sprite lunaAnnoyedOnBike;
+    public Sprite lunaNeutralOnBike;
+    public Sprite lunaSurprisedOnBike;
 
     public Sprite valNeutral;
     public Sprite valSerious;
