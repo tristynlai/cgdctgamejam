@@ -59,17 +59,6 @@ public class NotificationController : MonoBehaviour
         onNotificationHidden.Invoke();
     }
 
-        public void AdvanceDialogue()
-    {
-        bool wasTutorial = currentNotificationState == 1;
-
-        HideNotification();
-
-        if (wasTutorial && workingAdvancer != null)
-        {
-            workingAdvancer.RequestNextLine();
-        }
-    }
 
     public void AdvanceDialogue()
     {
