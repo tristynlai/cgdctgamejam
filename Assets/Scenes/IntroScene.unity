@@ -1480,10 +1480,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1927649773}
-  - {fileID: 203256159}
   - {fileID: 2060289914}
   - {fileID: 1089475248}
   - {fileID: 1729344451}
+  - {fileID: 203256159}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 26.955, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4799,6 +4799,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!225 &1642104644 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 8020628925107869969, guid: 52571f68872914e24837210513edea1d, type: 3}
+  m_PrefabInstance: {fileID: 203256154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1654769769
 GameObject:
   m_ObjectHideFlags: 0
@@ -5148,6 +5153,10 @@ PrefabInstance:
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 203256155}
+    - target: {fileID: 602795726068081791, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+      propertyPath: optionsCanvasGroup
+      value: 
+      objectReference: {fileID: 1642104644}
     - target: {fileID: 1279561443000608732, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
