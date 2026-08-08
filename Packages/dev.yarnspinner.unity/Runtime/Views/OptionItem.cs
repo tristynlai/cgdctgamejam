@@ -30,6 +30,7 @@ namespace Yarn.Unity
 
         [Group("Appearance"), SerializeField] InternalAppearance normal;
         [Group("Appearance"), SerializeField] InternalAppearance selected;
+        [Group("Appearance"), SerializeField] InternalAppearance pressed;
         [Group("Appearance"), SerializeField] InternalAppearance disabled;
 
         [Group("Appearance"), SerializeField] bool disabledStrikeThrough = true;
@@ -177,5 +178,24 @@ namespace Yarn.Unity
         {
             base.Select();
         }
-    }
+
+
+    public override void OnPointerDown(PointerEventData eventData)
+        {
+            base.OnPointerDown(eventData);
+            if (IsInteractable())
+            {
+                ApplyStyle(pressed);
+            }
+        }
+
+        public override void OnPointerUp(PointerEventData eventData)
+        {
+            base.OnPointerUp(eventData);
+            if (IsInteractable())
+            {
+                ApplyStyle(IsHighlighted ? selected : normal);
+            }
+        }
 }
+    }
