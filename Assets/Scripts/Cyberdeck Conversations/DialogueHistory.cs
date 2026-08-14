@@ -1,44 +1,35 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Yarn.Unity;
 using TMPro;
+using System.Collections.Generic;
 
-public class DialogueHistory : DialoguePresenterBase
+public class DialogueHistory : MonoBehaviour 
 {
     [SerializeField] private Transform historyContentContainer;
     [SerializeField] private GameObject historyLinePrefab;
     [SerializeField] private ScrollRect historyScrollRect;
 
-    public override YarnTask RunLineAsync(LocalizedLine dialogueLine, LineCancellationToken cancellationToken)
+    private void OnEnable()
     {
-        string lineText = dialogueLine.Text.Text;
-        Debug.Log($"History script received: {lineText}");
-        if (!string.IsNullOrEmpty(dialogueLine.CharacterName))
+        Yarn.Unity.LinePresenter.OnLineDelivered += HandleNewDialogue; 
+    }
+
+    private void OnDisable()
+    {
+        Yarn.Unity.LinePresenter.OnLineDelivered -= HandleNewDialogue;
+    }
+
+    private void HandleNewDialogue(string characterName, string text)
+    {
+        string lineText = text;
+        
+        if (!string.IsNullOrEmpty(characterName))
         {
-            lineText = $"<b>{dialogueLine.CharacterName}:</b> {lineText}";
+            lineText = $"<b>{characterName}:</b> {lineText}";
         }
 
         AddLineToHistory(lineText);
-
-        return YarnTask.CompletedTask;
     }
-
-    public override YarnTask OnDialogueStartedAsync()
-    {
-        return YarnTask.CompletedTask;
-    }
-
-    public override YarnTask OnDialogueCompleteAsync()
-    {
-        return YarnTask.CompletedTask;
-    }
-
-    public override YarnTask<DialogueOption?> RunOptionsAsync(DialogueOption[] dialogueOptions, LineCancellationToken cancellationToken)
-    {
-        return YarnTask.FromResult<DialogueOption?>(null);
-    }
-
 
     private void AddLineToHistory(string formattedText)
     {

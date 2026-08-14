@@ -26,6 +26,8 @@ namespace Yarn.Unity
     [HelpURL("https://docs.yarnspinner.dev/using-yarnspinner-with-unity/components/dialogue-view/line-view")]
     public sealed class LinePresenter : DialoguePresenterBase
     {
+        public static System.Action<string, string> OnLineDelivered;
+
         internal enum TypewriterType
         {
             Instant, ByLetter, ByWord, Custom,
@@ -319,6 +321,8 @@ namespace Yarn.Unity
                 return;
             }
 
+            OnLineDelivered?.Invoke(line.CharacterName, line.Text.Text);
+            
             MarkupParseResult text;
 
             // configuring the text fields
