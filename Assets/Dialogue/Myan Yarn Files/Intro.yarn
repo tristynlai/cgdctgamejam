@@ -4,16 +4,16 @@
 <<declare $goodend = 0>>
 <<declare $badend = 0>>
 <<enter SceneSampleEvents introLuna>>
-<<show SceneSampleEvents introLuna lunaNeutral>>
+//<<show SceneSampleEvents introLuna lunaNeutral>>
 <<fadeIn SceneSampleEvents>>
 <<wait .5>>
 Luna: Come on, you stupid SL0P app. Show me the big offers!
-<<show SceneSampleEvents introLuna lunaAnnoyed>>
+//<<show SceneSampleEvents introLuna lunaAnnoyed>>
 Luna: (Kaya is gonna kill me if I skip out on rent again. Just one big delivery gig should help me break even…)
 // SFX cyberdeck notification ping
 <<sfx SceneSampleEvents notification>>
 <<show_notification 0>>
-<<show SceneSampleEvents introLuna lunaSurprised>>
+//<<show SceneSampleEvents introLuna lunaSurprised>>
 <<wait 0.5>>
 Luna: (Huh? It's a new customer rating on the SL0P app. I better tap it and check it out…)
 <<jump BadReview>>
@@ -29,7 +29,7 @@ It's a review from the SL0P app, powered by AGENTS. A bad review, too.
 <<exit SceneSampleEvents Review>>
 ////////// We need to remove the asset of Luna leaning on her motorbike before we slide in Luna’s character sprite from the left.
 <<enter SceneSampleEvents Luna>>
-<<show SceneSampleEvents Luna lunaAnnoyed>>
+//<<show SceneSampleEvents Luna lunaAnnoyed>>
 //////////<<expression Luna annoyed>>
 Luna: You've got to be joking.
 Luna: (I have an option to respond…)
@@ -47,7 +47,7 @@ Luna: (I have an option to respond…)
     We're all that's left of humanity.
     <<jump CyberdeckTutorial>>
 -> Give the reviewer a 1-star rating
-    <<show SceneSampleEvents Luna lunaHappy>>
+    //<<show SceneSampleEvents Luna lunaHappy>>
     Luna: Heh, shove it.
     I give them a 1-star rating right back, passive-aggressively noting how their fruitarian and vegan preferences weren't mentioned in the app to begin with.
     Luna: That will show them.
@@ -75,7 +75,7 @@ title: CyberdeckTutorial
 ---
 // SFX cyberdeck notification ping
 <<sfx SceneSampleEvents notification>>
-<<show SceneSampleEvents Luna lunaAnnoyedArms>>
+//<<show SceneSampleEvents Luna lunaAnnoyedArms>>
 <<show_notification 1>>
 Luna: Now what?
 <<jump Tutorial_Phone_Chat>>
