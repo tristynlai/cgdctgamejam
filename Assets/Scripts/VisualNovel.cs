@@ -38,6 +38,12 @@ public class VisualNovel : MonoBehaviour {
     private void ChangeCameraLocation(Location location) {
         Camera.main.transform.position = location.cameraMarker.position;
         Camera.main.transform.rotation = location.cameraMarker.rotation;
+
+          foreach (var otherLocation in FindObjectsOfType<Location>()) {
+        if (otherLocation.background != null) {
+            otherLocation.background.SetActive(otherLocation == location);
+        }
+      }
     }
 
     // looks for character named {characterName} and moves it to the location 

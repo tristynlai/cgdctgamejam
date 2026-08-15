@@ -10,6 +10,7 @@ public class Location : MonoBehaviour
 {
     [SerializeField] internal List<Transform> markers = new List<Transform>();
     [SerializeField] internal Transform cameraMarker;
+    [SerializeField] internal GameObject background;
 
     private Transform FindMarkerTransform(string name) {
         foreach (var marker in markers) {
