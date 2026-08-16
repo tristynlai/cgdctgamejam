@@ -10,6 +10,9 @@ public class VisualNovel : MonoBehaviour {
     private DialogueRunner dialogueRunner; // utility object that serves lines of dialogue
     private FadeOverlay fadeOverlay; // black overlay used to fade in/out of scenes
 
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource sfxSource;
+
     // when this visual novel object is created
     // (in our example, this happens when the scene is created)
     private void Awake() {
