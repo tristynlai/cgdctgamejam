@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 6222597589554324179}
   - component: {fileID: 2096402523216245403}
   - component: {fileID: 6377304399324827049}
+  - component: {fileID: 5049398603116870673}
   m_Layer: 5
   m_Name: Nubs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6104077818010896027
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 631, y: -100}
+  m_AnchoredPosition: {x: 478, y: -100}
   m_SizeDelta: {x: 1038, y: 944}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6222597589554324179
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -98,3 +99,64 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5049398603116870673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8961528637856551296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3efbffcbc7d641d681d33b8ff624e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  expressions:
+  - name: agents
+    texture: {fileID: 2800000, guid: 2778b4262e065ce499425946b71e8bce, type: 3}
+  - name: angry
+    texture: {fileID: 2800000, guid: 77512df7076619740b59577cc5ee12f5, type: 3}
+  - name: arms_angry
+    texture: {fileID: 2800000, guid: b6097302cb3ff9044965fd09eb511386, type: 3}
+  - name: arms_confused
+    texture: {fileID: 2800000, guid: 6f97ee6ee53b693478d22f2fc1cb3cdd, type: 3}
+  - name: arms_happy
+    texture: {fileID: 2800000, guid: a65f181fe0dc3e74c88787032209f58a, type: 3}
+  - name: arms_neutral
+    texture: {fileID: 2800000, guid: 9f3dc185eb62c154e9757b78f4e9b88a, type: 3}
+  - name: arms_worried
+    texture: {fileID: 2800000, guid: adf42cf0982b0d844802b7956f6bef11, type: 3}
+  - name: confused
+    texture: {fileID: 2800000, guid: 930f077cd128e5148b3acdd594a0c320, type: 3}
+  - name: anger_evolution
+    texture: {fileID: 2800000, guid: 6ef7e4a7773db480ca959a86a8166450, type: 3}
+  - name: error_evolution
+    texture: {fileID: 2800000, guid: d2cd256ef4c1c41fa9fe5185cd83f329, type: 3}
+  - name: happy_evolution
+    texture: {fileID: 2800000, guid: 2411beb5ea87b446aa30b1a2a3d3b583, type: 3}
+  - name: neutral_evolution
+    texture: {fileID: 2800000, guid: 8e341da8208a94877b638c09d1e77f58, type: 3}
+  - name: error
+    texture: {fileID: 2800000, guid: 0da0d7b34ed89d74cb435fab62cda38f, type: 3}
+  - name: happy
+    texture: {fileID: 2800000, guid: 0a3a1270af316bc46ba9d19d52ad3dae, type: 3}
+  - name: loading
+    texture: {fileID: 2800000, guid: 9a2135d3d5b54584fa4c667043ef0303, type: 3}
+  - name: worried
+    texture: {fileID: 2800000, guid: 3807a4ae513588b46ad68970ab7615c7, type: 3}
+  - name: neutral
+    texture: {fileID: 2800000, guid: 4453b6008ce05b14e9312c3999e9bb66, type: 3}
+  - name: wave_angry
+    texture: {fileID: 2800000, guid: 39cff30edcacd81419ad4afe31ab3d2a, type: 3}
+  - name: wave_confused
+    texture: {fileID: 2800000, guid: 4a318e43f6dfa2248a8d5f0c0e1b0438, type: 3}
+  - name: wave_error
+    texture: {fileID: 2800000, guid: 97201e0c177c3f84193062fa0874d803, type: 3}
+  - name: wave_happy
+    texture: {fileID: 2800000, guid: 1bf14108378cc944aab6ab7968df0572, type: 3}
+  - name: wave_neutral
+    texture: {fileID: 2800000, guid: 4e826160d86d9184f9cbe2eb42de7ffc, type: 3}
+  - name: wave_worried
+    texture: {fileID: 2800000, guid: b9134c8b78bc04d4387e505eb1474c63, type: 3}
+  faceRenderer: {fileID: 0}
+  faceMaterialIndex: 0

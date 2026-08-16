@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 1667448818217859373}
   - component: {fileID: 1023784792301597922}
   - component: {fileID: 3423002701061847646}
+  - component: {fileID: 283414884950080817}
   m_Layer: 5
   m_Name: Nat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8317261398779918902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 631, y: -50.878}
-  m_SizeDelta: {x: 2317, y: 3440}
+  m_AnchoredPosition: {x: 614.81445, y: -50.878}
+  m_SizeDelta: {x: 2187.5156, y: 3440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1667448818217859373
 CanvasRenderer:
@@ -98,3 +99,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &283414884950080817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4915439535478662882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3efbffcbc7d641d681d33b8ff624e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  expressions:
+  - name: neutral
+    texture: {fileID: 2800000, guid: eab426be2a60a4c54b4400b09dca5fd9, type: 3}
+  - name: cute
+    texture: {fileID: 2800000, guid: 57ed7008d189443409fe0d44a6a0dd64, type: 3}
+  - name: scared
+    texture: {fileID: 2800000, guid: 20a73f8aeefdf4d09b96a6d2051ac5aa, type: 3}
+  faceRenderer: {fileID: 0}
+  faceMaterialIndex: 0
