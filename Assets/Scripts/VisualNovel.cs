@@ -19,25 +19,31 @@ public class VisualNovel : MonoBehaviour {
 
         // <<camera NAME_OF_LOCATION>>
         // Uncomment this line to define the command:
-        // dialogueRunner.AddCommandHandler<Location>("camera", ChangeCameraLocation);
+        dialogueRunner.AddCommandHandler<Location>("camera", ChangeCameraLocation);
         
         // <<place NAME_OF_CHARACTER>>
         // Uncomment this line to define the command:
-        // dialogueRunner.AddCommandHandler<string,string>("place", PlaceCharacter);
+        dialogueRunner.AddCommandHandler<string,string>("place", PlaceCharacter);
 
         // <<fadeIn DURATION>>
         // Uncomment this line to define the command:
-        // dialogueRunner.AddCommandHandler<float>("fadeIn", FadeIn);
+        dialogueRunner.AddCommandHandler<float>("fadeIn", FadeIn);
 
         // <<fadeOut DURATION>>
         // Uncomment this line to define the command:
-        // dialogueRunner.AddCommandHandler<float>("fadeOut", FadeOut);
+        dialogueRunner.AddCommandHandler<float>("fadeOut", FadeOut);
     }
 
     // moves camera to camera location {location} in the scene
     private void ChangeCameraLocation(Location location) {
         Camera.main.transform.position = location.cameraMarker.position;
         Camera.main.transform.rotation = location.cameraMarker.rotation;
+
+          foreach (var otherLocation in FindObjectsOfType<Location>()) {
+        if (otherLocation.background != null) {
+            otherLocation.background.SetActive(otherLocation == location);
+        }
+      }
     }
 
     // looks for character named {characterName} and moves it to the location 

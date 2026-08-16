@@ -1,5 +1,13 @@
 ﻿title: Val
 ---
+<<camera Understory>>
 This is an example of a Yarn Spinner script. Write your dialogue here!
 WASSUPPPPP
+Luna: Something is happening here...
+
+<<camera Alleyway>>
+Luna: Let's get out of here.
+
+<<camera LilGuyCG>>
+Luna: Wait... what's that?
 ===
