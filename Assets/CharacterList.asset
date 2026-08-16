@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterList
   characters:
   - {fileID: 5120095999213723516, guid: 76888bb2939824535898a4bf2fc79104, type: 3}
-  - {fileID: 5120095999213723516, guid: 76888bb2939824535898a4bf2fc79104, type: 3}
+  - {fileID: 3070234318267964923, guid: 45285f1bf76e34ceaa94ed1762121e65, type: 3}
+  - {fileID: 283414884950080817, guid: 1534aa69aafcc4041b4dd1dab7033519, type: 3}
+  - {fileID: -9206211397398424843, guid: 23b2565660ab2484db7a5266a53e04b3, type: 3}
+  - {fileID: 3234616708940417621, guid: 99d8dbf1794ca4de382c65b1c3178489, type: 3}
+  - {fileID: 5049398603116870673, guid: 84939fea2e75e4f5db46f6f7cbaae626, type: 3}
+  - {fileID: 4358184448389781178, guid: f0492db60296b4621ba84ccaeeaa5280, type: 3}
