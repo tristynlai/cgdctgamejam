@@ -32,6 +32,15 @@ public class VisualNovel : MonoBehaviour {
         // <<fadeOut DURATION>>
         // Uncomment this line to define the command:
         dialogueRunner.AddCommandHandler<float>("fadeOut", FadeOut);
+
+        // <<playMusic MUSIC_NAME>>
+        dialogueRunner.AddCommandHandler<string>("playMusic", PlayMusic);
+
+        // <<playSFX SFX_NAME>>
+        dialogueRunner.AddCommandHandler<string>("playSFX", PlaySFX);
+
+        // <<stopMusic>>
+        dialogueRunner.AddCommandHandler("stopMusic", StopMusic);
     }
 
     // moves camera to camera location {location} in the scene
@@ -78,5 +87,20 @@ public class VisualNovel : MonoBehaviour {
     // fades out a black screen over {time} seconds
     private Coroutine FadeOut(float time = 1f) {
         return StartCoroutine(fadeOverlay.FadeOut(time));
+    }
+
+    // plays background music {musicName}
+    private void PlayMusic(string musicName) {
+       // play music here
+    }
+
+    // plays sound effect {sfxName}
+    private void PlaySFX(string sfxName) {
+      // play SFX here
+    }
+
+    // stops the current background music
+    private void StopMusic() {
+      // stop music here
     }
 }
