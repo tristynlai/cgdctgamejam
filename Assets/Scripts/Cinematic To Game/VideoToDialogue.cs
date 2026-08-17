@@ -8,9 +8,6 @@ public class VideoToDialogue : MonoBehaviour
     [Header("Video and Dialogue")]
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private DialogueRunner dialogueRunner;
-    
-    [Header("Environment")]
-    [SerializeField] private GameObject gameEnvironment; 
 
     [Header("Fade Function")]
     [SerializeField] private CanvasGroup fadeOverlay;
@@ -80,13 +77,17 @@ public class VideoToDialogue : MonoBehaviour
             videoPlayer.gameObject.SetActive(false); 
         }
         
-        if (gameEnvironment != null)
+        if (dialogueUI != null)
         {
-            gameEnvironment.SetActive(true); 
+            dialogueUI.SetActive(true);
         }
 
         yield return StartCoroutine(Fade(1f, 0f, fadeInDuration));
 
+        if (dialogueRunner != null && !dialogueRunner.IsDialogueRunning)
+        {
+            dialogueRunner.StartDialogue(startingNode);
+        }
     }
 
     private IEnumerator Fade(float startAlpha, float targetAlpha, float duration)
