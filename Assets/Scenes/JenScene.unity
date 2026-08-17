@@ -1623,11 +1623,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   music:
-  - name: frisscity
+  - name: frisscityCalm
     clip: {fileID: 8300000, guid: b03704b79531240bdb8c2e303e10707a, type: 3}
+  - name: luxuryApt
+    clip: {fileID: 8300000, guid: 3a7fe273cbbab4092bcc47756d58ac05, type: 3}
+  - name: sundayNeons
+    clip: {fileID: 8300000, guid: 50f25ab274e0a45d19936c45e5200be0, type: 3}
+  - name: junkyard
+    clip: {fileID: 8300000, guid: 3ccacb37da77583459f12d9632538dc9, type: 3}
+  - name: deadroom
+    clip: {fileID: 8300000, guid: bf3d3232c88a94239a8df9f657d2c226, type: 3}
+  - name: ascensionMellow
+    clip: {fileID: 8300000, guid: e16342280cbdd401391e4d64e63813db, type: 3}
+  - name: loungeLizards
+    clip: {fileID: 8300000, guid: 106ba6457660d4a01952975b440f43f2, type: 3}
+  - name: lab
+    clip: {fileID: 8300000, guid: 5cc4c9f134a2d4149b41bca896599dca, type: 3}
+  - name: endingTheme
+    clip: {fileID: 8300000, guid: 14b9ea4a80ed94cd1b9663822be8504c, type: 3}
+  - name: midnightOil
+    clip: {fileID: 8300000, guid: 35ae054ea2853fe4c9a3d10eb57a236a, type: 3}
+  - name: titleTheme
+    clip: {fileID: 8300000, guid: 3deacd6db6c2944b0848b56e1566aa4b, type: 3}
   sfx:
-  - name: sampleNotification
-    clip: {fileID: 8300000, guid: e9dcf3b0ccefc69469ef92397fa31ba0, type: 3}
+  - name: notification
+    clip: {fileID: 8300000, guid: d4a92af5bacd04bf09b5d7fa9e3da19e, type: 3}
+  - name: valMotorcycle
+    clip: {fileID: 8300000, guid: 6efc37ed1efbb4325bee32b6b2c083e3, type: 3}
+  - name: caw
+    clip: {fileID: 8300000, guid: dcd8a0db76a1242a2ba8cb180f0452e5, type: 3}
+  - name: caws
+    clip: {fileID: 8300000, guid: d64463343a63e4c73ac2f1e490c08e3d, type: 3}
+  - name: podUnlock
+    clip: {fileID: 8300000, guid: dbf75426b41c44ed38c311842548f971, type: 3}
+  - name: beep
+    clip: {fileID: 8300000, guid: 85a75e6e440194f74ba6afaa53b75217, type: 3}
+  - name: maxxMotorcycle
+    clip: {fileID: 8300000, guid: 67f40bf8f3da2404ab9b7d9722c74512, type: 3}
+  - name: battlecry
+    clip: {fileID: 8300000, guid: 11cc6dcfe6d0145f4938e82b2a0d6f2c, type: 3}
+  - name: detonation
+    clip: {fileID: 8300000, guid: b3e0a59972a7847cd8c3bdf8af178a88, type: 3}
+  - name: reset
+    clip: {fileID: 8300000, guid: 09d349b0b30db47849a94de6f3174681, type: 3}
+  - name: grinder
+    clip: {fileID: 8300000, guid: 547793eaf9d164efb9da0e1f4dd9aade, type: 3}
 --- !u!4 &1378181040
 Transform:
   m_ObjectHideFlags: 0
