@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 using Yarn.Unity;
 
 public class Character : MonoBehaviour {
     [System.Serializable] // texture lookup for facial expressions
     public class Expression {
         public string name;
-        public Texture2D texture;
+        public Sprite sprite; 
     }
 
     // objects needed to render new textures on Character face
     [SerializeField] List<Expression> expressions = new List<Expression>();
-    [SerializeField] Renderer faceRenderer;
-    [SerializeField] int faceMaterialIndex;
+    [SerializeField] Image faceImage; 
 
     // object needed to set Character pose
     private Animator animator;
@@ -21,8 +21,8 @@ public class Character : MonoBehaviour {
     // when this character is first created
     public void Awake() {
         // set initial facial expression and pose to defaults
-        var defaultExpression = expressions[0].texture;
-        faceRenderer.materials[faceMaterialIndex].mainTexture = defaultExpression;
+        var defaultExpression = expressions[0].sprite;
+        faceImage.sprite = defaultExpression;
         animator = GetComponentInChildren<Animator>();
     }
 
@@ -46,6 +46,8 @@ public class Character : MonoBehaviour {
             }
         }
         // get the faceRenderer to apply the expression texture to the Character's face
-        faceRenderer.materials[faceMaterialIndex].mainTexture = expressionToUse.texture;
+        if (expressionToUse != null) {
+            faceImage.sprite = expressionToUse.sprite;
+        }
     }
 }

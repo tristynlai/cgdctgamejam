@@ -6,6 +6,8 @@ using Yarn.Unity;
 
 public class VisualNovel : MonoBehaviour {
     [SerializeField] CharacterList characterList;
+    [SerializeField] private Transform characterContainer;
+    
     private Dictionary<string, Character> characters = new Dictionary<string, Character>();
     private DialogueRunner dialogueRunner; // utility object that serves lines of dialogue
     private FadeOverlay fadeOverlay; // black overlay used to fade in/out of scenes
@@ -66,7 +68,8 @@ public class VisualNovel : MonoBehaviour {
         // if this character has not been instantiated before, do so now
         if (!characters.ContainsKey(characterName)) {
             var characterPrefab = characterList.FindCharacterPrefab(characterName);
-            character = Instantiate(characterPrefab);
+            character = Instantiate(characterPrefab, characterContainer); 
+            
             // and place it in the list of characters so we can find it next time
             characters[characterName] = character;
             

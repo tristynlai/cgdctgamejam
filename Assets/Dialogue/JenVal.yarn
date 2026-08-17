@@ -3,11 +3,17 @@
 <<camera Understory>>
 This is an example of a Yarn Spinner script. Write your dialogue here!
 WASSUPPPPP
+
+<<place Kaya_Neutral LeftScreen>>
+<<expression Kaya_Neutral neutral>>
 Luna: Something is happening here...
 
 <<camera Alleyway>>
+
+<<expression Kaya_Neutral annoyed>>
 Luna: Let's get out of here.
 
 <<camera LilGuyCG>>
+<<expression Kaya_Neutral happy>>
 Luna: Wait... what's that?
 ===
