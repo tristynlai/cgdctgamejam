@@ -4,7 +4,7 @@
 This is an example of a Yarn Spinner script. Write your dialogue here!
 WASSUPPPPP
 
-<<place Kaya_Neutral LeftScreen>>
+<<place Kaya_Neutral>>
 <<expression Kaya_Neutral neutral>>
 Luna: Something is happening here...
 

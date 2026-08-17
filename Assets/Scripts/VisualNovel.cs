@@ -28,7 +28,7 @@ public class VisualNovel : MonoBehaviour {
         
         // <<place NAME_OF_CHARACTER>>
         // Uncomment this line to define the command:
-        dialogueRunner.AddCommandHandler<string,string>("place", PlaceCharacter);
+        dialogueRunner.AddCommandHandler<string>("place", PlaceCharacter);
 
         // <<fadeIn DURATION>>
         // Uncomment this line to define the command:
@@ -62,7 +62,8 @@ public class VisualNovel : MonoBehaviour {
 
     // looks for character named {characterName} and moves it to the location 
     // of marker named {markerName} in the scene
-    private void PlaceCharacter(string characterName, string markerName) {
+    private void PlaceCharacter(string characterName) {
+        characterName = characterName.Trim();
         Character character;
 
         // if this character has not been instantiated before, do so now
@@ -78,11 +79,6 @@ public class VisualNovel : MonoBehaviour {
             // otherwise get the one we prepared earlier
             character = characters[characterName];
         }
-        // get the position/rotation of the destination marker in the scene
-        // and set the position/rotation of the Character to there
-        var marker = GameObject.Find(markerName);
-        character.transform.position = marker.transform.position;
-        character.transform.rotation = marker.transform.rotation;
     }
 
     // fades in a black screen over {time} seconds
