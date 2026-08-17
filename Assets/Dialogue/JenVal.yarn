@@ -1,20 +1,37 @@
 ﻿title: Val
 ---
-<<camera Understory>>
 <<playMusic frisscityCalm>>
-This is an example of a Yarn Spinner script. Write your dialogue here!
-WASSUPPPPP
+<<camera Understory>>
+<<fadeIn 2>>
+<<place Luna_Neutral>>
+<<expression Luna_Neutral arms_neutral>>
+Luna: The only thing I need is a big offer so I can get the hell home.
+<<playSFX valMotorcycle>>
+<<expression Luna_Neutral arms_surprised>>
+I recognize those tires. And the baddie who rides on them.
+Luna: (Stay cool.)
+<<place Val>>
+Val: Luna! Finally, someone without a corporate T-shirt. Have you been making bank today?
+<<expression Luna_Neutral arms_shy>>
+Luna: H-Hey, Val. No, not yet. Still getting the low-tipping vegans and high-strung snobs. Y'know how it is.
+I hold my breath as Val walks over. She laughs and it's a bright, bubbly sound that goes straight to my heart while her hand goes straight to my head for a gentle pat.
+<<expression Val flirty>>
+Val: I'm sure things will turn up by nighttime. All the overworked techies get the late-night munchies.
+Luna: (God, she's amazing. She always knows what to say.)
+Luna: (But it's kinda weird to see Root Town's corner store queen on this side of town. And so late at night.)
+<<expression Val neutral>>
+Val: Something on your mind?
+Luna: (BE. COOL.)
+<<jump ValChoices>>
+===
 
-<<place Kaya_Neutral>>
-<<expression Kaya_Neutral neutral>>
-Luna: Something is happening here...
-
+title: ValChoices
+---
 <<camera Alleyway>>
-
+<<place Kaya_Neutral>>
 <<expression Kaya_Neutral annoyed>>
 <<playSFX notification>>
 Luna: Let's get out of here.
-
 <<camera LilGuyCG>>
 <<expression Kaya_Neutral happy>>
 Luna: Wait... what's that?
