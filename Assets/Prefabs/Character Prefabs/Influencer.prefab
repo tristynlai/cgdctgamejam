@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2223159109620370017
+--- !u!1 &6141389403156157820
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,27 +8,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1931565785329081935}
-  - component: {fileID: 4735800767691567200}
-  - component: {fileID: 2127672188585235340}
-  - component: {fileID: 2425948756418647023}
+  - component: {fileID: 4736775326601169518}
+  - component: {fileID: 2528310823117127463}
+  - component: {fileID: 8031574457054126928}
+  - component: {fileID: 8260215625815860716}
+  - component: {fileID: -875137490862673461}
   m_Layer: 5
-  m_Name: CyberSeagull
+  m_Name: Influencer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1931565785329081935
+--- !u!224 &4736775326601169518
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2223159109620370017}
+  m_GameObject: {fileID: 6141389403156157820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -36,23 +37,23 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 631, y: -50.878}
-  m_SizeDelta: {x: 2317, y: 3440}
+  m_SizeDelta: {x: 1156, y: 1753}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &4735800767691567200
+--- !u!222 &2528310823117127463
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2223159109620370017}
+  m_GameObject: {fileID: 6141389403156157820}
   m_CullTransparentMesh: 1
---- !u!114 &2127672188585235340
+--- !u!114 &8031574457054126928
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2223159109620370017}
+  m_GameObject: {fileID: 6141389403156157820}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -66,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3233133167715661553, guid: 4920e01fc521c4b409d16a56f74f9249, type: 3}
+  m_Sprite: {fileID: -2440077464754611456, guid: f3d4590c7eea98c42a8bf0713f26fb6a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -76,17 +77,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &2425948756418647023
+--- !u!95 &8260215625815860716
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2223159109620370017}
+  m_GameObject: {fileID: 6141389403156157820}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6e6cae92c52189f4a96b6ecec4042610, type: 2}
+  m_Controller: {fileID: 9100000, guid: b3ef9329792adcf47aa7844de242b251, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -98,3 +99,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-875137490862673461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141389403156157820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3efbffcbc7d641d681d33b8ff624e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  expressions:
+  - name: neutral
+    sprite: {fileID: 759402884471709376, guid: 706e740b2d65445c0bddf590fd8144e2, type: 3}
+  - name: happy
+    sprite: {fileID: -2736658856983285870, guid: f4f9608f9982445ca8625358e78b0af5, type: 3}
+  - name: annoyed
+    sprite: {fileID: 4910081480945214497, guid: 05c5691fc76264630bf89b7fc2c567f9, type: 3}
+  faceImage: {fileID: 8031574457054126928}

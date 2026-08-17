@@ -113,10 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   expressions:
   - name: neutral
-    texture: {fileID: 2800000, guid: 5d26078877a1045f5b40b689708d1781, type: 3}
+    sprite: {fileID: -5937304214518909853, guid: 5d26078877a1045f5b40b689708d1781, type: 3}
   - name: flirty
-    texture: {fileID: 2800000, guid: 045670a72d112440887608ce39e6a135, type: 3}
+    sprite: {fileID: 8931884285673452393, guid: 045670a72d112440887608ce39e6a135, type: 3}
   - name: serious
-    texture: {fileID: 2800000, guid: 7d54738a16d134763bd4f88f3b47d891, type: 3}
-  faceRenderer: {fileID: 0}
-  faceMaterialIndex: 0
+    sprite: {fileID: -7018569358158547895, guid: 7d54738a16d134763bd4f88f3b47d891, type: 3}
+  faceImage: {fileID: 4909417022639879863}
