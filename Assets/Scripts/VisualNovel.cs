@@ -15,6 +15,9 @@ public class VisualNovel : MonoBehaviour {
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource sfxSource;
 
+    //For the Audio Manager
+    [SerializeField] private AudioManager audioManager;
+
     // when this visual novel object is created
     // (in our example, this happens when the scene is created)
     private void Awake() {
@@ -93,16 +96,31 @@ public class VisualNovel : MonoBehaviour {
 
     // plays background music {musicName}
     private void PlayMusic(string musicName) {
-       // play music here
+        musicName = musicName.Trim(); 
+        
+        AudioClip clip = audioManager.GetMusic(musicName);
+        
+        if (clip != null) {
+            musicSource.clip = clip;
+            musicSource.loop = true; 
+            musicSource.Play();
+        }
     }
 
     // plays sound effect {sfxName}
     private void PlaySFX(string sfxName) {
-      // play SFX here
+        sfxName = sfxName.Trim();
+        
+        AudioClip clip = audioManager.GetSFX(sfxName);
+        
+        if (clip != null) {
+            sfxSource.PlayOneShot(clip); 
+        }
     }
 
     // stops the current background music
     private void StopMusic() {
-      // stop music here
+        musicSource.Stop();
+        musicSource.clip = null;
     }
 }

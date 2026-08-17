@@ -1593,6 +1593,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1660351816}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1378181038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1378181040}
+  - component: {fileID: 1378181039}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1378181039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378181038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0fcbf3be43784db494e68f5559753e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  music:
+  - name: frisscity
+    clip: {fileID: 8300000, guid: b03704b79531240bdb8c2e303e10707a, type: 3}
+  sfx:
+  - name: sampleNotification
+    clip: {fileID: 8300000, guid: e9dcf3b0ccefc69469ef92397fa31ba0, type: 3}
+--- !u!4 &1378181040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378181038}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1202.9651, y: 550.8408, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1414741544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,6 +1964,7 @@ MonoBehaviour:
   characterContainer: {fileID: 1414741548}
   musicSource: {fileID: 1356346520}
   sfxSource: {fileID: 1025851647}
+  audioManager: {fileID: 1378181039}
 --- !u!4 &1660351816
 Transform:
   m_ObjectHideFlags: 0
@@ -2201,9 +2252,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 755273914}
+  - {fileID: 1414741548}
   - {fileID: 633909407}
   - {fileID: 1121041069}
   - {fileID: 1459871930}
   - {fileID: 1660351816}
   - {fileID: 564552706}
-  - {fileID: 1414741548}
+  - {fileID: 1378181040}
