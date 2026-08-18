@@ -200,7 +200,7 @@ Luna: (But damn, this guy is a TANK! And FERAL! Do I risk it?)
 -> Help the cybergull
     <<set $goodend += 1>>
     <<set $withCog = false>>
-    <<exprssion Luna_Neutral neutral>>
+    <<expression Luna_Neutral neutral>>
     Luna: If you bite me, you die. 
     There’s a glint through the gull’s glasses, and I can feel his scarred eye tracking me as I tip-toe towards him.
     Luna: Nice…mutant…seagull…thing…
