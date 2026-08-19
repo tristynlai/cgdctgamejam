@@ -33,6 +33,9 @@ public class VisualNovel : MonoBehaviour {
         // Uncomment this line to define the command:
         dialogueRunner.AddCommandHandler<string>("place", PlaceCharacter);
 
+        //This is for the character to exit:
+        dialogueRunner.AddCommandHandler<string>("exit", ExitCharacter);
+
         // <<fadeIn DURATION>>
         // Uncomment this line to define the command:
         dialogueRunner.AddCommandHandler<float>("fadeIn", FadeIn);
@@ -81,6 +84,15 @@ public class VisualNovel : MonoBehaviour {
         } else {
             // otherwise get the one we prepared earlier
             character = characters[characterName];
+        }
+    }
+
+    private void ExitCharacter(string characterName) {
+        characterName = characterName.Trim();
+
+        if (characters.ContainsKey(characterName)) {
+            Destroy(characters[characterName].gameObject);
+            characters.Remove(characterName);
         }
     }
 
