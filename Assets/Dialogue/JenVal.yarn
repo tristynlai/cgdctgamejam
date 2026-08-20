@@ -641,6 +641,7 @@ Luna: (Might as well squeeze another job in before riding back home…)
 <<exit Luna_Neutral>>
 <<exit Nubs>>
 <<fadeOut 2>>
+<<stopMusic>>
 <<jump Questline>>
 // Questline dialogue is in the Questline.yarn tab
 ===
