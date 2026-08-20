@@ -383,3 +383,264 @@ Luna: (I'm literally losing brain cells talking to this thing…)
 <<fadeOut 2>>
 <<jump LilGuyReaction>>
 ===
+
+title: LilGuyReaction
+---
+<<place Luna_Neutral>>
+<<expression Luna_Neutral arms_neutral>>
+<<camera Alleyway>>
+<<fadeIn 2>>
+// If player chose to Kick it around, show:
+<<if visited("KickPod") == true>>
+    <<place NubsPod>>
+    <<expression NubsPod angry>>
+    T.A.B: How dare you kick a perfect high-fidelity prototype like me around!
+    <<pose NubsPod SceneSample_NubsFadeOut>>
+    <<wait 1>>
+    <<exit NubsPod>>
+    The creature crawls out of the pod to give me a piece of its mind. The circuits in its tadpole-like tail jolt to life.
+    <<place Nubs>>
+    <<expression Nubs wave_angry>> 
+    T.A.B: My master will have your head for this! As well as the AGENTS Legal team! When they get their hands on that pod’s sensor—
+    <<expression Luna_Neutral arms_annoyed>>
+    Luna: Whoa, hold up. I'm not the one that tossed you here like trash. I'm just the delivery girl. Also…
+    I shove the transporter pod into the dumpster, which smears it with unspeakable leftovers. I give it one last push, and the glass on the fingerprint sensor cracks, erasing traces of my DNA in the process.
+    <<expression Luna_Neutral arms_happy>>
+    Luna: What sensor?
+    <<expression Nubs angry>> 
+    T.A.B: …
+    Luna: AGENTS tech is pretty fragile, huh? Not as ‘high-fidelity’ as it claims to be.
+    <<expression Luna_Neutral arms_neutral>>
+    Luna: Now, as for you…
+<<endif>>
+//If else, show:
+<<if visited("KickPod") == false>>
+    <<place NubsPod>>
+    <<expression NubsPod neutral>>
+    T.A.B: So you eventually came to your senses. You realized that stealing intellectual property from the most powerful corporation in Area 415 was wrong and costly. You have my thanks.
+    <<pose NubsPod SceneSample_NubsFadeOut>>
+    <<wait 1>>
+    <<exit NubsPod>>
+    The creature slowly emerges from the pod. 
+    <<place Nubs>>
+    <<expression Nubs neutral>>
+    Luna: (Meh. The face was cuter.)
+    T.A.B: As for my master, well. He will thank you with damage fees and lawsuits within the next 1-2 business days.
+    <<expression Luna_Neutral surprised>>
+    Luna: W-Wait, hold up! “Stealing?” I'm just the delivery girl. I didn't toss you here like trash!
+    The creature waves his tiny nubs at the transporter pod.
+    <<expression Nubs wave_angry>>
+    T.A.B: It's too late! This AGENTS pod sensor has already captured your DNA, which can and will be used against you in the court of law.
+    <<expression Luna_Neutral neutral>>
+    Luna: Oh yeah?
+    I immediately shove the transporter pod into the dumpster and smear its sensor with unspeakable leftovers.
+    <<expression Luna_Neutral happy>>
+    Luna: Oops! There goes my DNA.
+    <<expression Nubs neutral>>
+    T.A.B: Ah. 
+    <<expression Nubs loading>>
+    T.A.B: Recalculating potential lawsuit probability to 15%.
+    <<expression Luna_Neutral arms_neutral>>
+    Luna: Let's keep it that way. 
+    Luna: (Time to cross-examine this alien.)
+<<endif>>
+<<jump LilGuyQuestions>>
+===
+
+title: LilGuyQuestions
+---
+<<expression Nubs neutral>>
+-> What are you? <<once>>
+    <<detour WhatAreYou>>
+    <<jump LilGuyQuestions>>
+    // Return to the original questions in LilGuyQuestions node, but remove this question since the player completed it.
+-> Where did you come from?
+    Luna: Obviously you were stuffed into an AGENTS pod. But where did you come from BEFORE that?
+    T.A.B: A place where humans wear white hazmat suits and poke me with objects.
+    Luna: What the…
+    <<expression Luna_Neutral arms_neutral>>
+    Luna: So, like a lab?
+    T.A.B: Yes, I suppose you could say that. 
+    T.A.B: I am the result of 183 failed experiments in that lab.
+    <<expression Nubs wave_neutral>>
+    T.A.B: I could have been the 184th failure, but now I am all that is left. Considering what happened tonight.
+    Luna: What do you mean?
+    <<jump Tonight>>
+-> Who is your owner? <<once>>
+    <<detour WhoOwner>>
+    <<jump LilGuyQuestions>>
+    // Return to the original questions in LilGuyQuestions node, but remove this question since the player completed it.
+-> How can you speak? <<once>>
+    <<detour HowSpeak>>
+    <<jump LilGuyQuestions>>
+    // Return to the original questions in LilGuyQuestions node, but remove this question since the player completed it.
+===
+
+
+title: WhatAreYou
+---
+Luna: “T.A.B” is a stupid name. What are you, and what are you supposed to do?
+<<expression Nubs loading>>
+T.A.B: I am the property of AGENTS Incorporated and its magnum opus. Any other questions related to my enslavement are classified.    
+Luna: AGENTS shelled out zillions for YOU? Don't flatter yourself.
+Luna: (At least it knows it's oppressed by AGENTS.)
+<<expression Nubs neutral>>
+===
+
+
+title: WhoOwner
+---
+Luna: You mentioned a “master.” Who is it?
+<<expression Nubs loading>>
+T.A.B: That information is classified. The answer is hidden behind firewalls I can't even access.
+Luna: (Whoever it is, they don't want information leaking out to the public.)
+<<expression Nubs neutral>>
+===
+
+
+title: HowSpeak
+---
+Luna: Why were you installed with a language microchip? Is that what people want in their cyberpets?
+<<expression Nubs wave_angry>>
+T.A.B: I am NOT a pet!
+<<expression Nubs neutral>>
+T.A.B: I was programmed to speak in 25 languages. This was decided in my early concept days.
+<<expression Nubs arms_happy>>
+T.A.B: It is also what my master wanted. They found it highly marketable to the masses.
+Luna: Cyberpets are sold to the masses…
+Luna: (He really doesn't get that he's just a fancy toy.)
+Luna: And this “master” of yours?
+<<expression Nubs loading>>
+T.A.B: That's classified information.
+<<expression Luna_Neutral arms_annoyed>>
+Luna: Right, of course…
+Luna: (So you know what your master wants, but you don't know anything about them…)
+<<expression Nubs neutral>>
+===
+
+title: Tonight
+---
+<<declare $bigJob= false>>
+<<declare $tellTruth = false>>
+T.A.B: One of the hazmat humans took me away and stuffed me in this pod, which you freed me from. And, if you are telling the truth—
+<<expression Nubs loading>>
+The creature makes a whizzing sound and a blue light shoots out from its facial screen. The light scans me up and down.
+T.A.B: —Which you seem to be, based on my built-in lie detector technology. Your heartbeat and pulse rate are normal.
+<<expression Luna_Neutral arms_annoyed>>
+Luna: Uh, invasive much?! Isn't this against, like, some data privacy law?!
+T.A.B: Incorrect. Scanning people without permission has been legal since 2026, with glasses that had built-in cameras.
+Luna: (Ugh, he definitely was made by tech bros.)
+<<expression Nubs neutral>>
+T.A.B: The only possible conclusion is that I was stolen from the AGENTS lab.
+Luna: Bravo, genius.
+<<expression Luna_Neutral arms_neutral>>
+Luna: Did you see what they looked like?
+T.A.B: No. They took me when they were still in a hazmat suit. When one hazmat human injects plutonium into your titanium-grade outer shell, they all start to look the same.
+<<expression Luna_Neutral surprised>>
+Luna: W-Wait, you're a BOMB!? 
+T.A.B: The person didn't have any AGENTS tech implanted in them, though. I would've been able to scan and identify them if they had, even if they were wearing a suit.
+<<expression Nubs loading>>
+T.A.B: You also don't have any AGENTS tech either, which is fascinating. I was programmed to believe that everyone in Area 415 would have something installed into their skin.
+<<expression Luna_Neutral arms_annoyed>>
+Luna: Nope, no AGENTS for me. And I like to keep it that way.
+<<expression Nubs confused>>
+T.A.B: But why? Why would you not want to partake in the greatest inventions made by mankind?
+Luna: And sign up for 24/7 surveillance? Hard pass.
+I stare at its stubby sets of legs that are floating in the air.
+Luna: But I guess you’re already recording me without my permission, Nubs.
+<<expression Nubs wave_angry>>
+T.A.B: It's “T.A.B”!
+<<expression Luna_Neutral arms_neutral>>
+Luna: Nah. It's Nubs now.
+Nubs: And who are you?
+<<expression Luna_Neutral arms_annoyed>>
+Luna: If you can scan for my vitals and embarrassing stuff about me, then you definitely can scan for my name.
+Nubs: I can't. You don't have AGENTS technology installed in your system.
+<<expression Luna_Neutral arms_surprised>>
+Luna: Then how did you know about my…?
+<<expression Nubs arms_happy>>
+Nubs: Because nobody can resist my adorable form! I was designed to be disarming so that nobody would suspect my hidden capabilities!
+<<expression Luna_Neutral arms_annoyed>>
+Luna: Ugh. It's Luna, okay?
+// SFX cyberdeck notification ping
+<<playSFX notification>>
+<<expression Luna_Neutral arms_neutral>>
+<<expression Nubs confused>>
+A notification flashes on my homescreen. My current delivery status for Nubs changes from “Pick up” to “Delivery on the way.” The notification reveals where to drop him off.
+It's in Root Town.
+I tap on the notification and try to find more information about the requestor. Nothing.
+Luna: (Why would someone want a cute little BOMB roaming free in the streets…?)
+// SFX cyberdeck notification ping
+<<playSFX notification>>
+More delivery offers from the SL0P app appear on my cyberdeck. The rates are double what they usually are.
+Luna: (Might as well squeeze another job in before riding back home…)
+
+-> Choose the offer with a lower tip and easier dropoff
+    I hop back onto my motorbike and pat the faded cushion on the back.
+    Luna: Hop on, lil guy.
+    Nubs: Are you taking me back to AGENTS?
+    Luna: What? No. I’m doing another delivery before I take you to Root Town. That's where the customer wants you.
+    <<expression Nubs angry>>
+    Nubs: So you have chosen violence. You want to continue kidnapping me.
+    <<expression Luna_Neutral arms_neutral>>
+    Luna: (The lil guy's not buying it…)
+    -> Lie and say the requestor is its master
+        <<set $badend += 1>>
+        <<expression Luna_Neutral neutral>>
+        Luna: I checked the SL0P app. The one powered by AGENTS. Your favorite.
+        Luna: It said the customer was your master. And would an AGENTS product lie to me?
+        <<expression Nubs wave_worried>>
+        Nubs: Never! Perhaps this is the master's way of discreetly moving me to another location to continue experimentation.
+        <<expression Nubs wave_happy>>
+        The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and wraps his tail around it.
+        Nubs: I would try my lie detector again, but I've run out of tokens to use that feature.
+        Luna: (Phew…)
+    -> Tell the truth and explain your situation
+            <<set $tellTruth = true>>
+            <<set $goodend += 1>>
+            <<expression Luna_Neutral neutral>>
+            Luna: Look, I'm short on rent and need to complete this task so my roommate doesn’t kick me out.
+            Luna: What if I pretend to drop you off in Root Town, then take you back to the nearest AGENTS facility? That way, we both get what we want.
+            <<expression Nubs happy>>
+            The creature seems convinced and nods. He crawls up onto the motorbike's cushion and wraps his tail around it.
+            Nubs: I could scan you again to see if you are telling the truth. But your answer is sufficient.
+            <<expression Luna_Neutral annoyed>>
+-> Choose the offer with a higher tip and harder dropoff
+    <<set $bigJob = true>>
+    I hop back onto my motorbike and pat the faded cushion on the back.
+    Luna: Hop on, lil guy.
+    Nubs: Are you taking me back to AGENTS?
+    Luna: What? No. We're doing another delivery before I take you to Root Town. That's where the customer wants you.
+    <<expression Nubs angry>>
+    Nubs: So you have chosen violence. You want to continue kidnapping me.
+    <<expression Luna_Neutral arms_neutral>>
+    Luna: (The lil guy's not buying it…)
+    -> Lie and say the requestor is its master
+        <<set $badend += 1>>
+        <<expression Luna_Neutral neutral>>
+        Luna: I checked the SL0P app. The one powered by AGENTS, your favorite.
+        Luna: It said the customer was your master. And would an AGENTS product lie to me?
+        <<expression Nubs wave_worried>>
+        Nubs: Never! Perhaps this is the master's way of discreetly moving me to another location to continue experimentation.
+        <<expression Nubs wave_happy>>
+        The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and wraps his tail around it.
+        Nubs: I would try my lie detector again, but I've run out of tokens to use that feature.
+        Luna: (Phew…)
+    -> Tell the truth and explain your situation
+        <<set $tellTruth = true>>
+        <<set $goodend += 1>>
+        Luna: Look, I'm short on rent and need to complete this task so my roommate doesn’t kick me out.
+        Luna: What if I pretend to drop you off in Root Town, then take you back to the nearest AGENTS facility? That way, we both get what we want.
+        <<expression Nubs happy>>
+        The creature seems convinced and nods. He crawls up onto the motorbike's cushion and wraps his tail around it.
+        Nubs: I could scan you again to see if you are telling the truth. But your answer is sufficient.
+        <<expression Luna_Neutral annoyed>>
+<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<pose Nubs SceneSample_NubsFadeOut>>
+<<wait 1>>
+<<exit Luna_Neutral>>
+<<exit Nubs>>
+<<fadeOut 2>>
+<<jump Questline>>
+// Questline dialogue is in the Questline.yarn tab
+===
