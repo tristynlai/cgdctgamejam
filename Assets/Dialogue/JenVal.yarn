@@ -63,6 +63,7 @@ Luna: (I’ve unleashed a gearhead beast. There’s no end to this conversation.
     Val: But mine's built to survive. She'll outrun anything that's fresh off the showroom floor!
     She rambles on for ten more minutes about her motorbike. And I love every second of it.
     // Return to the original question node in Val, but remove this question since the player completed it.
+    <<expression Val neutral>>
 ->  Cut it short.
     <<expression Luna_Neutral arms_neutral>>
     <<expression Val neutral>>
@@ -129,11 +130,14 @@ title: TheOffer
 Val's attention is suddenly stolen by her phone. She smears her thumb across her screen, makes a couple of taps, then hops back onto her motorbike.
 <<expression Luna_Neutral neutral>>
 <<expression Val neutral>>
-// SFX motorcycle engine turning on
-<<playSFX valMotorcycle>>
 Val: Sorry, gotta jet! Root Town needs their soda pop.
 Val: Stop by tonight, if you’re free. I’ll be open.
-/////////// Val leaves
+// SFX motorcycle engine turning on
+<<playSFX valMotorcycle>>
+// Val leaves
+<<pose Val SceneSample_ValFadeOut>>
+<<wait 1>>
+<<exit Val>>
 Luna: There she goes…
 Val is everything I want to be. Independent, spunky. And good with her hands, too.
 <<expression Luna_Neutral arms_shy>> 
@@ -149,7 +153,10 @@ Luna: Jackpot.
 A big offer on the SL0P app finally lands on my screen.
 I quickly accept the offer. It reveals the coordinates of my delivery order's pickup location.
 Luna: Time to roll.
-///////// Luna leaves
+// Luna leaves
+<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<wait 1>>
+<<exit Luna_Neutral>>
 <<fadeOut 2>>
 <<wait 2>>
 <<jump Alleyway>>
@@ -159,7 +166,6 @@ title: Alleyway
 ---
 <<camera Alleyway>>
 <<fadeIn 2>>
-<<wait 2>>
 <<place Luna_Neutral>>
 <<expression Luna_Neutral neutral>>
 Luna: This is…suss.
@@ -193,7 +199,7 @@ title: Cybergull
 ---
 <<declare $withCog = true>>
 // SFX of gull noise, short version
-<<playSFX caws>>
+<<playSFX caw>>
 The cybergull’s wings flap furiously as he screeches, almost like a warning.
 Luna: (But damn, this guy is a TANK! And FERAL! Do I risk it?)
 
@@ -206,29 +212,41 @@ Luna: (But damn, this guy is a TANK! And FERAL! Do I risk it?)
     Luna: Nice…mutant…seagull…thing…
     I squat down to his level and reach my arm out to grab the gear.
     // SFX of gull noise, short version
-    <<playSFX caw>>
+    <<playSFX caws>>
     <<expression Luna_Neutral surprised>>
     The cybergull instinctively recoils, his webbed feet digging into the handle of his extremely shiny knife.
     <<expression Luna_Neutral neutral>>
     Luna: B-Bro! I don’t have all day. Do you wanna become roadkill or not?!
     He puffs his chest before he reluctantly holds still. I manage to wriggle the piece off his beefy neck.
+    <<pose CyberSeagull SceneSample_CybergullFadeOut>>
+    <<wait 1>>
     <<exit CyberSeagull>>
     <<place CyberSeagull>>
     <<expression CyberSeagull cogless>>
     The gull ruffles his feathers to collect himself. Then, he stares into my soul. 
     <<expression Luna_Neutral surprised>>
     Is he…aura farming?
+    <<pose CyberSeagull SceneSample_CybergullFadeOut>>
+    <<wait 1>>
     <<exit CyberSeagull>>
     But then, he flies away.
     <<expression Luna_Neutral arms_neutral>>
     Luna: You’re welcome.
     I tuck the flux ring away for safe-keeping.
+    <<pose Luna_Neutral SceneSample_LunaFadeOut>>
+    <<wait 1>>
+    <<exit Luna_Neutral>>
 -> Don’t help the cybergull
     <<set $badend += 1>>
     <<expression Luna_Neutral arms_neutral>>
     Luna: I can’t risk getting rabies, or whatever chemical disease you have.
     The cybergull scowls as I walk past him and look around to see what package I need to pick up around this disgusting trashpile. 
     A grudge brews from beyond the gull’s glasses. 
+    <<pose Luna_Neutral SceneSample_LunaFadeOut>>
+    <<pose CyberSeagull SceneSample_CybergullFadeOut>>
+    <<wait 1>>
+    <<exit CyberSeagull>>
+    <<exit Luna_Neutral>>
 <<fadeOut 2>>
 <<wait 2>>
 <<jump TransporterPod>>
@@ -237,11 +255,10 @@ Luna: (But damn, this guy is a TANK! And FERAL! Do I risk it?)
 title: TransporterPod
 ---
 <<camera Alleyway>>
-<<place NubsPod right>>
+<<place NubsPod>>
 <<expression NubsPod closed>>
 <<fadeIn 2>>
-<<wait 2>>
-<<place Luna_Neutral left>>
+<<place Luna_Neutral>>
 <<expression Luna_Neutral arms_neutral>>
 I finally notice a transporter pod branded with the AGENTS logo sitting by the dumpster. It's an odd place to leave something so brand-spanking new.
 <<expression Luna_Neutral surprised>>
@@ -259,6 +276,9 @@ The pod rattles on the rubble. Usually, food deliveries don't involve LIVING CRE
     Which can only mean one thing.
     Luna: (This delivery is…meant for me? But why?)
     Luna: (Why does this pod have my DNA…?)
+    <<wait 1>>
+    <<exit Luna_Neutral>>
+    <<exit NubsPod>>
 -> Get closer to inspect it
     <<jump InspectPod>>
 -> Kick it around
@@ -289,6 +309,9 @@ Which can only mean one thing.
 Luna: (This delivery is…meant for me? But why?)
 Luna: (Why does this pod have my DNA…?)
 And what kind of monster did I just unleash?
+<<wait 1>>
+<<exit Luna_Neutral>>
+<<exit NubsPod>>
 <<fadeOut 2>>
 <<jump MeetLilGuy>>
 ===
@@ -333,16 +356,17 @@ I glance at the pod's markings again. It's from AGENTS—the very company that's
     Which can only mean one thing.
     Luna: (This delivery is…meant for me? But why?)
     Luna: (Why does this pod have my DNA…?)
-<<jump MeetLilGuy>>
+<<wait 1>>
+<<exit Luna_Neutral>>
+<<exit NubsPod>>
 <<fadeOut 2>>
-<<wait 2>>
+<<jump MeetLilGuy>>
 ===
 
 title: MeetLilGuy
 ---
 // Fade in to show the CG with the transporter pod opened and Lil Guy revealed. Let’s NOT call in character sprites.
 <<camera LilGuyCG>>
-<<wait 2>>
 <<fadeIn 2>>
 <<wait 2>>
 The pod sheds its protective packaging and reveals a creature in a large glass container.
