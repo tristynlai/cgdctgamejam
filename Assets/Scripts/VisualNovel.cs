@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using UnityEngine.SceneManagement;
 
 public class VisualNovel : MonoBehaviour {
     [SerializeField] CharacterList characterList;
@@ -52,6 +53,9 @@ public class VisualNovel : MonoBehaviour {
 
         // <<stopMusic>>
         dialogueRunner.AddCommandHandler("stopMusic", StopMusic);
+
+        //Loading other scenes
+        dialogueRunner.AddCommandHandler<string>("loadScene", LoadScene);
     }
 
     // moves camera to camera location {location} in the scene
@@ -134,5 +138,11 @@ public class VisualNovel : MonoBehaviour {
     private void StopMusic() {
         musicSource.Stop();
         musicSource.clip = null;
+    }
+
+    //Loads the scene we want next
+    private void LoadScene(string sceneName) {
+        sceneName = sceneName.Trim();
+        SceneManager.LoadScene(sceneName);
     }
 }
