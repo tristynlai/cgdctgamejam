@@ -1068,6 +1068,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -48
       objectReference: {fileID: 0}
+    - target: {fileID: 3859336324316773513, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: presenter
+      value: 
+      objectReference: {fileID: 1779338706}
     - target: {fileID: 4606572109612819649, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1166,7 +1170,7 @@ PrefabInstance:
       objectReference: {fileID: 7545569452688597077, guid: 4884403c7e0a0461db863595820fdd30, type: 3}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: dialoguePresenters.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: 'dialoguePresenters.Array.data[0]'
@@ -1175,7 +1179,7 @@ PrefabInstance:
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: 'dialoguePresenters.Array.data[1]'
       value: 
-      objectReference: {fileID: 1779338706}
+      objectReference: {fileID: 1271800928}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: 'dialoguePresenters.Array.data[2]'
       value: 
@@ -1552,6 +1556,17 @@ Transform:
   - {fileID: 769450621}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1271800928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8020628925107869960, guid: 52571f68872914e24837210513edea1d, type: 3}
+  m_PrefabInstance: {fileID: 863688625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0cd0d0412ea34813959f8ddaf02a6eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1336670687
 GameObject:
   m_ObjectHideFlags: 0
@@ -2323,6 +2338,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4705603931484844590, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4846961684678715831, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2505,6 +2524,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6561775045129517909, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101486133759835507, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7670393705055770308, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
