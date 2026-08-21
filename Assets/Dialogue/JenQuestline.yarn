@@ -1,6 +1,5 @@
 ﻿title: Questline
 ---
-<<playMusic luxuryApt>>
 <<if $bigJob == false>>
     <<jump DivorcedDad>>
 <<else>>
@@ -10,6 +9,7 @@
 
 title: DivorcedDad
 ---
+<<playMusic luxuryApt>>
 <<camera Lobby>>
 <<fadeIn 2>>
 <<place Luna_Neutral>>
@@ -47,14 +47,16 @@ Luna: (It feels like he's REALLY desperate to say something, but has no one to s
     <<wait 1>>
     <<exit Luna_Neutral>>
     <<exit Nubs>>
+    <<exit Dad_Neutral>>
     <<fadeOut 2>>
-    <<fadeIn 2>>
+    <<camera BlackImage>>
+    <<fadeIn 1>>
     //Only show a black screen and the dialogue box
     20 minutes later, I get a negative rating on the SL0P app and a violation as the cherry on top. It said the food looked like it'd been tampered with…
     Luna: …
     Nubs: I was hungry…
     But who cares? A person who lives in that building is rich enough to get more food without batting an eye…
-    <<fadeOut 2>>
+    <<fadeOut 1>>
     <<stopMusic>>
     <<jump Bad_Outcome>>
 -> Stare at him, expecting him to talk
