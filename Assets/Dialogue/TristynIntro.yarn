@@ -2,7 +2,7 @@
 ---
 <<declare $goodend = 0>>
 <<declare $badend = 0>>
-<<playMusic frisscity>> 
+<<playMusic frisscityCalm>>
 //This needs to be updated with the correct location
 <<camera Understory>>
 <<fadeIn 2>>
