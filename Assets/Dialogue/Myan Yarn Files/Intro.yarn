@@ -1,8 +1,8 @@
 ﻿title: Intro
 ---
 ///////////////// Play Frisscity calm music track
-<<declare $goodend = 0>>
-<<declare $badend = 0>>
+//<<declare $goodend = 0>>
+//<<declare $badend = 0>>
 <<enter SceneSampleEvents introLuna>>
 //<<show SceneSampleEvents introLuna lunaNeutral>>
 <<fadeIn SceneSampleEvents>>

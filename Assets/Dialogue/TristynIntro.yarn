@@ -1,9 +1,22 @@
 ﻿title: Beginning
 ---
+<<declare $goodend = 0>>
+<<declare $badend = 0>>
+//Play Frisscity calm music track
+//This needs to be updated with the correct location
 <<camera Understory>>
 <<fadeIn 2>>
 <<place Luna_Neutral>>
 <<expression Luna_Neutral arms_neutral>>
+Luna: Come on, you stupid SL0P app. Show me the big offers!
+
+
+
+
+
+
+
+
 HEYOOOOOOO
 HiHIIII
 WEEEEEE
