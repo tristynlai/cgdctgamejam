@@ -42,6 +42,7 @@ Luna: (It feels like he's REALLY desperate to say something, but has no one to s
     <<expression Dad_Neutral annoyed>>
     <<expression Nubs worried>>
     I turn around and leave. A job's a job, and I finished it.
+    <<playSFX lunaMotorcycle>>
     <<pose Luna_Neutral SceneSample_LunaFadeOut>>
     <<pose Nubs SceneSample_NubsFadeOut>>
     <<wait 1>>
