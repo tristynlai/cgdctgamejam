@@ -19,6 +19,10 @@ public class VisualNovel : MonoBehaviour {
     //For the Audio Manager
     [SerializeField] private AudioManager audioManager;
 
+    //For the Dialogue to Be Paused
+    [SerializeField] private LineAdvancer lineAdvancer;
+    private bool dialoguePaused = false;
+
     // when this visual novel object is created
     // (in our example, this happens when the scene is created)
     private void Awake() {
@@ -144,5 +148,15 @@ public class VisualNovel : MonoBehaviour {
     private void LoadScene(string sceneName) {
         sceneName = sceneName.Trim();
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void PauseDialogue(bool isPaused)
+    {
+        dialoguePaused = isPaused;
+        
+        if (lineAdvancer != null)
+        {
+            lineAdvancer.enabled = !dialoguePaused;
+        }
     }
 }
