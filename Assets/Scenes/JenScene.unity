@@ -2555,6 +2555,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 09d349b0b30db47849a94de6f3174681, type: 3}
   - name: grinder
     clip: {fileID: 8300000, guid: 547793eaf9d164efb9da0e1f4dd9aade, type: 3}
+  - name: lunaMotorcycle
+    clip: {fileID: 8300000, guid: 4209402ed7507a548bbb38c362348f97, type: 3}
+  - name: tiresScreech
+    clip: {fileID: 8300000, guid: 96fee5dc733211b4a809bab4e305ddef, type: 3}
 --- !u!4 &1378181040
 Transform:
   m_ObjectHideFlags: 0

@@ -154,6 +154,7 @@ A big offer on the SL0P app finally lands on my screen.
 I quickly accept the offer. It reveals the coordinates of my delivery order's pickup location.
 Luna: Time to roll.
 // Luna leaves
+<<playSFX lunaMotorcycle>>
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
@@ -635,6 +636,7 @@ Luna: (Might as well squeeze another job in before riding back home…)
         The creature seems convinced and nods. He crawls up onto the motorbike's cushion and wraps his tail around it.
         Nubs: I could scan you again to see if you are telling the truth. But your answer is sufficient.
         <<expression Luna_Neutral annoyed>>
+<<playSFX lunaMotorcycle>>
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
 <<pose Nubs SceneSample_NubsFadeOut>>
 <<wait 1>>
