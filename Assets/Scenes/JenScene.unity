@@ -680,7 +680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: startNode
-      value: DivorcedDad
+      value: Val
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: yarnProject
@@ -1921,6 +1921,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7925467270727130405, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+      propertyPath: characterNameText
+      value: 
+      objectReference: {fileID: 998950833}
     - target: {fileID: 8503687055213591508, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1944,14 +1948,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1619584320906332410, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 998950837}
   m_SourcePrefab: {fileID: 100100000, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
 --- !u!114 &998950831 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7925467270727130405, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
   m_PrefabInstance: {fileID: 998950830}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 998950836}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7dd50f871a60b4bbe88a71d308b2613f, type: 3}
@@ -1962,6 +1969,58 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5525677815831667156, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
   m_PrefabInstance: {fileID: 998950830}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &998950833 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5330869542051958578, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+  m_PrefabInstance: {fileID: 998950830}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &998950834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4778148744476528233, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+  m_PrefabInstance: {fileID: 998950830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &998950835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 581381416255552057, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+  m_PrefabInstance: {fileID: 998950830}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998950834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &998950836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1619584320906332410, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+  m_PrefabInstance: {fileID: 998950830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &998950837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998950836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e5ce715aa704c368b8e92679832508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NameplateSwitch
+  yarnNameText: {fileID: 998950833}
+  nameplateObject: {fileID: 998950834}
+  nameplateImage: {fileID: 998950835}
+  nameplates:
+  - characterName: Luna
+    nameplateSprite: {fileID: 21300000, guid: b4d08ecc2082bc3468f8eaee3184c66a, type: 3}
+  - characterName: Val
+    nameplateSprite: {fileID: 21300000, guid: 952b7bdd3f9631f49b3a99412a7f12cd, type: 3}
 --- !u!1 &1008185364
 GameObject:
   m_ObjectHideFlags: 0
@@ -3432,6 +3491,7 @@ MonoBehaviour:
   musicSource: {fileID: 1356346520}
   sfxSource: {fileID: 1025851647}
   audioManager: {fileID: 1378181039}
+  lineAdvancer: {fileID: 0}
 --- !u!4 &1660351816
 Transform:
   m_ObjectHideFlags: 0

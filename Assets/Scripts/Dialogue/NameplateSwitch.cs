@@ -23,24 +23,26 @@ public class NameplateSwitch : MonoBehaviour
 
     private string lastSeenName = "INITIALIZE_ON_START"; 
 
-    void Update()
+    void LateUpdate()
     {
         if (yarnNameText == null) return;
 
-        string currentText;
+        if (nameplateObject != null && !nameplateObject.activeSelf)
+        {
+            nameplateObject.SetActive(true);
+        }
 
-        if (yarnNameText.gameObject.activeInHierarchy == false)
+        if (!yarnNameText.gameObject.activeSelf)
+        {
+            yarnNameText.gameObject.SetActive(true);
+        }
+
+        string currentText = yarnNameText.text.Trim();
+
+        if (string.IsNullOrEmpty(currentText))
         {
             currentText = "Luna";
-        }
-        else
-        {
-            currentText = yarnNameText.text.Trim();
-            
-            if (string.IsNullOrEmpty(currentText)) 
-            {
-                currentText = "Luna"; 
-            }
+            yarnNameText.text = "LUNA";
         }
 
         if (currentText == lastSeenName) return;
@@ -51,8 +53,6 @@ public class NameplateSwitch : MonoBehaviour
 
     private void UpdateSprite(string currentName)
     {
-        if (nameplateObject != null) nameplateObject.SetActive(true);
-
         if (nameplateImage != null)
         {
             bool foundMatch = false;
