@@ -24,3 +24,15 @@ HiHIIII
 WEEEEEE
 <<loadScene JenScene>>
 ===
+
+title: teaTest
+---
+<<camera Understory>>
+<<fadeIn 2>>
+<<place Luna_Neutral>>
+
+<<place Kaya_Neutral>>
+<<place Nat>>
+
+WASSUP WASSUP
+===
