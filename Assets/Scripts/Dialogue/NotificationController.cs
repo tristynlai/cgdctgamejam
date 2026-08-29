@@ -8,18 +8,23 @@ public class NotificationController : MonoBehaviour
     public DialogueRunner dialogueRunner;
     public CyberdeckController cyberdeckController; 
 
-     public GameObject alertIndicator;
+    //public GameObject alertIndicator;
 
     [Header("Dialogue Advancer")]
     public LineAdvancer workingAdvancer;
 
     public UnityEvent onNotificationShown; 
-        public UnityEvent onNotificationHidden;
+    public UnityEvent onNotificationHidden;
 
     private int currentNotificationState = -1;
 
     void Awake()
     {
+        if (dialogueRunner == null)
+        {
+            dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
+        }
+
         if (dialogueRunner != null)
         {
             dialogueRunner.AddCommandHandler<int>("show_notification", ShowNotification);
@@ -34,7 +39,7 @@ public class NotificationController : MonoBehaviour
         if (notificationGroup != null)
         {
             notificationGroup.SetActive(true);
-                    if (alertIndicator != null) alertIndicator.SetActive(true);
+            //if (alertIndicator != null) alertIndicator.SetActive(true);
         }
 
         if (cyberdeckController != null)
@@ -55,7 +60,7 @@ public class NotificationController : MonoBehaviour
         if (currentNotificationState == -1) return;
 
         if (notificationGroup != null) notificationGroup.SetActive(false);
-        if (alertIndicator != null) alertIndicator.SetActive(false);
+        //if (alertIndicator != null) alertIndicator.SetActive(false);
 
         currentNotificationState = -1;
         onNotificationHidden.Invoke();

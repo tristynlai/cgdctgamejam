@@ -159,4 +159,9 @@ public class VisualNovel : MonoBehaviour {
             lineAdvancer.enabled = !dialoguePaused;
         }
     }
+
+    public bool IsDialoguePaused()
+    {
+        return dialoguePaused;
+    }
 }
