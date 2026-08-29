@@ -31,6 +31,9 @@ title: teaTest
 <<camera Understory>>
 <<fadeIn 2>>
 <<place Luna_Neutral>>
+<<place CompanionNubs>>
+<<expression CompanionNubs angry>>
+
 
 <<place Kaya_Neutral>>
 <<place Nat>>
