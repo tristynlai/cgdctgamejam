@@ -1941,7 +1941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &623602018
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2668,7 +2668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!328 &1100896066
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -3055,12 +3055,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VideoToDialogue
   videoPlayer: {fileID: 1100896066}
   dialogueRunner: {fileID: 203256155}
-  gameEnvironment: {fileID: 1927649772}
   fadeOverlay: {fileID: 1243540511}
   fadeOutDuration: 2
   fadeInDuration: 5
   dialogueUI: {fileID: 235549326}
-  startingNode: Intro
+  startingNode: Beginning
 --- !u!4 &1202688889
 Transform:
   m_ObjectHideFlags: 0
@@ -4459,7 +4458,6 @@ MonoBehaviour:
   notificationGroup: {fileID: 1717459801}
   dialogueRunner: {fileID: 203256155}
   cyberdeckController: {fileID: 146273346}
-  alertIndicator: {fileID: 0}
   workingAdvancer: {fileID: 0}
   onNotificationShown:
     m_PersistentCalls:
