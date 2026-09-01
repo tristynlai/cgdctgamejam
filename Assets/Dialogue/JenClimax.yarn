@@ -2,7 +2,7 @@
 ---
 <<expression Luna_Neutral neutral>>
 <<expression Nubs neutral>>
-His electric eyes wander and become mesmerized by the sky's dusky colors.
+Luna: <i>His electric eyes wander and become mesmerized by the sky's dusky colors.</i>
 <<if visited("Bad_Outcome") == true>>
 Nubs: Today is still better than all the other days I have lived in the lab.
 <<endif>>
@@ -61,27 +61,109 @@ title: LilGuy_Day
 <<if $lilday == 2>>
     -> What is your purpose?
         Luna: So what is your purpose? Why were YOU created?
-        <<show SceneSampleEvents Luna lunaNeutralArms>>
+        <<expression Luna_Neutral arms_neutral>>
         Luna: And don't give me that firewall crap.
-        <<show SceneSampleEvents Nubs nubsConfused>>
+        <<expression Nubs confused>>
         Nubs: But, I really cannot access those files…
         Luna: Then what do YOU want your purpose to be?
-        <<show SceneSampleEvents Nubs nubsNeutral>>
+        <<expression Nubs neutral>>
         Nubs: …!
         Luna: Okay, so you can't access it. So what? What do YOU want to do?
-        <<show SceneSampleEvents Nubs nubsWorriedArms>>
-        Nubs is genuinely stumped by my question. Nothing in his database is able to retrieve a clear answer.
-        <<show SceneSampleEvents Luna lunaNeutralShy>>
+        <<expression Nubs arms_worried>>
+        Luna: <i>Nubs is genuinely stumped by my question. Nothing in his database is able to retrieve a clear answer.</i>
+        <<expression Luna_Neutral shy_neutral>>
         Luna: I know I'm supposed to drop you off at your master's, but…it doesn't seem like you even wanna go back to pokes and firestorms.
         Luna: You…deserve to live…        
-        <<show SceneSampleEvents Nubs nubsNeutral>>
+        <<expression Nubs neutral>>
         Nubs: Luna…
-        <<show SceneSampleEvents Luna lunaShy>>
+        <<expression Luna_Neutral shy>>
         Luna: (Ugh, why am I even saying this? It's like I'm trying to give myself a pep talk.)
-        ///////////////// Is it possible to stop the current music track so that there’s complete silence?
-        <<show SceneSampleEvents Luna lunaSurprised>>
-        <<show SceneSampleEvents Nubs nubsNeutralArms>>
+        // Stop music
+        <<stopMusic>>
+        <<expression Luna_Neutral surprised>>
+        <<expression Nubs arms_neutral>>
         ???: You deserve JAIL TIME.
 <<endif>>
+<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<pose Nubs SceneSample_NubsFadeOut>>
+<<wait 1>>
+<<exit Luna_Neutral>>
+<<exit Nubs>>
+<<fadeOut 1>>
 <<jump MaxxIntro>>
 ===
+
+title: MaxxIntro
+---
+// Play JunkYard music track
+<<playMusic junkyard>>
+<<camera Bridge>>
+<<fadeIn 1>>
+<<place Luna_Neutral>>
+<<expression Luna_Neutral surprised>>
+<<place CompanionNubs>>
+<<expression CompanionNubs arms_neutral>>
+<<place Maxx>>
+<<expression Maxx neutral>>
+<<wait 1>>
+???: Straight to jail.
+<<expression Luna_Neutral arms_annoyed>>
+Luna: <i>A douchebag with an augmented glass jaw rolls up next to me on his bulky motorbike. The thing has been customized to bits to show off—and not to drive.</i>
+Luna: <i>I press my weight deeper into my motorbike, ready to bounce at any moment.</i>
+Luna: Who the hell are you?
+<<expression Maxx intrigued>>
+Maxx: The one true ascended adonis of AGENTS, Maxx.
+Maxx: Lanklets refer to me as their Chief Product Officer, but our elevated CEO prefers the new-age term “Disciple” for his executive C-suite.
+<<expression CompanionNubs wave_neutral>>
+Nubs: That's the guy who named me T.A.B!
+Luna: …Makes sense.
+<<expression CompanionNubs arms_neutral>>
+<<expression Maxx neutral>>
+Maxx: I finally found you after combing through AGENTS highway footage.
+Maxx: You've been driving around town with company property. 
+<<expression CompanionNubs arms_worried>>
+Nubs: …
+Maxx: If you're a smart girl, you'll hand over that pillbug and continue on with your extremely jester life.
+<<expression CompanionNubs arms_worried>>
+
+-> Over your gigachad body.
+    <<set $goodend += 1>>
+    <<expression Maxx intrigued>>
+    Maxx: Flame me all you want, but everyone wishes they had my body and brain chemistry.
+    Maxx: My jaw is made from Area 27 diamonds. No amount of mewing and semaglutides could ever get to my level.
+-> And what do I get in return for handing him over?
+    <<set $badend += 1>>
+    <<expression Maxx intrigued>>
+    Maxx: Good strategy! I admire your business mindset.
+    Maxx: But the only ROI you'll get is a life behind bars for stealing AGENTS property!
+-> And if I don't?
+    Maxx: A life behind bars for stealing AGENTS property!
+<<jump MaxxThreat>>
+===
+
+title: MaxxThreat
+---
+Nubs: …
+<<expression Maxx intrigued>>
+Maxx: Don't act innocent, little pillbug. I overheard your non-compliant conversation with the girl.
+Maxx: You, having a life of your own?
+Maxx: Once I take you back, you'll be torn apart for the next prototype! Though given your recent acts of sacrilege, I doubt we'll salvage anything from your existing parts.
+<<expression Maxx neutral>>
+Maxx: As for you.
+Luna: <i>His glass jaw glows as his internal system scans me and my motorbike over.</i>
+Maxx: Let’s see here…
+Maxx: A fake license plate. Multiple accounts of speeding. And stealing intellectual property from an AGENTS lab.
+Luna: (He’s confusing me with the person who stole Nubs from the lab…)
+Maxx: Not only will I suspend your SL0P account, but I’ll also process a warrant for your arrest and assign a CENTURY’S worth of debt to your bank account!
+<<expression Luna_Neutral shy_annoyed>>
+Luna: (Shit, I'm already swimming in debt! I can't afford any more…!)
+Maxx: Buuuuut if you let the pillbug go now, I GUESS I'll let you and your busted bike continue to use the SL0P app.
+<<expression Maxx intrigued>>
+Maxx: And, as an add-on, I'll drop the debt charges. Because I'm SUCH a forgiving god.
+<<expression CompanionNubs arms_worried>>
+Nubs: …
+<<expression Luna_Neutral shy_neutral>>
+Luna: (This might be my last chance to bargain…)
+<<jump MaxxChoices>>
+===
+
