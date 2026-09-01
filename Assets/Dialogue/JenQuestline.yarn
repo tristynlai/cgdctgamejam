@@ -354,11 +354,14 @@ Luna: It's actually pretty cute.</i>
 title: Influencer
 ---
 <<playMusic luxuryApt>>
-<<camera PenthouseClosed>>
-<<fadeIn 2>>
+<<camera Lobby>>
+<<fadeIn 1>>
 Luna: <i>The delivery takes me to the Meridian District, home to the tech zillionaires and their corporate grifters.</i>
 Luna: <i> I haul a catering order through the bulletproof glass doors of a luxury apartment and trudge past the security robots in the lobby. They don't press the elevator button for me.</i>
 Luna: <i>Because they know I don’t belong here.</i>
+<<fadeOut 1>>
+<<camera PenthouseClosed>>
+<<fadeIn 1>>
 <<place Luna_Neutral>>
 <<expression Luna_Neutral arms_neutral>>
 <<place CompanionNubs>>

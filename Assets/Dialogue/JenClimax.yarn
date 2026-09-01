@@ -167,3 +167,332 @@ Luna: (This might be my last chance to bargain…)
 <<jump MaxxChoices>>
 ===
 
+title: MaxxChoices
+---
+-> Take the deal.
+    <<jump BadEnding1>>
+-> Don't take the deal.
+    <<set $goodend += 1>>
+    Luna: (Do it scared. Even if it fucks me over.)
+    <<expression Luna_Neutral arms_neutral>>
+    <<expression CompanionNubs arms_neutral>>
+    Luna: No deal. I'm keeping him. And his name’s Nubs.
+    <<expression Maxx annoyed>>
+    Maxx: WHAT? Are you stupid!?
+    Nubs: L-Luna! But why—?
+    <<expression Nubs wave_worried>>
+    Nubs: Ah!
+    Luna: <i>I scoop him up and ram my foot on my motorbike’s pedal.</i>
+    Luna: If you want him, then you're gonna have to get him!
+    // Motorcycle SFX sound
+    <<playSFX lunaMotorcycle>>
+    Luna: <i>And with that, I start hauling ass back to Root Town.</i>
+    <<pose Luna_Neutral SceneSample_LunaFadeOut>>
+    <<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
+    <<wait 1>> 
+    <<exit Luna_Neutral>>
+    <<exit CompanionNubs>>
+-> Tell him you're not the person he's looking for. <<once>>
+    <<set $badend += 1>>
+    <<expression Luna_Neutral arms_neutral>>
+    Luna: None of this is my fault—because someone else gave me this task. THAT’S the real person you're after.
+    Maxx: Doesn't matter. You still unlocked AGENTS-sanctioned property and that's against SL0P app policy.
+    <<expression Maxx intrigued>>
+    Maxx: And thanks for the tip! I'll make sure to lock BOTH of you up!
+    <<expression Luna_Neutral arms_annoyed>>
+    Luna: (Shit, that didn't work.)
+    Nubs: Luna…
+    <<jump MaxxChoices>>
+-> Flirt and distract him before you make a run for it.
+    <<expression Maxx intrigued>>
+    Maxx: Thanks, but you're not my type.
+    <<pose Luna_Neutral SceneSample_LunaFadeOut>>
+    <<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
+    <<wait 1>>
+    <<exit Luna_Neutral>>
+    <<exit CompanionNubs>>
+    Maxx: Refusing women, sports, and beer are what separate me from the average man who’s ladaring. Dating would keep me from being my one true, elevated self.
+    Maxx: And there's no ROI in love.
+    <<expression Maxx neutral>>
+    Maxx: …
+    <<expression Maxx annoyed>>
+    Maxx: Tch!
+    Luna: <i>The dumbass was so into himself, making it easy for me and Nubs to escape and leave him in the dust.</i>
+    Luna: <i>I was already hauling my ass back to Root Town.</i>
+
+<<expression Maxx annoyed>>
+Maxx: Well played. But it’s not over.
+Maxx: Didn't think I'd need to use this…
+// Stop Junk Yard music track
+<<stopMusic>>
+// Play Beep SFX
+<<playSFX beep>>
+<<exit Maxx>>
+<<fadeOut 1>>
+<<jump LilGuyBrainwashed>>
+===
+
+
+title: BadEnding1
+---
+Luna: (The stakes are too high. I don't want to owe anyone anything. Not anymore.)
+<<expression Luna_Neutral arms_neutral>>
+<<expression SceneSampleEvents CompanionNubs arms_worried>>
+Luna: Fine.
+<<expression Maxx intrigued>>
+<<expression CompanionNubs wave_worried>>
+Nubs: L-Luna, no!
+Luna: <i>I toss Nubs over to the overgrown gigachad. The creature is just a prototype, after all.</i>
+Maxx: Smart girl. I knew you'd make the right choice.
+Nubs: N-No…!
+Maxx: To the scrapyard, pillbug!
+// Play Beep SFX
+<<playSFX beep>>
+<<expression CompanionNubs wave_neutral>>
+Nubs: !!!
+<<expression CompanionNubs agents>>
+Nubs: …
+<<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
+<<pose Maxx SceneSample_MaxxFadeOut>>
+<<wait 1>>
+<<exit Maxx>>
+<<exit CompanionNubs>>
+Luna: <i>I block out the gigachad's cackling as he rides away with the city’s most dangerous weapon.</i> 
+Luna: <i>I sigh, turning to look at Frisscity’s glistening cityscape one last time before I ride off as if nothing ever happened.</i>
+Luna: <i>Because nothing did.</i>
+Luna: <i>Tonight was just another night of trying to survive.</i>
+<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<wait 1>>
+<<exit Luna_Neutral>>
+<<stopMusic>>
+<<fadeOut 2>>
+// Show a screen with BAD END image
+<<camera BadEnd>>
+// Play the Error of Our Ways music track
+<<playMusic endingTheme>>
+<<fadeIn 2>>
+<<wait 5>>
+<<fadeOut 2>>
+/////////// Create a command to automatically return to the Title Screen
+===
+
+
+title: LilGuyBrainwashed
+---
+// Play Deadroom track
+<<playMusic deadroom>>
+// Show the Bridge environment bridge asset, TBD if we’ll have an on the bridge background asset or not!
+<<camera Bridge>>
+<<fadeIn 2>>
+<<wait 1>>
+Luna: <i>I speed my way onto The Bridge, weaving around self-driving cars and corporate megabuses that shuttle underpaid workers back home.</i>
+Luna: <i>It's just a few more miles before I reach Root Town, where Frisscity's high-tech gadgets lose signal—and hold no power over me.</i>
+<<place Luna_Neutral>>
+<<expression Luna_Neutral neutral>>
+<<place CompanionNubs>>
+<<expression CompanionNubs agents>>
+Nubs: …
+Luna: W-What the hell?!
+Luna: Nubs!? Hey! Wake up!
+Luna: <i>A hypnotic swirl dominates Nubs's screenface. His body freezes in place, clinging onto the nape of my neck as I race past another bus.</i>
+Luna: <i>The more I stare at the spiral, the more I feel…enticed by it.</i>
+Luna: <i>I quickly blink the sensation away, shaking my head and turning back to the road I’m racing down.</i>
+Luna: (I can’t look at that thing. It’s like it’s drilling a hole into my mind…)
+Luna: <i>Suddenly, a new voice takes over Nubs.</i>
+// Do NOT call Maxx’s sprite to appear
+Maxx: There you are.
+<<expression Luna_Neutral annoyed>>
+Luna: (Shit, he can track me…?!)
+// Play SFX Maxx motorcycle sound
+<<playSFX maxxMotorcycle>>
+A motor mixed with ego and neon particles roars behind me in the distance.
+Maxx: Won't be long before I catch up. 
+Luna: <i>My breath stalls. Sweat starts beading at the back of my neck.</i>
+Luna: (I knew there was a cost to shoving it to AGENTS and that overgrown gigachad.)
+Luna: (But I'm totally fucking screwed!)
+Luna: (Was this choice even worth it…?!)
+<<jump Cybergulls>>
+===
+
+
+title: Cybergulls
+---
+// Play SFX Cybergull M 
+<<playSFX caws>>
+<<expression Luna_Neutral surprised>>
+Luna: !!!
+Luna: <i>The squawk of a cybergull splits the sky. I look up, keeping my foot on the accelerator.</i>
+<<if $withCog == true>>
+// Enter Cybergull with cog on
+<<place CyberSeagull>>
+<<expression CyberSeagull cog>>
+Luna: (It’s that gull from the dumpster…)
+Luna: (He thugged it out and now he’s able to fly with that cog…)
+<<endif>>
+<<if $withCog == false>>
+// Enter Cybergull without the cog on
+<<place CyberSeagull>>
+<<expression CyberSeagull cogless>>
+Luna: (It’s that gull from the dumpster…)
+<<endif>>
+// SFX Cybergull S 
+<<playSFX caw>>
+Luna: <i>He lets out another loud, electrifying battle cry that rings out across The Bridge.</i>
+// Exit Cybergull
+<<pose CyberSeagull SceneSample_CybergullFadeOut>>
+<<wait 1>>
+<<exit CyberSeagull>>
+Luna: <i>Shadows materialize in the distance, and I begin to see a whole horde of cybergulls flap towards us.</i>
+Luna: (HE’S A GANG LEADER?!?!)
+<<expression Luna_Neutral neutral>>
+Luna: (Wait…)
+Luna: <i>The Bridge is a prime roost for cybergulls, who love to swoop down and swipe whatever shines the brightest.</i>
+Luna: (This could actually be my key to ditching Maxx for good!)
+// Play SFX Maxx motorcycle sound
+<<playSFX maxxMotorcycle>>
+<<expression Luna_Neutral surprised>>
+<<place Maxx>>
+<<expression Maxx intrigued>>
+Luna: <i>Suddenly I hear tires screeching and then, in a blink of an eye, I see Maxx riding right beside me on his shining stallion of iron garbage.</i>
+Maxx: Boo.
+<<expression Luna_Neutral annoyed>>
+Luna: …
+Luna: <i>We're both speeding down the road, neck and neck.</i>
+<<expression Maxx annoyed>>
+Maxx: Why aren’t you pulling over? I GOT you. You’re going to JAIL!
+<<expression Luna_Neutral neutral>>
+Luna: Not yet.
+// SFX motorcycle tires
+<<playSFX tiresScreech>>
+<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
+<<wait 1>>
+<<exit Luna_Neutral>>
+<<exit CompanionNubs>>
+Luna: <i>I veer off, making a hard left turn onto another highway onramp. It's the turn only a Root Town local would know.</i>
+Maxx: Dammit!
+Luna: <i>Maxx doesn't make the turn in time and continues straight…right into the growing horde of cybergulls.</i>
+<<exit Maxx>>
+<<fadeOut 2>>
+<<jump Cybergull_CG>>
+===
+
+
+title: Cybergull_CG
+---
+// Show Maxx and Cybergulls CG. Do not call any character sprites during this time.
+<<camera MaxxCG>>
+<<fadeIn 2>>
+// Play SFX Cybergull Battlecry sound effect
+<<playSFX battlecry>>
+<<wait 1>>
+Luna: <i>I stop my bike at the edge of the shoulder lane, watching as the horde of birds swell before descending upon him and the highway below.</i>
+Maxx: No no no no NOOOOO!
+Luna: <i>The birds are relentless.</i>
+Luna: <i>Pecking, ripping, and ransacking anything that glows, which includes both Maxx and his precious state-of-the-art junkyard motorcycle.</i>
+Maxx: Not the face! Not the JAW!! Now the JAWWWWW!!
+Luna: <i>I flinch and look away, refusing to watch the gulls tear Maxx’s prized possession and his ego away from him, limb from limb.</i>
+Maxx: AHHHHHHHHHHHHRRRRGHHHH!!!
+Luna: <i>The cybergulls slowly disperse back into dusk, leaving tokens of their appreciation in the form of noxious droppings spittled across the concrete.</i>
+Luna: <i>Whatever is left of Maxx and his motorcycle remains on the highway, like roadkill.</i>
+<<fadeOut 2>>
+<<stopMusic>>
+<<jump BridgeResolution>>
+===
+
+
+title: BridgeResolution
+---
+// Play Ascension Mellow music track
+<<playMusic ascensionMellow>>
+<<camera Bridge>>
+<<fadeIn 2>>
+<<if $withCog == true>>
+<<place Luna_Neutral>>
+<<expression Luna_Neutral neutral>>
+<<place CompanionNubs>>
+<<expression CompanionNubs agents>>
+<<wait 1>>
+Luna: <i>We make it safely to the outskirts of Root Town. I park on the side of the road. Frisscity's lights glitter from the other side of the bridge.</i>
+// Play SFX Cybergull M
+<<playSFX caws>>
+<<expression Luna_Neutral surprised>>
+// Enter Cybergull with cog on
+<<place CyberSeagull>>
+<<expression CyberSeagull cog>>
+Luna: <i>The cybergull gang leader descends down from the skies, hovering over my place on the road. The massive cog twinkles in the night sky.</i>
+<<expression Luna_Neutral neutral>>
+Luna: It’s him…
+Luna: <i>He watches me carefully through his scarred eye…</i>
+<<expression Luna_Neutral shy_annoyed>>
+Luna: <i>…Before deciding to poop on me.</i>
+Luna: S-Shit!
+Luna: <i>Literally. Happy with his revenge, the cybergull departs into the darkness.</i>
+// Exit Cybergull
+<<pose CyberSeagull SceneSample_CybergullFadeOut>>
+<<wait 1>>
+<<exit CyberSeagull>>
+Luna: Ughhhh, grosssss…!
+Luna: (This stuff isn’t gonna come out of my jacket.)
+<<exit Luna_Neutral>>
+<<exit CompanionNubs>>
+<<fadeOut 1>>
+<<fadeIn 1>>
+<<endif>>
+<<place Luna_Neutral>>
+<<expression Luna_Neutral neutral>>
+<<place Nubs>>
+<<expression Nubs agents>>
+Luna: <i>A sharp noise buzzes from Nubs and I turn to look at him.</i>
+<<expression Luna_Neutral surprised>>
+<<expression Nubs worried>>
+Nubs: H-Huh?
+<<expression Luna_Neutral happy>>
+Luna: Nubs! You're back!
+<<expression Nubs arms_worried>>
+Nubs: What happened…?
+Luna: Shit. CRAZY shit. And a whole lotta shit. 
+<<expression Luna_Neutral neutral>>
+Luna: What do you remember?
+Nubs: I remember Maxx demanding for my custody. Threatening you with the full force of the AGENTS Legal team and Frisscity police force. And you, driving away with me.
+<<expression Nubs wave_worried>>
+Nubs: Which is what I don't understand!
+<<expression Luna_Neutral arms_neutral>>
+Luna: What do you mean?
+<<expression Nubs arms_worried>>
+Nubs: Why did you decide to take me across The Bridge? To keep me?
+Luna: …
+<<if $goodend >= 4>>
+    <<jump GoodPath>>
+<<else>>
+    <<jump BadEnding2>>
+<<endif>>
+===
+
+
+title: BadEnding2
+---
+Luna: Delivering you to Root Town was worth a lot on the SL0P app, remember? I have to keep you close if I wanna get paid.
+<<show SceneSampleEvents Nubs nubsWorried>>
+Nubs: Oh…
+Luna: And when Maxx cornered me, I knew I’d lose everything. And that’s not an option for me. 
+Luna: (I have to survive.)
+<<show SceneSampleEvents Luna lunaAnnoyedArms>>
+Luna: A job's a job, and I gotta finish it. And to be honest, I don’t think you’re even worth all the trouble I’ve been through tonight.
+Nubs: R-Right. This was all just a monetary transaction. Of course…
+<<show SceneSampleEvents Luna lunaAnnoyedShy>>
+Luna: Today's been a huge pain in the ass…
+Luna: (And a reminder of how much I hate Frisscity.)
+Luna: Let’s just get this over with.
+<<fadeOut SceneSampleEvents>>
+<<wait 2>>
+// I imagine just the dialogue box, with no sprites appearing
+I drive off into Root Town to complete the delivery. The SL0P app tells me to drop off the experiment near Val's corner store, which seems suss at first…
+But I don't care. It's not worth my time to think about it right now.
+I'm just trying to survive.
+<<fadeIn SceneSampleEvents>>
+///////////////////////// Play the Error of Our Ways music track
+//////////////////////// Show a screen with THE END text, and an option to Load Game or Return to Title Screen
+<<fadeOut SceneSampleEvents>>
+===
+
