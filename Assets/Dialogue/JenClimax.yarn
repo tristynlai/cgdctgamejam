@@ -1,4 +1,87 @@
-﻿title: JenClimax
+﻿title: LilGuy_Respite
 ---
-This is an example of a Yarn Spinner script. Write your dialogue here!
+<<expression Luna_Neutral neutral>>
+<<expression Nubs neutral>>
+His electric eyes wander and become mesmerized by the sky's dusky colors.
+<<if visited("Bad_Outcome") == true>>
+Nubs: Today is still better than all the other days I have lived in the lab.
+<<endif>>
+<<if visited("Bad_Outcome") == false>>
+<<expression Nubs arms_happy>>
+Nubs: Today is the best day ever.
+<<endif>>
+<<declare $lilday = 0>>
+<<jump LilGuy_Day>>
+===
+
+title: LilGuy_Day
+---
+-> What are your days usually like? <<once>>
+    <<set $lilday += 1>>
+    Nubs: Undergoing 20-30 tests a day to assess my durability. As the greatest product ever developed by AGENTS, I need to withstand drowning, poison, plasma, and firestorms. 
+    <<expression Luna_Neutral surprised>>
+    Nubs: In case the place I am stored in explodes from an incoming stealth missile.
+    Nubs: Then I get squeezed back into a capsule that is smaller than the pod you freed me from.
+    <<expression Nubs worried>>
+    Nubs: It was kinda hard to breathe in there, now that I think about it.
+    <<expression Luna_Neutral neutral>>
+    Luna: That’s inhumane. Isn’t this against a law or something?
+    <<expression Nubs loading>>
+    Nubs: Title XVI, Section 23, Clause 8: It is not considered worker or animal cruelty if the organism was not constructed with a bladder.
+    <<expression Nubs neutral>>
+    Nubs: I do not have one. So I suppose there really is no logical reason for me to leave my capsule, after all.    
+    <<expression Luna_Neutral arms_neutral>>
+    Luna: What a convenient loophole…
+    <<expression Luna_Neutral neutral>>
+    <<jump LilGuy_Day>>
+-> What made today so great? <<once>>
+    <<set $lilday += 1>>
+    Nubs: Meeting you. And getting to see how humans live.
+    // If player’s $badend score is >= 5, then show this line of text and expression below:
+    <<if $badend >= 5>>
+        <<expression Nubs angry>>
+        Nubs: Even if you are intolerable and inhospitable at times…
+        <<expression Nubs neutral>>
+    <<else>>
+    // If player’s $badend score is <=4, then continue with the below:
+        Nubs: You have a good life.
+        <<expression Luna_Neutral arms_neutral>>
+        Luna: Don't bullshit me.
+        Luna: There's nothing “good” about my life at all.
+        Nubs: You do not have to be poked and stuffed into a capsule, only for the same thing to happen to you the next day. You can do whatever you want, with unrestricted access to the city.
+        <<expression Nubs happy>>
+        Nubs: And you’ll use that access to take me back to my master, which you promised you would do once we completed this delivery!
+        Luna: …
+        <<expression Nubs neutral>>
+        Nubs: You are not a prototype. You are…an original. 
+        <<expression Nubs worried>>
+        Nubs: At least you have a purpose…
+    <<endif>>
+// When the two questions above have been played through, reveal this choice to continue with the main story:
+<<if $lilday == 2>>
+    -> What is your purpose?
+        Luna: So what is your purpose? Why were YOU created?
+        <<show SceneSampleEvents Luna lunaNeutralArms>>
+        Luna: And don't give me that firewall crap.
+        <<show SceneSampleEvents Nubs nubsConfused>>
+        Nubs: But, I really cannot access those files…
+        Luna: Then what do YOU want your purpose to be?
+        <<show SceneSampleEvents Nubs nubsNeutral>>
+        Nubs: …!
+        Luna: Okay, so you can't access it. So what? What do YOU want to do?
+        <<show SceneSampleEvents Nubs nubsWorriedArms>>
+        Nubs is genuinely stumped by my question. Nothing in his database is able to retrieve a clear answer.
+        <<show SceneSampleEvents Luna lunaNeutralShy>>
+        Luna: I know I'm supposed to drop you off at your master's, but…it doesn't seem like you even wanna go back to pokes and firestorms.
+        Luna: You…deserve to live…        
+        <<show SceneSampleEvents Nubs nubsNeutral>>
+        Nubs: Luna…
+        <<show SceneSampleEvents Luna lunaShy>>
+        Luna: (Ugh, why am I even saying this? It's like I'm trying to give myself a pep talk.)
+        ///////////////// Is it possible to stop the current music track so that there’s complete silence?
+        <<show SceneSampleEvents Luna lunaSurprised>>
+        <<show SceneSampleEvents Nubs nubsNeutralArms>>
+        ???: You deserve JAIL TIME.
+<<endif>>
+<<jump MaxxIntro>>
 ===
