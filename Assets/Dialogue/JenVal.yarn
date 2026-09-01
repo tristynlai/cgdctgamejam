@@ -8,13 +8,13 @@
 Luna: The only thing I need is a big offer so I can get the hell home.
 <<playSFX valMotorcycle>>
 <<expression Luna_Neutral arms_surprised>>
-I recognize those tires. And the baddie who rides on them.
+Luna: <i>I recognize those tires. And the baddie who rides on them.</i>
 Luna: (Stay cool.)
 <<place Val>>
 Val: Luna! Finally, someone without a corporate T-shirt. Have you been making bank today?
 <<expression Luna_Neutral arms_shy>>
 Luna: H-Hey, Val. No, not yet. Still getting the low-tipping vegans and high-strung snobs. Y'know how it is.
-I hold my breath as Val walks over. She laughs and it's a bright, bubbly sound that goes straight to my heart while her hand goes straight to my head for a gentle pat.
+Luna: <i>I hold my breath as Val walks over. She laughs and it's a bright, bubbly sound that goes straight to my heart while her hand goes straight to my head for a gentle pat.</i>
 <<expression Val flirty>>
 Val: I'm sure things will turn up by nighttime. All the overworked techies get the late-night munchies.
 Luna: (God, she's amazing. She always knows what to say.)
@@ -35,7 +35,7 @@ title: ValChoices
     <<jump ValChoices>>
 -> What are you doing here?
     <<expression Val flirty>>
-    Val: A Root Town business never reveals her secrets~!
+    Val: A Root Town business owner never reveals her secrets~!
     <<jump PressingVal>>
 ===
 
@@ -61,7 +61,7 @@ Luna: (I’ve unleashed a gearhead beast. There’s no end to this conversation.
     Val: See, that's the thing. Corporate bikes are built to last until the warranty expires.
     <<expression Val flirty>>
     Val: But mine's built to survive. She'll outrun anything that's fresh off the showroom floor!
-    She rambles on for ten more minutes about her motorbike. And I love every second of it.
+    Luna: <i>She rambles on for ten more minutes about her motorbike. And I love every second of it.</i>
     // Return to the original question node in Val, but remove this question since the player completed it.
     <<expression Val neutral>>
 ->  Cut it short.
@@ -76,7 +76,7 @@ title: Poor_Flirting
 ---
 <<expression Val flirty>>
 <<expression Luna_Neutral shy>>
-Val is beaming, which makes me blush redder than that damn belladonna apple.
+Luna: <i>Val is beaming, which makes me blush redder than that damn belladonna apple.</i>
 Val: That's so sweet! You're cute.
 Luna: (C-Cute!?)
 Val: But if you think that'll land you a discount at the shop, then you'll need to try harder~
@@ -95,7 +95,7 @@ Luna: !!!
 title: PressingVal
 ---
 <<expression Luna_Neutral arms_neutral>>
-Past her super good looks and chipper tone, I notice she's a little out of breath. Her eyes shift back to her motorbike.
+Luna: <i>Past her super good looks and chipper tone, I notice she's a little out of breath. Her eyes shift back to her motorbike.</i>
 Luna: (Is she hiding something…?)
 
 -> Ignore it
@@ -107,7 +107,7 @@ Luna: (Is she hiding something…?)
     Val: You’re thinking about me~?
     <<expression Luna_Neutral arms_shy>>    
     Luna: W-What!? N-no! Ugh, it's nothing.
-    Anything I noticed before has completely vanished.
+    Luna: <i>Anything I noticed before has completely vanished.</i>
 -> Press her
     <<set $goodend += 1>>
     <<expression Luna_Neutral arms_neutral>>  
@@ -115,7 +115,7 @@ Luna: (Is she hiding something…?)
     Luna: Is that the 'secret?'
     <<expression Val serious>>
     Val: …
-    The silence that washes over us is painful. Something is off.
+    Luna: <i>The silence that washes over us is painful. Something is off.</i>
     <<expression Val flirty>>
     Val: Boooo, you got me! My glass skin soda pop actually comes from a vendor in Frisscity.
     <<expression Val neutral>>
@@ -127,7 +127,7 @@ Luna: (Is she hiding something…?)
 title: TheOffer
 ---
 <<expression Val serious>>
-Val's attention is suddenly stolen by her phone. She smears her thumb across her screen, makes a couple of taps, then hops back onto her motorbike.
+Luna: <i>Val's attention is suddenly stolen by her phone. She smears her thumb across her screen, makes a couple of taps, then hops back onto her motorbike.</i>
 <<expression Luna_Neutral neutral>>
 <<expression Val neutral>>
 Val: Sorry, gotta jet! Root Town needs their soda pop.
@@ -139,19 +139,19 @@ Val: Stop by tonight, if you’re free. I’ll be open.
 <<wait 1>>
 <<exit Val>>
 Luna: There she goes…
-Val is everything I want to be. Independent, spunky. And good with her hands, too.
+Luna: <i>Val is everything I want to be. Independent, spunky. And good with her hands, too.</i>
 <<expression Luna_Neutral arms_shy>> 
-Uh. In the nicest, non-creepiest way possible.
+Luna: <i>Uh. In the nicest, non-creepiest way possible.</i>
 <<expression Luna_Neutral arms_neutral>> 
-If it wasn't for my shitty situation, I'd be just like her.
+Luna: <i>If it wasn't for my shitty situation, I'd be just like her.</i>
 <<expression Luna_Neutral arms_shy>> 
-Or WITH her? Hm, which is it…?
+Luna: <i>Or WITH her? Hm, which is it…?</i>
 // SFX cyberdeck notification ping
 <<playSFX notification>>
 <<expression Luna_Neutral arms_neutral>> 
 Luna: Jackpot.
-A big offer on the SL0P app finally lands on my screen.
-I quickly accept the offer. It reveals the coordinates of my delivery order's pickup location.
+Luna: <i>A big offer on the SL0P app finally lands on my screen.</i>
+Luna: <i>I quickly accept the offer. It reveals the coordinates of my delivery order's pickup location.</i>
 Luna: Time to roll.
 // Luna leaves
 <<playSFX lunaMotorcycle>>
@@ -170,7 +170,7 @@ title: Alleyway
 <<place Luna_Neutral>>
 <<expression Luna_Neutral neutral>>
 Luna: This is…suss.
-The pickup location is in a cramped alleyway. The place reeks of expired seafood scraps and junkyard scrap.
+Luna: <i>The pickup location is in a cramped alleyway. The place reeks of expired seafood scraps and junkyard scrap.</i>
 // SFX of gull noise, short version
 <<playSFX caw>>
 <<expression Luna_Neutral surprised>>
@@ -179,11 +179,11 @@ Luna: What the…?!
 <<place CyberSeagull>>
 <<expression CyberSeagull cog>>
 <<expression Luna_Neutral arms_neutral>>
-It’s a cybergull, the result of chemical runoff mixed with all the shiny stuff they’ve swallowed—and evolved from. 
-The creature grunts as he tries to free himself from an object that’s bound to his neck.
+Luna: <i>It’s a cybergull, the result of chemical runoff mixed with all the shiny stuff they’ve swallowed—and evolved from.</i>
+Luna: <i>The creature grunts as he tries to free himself from an object that’s bound to his neck.</i>
 Luna: (It must be so heavy that he can’t even fly. Which is a shame, ‘cause the look kinda fits him…)
 <<expression Luna_Neutral arms_surprised>>
-A shiny cog glimmers back at me. It looks like it’d fit one lucky engine.
+Luna: <i>A shiny cog glimmers back at me. It looks like it’d fit one lucky engine.</i>
 // If player completed the Poor_Flirting node, then show the below
 <<if visited("Poor_Flirting") == true>>
 Luna: (Shiny. Powerful. Expensive-looking. This could be the flux ring Val was talking about.)
@@ -201,7 +201,7 @@ title: Cybergull
 <<declare $withCog = true>>
 // SFX of gull noise, short version
 <<playSFX caw>>
-The cybergull’s wings flap furiously as he screeches, almost like a warning.
+Luna: <i>The cybergull’s wings flap furiously as he screeches, almost like a warning.</i>
 Luna: (But damn, this guy is a TANK! And FERAL! Do I risk it?)
 
 -> Help the cybergull
@@ -209,31 +209,31 @@ Luna: (But damn, this guy is a TANK! And FERAL! Do I risk it?)
     <<set $withCog = false>>
     <<expression Luna_Neutral neutral>>
     Luna: If you bite me, you die. 
-    There’s a glint through the gull’s glasses, and I can feel his scarred eye tracking me as I tip-toe towards him.
+    Luna: <i>There’s a glint through the gull’s glasses, and I can feel his scarred eye tracking me as I tip-toe towards him.</i>
     Luna: Nice…mutant…seagull…thing…
-    I squat down to his level and reach my arm out to grab the gear.
+    Luna: <i>I squat down to his level and reach my arm out to grab the gear.</i>
     // SFX of gull noise, short version
     <<playSFX caws>>
     <<expression Luna_Neutral surprised>>
-    The cybergull instinctively recoils, his webbed feet digging into the handle of his extremely shiny knife.
+    Luna: <i>The cybergull instinctively recoils, his webbed feet digging into the handle of his extremely shiny knife.</i>
     <<expression Luna_Neutral neutral>>
     Luna: B-Bro! I don’t have all day. Do you wanna become roadkill or not?!
-    He puffs his chest before he reluctantly holds still. I manage to wriggle the piece off his beefy neck.
+    Luna: <i>He puffs his chest before he reluctantly holds still. I manage to wriggle the piece off his beefy neck.</i>
     <<pose CyberSeagull SceneSample_CybergullFadeOut>>
     <<wait 1>>
     <<exit CyberSeagull>>
     <<place CyberSeagull>>
     <<expression CyberSeagull cogless>>
-    The gull ruffles his feathers to collect himself. Then, he stares into my soul. 
+    Luna: <i>The gull ruffles his feathers to collect himself. Then, he stares into my soul.</i> 
     <<expression Luna_Neutral surprised>>
-    Is he…aura farming?
+    Luna: (Is he…aura farming?)
     <<pose CyberSeagull SceneSample_CybergullFadeOut>>
     <<wait 1>>
     <<exit CyberSeagull>>
-    But then, he flies away.
+    Luna: <i>But then, he flies away.</i>
     <<expression Luna_Neutral arms_neutral>>
     Luna: You’re welcome.
-    I tuck the flux ring away for safe-keeping.
+    Luna: <i>I tuck the flux ring away for safe-keeping.</i>
     <<pose Luna_Neutral SceneSample_LunaFadeOut>>
     <<wait 1>>
     <<exit Luna_Neutral>>
@@ -241,8 +241,8 @@ Luna: (But damn, this guy is a TANK! And FERAL! Do I risk it?)
     <<set $badend += 1>>
     <<expression Luna_Neutral arms_neutral>>
     Luna: I can’t risk getting rabies, or whatever chemical disease you have.
-    The cybergull scowls as I walk past him and look around to see what package I need to pick up around this disgusting trashpile. 
-    A grudge brews from beyond the gull’s glasses. 
+    Luna: <i>The cybergull scowls as I walk past him and look around to see what package I need to pick up around this disgusting trashpile.</i> 
+    Luna: <i>A grudge brews from beyond the gull’s glasses.</i> 
     <<pose Luna_Neutral SceneSample_LunaFadeOut>>
     <<pose CyberSeagull SceneSample_CybergullFadeOut>>
     <<wait 1>>
@@ -261,20 +261,20 @@ title: TransporterPod
 <<fadeIn 2>>
 <<place Luna_Neutral>>
 <<expression Luna_Neutral arms_neutral>>
-I finally notice a transporter pod branded with the AGENTS logo sitting by the dumpster. It's an odd place to leave something so brand-spanking new.
+Luna: <i>I finally notice a transporter pod branded with the AGENTS logo sitting by the dumpster. It's an odd place to leave something so brand-spanking new.</i>
 <<expression Luna_Neutral surprised>>
-The pod rattles on the rubble. Usually, food deliveries don't involve LIVING CREATURES!
+Luna: <i>The pod rattles on the rubble. Usually, food deliveries don't involve LIVING CREATURES!</i>
 
 -> Put it on the motorcycle
     <<expression Luna_Neutral neutral>>
     Luna: (I can't just unlock it. That's against SL0P protocol.)
     Luna: (And I can't afford another bad rating. I'd get suspended.)
-    I carefully pick up the transporter pod from the ground.
+    Luna: <i>I carefully pick up the transporter pod from the ground.</i>
     // SFX unlock sound
     <<playSFX podUnlock>>
     <<expression Luna_Neutral surprised>>
-    But my fingerprints unlock it and bypass the pod's DNA-encoded password security. 
-    Which can only mean one thing.
+    Luna: <i>But my fingerprints unlock it and bypass the pod's DNA-encoded password security.</i> 
+    Luna: <i>Which can only mean one thing.</i>
     Luna: (This delivery is…meant for me? But why?)
     Luna: (Why does this pod have my DNA…?)
     <<wait 1>>
@@ -293,23 +293,23 @@ title: KickPod
 <<set $badend += 1>>
 <<expression Luna_Neutral annoyed>>
 Luna: Fuck AGENTS!
-It feels good to stick it to the tech overlords, even if it's just damaging their property. 
-The thing inside the pod yelps, but I don't care.
-Because everything that AGENTS makes is all the same to me.
-Slop.
-Other than one scuff, the pod is perfectly intact.
+Luna: <i>It feels good to stick it to the tech overlords, even if it's just damaging their property.</i> 
+Luna: <i>The thing inside the pod yelps, but I don't care.</i>
+Luna: <i>Because everything that AGENTS makes is all the same to me.</i>
+Luna: <i>Slop.</i>
+Luna: <i>Other than one scuff, the pod is perfectly intact.</i>
 <<expression Luna_Neutral arms_annoyed>>
 Luna: (As long as the customer isn’t neurotic about how their apples are packaged, then I might just get away with this.)
-I pick the transporter pod up.
-But when I do…
+Luna: <i>I pick the transporter pod up.</i>
+Luna: <i>But when I do…</i>
 // SFX unlock sound
 <<playSFX podUnlock>>
 <<expression Luna_Neutral surprised>>
-My fingerprints unlock it and bypass the pod's DNA-encoded password security.
-Which can only mean one thing.
+Luna: <i>My fingerprints unlock it and bypass the pod's DNA-encoded password security.</i>
+Luna: <i>Which can only mean one thing.</i>
 Luna: (This delivery is…meant for me? But why?)
 Luna: (Why does this pod have my DNA…?)
-And what kind of monster did I just unleash?
+Luna: <i>And what kind of monster did I just unleash?</i>
 <<wait 1>>
 <<exit Luna_Neutral>>
 <<exit NubsPod>>
@@ -319,25 +319,25 @@ And what kind of monster did I just unleash?
 
 title: InspectPod
 ---
-There's a fingerprint sensor attached to the pod. It's DNA-encoded, which is pretty high security for an underpaid driver like me to be handling.
+Luna: <i>There's a fingerprint sensor attached to the pod. It's DNA-encoded, which is pretty high security for an underpaid driver like me to be handling.</i>
 <<expression Luna_Neutral surprised>>
 ???: Free me from this pod, you strange creature!
 Luna: (It talks…! But I'M the strange creature?)
 <<expression Luna_Neutral neutral>>
-I glance at the pod's markings again. It's from AGENTS—the very company that's screwed me and humankind over.
+Luna: <i>I glance at the pod's markings again. It's from AGENTS—the very company that's screwed me and humankind over.</i>
 
 -> Unlock the pod
     <<set $goodend += 1>>
     <<expression Luna_Neutral arms_annoyed>>
     Luna: I can't believe I'm taking orders from a talking pod…
-    I'm basically asking for a permanent account suspension—and a possible lawsuit.
-    Sighing, I place my hand on the pod's fingerprint sensor.
+    Luna: <i>I'm basically asking for a permanent account suspension—and a possible lawsuit.</i>
+    Luna: <i>Sighing, I place my hand on the pod's fingerprint sensor.</i>
     Luna: (It’s not like the lock won’t respond to my biometrics.)
     // SFX unlock sound
     <<playSFX podUnlock>>
     <<expression Luna_Neutral surprised>>
     Luna: !!!
-    The pod unlocks with my biometric data. Something feels wrong about this whole thing.
+    Luna: <i>The pod unlocks with my biometric data. Something feels wrong about this whole thing.</i>
     Luna: (This delivery is…meant for me? But why?)
     Luna: (Why does this pod have my DNA…?)
 -> Don't unlock it
@@ -349,12 +349,12 @@ I glance at the pod's markings again. It's from AGENTS—the very company that's
     <<expression Luna_Neutral arms_annoyed>>
     Luna: I can’t. It’s against SL0P policy.
     Luna: (Am I really talking to someone's midnight snack?)
-    I pick up the transporter pod from the ground, ready to place it on the motorbike and be done with it.
+    Luna: <i>I pick up the transporter pod from the ground, ready to place it on the motorbike and be done with it.</i>
     // SFX unlock sound
     <<playSFX podUnlock>>
     <<expression Luna_Neutral surprised>>
-    But I wasn't expecting it to unlock with my biometric data. 
-    Which can only mean one thing.
+    Luna: <i>But I wasn't expecting it to unlock with my biometric data.</i> 
+    Luna: <i>Which can only mean one thing.</i>
     Luna: (This delivery is…meant for me? But why?)
     Luna: (Why does this pod have my DNA…?)
 <<wait 1>>
@@ -370,9 +370,9 @@ title: MeetLilGuy
 <<camera LilGuyCG>>
 <<fadeIn 2>>
 <<wait 2>>
-The pod sheds its protective packaging and reveals a creature in a large glass container.
-It blinks at me from its AGENTS cage, with a screen for a face and pixels for eyes.
-It's actually kind of…cute.
+Luna: <i>The pod sheds its protective packaging and reveals a creature in a large glass container.</i>
+Luna: <i>It blinks at me from its AGENTS cage, with a screen for a face and pixels for eyes.</i>
+Luna: <i>It's actually kind of…cute.</i>
 ???: Ah, so you are not a foreign entity. Just a human. 65% oxygen, 18% carbon, 10% hydrogen, and 3% nitrogen. And with a very concerning crane game addiction.
 Luna: And YOU’RE some kinda state-of-the-art cyberpet that talks and scans…body particles?
 Luna: (AND scans embarrassing information. Nobody heard that, right?!)
@@ -399,13 +399,13 @@ title: LilGuyReaction
     <<pose NubsPod SceneSample_NubsFadeOut>>
     <<wait 1>>
     <<exit NubsPod>>
-    The creature crawls out of the pod to give me a piece of its mind. The circuits in its tadpole-like tail jolt to life.
+    Luna: <i>The creature crawls out of the pod to give me a piece of its mind. The circuits in its tadpole-like tail jolt to life.</i>
     <<place Nubs>>
     <<expression Nubs wave_angry>> 
     T.A.B: My master will have your head for this! As well as the AGENTS Legal team! When they get their hands on that pod’s sensor—
     <<expression Luna_Neutral arms_annoyed>>
     Luna: Whoa, hold up. I'm not the one that tossed you here like trash. I'm just the delivery girl. Also…
-    I shove the transporter pod into the dumpster, which smears it with unspeakable leftovers. I give it one last push, and the glass on the fingerprint sensor cracks, erasing traces of my DNA in the process.
+    Luna: <i>I shove the transporter pod into the dumpster, which smears it with unspeakable leftovers. I give it one last push, and the glass on the fingerprint sensor cracks, erasing traces of my DNA in the process.</i>
     <<expression Luna_Neutral arms_happy>>
     Luna: What sensor?
     <<expression Nubs angry>> 
@@ -422,19 +422,19 @@ title: LilGuyReaction
     <<pose NubsPod SceneSample_NubsFadeOut>>
     <<wait 1>>
     <<exit NubsPod>>
-    The creature slowly emerges from the pod. 
+    Luna: <i>The creature slowly emerges from the pod.</i>
     <<place Nubs>>
     <<expression Nubs neutral>>
     Luna: (Meh. The face was cuter.)
     T.A.B: As for my master, well. He will thank you with damage fees and lawsuits within the next 1-2 business days.
     <<expression Luna_Neutral surprised>>
     Luna: W-Wait, hold up! “Stealing?” I'm just the delivery girl. I didn't toss you here like trash!
-    The creature waves his tiny nubs at the transporter pod.
+    Luna: <i>The creature waves his tiny nubs at the transporter pod.</i>
     <<expression Nubs wave_angry>>
     T.A.B: It's too late! This AGENTS pod sensor has already captured your DNA, which can and will be used against you in the court of law.
     <<expression Luna_Neutral neutral>>
     Luna: Oh yeah?
-    I immediately shove the transporter pod into the dumpster and smear its sensor with unspeakable leftovers.
+    Luna: <i>I immediately shove the transporter pod into the dumpster and smear its sensor with unspeakable leftovers.</i>
     <<expression Luna_Neutral happy>>
     Luna: Oops! There goes my DNA.
     <<expression Nubs neutral>>
@@ -525,7 +525,7 @@ title: Tonight
 <<declare $tellTruth = false>>
 T.A.B: One of the hazmat humans took me away and stuffed me in this pod, which you freed me from. And, if you are telling the truth—
 <<expression Nubs loading>>
-The creature makes a whizzing sound and a blue light shoots out from its facial screen. The light scans me up and down.
+Luna: <i>The creature makes a whizzing sound and a blue light shoots out from its facial screen. The light scans me up and down.</i>
 T.A.B: —Which you seem to be, based on my built-in lie detector technology. Your heartbeat and pulse rate are normal.
 <<expression Luna_Neutral arms_annoyed>>
 Luna: Uh, invasive much?! Isn't this against, like, some data privacy law?!
@@ -547,7 +547,7 @@ Luna: Nope, no AGENTS for me. And I like to keep it that way.
 <<expression Nubs confused>>
 T.A.B: But why? Why would you not want to partake in the greatest inventions made by mankind?
 Luna: And sign up for 24/7 surveillance? Hard pass.
-I stare at its stubby sets of legs that are floating in the air.
+Luna: <i>I stare at its stubby sets of legs that are floating in the air.</i>
 Luna: But I guess you’re already recording me without my permission, Nubs.
 <<expression Nubs wave_angry>>
 T.A.B: It's “T.A.B”!
@@ -567,17 +567,17 @@ Luna: Ugh. It's Luna, okay?
 <<playSFX notification>>
 <<expression Luna_Neutral arms_neutral>>
 <<expression Nubs confused>>
-A notification flashes on my homescreen. My current delivery status for Nubs changes from “Pick up” to “Delivery on the way.” The notification reveals where to drop him off.
-It's in Root Town.
-I tap on the notification and try to find more information about the requestor. Nothing.
+Luna: <i>A notification flashes on my homescreen. My current delivery status for Nubs changes from “Pick up” to “Delivery on the way.” The notification reveals where to drop him off.</i>
+Luna: <i>It's in Root Town.</i>
+Luna: <i>I tap on the notification and try to find more information about the requestor. Nothing.</i>
 Luna: (Why would someone want a cute little BOMB roaming free in the streets…?)
 // SFX cyberdeck notification ping
 <<playSFX notification>>
-More delivery offers from the SL0P app appear on my cyberdeck. The rates are double what they usually are.
+Luna: <i>More delivery offers from the SL0P app appear on my cyberdeck. The rates are double what they usually are.</i>
 Luna: (Might as well squeeze another job in before riding back home…)
 
 -> Choose the offer with a lower tip and easier dropoff
-    I hop back onto my motorbike and pat the faded cushion on the back.
+    Luna: <i>I hop back onto my motorbike and pat the faded cushion on the back.</i>
     Luna: Hop on, lil guy.
     Nubs: Are you taking me back to AGENTS?
     Luna: What? No. I’m doing another delivery before I take you to Root Town. That's where the customer wants you.
@@ -593,7 +593,7 @@ Luna: (Might as well squeeze another job in before riding back home…)
         <<expression Nubs wave_worried>>
         Nubs: Never! Perhaps this is the master's way of discreetly moving me to another location to continue experimentation.
         <<expression Nubs wave_happy>>
-        The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and wraps his tail around it.
+        Luna: <i>The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and wraps his tail around it.</i>
         Nubs: I would try my lie detector again, but I've run out of tokens to use that feature.
         Luna: (Phew…)
     -> Tell the truth and explain your situation
@@ -603,12 +603,12 @@ Luna: (Might as well squeeze another job in before riding back home…)
             Luna: Look, I'm short on rent and need to complete this task so my roommate doesn’t kick me out.
             Luna: What if I pretend to drop you off in Root Town, then take you back to the nearest AGENTS facility? That way, we both get what we want.
             <<expression Nubs happy>>
-            The creature seems convinced and nods. He crawls up onto the motorbike's cushion and wraps his tail around it.
+            Luna: <i>The creature seems convinced and nods. He crawls up onto the motorbike's cushion and wraps his tail around it.</i>
             Nubs: I could scan you again to see if you are telling the truth. But your answer is sufficient.
             <<expression Luna_Neutral annoyed>>
 -> Choose the offer with a higher tip and harder dropoff
     <<set $bigJob = true>>
-    I hop back onto my motorbike and pat the faded cushion on the back.
+    Luna: <i>I hop back onto my motorbike and pat the faded cushion on the back.</i>
     Luna: Hop on, lil guy.
     Nubs: Are you taking me back to AGENTS?
     Luna: What? No. We're doing another delivery before I take you to Root Town. That's where the customer wants you.
@@ -624,7 +624,7 @@ Luna: (Might as well squeeze another job in before riding back home…)
         <<expression Nubs wave_worried>>
         Nubs: Never! Perhaps this is the master's way of discreetly moving me to another location to continue experimentation.
         <<expression Nubs wave_happy>>
-        The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and wraps his tail around it.
+        Luna: <i>The creature seems convinced, and nods. He crawls up onto the motorbike's cushion and wraps his tail around it.</i>
         Nubs: I would try my lie detector again, but I've run out of tokens to use that feature.
         Luna: (Phew…)
     -> Tell the truth and explain your situation
@@ -633,7 +633,7 @@ Luna: (Might as well squeeze another job in before riding back home…)
         Luna: Look, I'm short on rent and need to complete this task so my roommate doesn’t kick me out.
         Luna: What if I pretend to drop you off in Root Town, then take you back to the nearest AGENTS facility? That way, we both get what we want.
         <<expression Nubs happy>>
-        The creature seems convinced and nods. He crawls up onto the motorbike's cushion and wraps his tail around it.
+        Luna: <i>The creature seems convinced and nods. He crawls up onto the motorbike's cushion and wraps his tail around it.</i>
         Nubs: I could scan you again to see if you are telling the truth. But your answer is sufficient.
         <<expression Luna_Neutral annoyed>>
 <<playSFX lunaMotorcycle>>
