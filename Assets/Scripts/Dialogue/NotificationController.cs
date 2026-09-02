@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events; 
 using Yarn.Unity; 
+using System.Collections;
 
 public class NotificationController : MonoBehaviour
 {
@@ -83,5 +84,43 @@ public class NotificationController : MonoBehaviour
             
             currentNotificationState = -1;
         }
+    }
+
+    public void OpenCyberdeckFromNotification()
+    {
+        if (currentNotificationState == -1) return;
+
+        if (notificationGroup != null)
+        {
+            notificationGroup.SetActive(false);
+        }
+
+        if (cyberdeckController != null)
+        {
+            cyberdeckController.OpenCyberdeck(); 
+            
+            cyberdeckController.SetCyberdeckState(currentNotificationState);
+            
+            cyberdeckController.selectTab(0); 
+        }
+    }
+
+    public void OnCyberdeckClosed()
+    {
+        StartCoroutine(UnpauseAfterDelay());
+    }
+
+    private IEnumerator UnpauseAfterDelay()
+    {
+        yield return new WaitForSecondsRealtime(0.1f);
+
+        onNotificationHidden.Invoke();
+
+        if (workingAdvancer != null)
+        {
+            workingAdvancer.RequestNextLine();
+        }
+
+        currentNotificationState = -1;
     }
 }

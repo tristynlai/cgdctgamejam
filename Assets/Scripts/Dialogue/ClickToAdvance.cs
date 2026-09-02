@@ -1,9 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using TMPro;
 using System.Threading;
 using Yarn.Markup;
 using Yarn.Unity;
-using System.Runtime.CompilerServices;
 
 public class ClickToAdvance : ActionMarkupHandler
 {
@@ -14,6 +14,14 @@ public class ClickToAdvance : ActionMarkupHandler
   private void Awake()
   {
     visualNovel = FindObjectOfType<VisualNovel>();
+  }
+
+  private void Update()
+  {
+    if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+    {
+      Advance();
+    }
   }
 
   public void Advance()

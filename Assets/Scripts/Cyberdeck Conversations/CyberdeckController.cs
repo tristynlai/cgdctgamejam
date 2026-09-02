@@ -2,9 +2,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
+using UnityEngine.EventSystems;
 
 public class CyberdeckController : MonoBehaviour
 {
+    [Header("UI Tabs & Pages")]
     public GameObject[] topBarTabs;
     public GameObject[] pageTabs;
     
@@ -20,10 +22,12 @@ public class CyberdeckController : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private GameObject cyberdeckParentCanvas;
-    private DialogueRunner? dialogueRunner;
+    private DialogueRunner dialogueRunner;
 
     private bool isWaitingForExit = false;
     private LineAdvancer[] activeLineAdvancers;
+
+    private int currentStateIndex = 0;
 
     private void Awake()
     {
@@ -48,6 +52,22 @@ public class CyberdeckController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        bool isCyberdeckOpen = (cyberdeckParentCanvas != null && cyberdeckParentCanvas.activeSelf) || gameObject.activeSelf;
+        
+        if (!isCyberdeckOpen && !isWaitingForExit)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (dialogueRunner != null && dialogueRunner.IsDialogueRunning)
+                {
+                    dialogueRunner.RequestHurryUpLine();
+                }
+            }
+        }
+    }
+
     private IEnumerator WaitForCyberdeckExit()
     {
         isWaitingForExit = true;
@@ -64,22 +84,10 @@ public class CyberdeckController : MonoBehaviour
         }
     }
 
-    public void selectTab(int index)
-    {
-        for (int i = 0; i < topBarTabs.Length; i++)
-        {
-            topBarTabs[i].SetActive(i == index);
-            pageTabs[i].SetActive(i == index);
-        }
-        
-        if (index == 1 && messagesNotificationDot != null)
-        {
-            messagesNotificationDot.SetActive(false);
-        }
-    }
-
     public void SetCyberdeckState(int stateIndex)
     {
+        currentStateIndex = stateIndex;
+
         for (int i = 0; i < homeStates.Length; i++)
         {
             if (homeStates[i] != null) homeStates[i].SetActive(i == stateIndex);
@@ -105,20 +113,57 @@ public class CyberdeckController : MonoBehaviour
         }
     }
 
-    public void ExitCyberdeck()
+    public void selectTab(int index)
     {
-        if (dialogueRunner != null)
+        for (int i = 0; i < topBarTabs.Length; i++)
         {
-            dialogueRunner.StartCoroutine(DelayedReenableAndExit());
+            topBarTabs[i].SetActive(i == index);
+            pageTabs[i].SetActive(i == index);
         }
-        else
+        
+        if (index == 1)
         {
-            gameObject.SetActive(false);
+            for (int i = 0; i < messageStates.Length; i++)
+            {
+                if (messageStates[i] != null) 
+                {
+                    messageStates[i].SetActive(i == currentStateIndex);
+                }
+            }
+        }
+        
+        if (index == 1 && messagesNotificationDot != null)
+        {
+            messagesNotificationDot.SetActive(false);
         }
     }
 
-    private IEnumerator DelayedReenableAndExit()
+    public void OpenMessagesTab()
     {
+        selectTab(1);
+    }
+
+    public void OpenCyberdeck()
+    {
+        if (cyberdeckParentCanvas != null)
+        {
+            cyberdeckParentCanvas.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
+    }
+
+    public void ExitCyberdeck()
+    {
+        if (EventSystem.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+
+        isWaitingForExit = false;
+
         if (cyberdeckParentCanvas != null)
         {
             cyberdeckParentCanvas.SetActive(false);
@@ -128,8 +173,19 @@ public class CyberdeckController : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        yield return null;
-        yield return null;
+        if (dialogueRunner != null)
+        {
+            dialogueRunner.StartCoroutine(ResumeDialogueRoutine());
+        }
+        else
+        {
+            HideCyberdeckInstant();
+        }
+    }
+
+    private IEnumerator ResumeDialogueRoutine()
+    {
+        yield return null; 
 
         if (activeLineAdvancers != null)
         {
@@ -142,9 +198,36 @@ public class CyberdeckController : MonoBehaviour
             }
         }
 
-        if (isWaitingForExit)
+        VisualNovel visualNovel = FindObjectOfType<VisualNovel>();
+        if (visualNovel != null)
         {
-            isWaitingForExit = false;
+            visualNovel.PauseDialogue(false);
+        }
+    }
+
+    private void HideCyberdeckInstant()
+    {
+        if (cyberdeckParentCanvas != null)
+        {
+            cyberdeckParentCanvas.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+
+        if (activeLineAdvancers != null)
+        {
+            foreach (var advancer in activeLineAdvancers)
+            {
+                if (advancer != null) advancer.enabled = true;
+            }
+        }
+
+        VisualNovel visualNovel = FindObjectOfType<VisualNovel>();
+        if (visualNovel != null)
+        {
+            visualNovel.PauseDialogue(false);
         }
     }
 }
