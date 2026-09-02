@@ -52,6 +52,22 @@ public class CyberdeckController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        bool isCyberdeckOpen = (cyberdeckParentCanvas != null && cyberdeckParentCanvas.activeSelf) || gameObject.activeSelf;
+        
+        if (!isCyberdeckOpen && !isWaitingForExit)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (dialogueRunner != null && dialogueRunner.IsDialogueRunning)
+                {
+                    dialogueRunner.RequestHurryUpLine();
+                }
+            }
+        }
+    }
+
     private IEnumerator WaitForCyberdeckExit()
     {
         isWaitingForExit = true;
@@ -127,8 +143,27 @@ public class CyberdeckController : MonoBehaviour
         selectTab(1);
     }
 
+    public void OpenCyberdeck()
+    {
+        if (cyberdeckParentCanvas != null)
+        {
+            cyberdeckParentCanvas.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
+    }
+
     public void ExitCyberdeck()
     {
+        if (EventSystem.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+
+        isWaitingForExit = false;
+
         if (cyberdeckParentCanvas != null)
         {
             cyberdeckParentCanvas.SetActive(false);
@@ -138,10 +173,19 @@ public class CyberdeckController : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        if (EventSystem.current != null)
+        if (dialogueRunner != null)
         {
-            EventSystem.current.SetSelectedGameObject(null);
+            dialogueRunner.StartCoroutine(ResumeDialogueRoutine());
         }
+        else
+        {
+            HideCyberdeckInstant();
+        }
+    }
+
+    private IEnumerator ResumeDialogueRoutine()
+    {
+        yield return null; 
 
         if (activeLineAdvancers != null)
         {
@@ -159,19 +203,31 @@ public class CyberdeckController : MonoBehaviour
         {
             visualNovel.PauseDialogue(false);
         }
-
-        isWaitingForExit = false;
     }
 
-    public void OpenCyberdeck()
+    private void HideCyberdeckInstant()
     {
         if (cyberdeckParentCanvas != null)
         {
-            cyberdeckParentCanvas.SetActive(true);
+            cyberdeckParentCanvas.SetActive(false);
         }
         else
         {
-            gameObject.SetActive(true);
+            gameObject.SetActive(false);
+        }
+
+        if (activeLineAdvancers != null)
+        {
+            foreach (var advancer in activeLineAdvancers)
+            {
+                if (advancer != null) advancer.enabled = true;
+            }
+        }
+
+        VisualNovel visualNovel = FindObjectOfType<VisualNovel>();
+        if (visualNovel != null)
+        {
+            visualNovel.PauseDialogue(false);
         }
     }
 }
