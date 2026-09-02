@@ -373,13 +373,16 @@ title: MeetLilGuy
 Luna: <i>The pod sheds its protective packaging and reveals a creature in a large glass container.</i>
 Luna: <i>It blinks at me from its AGENTS cage, with a screen for a face and pixels for eyes.</i>
 Luna: <i>It's actually kind of…cute.</i>
-???: Ah, so you are not a foreign entity. Just a human. 65% oxygen, 18% carbon, 10% hydrogen, and 3% nitrogen. And with a very concerning crane game addiction.
+???: Ah, so you are not a foreign entity. Just a human. 
+???: 65% oxygen, 18% carbon, 10% hydrogen, and 3% nitrogen. And with a very concerning crane game addiction.
 Luna: And YOU’RE some kinda state-of-the-art cyberpet that talks and scans…body particles?
 Luna: (AND scans embarrassing information. Nobody heard that, right?!)
 ???: I'm not a pet! I’m T.A.B.
 Luna: Tab…?
-???: Technologically Advanced Broseph. Fit for the future of all bro-kind. My name's origin stems from a company naming event.
-???: I could not just be called “bro.” It needed to be more technical, more SEO-optimized. And so my name was keyword-stuffed to absolute perfection.
+???: Technologically Advanced Broseph. Fit for the future of all bro-kind. 
+???: My name's origin stems from a company naming event.
+???: I could not just be called “bro.” It needed to be more technical, more SEO-optimized. 
+???: And so my name was keyword-stuffed to absolute perfection.
 Luna: (I'm literally losing brain cells talking to this thing…)
 <<fadeOut 2>>
 <<jump LilGuyReaction>>
