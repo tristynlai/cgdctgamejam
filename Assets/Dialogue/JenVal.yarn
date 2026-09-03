@@ -4,24 +4,26 @@
 <<camera Understory>>
 <<fadeIn 2>>
 <<place Luna_Neutral>>
+<<bike Luna_Neutral on>>
 <<expression Luna_Neutral arms_neutral>>
 Luna: The only thing I need is a big offer so I can get the hell home.
 <<playSFX valMotorcycle>>
 <<expression Luna_Neutral arms_surprised>>
 Luna: <i>I recognize those tires. And the baddie who rides on them.</i>
-Luna: (Stay cool.)
+Luna: <i>Stay cool.<i>
 <<place Val>>
+<<bike Val on>>
 Val: Luna! Finally, someone without a corporate T-shirt. Have you been making bank today?
 <<expression Luna_Neutral arms_shy>>
 Luna: H-Hey, Val. No, not yet. Still getting the low-tipping vegans and high-strung snobs. Y'know how it is.
 Luna: <i>I hold my breath as Val walks over. She laughs and it's a bright, bubbly sound that goes straight to my heart while her hand goes straight to my head for a gentle pat.</i>
 <<expression Val flirty>>
 Val: I'm sure things will turn up by nighttime. All the overworked techies get the late-night munchies.
-Luna: (God, she's amazing. She always knows what to say.)
-Luna: (But it's kinda weird to see Root Town's corner store queen on this side of town. And so late at night.)
+Luna: <i>God, she's amazing. She always knows what to say.</i>
+Luna: <i>But it's kinda weird to see Root Town's corner store queen on this side of town. And so late at night...</i>
 <<expression Val neutral>>
 Val: Something on your mind?
-Luna: (BE. COOL.)
+Luna: <i>BE. COOL.</i>
 <<jump ValChoices>>
 ===
 
@@ -35,7 +37,7 @@ title: ValChoices
     <<jump ValChoices>>
 -> What are you doing here?
     <<expression Val flirty>>
-    Val: A Root Town business owner never reveals her secrets~!
+    Val: A Root Town business owner never reveals her secrets!
     <<jump PressingVal>>
 ===
 
@@ -159,6 +161,7 @@ Luna: Time to roll.
 <<wait 1>>
 <<exit Luna_Neutral>>
 <<fadeOut 2>>
+<<bike Luna_Neutral off>>
 <<wait 2>>
 <<jump Alleyway>>
 ===
