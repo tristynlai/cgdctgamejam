@@ -11,7 +11,7 @@
 Luna: Come on, you stupid SL0P app. Show me the big offers!
 <<expression Luna_Neutral annoyed>>
 Luna: (Kaya is gonna kill me if I skip out on rent again. Just one big delivery gig should help me break even…)
-//Play the Cyberdeck Notification ping
+<<playSFX notification>>
 <<expression Luna_Neutral surprised>>
 <<show_notification 0>>
 Luna: (Huh? It’s a new customer rating on the SL0P app. I better tap it and check it out…)
@@ -57,7 +57,7 @@ Luna: (I have an option to respond…)
 
 title: CyberdeckT
 ---
-//Play the Cyberdeck Notification ping
+<<playSFX notification>>
 //Luna with lunaAnnoyedArms
 <<show_notification 1>>
 Luna: Now what?
