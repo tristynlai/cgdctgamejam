@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e1b41dee162524b578f270014464319d
+guid: b2ab63247333c4dae930fdd03c11b6f5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7680329195180591221
-    second: dialoguebox_hyperyellow_Cybergull_0
+      213: -1926215043699471979
+    second: nameplate_Kaya_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 200
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialoguebox_hyperyellow_Cybergull_0
+      name: nameplate_Kaya_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 566
+        width: 880
         height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5780dccf5b2069a60800000000000000
-      internalID: 7680329195180591221
+      spriteID: 599874f8f95b445e0800000000000000
+      internalID: -1926215043699471979
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dialoguebox_hyperyellow_Cybergull_0: 7680329195180591221
+      nameplate_Kaya_0: -1926215043699471979
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

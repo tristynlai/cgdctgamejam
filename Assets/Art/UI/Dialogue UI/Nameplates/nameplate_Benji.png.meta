@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ddf253206ad594466ab60fd64abfd48a
+guid: cffba5c33efd84448a3afd0b594e08da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1752082372117268745
-    second: dialoguebox_BigBad_0
+      213: 9062264845194700350
+    second: nameplate_Benji_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 200
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialoguebox_BigBad_0
+      name: nameplate_Benji_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 566
+        width: 880
         height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7f6f9b09d5a5fa7e0800000000000000
-      internalID: -1752082372117268745
+      spriteID: e36275edcd1a3cd70800000000000000
+      internalID: 9062264845194700350
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dialoguebox_BigBad_0: -1752082372117268745
+      nameplate_Benji_0: 9062264845194700350
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b4a87f9a5ea9c406c9e50f4ad4ede7b2
+guid: 6a7274496bc8245239aa16b56d74e108
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7060312344751215467
-    second: dialoguebox_badGuyGreen_Incompetentdirector_0
+      213: -4342111950829584768
+    second: nameplate_Nubs_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialoguebox_badGuyGreen_Incompetentdirector_0
+      name: nameplate_Nubs_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 566
+        width: 880
         height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b639330aba44bf160800000000000000
-      internalID: 7060312344751215467
+      spriteID: 08ef2dbaf28bdb3c0800000000000000
+      internalID: -4342111950829584768
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dialoguebox_badGuyGreen_Incompetentdirector_0: 7060312344751215467
+      nameplate_Nubs_0: -4342111950829584768
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

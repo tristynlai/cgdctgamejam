@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 94f1b5cdf6754484da21bdb9a224e703
+guid: f3ac23d61fe5a4b3d806ff9d29812529
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2425848127524509586
-    second: dialoguebox_purple_Nat_0
+      213: -9123262311874622039
+    second: nameplate_Maxx_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialoguebox_purple_Nat_0
+      name: nameplate_Maxx_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 566
+        width: 880
         height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2971520f4085aa120800000000000000
-      internalID: 2425848127524509586
+      spriteID: 9ad0104b349a36180800000000000000
+      internalID: -9123262311874622039
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dialoguebox_purple_Nat_0: 2425848127524509586
+      nameplate_Maxx_0: -9123262311874622039
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

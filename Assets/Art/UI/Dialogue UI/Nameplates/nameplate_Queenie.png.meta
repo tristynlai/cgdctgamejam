@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3ed9760274cc74eb385b89ffd48c3cde
+guid: 4ce4b97dfa27141afb3662ca058c8796
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4467256853248596486
-    second: dialoguebox_FrissBlue_lilGuy_0
+      213: -152804797816712525
+    second: nameplate_Queenie_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialoguebox_FrissBlue_lilGuy_0
+      name: nameplate_Queenie_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 566
+        width: 880
         height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60adf428072eefd30800000000000000
-      internalID: 4467256853248596486
+      spriteID: 3b2d82298d021edf0800000000000000
+      internalID: -152804797816712525
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dialoguebox_FrissBlue_lilGuy_0: 4467256853248596486
+      nameplate_Queenie_0: -152804797816712525
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

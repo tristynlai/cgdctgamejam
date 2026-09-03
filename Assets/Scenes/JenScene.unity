@@ -1577,6 +1577,14 @@ PrefabInstance:
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 490507773}
+    - target: {fileID: 581381416255552057, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 581381416255552057, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+      propertyPath: m_FillCenter
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 602795726068081791, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
       propertyPath: dialogueRunner
       value: 
@@ -1881,6 +1889,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6080741619947111408, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080741619947111408, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080741619947111408, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 440
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080741619947111408, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6268968425383781328, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
       propertyPath: m_SortingOrder
       value: 25
@@ -2020,27 +2044,27 @@ MonoBehaviour:
   - characterName: Luna
     nameplateSprite: {fileID: 21300000, guid: b4d08ecc2082bc3468f8eaee3184c66a, type: 3}
   - characterName: Val
-    nameplateSprite: {fileID: 21300000, guid: 952b7bdd3f9631f49b3a99412a7f12cd, type: 3}
+    nameplateSprite: {fileID: 21300000, guid: 01edee0bd1cf6450d805ca30d5b8575a, type: 3}
   - characterName: Incompetent Director
-    nameplateSprite: {fileID: 21300000, guid: b4a87f9a5ea9c406c9e50f4ad4ede7b2, type: 3}
+    nameplateSprite: {fileID: 21300000, guid: 6e23f8d99b3a0400d847224b66fad0d5, type: 3}
   - characterName: Maxx
-    nameplateSprite: {fileID: 21300000, guid: 78b04bfe934f44057bda0f5601375152, type: 3}
+    nameplateSprite: {fileID: 21300000, guid: f3ac23d61fe5a4b3d806ff9d29812529, type: 3}
   - characterName: The Big Bad
-    nameplateSprite: {fileID: 21300000, guid: ddf253206ad594466ab60fd64abfd48a, type: 3}
+    nameplateSprite: {fileID: 21300000, guid: 9e217a52ad4214672af5dddea5e01824, type: 3}
   - characterName: Nubs
-    nameplateSprite: {fileID: 21300000, guid: 3ed9760274cc74eb385b89ffd48c3cde, type: 3}
+    nameplateSprite: {fileID: 21300000, guid: 6a7274496bc8245239aa16b56d74e108, type: 3}
   - characterName: Benji
-    nameplateSprite: {fileID: 21300000, guid: 8e9e5ca30581d41d2ab9fc8d40363543, type: 3}
+    nameplateSprite: {fileID: 21300000, guid: cffba5c33efd84448a3afd0b594e08da, type: 3}
   - characterName: Kaya
-    nameplateSprite: {fileID: 21300000, guid: 04d826c0b28ce48009dd24d2877938e3, type: 3}
+    nameplateSprite: {fileID: 21300000, guid: b2ab63247333c4dae930fdd03c11b6f5, type: 3}
   - characterName: Cybergull
-    nameplateSprite: {fileID: 21300000, guid: e1b41dee162524b578f270014464319d, type: 3}
+    nameplateSprite: {fileID: 21300000, guid: b0a4329efc3994dbaba9211c0ab14693, type: 3}
   - characterName: Nat
-    nameplateSprite: {fileID: 2425848127524509586, guid: 94f1b5cdf6754484da21bdb9a224e703, type: 3}
+    nameplateSprite: {fileID: 21300000, guid: de1bbc706e4ae4893aa65fd5f174b9a4, type: 3}
   - characterName: T.A.B
-    nameplateSprite: {fileID: 21300000, guid: 3ed9760274cc74eb385b89ffd48c3cde, type: 3}
+    nameplateSprite: {fileID: 21300000, guid: 6a7274496bc8245239aa16b56d74e108, type: 3}
   - characterName: Queenie
-    nameplateSprite: {fileID: 21300000, guid: 00c74608dbe864b70b1746c9a4060e8c, type: 3}
+    nameplateSprite: {fileID: 21300000, guid: 4ce4b97dfa27141afb3662ca058c8796, type: 3}
 --- !u!1 &1008185364
 GameObject:
   m_ObjectHideFlags: 0

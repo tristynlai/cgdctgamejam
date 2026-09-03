@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b4d08ecc2082bc3468f8eaee3184c66a
+guid: de1bbc706e4ae4893aa65fd5f174b9a4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8343498400025029707
-    second: dialoguebox_red_0
+      213: -72846225166833198
+    second: nameplate_Nat_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,10 +48,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialoguebox_red_0
+      name: nameplate_Nat_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 566
+        width: 880
         height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5b3d7723960f53c80800000000000000
-      internalID: -8343498400025029707
+      spriteID: 2d9e3b18eb23dfef0800000000000000
+      internalID: -72846225166833198
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dialoguebox_red_0: -8343498400025029707
+      nameplate_Nat_0: -72846225166833198
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
