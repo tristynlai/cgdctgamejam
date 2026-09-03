@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 478, y: -100}
-  m_SizeDelta: {x: 421, y: 940}
+  m_SizeDelta: {x: 1200, y: 2048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6222597589554324179
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 9004985149374680108, guid: 7e77e6b1a2fd2214eb2ba0e6718e7469, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f3dc185eb62c154e9757b78f4e9b88a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -113,49 +113,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   expressions:
   - name: agents
-    sprite: {fileID: -5874817892992855081, guid: 2778b4262e065ce499425946b71e8bce, type: 3}
+    sprite: {fileID: 21300000, guid: 2778b4262e065ce499425946b71e8bce, type: 3}
   - name: angry
-    sprite: {fileID: 7300176357626858338, guid: 77512df7076619740b59577cc5ee12f5, type: 3}
+    sprite: {fileID: 21300000, guid: 77512df7076619740b59577cc5ee12f5, type: 3}
   - name: arms_angry
-    sprite: {fileID: -8407966466241614922, guid: b6097302cb3ff9044965fd09eb511386, type: 3}
+    sprite: {fileID: 21300000, guid: b6097302cb3ff9044965fd09eb511386, type: 3}
   - name: arms_confused
-    sprite: {fileID: -4068659042341220735, guid: 6f97ee6ee53b693478d22f2fc1cb3cdd, type: 3}
+    sprite: {fileID: 21300000, guid: 6f97ee6ee53b693478d22f2fc1cb3cdd, type: 3}
   - name: arms_happy
-    sprite: {fileID: -3873096187696482045, guid: a65f181fe0dc3e74c88787032209f58a, type: 3}
+    sprite: {fileID: 21300000, guid: a65f181fe0dc3e74c88787032209f58a, type: 3}
   - name: arms_neutral
-    sprite: {fileID: 1598147254451629371, guid: 9f3dc185eb62c154e9757b78f4e9b88a, type: 3}
+    sprite: {fileID: 21300000, guid: 9f3dc185eb62c154e9757b78f4e9b88a, type: 3}
   - name: arms_worried
-    sprite: {fileID: 2090453523910777667, guid: adf42cf0982b0d844802b7956f6bef11, type: 3}
+    sprite: {fileID: 21300000, guid: adf42cf0982b0d844802b7956f6bef11, type: 3}
   - name: confused
-    sprite: {fileID: 7144922111400190768, guid: 930f077cd128e5148b3acdd594a0c320, type: 3}
+    sprite: {fileID: 21300000, guid: 930f077cd128e5148b3acdd594a0c320, type: 3}
   - name: anger_evolution
-    sprite: {fileID: 7100009183535738960, guid: 6ef7e4a7773db480ca959a86a8166450, type: 3}
+    sprite: {fileID: 21300000, guid: 6ef7e4a7773db480ca959a86a8166450, type: 3}
   - name: error_evolution
-    sprite: {fileID: 5573069272412405824, guid: d2cd256ef4c1c41fa9fe5185cd83f329, type: 3}
+    sprite: {fileID: 21300000, guid: d2cd256ef4c1c41fa9fe5185cd83f329, type: 3}
   - name: happy_evolution
-    sprite: {fileID: 8989703785774660318, guid: 2411beb5ea87b446aa30b1a2a3d3b583, type: 3}
+    sprite: {fileID: 21300000, guid: 2411beb5ea87b446aa30b1a2a3d3b583, type: 3}
   - name: neutral_evolution
-    sprite: {fileID: 5168680102582513515, guid: 8e341da8208a94877b638c09d1e77f58, type: 3}
+    sprite: {fileID: 21300000, guid: 8e341da8208a94877b638c09d1e77f58, type: 3}
   - name: error
-    sprite: {fileID: 5615815216715721761, guid: 0da0d7b34ed89d74cb435fab62cda38f, type: 3}
+    sprite: {fileID: 21300000, guid: 0da0d7b34ed89d74cb435fab62cda38f, type: 3}
   - name: happy
-    sprite: {fileID: 3747339042692325380, guid: 0a3a1270af316bc46ba9d19d52ad3dae, type: 3}
+    sprite: {fileID: 21300000, guid: 0a3a1270af316bc46ba9d19d52ad3dae, type: 3}
   - name: loading
-    sprite: {fileID: 7758288783579432565, guid: 9a2135d3d5b54584fa4c667043ef0303, type: 3}
+    sprite: {fileID: 21300000, guid: 9a2135d3d5b54584fa4c667043ef0303, type: 3}
   - name: worried
-    sprite: {fileID: -4125503204209978723, guid: 3807a4ae513588b46ad68970ab7615c7, type: 3}
+    sprite: {fileID: 21300000, guid: 3807a4ae513588b46ad68970ab7615c7, type: 3}
   - name: neutral
-    sprite: {fileID: 2430757066697684363, guid: 4453b6008ce05b14e9312c3999e9bb66, type: 3}
+    sprite: {fileID: 21300000, guid: 4453b6008ce05b14e9312c3999e9bb66, type: 3}
   - name: wave_angry
-    sprite: {fileID: -5947986552613002513, guid: 39cff30edcacd81419ad4afe31ab3d2a, type: 3}
+    sprite: {fileID: 21300000, guid: 39cff30edcacd81419ad4afe31ab3d2a, type: 3}
   - name: wave_confused
-    sprite: {fileID: 1193261224794433507, guid: 4a318e43f6dfa2248a8d5f0c0e1b0438, type: 3}
+    sprite: {fileID: 21300000, guid: 4a318e43f6dfa2248a8d5f0c0e1b0438, type: 3}
   - name: wave_error
-    sprite: {fileID: -9043058629234118315, guid: 97201e0c177c3f84193062fa0874d803, type: 3}
+    sprite: {fileID: 21300000, guid: 97201e0c177c3f84193062fa0874d803, type: 3}
   - name: wave_happy
-    sprite: {fileID: 7368628057135483789, guid: 1bf14108378cc944aab6ab7968df0572, type: 3}
+    sprite: {fileID: 21300000, guid: 1bf14108378cc944aab6ab7968df0572, type: 3}
   - name: wave_neutral
-    sprite: {fileID: -8102978577268903235, guid: 4e826160d86d9184f9cbe2eb42de7ffc, type: 3}
+    sprite: {fileID: 21300000, guid: 4e826160d86d9184f9cbe2eb42de7ffc, type: 3}
   - name: wave_worried
-    sprite: {fileID: 1610693778359590475, guid: b9134c8b78bc04d4387e505eb1474c63, type: 3}
+    sprite: {fileID: 21300000, guid: b9134c8b78bc04d4387e505eb1474c63, type: 3}
   faceImage: {fileID: 2096402523216245403}
+  bikeObject: {fileID: 0}
