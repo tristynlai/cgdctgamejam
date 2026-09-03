@@ -291,7 +291,7 @@ Luna: <i>The shadow of Root Town lingers in the distance across the ocean.</i>
 <<expression Luna_Neutral neutral>>
 <<place Nubs>>
 <<expression Nubs neutral>>
-///////////// Show new phone message opportunities by showing the new notification status on the cyberdeck’s NATIO 3000 logo
+////////////////////// Show new phone message opportunities by showing the new notification status on the cyberdeck’s NATIO 3000 logo
 // If player chose You’re never gonna get back that time, then also show the below:
 <<if $timetime == 1>>
     <<expression Luna_Neutral shy>>

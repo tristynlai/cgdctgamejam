@@ -268,6 +268,8 @@ Luna: <i>Tonight was just another night of trying to survive.</i>
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
+// Fully dismiss the dialogue box at this point
+<<hideDialogue>>
 <<fadeOut 2>>
 <<stopMusic>>
 <<wait 1>>
@@ -275,12 +277,12 @@ Luna: <i>Tonight was just another night of trying to survive.</i>
 <<camera BadEnd>>
 // Play the Error of Our Ways music track
 <<playMusic endingTheme>>
-<<fadeIn 3>>
-<<wait 10>>
-///////////////////// Create a command to automatically return to the Title Screen
-//////////////////// How can we fully dismiss the dialogue box at this point?
+<<fadeIn 2>>
+<<wait 5>>
 <<fadeOut 2>>
 <<stopMusic>>
+// Create a command to automatically return to the Title Screen
+<<loadScene MainMenuScene>>
 ===
 
 
@@ -514,15 +516,17 @@ Luna: Let’s just get this over with.
 Luna: <i>I drive off into Root Town to complete the delivery. The SL0P app tells me to drop off the experiment near Val's corner store, which seems suss at first…</i>
 Luna: <i>But I don't care. It's not worth my time to think about it right now.</i>
 Luna: <i>I'm just trying to survive.</i>
+// Fully dismiss the dialogue box at this point
+<<hideDialogue>>
 <<fadeOut 2>>
 // Show a screen with THE END text and image
 <<camera BadEnd>>
 <<fadeIn 2>>
-<<wait 10>>
-//////////////////// How can we fully dismiss the dialogue box at this point?
-///////////////////// Create a command to automatically return to the Title Screen
+<<wait 5>>
 <<fadeOut 2>>
 <<stopMusic>>
+// Create a command to automatically return to the Title Screen
+<<loadScene MainMenuScene>>
 ===
 
 title: GoodPath
@@ -543,7 +547,7 @@ Luna: Honestly, I haven't felt this way in a long time. It almost makes me…gid
 <<expression Nubs neutral>>
 Nubs: Luna…
 Luna: Now, as for where to take you…
-//If player selected Tell the truth and explain your situation from Intro.yarn file, show this:
+// If player selected Tell the truth and explain your situation from Intro.yarn file, show this:
 <<if $tellTruth == true>>
     <<expression Nubs angry>>
     Nubs: I do not want to go back. And I do not want to get dropped off.
@@ -558,7 +562,7 @@ Luna: Now, as for where to take you…
     Luna: But you'll have to get permission from my roommates first.
     Luna: I know one’s a solid yes to keeping you. As for the other girl, you'll have to make your case to her.
     Luna: IF she even gets past the fact you can talk…
-//If player selected Lie and say the requestor is its master from the Intro.yarn file, show this:
+// If player selected Lie and say the requestor is its master from the Intro.yarn file, show this:
 <<else>>
     Luna: I…might've lied to you when I said the delivery's customer was your master.
     <<expression Nubs angry>>
@@ -868,6 +872,7 @@ Incompetent Director: But after the state we found him in on The Bridge, I'm jus
 The Big Bad: Maxx no longer works for the company. 
 The Big Bad: Though he'll still be working. Just in a more…useful capacity.
 The Big Bad: In fact, he's being repurposed as we speak... 
+// Dismiss the dialogue box in this moment for the ending
 <<hideDialogue>>
 <<fadeOut 2>>
 <<stopMusic>>
@@ -877,12 +882,10 @@ The Big Bad: In fact, he's being repurposed as we speak...
 // Show a screen with “THE END? (TO BE CONTINUED…)” text for the good end.
 <<camera GoodEnd>>
 <<fadeIn 2>>
-<<wait 10>>
-//<<wait 5>> - I used this to test
-///////////////////// Create a command to automatically return to the Title Screen
-/////////////// Is there any way to dismiss the dialogue box in these moments for the endings?
+<<wait 5>>
 <<fadeOut 2>>
-<<loadScene MainMenuScene>>
 <<stopMusic>>
+// Create a command to automatically return to the Title Screen
+<<loadScene MainMenuScene>>
 ===
 
