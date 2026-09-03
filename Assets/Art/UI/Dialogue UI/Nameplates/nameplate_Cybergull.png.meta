@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 00c74608dbe864b70b1746c9a4060e8c
+guid: b0a4329efc3994dbaba9211c0ab14693
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8577937291120037023
-    second: dialoguebox_Influencer_Pink_0
+      213: 4751000368712539120
+    second: nameplate_Cybergull_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialoguebox_Influencer_Pink_0
+      name: nameplate_Cybergull_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 566
+        width: 880
         height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9c49c6b484fa0770800000000000000
-      internalID: 8577937291120037023
+      spriteID: 0fb5cd8d9a1fee140800000000000000
+      internalID: 4751000368712539120
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dialoguebox_Influencer_Pink_0: 8577937291120037023
+      nameplate_Cybergull_0: 4751000368712539120
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bd68317deaed0e54c9c1fdc718ada065
+guid: 01edee0bd1cf6450d805ca30d5b8575a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7659998531794837014
-    second: dialoguebox_name_Luna_0
+      213: 4576231250975439224
+    second: nameplate_Val_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 200
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialoguebox_name_Luna_0
+      name: nameplate_Val_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 566
+        width: 880
         height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61e15ab8418cd4a60800000000000000
-      internalID: 7659998531794837014
+      spriteID: 879be6ca31a028f30800000000000000
+      internalID: 4576231250975439224
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dialoguebox_name_Luna_0: 7659998531794837014
+      nameplate_Val_0: 4576231250975439224
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8e9e5ca30581d41d2ab9fc8d40363543
+guid: 5dded72ec0cf44501b6043a29bf7559d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6809841621327087980
-    second: dialoguebox_frissNavy_divorcedDad_0
+      213: 4300962967060382944
+    second: nameplate_Luna_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialoguebox_frissNavy_divorcedDad_0
+      name: nameplate_Luna_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 566
+        width: 880
         height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c690fdfdfda618e50800000000000000
-      internalID: 6809841621327087980
+      spriteID: 0e48eb3f70710bb30800000000000000
+      internalID: 4300962967060382944
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dialoguebox_frissNavy_divorcedDad_0: 6809841621327087980
+      nameplate_Luna_0: 4300962967060382944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
