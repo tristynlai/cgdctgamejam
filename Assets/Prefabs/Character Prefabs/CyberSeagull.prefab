@@ -113,9 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   expressions:
   - name: warrior
-    sprite: {fileID: -3233133167715661553, guid: 4920e01fc521c4b409d16a56f74f9249, type: 3}
+    sprite: {fileID: 21300000, guid: 8e5be04a5c445474296c0ee16b7fe84b, type: 3}
   - name: cogless
     sprite: {fileID: 21300000, guid: 4ba46ff37cd7d4647b473e686d29901e, type: 3}
   - name: cog
-    sprite: {fileID: -1277866567730687615, guid: b9a83d94280cf4da8a8bae4931b4bab8, type: 3}
+    sprite: {fileID: 21300000, guid: 2e597b44ef27045989e7c49d535fd55c, type: 3}
   faceImage: {fileID: 2127672188585235340}
