@@ -14,6 +14,7 @@ public class Character : MonoBehaviour {
     // objects needed to render new textures on Character face
     [SerializeField] List<Expression> expressions = new List<Expression>();
     [SerializeField] Image faceImage; 
+    [SerializeField] GameObject bikeObject;
 
     // object needed to set Character pose
     private Animator animator;
@@ -48,6 +49,12 @@ public class Character : MonoBehaviour {
         // get the faceRenderer to apply the expression texture to the Character's face
         if (expressionToUse != null) {
             faceImage.sprite = expressionToUse.sprite;
+        }
+    }
+
+    public void SetBikeVisible(bool isVisible) {
+        if (bikeObject != null) {
+            bikeObject.SetActive(isVisible);
         }
     }
 }
