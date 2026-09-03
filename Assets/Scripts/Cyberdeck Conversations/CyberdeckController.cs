@@ -1,8 +1,10 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class CyberdeckController : MonoBehaviour
 {
@@ -20,6 +22,9 @@ public class CyberdeckController : MonoBehaviour
     [Header("Buttons")]
     public GameObject exitButton;
 
+    [Header("Phone Chat Integration")]
+    [SerializeField] private ChatDialogueView chatDialogueView;
+
     [Header("References")]
     [SerializeField] private GameObject cyberdeckParentCanvas;
     private DialogueRunner dialogueRunner;
@@ -36,6 +41,10 @@ public class CyberdeckController : MonoBehaviour
         if (dialogueRunner != null)
         {
             dialogueRunner.AddCommandHandler("wait_for_cyberdeck_exit", WaitForCyberdeckExit);
+            
+            dialogueRunner.AddCommandHandler<int>("set_cyberdeck_state", SetCyberdeckState);
+
+            dialogueRunner.AddCommandHandler("enable_cyberdeck_exit", EnableCyberdeckExit);
         }
     }
 
@@ -98,6 +107,26 @@ public class CyberdeckController : MonoBehaviour
             if (messageStates[i] != null) messageStates[i].SetActive(i == stateIndex);
         }
 
+        UpdateChatViewRegistration(); 
+
+        if (stateIndex == 1)
+        {
+            if (chatDialogueView != null)
+            {
+                chatDialogueView.ClearChatHistory();
+            }
+
+            if (dialogueRunner != null && dialogueRunner.IsDialogueRunning)
+            {
+                LineAdvancer advancer = FindObjectOfType<LineAdvancer>();
+                if (advancer != null)
+                {
+                    advancer.enabled = true;
+                    advancer.RequestNextLine();
+                }
+            }
+        }
+
         if (messagesNotificationDot != null)
         {
             messagesNotificationDot.SetActive(true);
@@ -132,9 +161,39 @@ public class CyberdeckController : MonoBehaviour
             }
         }
         
+        UpdateChatViewRegistration(); 
+
         if (index == 1 && messagesNotificationDot != null)
         {
             messagesNotificationDot.SetActive(false);
+        }
+    }
+
+   private void UpdateChatViewRegistration()
+    {
+        if (dialogueRunner == null || chatDialogueView == null) return;
+
+        bool isMessageState1Active = (currentStateIndex == 1);
+
+        var presenters = new List<DialoguePresenterBase>(dialogueRunner.DialoguePresenters);
+
+        if (isMessageState1Active)
+        {
+            if (!presenters.Contains(chatDialogueView))
+            {
+                presenters.Add(chatDialogueView);
+                dialogueRunner.DialoguePresenters = presenters;
+            }
+            chatDialogueView.enabled = true;
+        }
+        else
+        {
+            if (presenters.Contains(chatDialogueView))
+            {
+                presenters.Remove(chatDialogueView);
+                dialogueRunner.DialoguePresenters = presenters;
+            }
+            chatDialogueView.enabled = false;
         }
     }
 
@@ -153,6 +212,7 @@ public class CyberdeckController : MonoBehaviour
         {
             gameObject.SetActive(true);
         }
+        UpdateChatViewRegistration();
     }
 
     public void ExitCyberdeck()
@@ -163,6 +223,17 @@ public class CyberdeckController : MonoBehaviour
         }
 
         isWaitingForExit = false;
+
+        if (chatDialogueView != null)
+        {
+            var presenters = new List<DialoguePresenterBase>(dialogueRunner.DialoguePresenters);
+            if (presenters.Contains(chatDialogueView))
+            {
+                presenters.Remove(chatDialogueView);
+                dialogueRunner.DialoguePresenters = presenters;
+            }
+            chatDialogueView.enabled = false;
+        }
 
         if (cyberdeckParentCanvas != null)
         {
@@ -230,5 +301,21 @@ public class CyberdeckController : MonoBehaviour
             visualNovel.PauseDialogue(false);
         }
     }
-}
 
+    public void EnableCyberdeckExit()
+    {
+        if (exitButton != null)
+        {
+            Button btn = exitButton.GetComponent<Button>();
+            if (btn != null)
+            {
+                btn.interactable = true;
+            }
+        }
+    }
+
+    public void ExitAndLoadScene()
+    {
+        SceneManager.LoadScene("JenScene");
+    }
+}

@@ -18,7 +18,10 @@ public class ClickToAdvance : ActionMarkupHandler
 
   private void Update()
   {
-    if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+    bool spacePressed = Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame;
+    bool mousePressed = Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame;
+
+    if (spacePressed || mousePressed)
     {
       Advance();
     }

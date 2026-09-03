@@ -5,7 +5,6 @@ using Yarn.Unity;
 
 #nullable enable
 
-
 public class ChatDialogueView : DialoguePresenterBase
 {
     [Header("Prefabs")]
@@ -62,21 +61,9 @@ public class ChatDialogueView : DialoguePresenterBase
             return;
         }
 
-        int index;
-
-        if (optionsContainer != null)
-        {
-            index = optionsContainer.GetSiblingIndex();
-        }
-        else
-        {
-            index = bubbleContainer.childCount - 1;
-        }
-
         if (showTypingIndicators && prefab.HasIndicator)
         {
             var typingBubble = Instantiate(prefab, bubbleContainer);
-            typingBubble.transform.SetSiblingIndex(index);
             typingBubble.ShowTyping();
 
             var typingDelay = Mathf.Clamp(
@@ -90,11 +77,16 @@ public class ChatDialogueView : DialoguePresenterBase
         }
 
         var bubble = Instantiate(prefab, bubbleContainer);
-        bubble.transform.SetSiblingIndex(index);
         bubble.ShowText(line.TextWithoutCharacterName.Text);
 
-        await YarnTask.WaitUntilCanceled(token.NextContentToken).SuppressCancellationThrow();
+        Canvas.ForceUpdateCanvases();
+        var scrollRect = bubbleContainer.GetComponentInParent<UnityEngine.UI.ScrollRect>();
+        if (scrollRect != null)
+        {
+            scrollRect.verticalNormalizedPosition = 0f;
+        }
 
+        await YarnTask.WaitUntilCanceled(token.NextContentToken).SuppressCancellationThrow();
     }
 
     public override async YarnTask<DialogueOption?> RunOptionsAsync(DialogueOption[] dialogueOptions, LineCancellationToken cancellationToken)
@@ -134,5 +126,16 @@ public class ChatDialogueView : DialoguePresenterBase
         }
 
         return selectedOption;
+    }
+
+    public void ClearChatHistory()
+    {
+        if (bubbleContainer != null)
+        {
+            foreach (Transform child in bubbleContainer)
+            {
+                Destroy(child.gameObject);
+            }
+        }
     }
 }

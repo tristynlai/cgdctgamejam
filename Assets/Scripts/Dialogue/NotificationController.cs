@@ -103,6 +103,18 @@ public class NotificationController : MonoBehaviour
             
             cyberdeckController.selectTab(0); 
         }
+
+        if (workingAdvancer != null)
+        {
+            workingAdvancer.RequestNextLine();
+        }
+        else
+        {
+            LineAdvancer advancer = FindObjectOfType<LineAdvancer>();
+            if (advancer != null) { advancer.RequestNextLine(); }
+        }
+
+        currentNotificationState = -1;
     }
 
     public void OnCyberdeckClosed()
