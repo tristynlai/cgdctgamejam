@@ -28,30 +28,30 @@ Luna: (I have an option to respond…)
 -> Don't respond and close the app
     <<set $goodend += 1>>
     Luna: Ugh, whatever.
-    I close the app because these people aren’t worth my time.
-    Frisscity is home to the ultra-rich who eat up trends, get hooked up with the latest AGENTS tech stack, and want to discover the next worst thing for society.
+    <i>I close the app because these people aren’t worth my time.</i>
+    <i>Frisscity is home to the ultra-rich who eat up trends, get hooked up with the latest AGENTS tech stack, and want to discover the next worst thing for society.</i>
     //////////<<show SceneSampleEvents Luna shyAnnnoyed>>
-    They're fake freaks. And they don't tip.
-    I don't wanna deal with them any more than I have to. Frisscity's just where I work. I can't wait for this day to be over so I can get back to my real life in Root Town.
+    <i>They're fake freaks. And they don't tip.</i>
+    <i>I don't wanna deal with them any more than I have to. Frisscity's just where I work. I can't wait for this day to be over so I can get back to my real life in Root Town.</i>
     <<jump CyberdeckT>>
 -> Give the reviewer a 1-star rating
     ///////<<show SceneSampleEvents Luna lunaHappy>>
     Luna: Heh, shove it.
-    I give Karen a 1-star rating right back, noting how her fruitarian and vegan preferences were never mentioned in the app.
+    <i>I give Karen a 1-star rating right back, noting how her fruitarian and vegan preferences were never mentioned in the app.</i>
     ////////<<show SceneSampleEvents Luna lunaNeutral>>
-    I'm waiting for the day everyone in Frisscity finally decides to upload their brains to the cloud. If the AGENTS founder does it, I'm sure they’ll do it.    
-    But me? I’d never fall for a capitalist trick like that.
-    Me and Root Town refuse to integrate with AGENTS technology. Life outside of AGENTS and Frisscity is hard, but it's real. And it's home.
+    <i>I'm waiting for the day everyone in Frisscity finally decides to upload their brains to the cloud. If the AGENTS founder does it, I'm sure they’ll do it.</i> 
+    <i>But me? I’d never fall for a capitalist trick like that.</i>
+    <i>Me and Root Town refuse to integrate with AGENTS technology. Life outside of AGENTS and Frisscity is hard, but it's real. And it's home.</i>
     <<jump CyberdeckT>>
 -> Doxx their address on an online forum for SL0P drivers
     <<set $badend += 1>>
-    Instead of leaving them a review, I do much worse. I post their address on a public online forum and warn fellow drivers from Root Town not to take delivery orders from them.
+    <i>Instead of leaving them a review, I do much worse. I post their address on a public online forum and warn fellow drivers from Root Town not to take delivery orders from them.</i>
     ///////<<show SceneSampleEvents Luna lunaHappyArms>>
     Luna: Now all of SL0P will know what you have done. Good luck getting your stupid apples and cheese.
     ////////<<show SceneSampleEvents Luna lunaAnnoyedArms>>
-    This is the shit I put up with in Frisscity. I break my back for baecoins for people who chase trends and chase surgeries to get hooked up with the latest AGENTS technology.
-    But me? I refuse to be augmented.
-    I wish Frisscity would just disappear.
+    <i>This is the shit I put up with in Frisscity. I break my back for baecoins for people who chase trends and chase surgeries to get hooked up with the latest AGENTS technology.</i>
+    <i>But me? I refuse to be augmented.</i>
+    <i>I wish Frisscity would just disappear.</i>
     <<jump CyberdeckT>>
 ===
 
