@@ -57,6 +57,9 @@ public class VisualNovel : MonoBehaviour {
         // <<playSFX SFX_NAME>>
         dialogueRunner.AddCommandHandler<string>("playSFX", PlaySFX);
 
+        // <<bike CHARACTER_NAME on|off>>
+        dialogueRunner.AddCommandHandler<string, string>("bike", SetBikeVisibility);
+
         // <<stopMusic>>
         dialogueRunner.AddCommandHandler("stopMusic", StopMusic);
 
@@ -144,6 +147,22 @@ public class VisualNovel : MonoBehaviour {
         if (clip != null) {
             sfxSource.PlayOneShot(clip); 
         }
+    }
+
+    private void SetBikeVisibility(string characterName, string visibility) {
+        characterName = characterName.Trim();
+        visibility = visibility.Trim();
+
+        if (!characters.TryGetValue(characterName, out Character character)) {
+            Debug.LogWarning($"Cannot toggle bike; character '{characterName}' is not currently placed.");
+            return;
+        }
+
+        bool showBike = visibility.Equals("on", StringComparison.InvariantCultureIgnoreCase)
+            || visibility.Equals("show", StringComparison.InvariantCultureIgnoreCase)
+            || visibility.Equals("true", StringComparison.InvariantCultureIgnoreCase);
+
+        character.SetBikeVisible(showBike);
     }
 
     // stops the current background music
