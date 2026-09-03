@@ -868,6 +868,7 @@ Incompetent Director: But after the state we found him in on The Bridge, I'm jus
 The Big Bad: Maxx no longer works for the company. 
 The Big Bad: Though he'll still be working. Just in a more…useful capacity.
 The Big Bad: In fact, he's being repurposed as we speak... 
+<<hideDialogue>>
 <<fadeOut 2>>
 <<stopMusic>>
 <<wait 1>>
@@ -877,9 +878,11 @@ The Big Bad: In fact, he's being repurposed as we speak...
 <<camera GoodEnd>>
 <<fadeIn 2>>
 <<wait 10>>
+//<<wait 5>> - I used this to test
 ///////////////////// Create a command to automatically return to the Title Screen
 /////////////// Is there any way to dismiss the dialogue box in these moments for the endings?
 <<fadeOut 2>>
+<<loadScene MainMenuScene>>
 <<stopMusic>>
 ===
 

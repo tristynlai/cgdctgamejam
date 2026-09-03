@@ -2037,6 +2037,8 @@ MonoBehaviour:
     nameplateSprite: {fileID: 21300000, guid: e1b41dee162524b578f270014464319d, type: 3}
   - characterName: Nat
     nameplateSprite: {fileID: 2425848127524509586, guid: 94f1b5cdf6754484da21bdb9a224e703, type: 3}
+  - characterName: T.A.B
+    nameplateSprite: {fileID: 21300000, guid: 3ed9760274cc74eb385b89ffd48c3cde, type: 3}
   - characterName: Queenie
     nameplateSprite: {fileID: 21300000, guid: 00c74608dbe864b70b1746c9a4060e8c, type: 3}
 --- !u!1 &1008185364
@@ -3510,6 +3512,7 @@ MonoBehaviour:
   sfxSource: {fileID: 1025851647}
   audioManager: {fileID: 1378181039}
   lineAdvancer: {fileID: 0}
+  dialogueBoxUI: {fileID: 998950836}
 --- !u!4 &1660351816
 Transform:
   m_ObjectHideFlags: 0

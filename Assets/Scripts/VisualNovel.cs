@@ -23,6 +23,8 @@ public class VisualNovel : MonoBehaviour {
     [SerializeField] private LineAdvancer lineAdvancer;
     private bool dialoguePaused = false;
 
+    [SerializeField] private GameObject dialogueBoxUI;
+
     // when this visual novel object is created
     // (in our example, this happens when the scene is created)
     private void Awake() {
@@ -60,6 +62,12 @@ public class VisualNovel : MonoBehaviour {
 
         //Loading other scenes
         dialogueRunner.AddCommandHandler<string>("loadScene", LoadScene);
+
+        //Hide Dialogue at the end
+        dialogueRunner.AddCommandHandler("hideDialogue", HideDialogue);
+
+        //Show Dialogue box - will need this for the cyberdeck later
+        dialogueRunner.AddCommandHandler("showDialogue", ShowDialogue);
     }
 
     // moves camera to camera location {location} in the scene
@@ -148,6 +156,18 @@ public class VisualNovel : MonoBehaviour {
     private void LoadScene(string sceneName) {
         sceneName = sceneName.Trim();
         SceneManager.LoadScene(sceneName);
+    }
+
+    private void HideDialogue() {
+        if (dialogueBoxUI != null) {
+            dialogueBoxUI.SetActive(false);
+        }
+    }
+
+    private void ShowDialogue() {
+        if (dialogueBoxUI != null) {
+            dialogueBoxUI.SetActive(true);
+        }
     }
 
     public void PauseDialogue(bool isPaused)
