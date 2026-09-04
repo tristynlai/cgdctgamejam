@@ -21,6 +21,12 @@ public class ClickToAdvance : ActionMarkupHandler
     bool spacePressed = Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame;
     bool mousePressed = Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame;
 
+    if (UnityEngine.EventSystems.EventSystem.current != null && 
+        UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+    {
+        return;
+    }
+
     if (spacePressed || mousePressed)
     {
       Advance();

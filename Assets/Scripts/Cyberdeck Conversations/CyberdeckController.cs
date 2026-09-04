@@ -318,4 +318,64 @@ public class CyberdeckController : MonoBehaviour
     {
         SceneManager.LoadScene("JenScene");
     }
+
+    public void OpenCyberdeckGeneral()
+    {
+        VisualNovel visualNovel = FindObjectOfType<VisualNovel>();
+        if (visualNovel != null)
+        {
+            visualNovel.PauseDialogue(true);
+        }
+
+        if (cyberdeckParentCanvas != null)
+        {
+            cyberdeckParentCanvas.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
+
+        UpdateChatViewRegistration();
+    }
+
+    public void ExitCyberdeckGeneral()
+    {
+        if (EventSystem.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+
+        isWaitingForExit = false;
+
+        if (chatDialogueView != null)
+        {
+            var presenters = new List<DialoguePresenterBase>(dialogueRunner.DialoguePresenters);
+            if (presenters.Contains(chatDialogueView))
+            {
+                presenters.Remove(chatDialogueView);
+                dialogueRunner.DialoguePresenters = presenters;
+            }
+            chatDialogueView.enabled = false;
+        }
+
+        if (cyberdeckParentCanvas != null)
+        {
+            cyberdeckParentCanvas.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+
+        if (dialogueRunner != null)
+        {
+            dialogueRunner.StartCoroutine(ResumeDialogueRoutine());
+        }
+        else
+        {
+            HideCyberdeckInstant();
+        }
+    }
+
 }
