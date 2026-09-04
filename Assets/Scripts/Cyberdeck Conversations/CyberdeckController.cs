@@ -137,7 +137,7 @@ public class CyberdeckController : MonoBehaviour
             Button btn = exitButton.GetComponent<Button>();
             if (btn != null)
             {
-                btn.interactable = (stateIndex != 1);
+                btn.interactable = (stateIndex != 0 && stateIndex != 1);
             }
         }
     }
