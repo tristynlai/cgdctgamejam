@@ -46,11 +46,11 @@ public class MainMenuManager : MonoBehaviour
     }
     */
 
-    IEnumerator LoadScene()
+    /*IEnumerator LoadScene()
     {
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(1);
-    }
+    }*/
 
     public void EnterSettingsMenu()
     {
@@ -79,9 +79,8 @@ public class MainMenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoadScene()
     {
-        
+        SceneManager.LoadScene("TristynScene");
     }
 }

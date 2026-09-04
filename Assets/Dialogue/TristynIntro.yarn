@@ -11,7 +11,7 @@
 Luna: Come on, you stupid SL0P app. Show me the big offers!
 <<expression Luna_Neutral annoyed>>
 Luna: (Kaya is gonna kill me if I skip out on rent again. Just one big delivery gig should help me break even…)
-//Play the Cyberdeck Notification ping
+<<playSFX notification>>
 <<expression Luna_Neutral surprised>>
 <<show_notification 0>>
 Luna: (Huh? It’s a new customer rating on the SL0P app. I better tap it and check it out…)
@@ -20,23 +20,77 @@ Luna: (Huh? It’s a new customer rating on the SL0P app. I better tap it and ch
 
 title: BR
 ---
-HEYOOOOOOO
-HiHIIII
-WEEEEEE
-<<loadScene JenScene>>
+////////// We need to remove the asset of Luna leaning on her motorbike before we slide in Luna’s character sprite from the left.
+<<place Luna_Neutral>>
+<<expression Luna_Neutral annoyed>>
+Luna: You've got to be joking.
+Luna: (I have an option to respond…)
+-> Don't respond and close the app
+    <<set $goodend += 1>>
+    Luna: Ugh, whatever.
+    <i>I close the app because these people aren’t worth my time.</i>
+    <i>Frisscity is home to the ultra-rich who eat up trends, get hooked up with the latest AGENTS tech stack, and want to discover the next worst thing for society.</i>
+    //////////<<show SceneSampleEvents Luna shyAnnnoyed>>
+    <i>They're fake freaks. And they don't tip.</i>
+    <i>I don't wanna deal with them any more than I have to. Frisscity's just where I work. I can't wait for this day to be over so I can get back to my real life in Root Town.</i>
+    <<jump CyberdeckT>>
+-> Give the reviewer a 1-star rating
+    ///////<<show SceneSampleEvents Luna lunaHappy>>
+    Luna: Heh, shove it.
+    <i>I give Karen a 1-star rating right back, noting how her fruitarian and vegan preferences were never mentioned in the app.</i>
+    ////////<<show SceneSampleEvents Luna lunaNeutral>>
+    <i>I'm waiting for the day everyone in Frisscity finally decides to upload their brains to the cloud. If the AGENTS founder does it, I'm sure they’ll do it.</i> 
+    <i>But me? I’d never fall for a capitalist trick like that.</i>
+    <i>Me and Root Town refuse to integrate with AGENTS technology. Life outside of AGENTS and Frisscity is hard, but it's real. And it's home.</i>
+    <<jump CyberdeckT>>
+-> Doxx their address on an online forum for SL0P drivers
+    <<set $badend += 1>>
+    <i>Instead of leaving them a review, I do much worse. I post their address on a public online forum and warn fellow drivers from Root Town not to take delivery orders from them.</i>
+    ///////<<show SceneSampleEvents Luna lunaHappyArms>>
+    Luna: Now all of SL0P will know what you have done. Good luck getting your stupid apples and cheese.
+    ////////<<show SceneSampleEvents Luna lunaAnnoyedArms>>
+    <i>This is the shit I put up with in Frisscity. I break my back for baecoins for people who chase trends and chase surgeries to get hooked up with the latest AGENTS technology.</i>
+    <i>But me? I refuse to be augmented.</i>
+    <i>I wish Frisscity would just disappear.</i>
+    <<jump CyberdeckT>>
 ===
 
-title: teaTest
+title: CyberdeckT
 ---
-<<camera Understory>>
-<<fadeIn 2>>
-<<place Luna_Neutral>>
-<<place CompanionNubs>>
-<<expression CompanionNubs angry>>
+<<playSFX notification>>
+//Luna with lunaAnnoyedArms
+<<show_notification 1>>
+Luna: Now what?
+//<<fadeIn 2>>
+<<set_cyberdeck_state 1>>
+<<jump Tutorial_Chat>>
+===
 
+title: Tutorial_Chat
+---
+<<wait 0.5>>
 
-<<place Kaya_Neutral>>
-<<place Nat>>
-
-WASSUP WASSUP
+Nat: Hey-yo! How’s your night going?
+Luna: like slop. as usual. 
+Nat: Ooo, bummer. Well I wanted to ask how you’re liking the cyberdeck I made ya?
+Luna: i’m typing rn, aren’t i?
+Nat: I know! But have you used any of the other features?
+Luna: …
+Nat: How about I show you around the NATIO 3000?
+Nat: Get it? 
+Nat: The NAT-io? 
+Luna: cute…
+Nat: You’re currently on the message screen! Click on the tabs to sort through all the messages you get. Like spam, news, and super-important messages from me ;)
+Nat: Your settings are also in the cyberdeck in case you wanna fine-tune things like sound volume or message speed!
+Nat: You can also quit the game using the Settings tab on your cyberdeck.
+Nat: I also programmed a super cute mini game just for you! Play it whenever you want. 
+Nat: Lemme know when you get a new high score, k~?
+Nat: The History button also lets you peep at previous conversations you had with others. (Or yourself.) 
+Nat: And when you’re done tinkering around, just press the Exit button! You can return to the cyberdeck by clicking on the NATIO 3000 logo in the game.
+Nat: Did that make sense? 
+Luna: yeah, thx. can i go back to work now?
+Nat: Of course! Just let me know if you need anything
+<<wait_for_cyberdeck_exit>>
+<<enable_cyberdeck_exit>>
+//<<loadScene JenScene>>
 ===

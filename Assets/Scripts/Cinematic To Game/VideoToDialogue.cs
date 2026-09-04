@@ -11,39 +11,66 @@ public class VideoToDialogue : MonoBehaviour
 
     [Header("Fade Function")]
     [SerializeField] private CanvasGroup fadeOverlay;
-    [SerializeField] private float fadeOutDuration = 1f; 
-    [SerializeField] private float fadeInDuration = 2.5f; 
+    [SerializeField] private float fadeOutDuration = 2f; 
+    [SerializeField] private float fadeInDuration = 5f; 
 
     [Header("UI Elements")]
     [SerializeField] private GameObject dialogueUI; 
 
     [Header("Dialogue Node")]
-    [SerializeField] private string startingNode = "Intro";
+    [SerializeField] private string startingNode = "Beginning";
 
-    private void Start()
+    private void Awake()
     {
         if (fadeOverlay != null)
         {
             fadeOverlay.alpha = 1f; 
         }
 
-        if (videoPlayer != null)
+        if (dialogueUI != null)
         {
-            videoPlayer.Play();
-            StartCoroutine(WaitForVideoToStart());
+            dialogueUI.SetActive(false);
+        }
+
+        if (videoPlayer != null && videoPlayer.targetTexture != null)
+        {
+            RenderTexture rt = videoPlayer.targetTexture;
+            RenderTexture.active = rt;
+            GL.Clear(true, true, Color.black);
+            RenderTexture.active = null;
         }
     }
 
-    private IEnumerator WaitForVideoToStart()
+    private void Start()
+    {
+        if (videoPlayer != null)
+        {
+            videoPlayer.Stop();
+            videoPlayer.prepareCompleted += OnVideoPrepared;
+            videoPlayer.Prepare();
+        }
+    }
+
+    private void OnVideoPrepared(VideoPlayer vp)
+    {
+        videoPlayer.prepareCompleted -= OnVideoPrepared;
+        
+        videoPlayer.Play();
+        StartCoroutine(WaitForVideoPlayback());
+    }
+
+    private IEnumerator WaitForVideoPlayback()
     {
         while (videoPlayer != null && !videoPlayer.isPlaying)
         {
             yield return null;
         }
 
+        yield return new WaitForSeconds(0.4f);
+
         if (fadeOverlay != null)
         {
-            StartCoroutine(Fade(1f, 0f, fadeOutDuration)); 
+            yield return StartCoroutine(Fade(1f, 0f, fadeOutDuration)); 
         }
     }
 
@@ -60,6 +87,7 @@ public class VideoToDialogue : MonoBehaviour
         if (videoPlayer != null)
         {
             videoPlayer.loopPointReached -= OnVideoFinished;
+            videoPlayer.prepareCompleted -= OnVideoPrepared;
         }
     }
 
@@ -76,13 +104,13 @@ public class VideoToDialogue : MonoBehaviour
         {
             videoPlayer.gameObject.SetActive(false); 
         }
-        
+
+        yield return StartCoroutine(Fade(1f, 0f, fadeInDuration));
+
         if (dialogueUI != null)
         {
             dialogueUI.SetActive(true);
         }
-
-        yield return StartCoroutine(Fade(1f, 0f, fadeInDuration));
 
         if (dialogueRunner != null && !dialogueRunner.IsDialogueRunning)
         {
