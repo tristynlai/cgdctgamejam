@@ -629,7 +629,7 @@ title: Queenie_Ideas
     Nubs: I can do a lot more for people who have AGENTS implants. Like–
     <<expression Luna_Neutral surprised>>
     Luna: D-Don't mind him! I installed a new microchip that allows him to talk. It's still a little buggy.
-    <<expression CompanionNubs arms_angry>>
+    <<expression CompanionNubs angry>>
     Nubs: I'm not buggy! I've been cleared of 31 SEVs and over 2,000 coding errors!
     <<expression Luna_Neutral happy>>
     Luna: V-Vaccinations! Sooo many vaccinations. Pets are so expensive, y'know?
@@ -650,7 +650,7 @@ title: Queenie_Ideas
     Nubs: I can do a lot more for people who have AGENTS implants. Like-
     <<expression Luna_Neutral surprised>>
     Luna: D-Don't mind him! I installed a new microchip that allows him to talk. It's still a little buggy.
-    <<expression ComapnionNubs arms_angry>>
+    <<expression CompanionNubs angry>>
     Nubs: I'm not buggy! I've been cleared of 31 SEVs and over 2,000 coding errors!
     <<expression Luna_Neutral happy>>
     Luna: V-Vaccinations! Sooo many vaccinations. Pets are so expensive, y'know?
