@@ -36,9 +36,13 @@ public class CyberdeckController : MonoBehaviour
 
     [Header("Scene Restrictions")]
     [SerializeField] private GameObject historyButtonObject;
+    [SerializeField] private GameObject minigameButtonObject;
 
     [Header("History Overlay")]
     [SerializeField] private GameObject historyOverlayPanel;
+
+    [Header("Minigame Overlay")]
+    [SerializeField] private GameObject minigameOverlayPanel;
 
     private void Awake()
     {
@@ -47,8 +51,10 @@ public class CyberdeckController : MonoBehaviour
         
         if (historyButtonObject != null)
         {
-            bool isJenScene = currentSceneName.Contains("JenScene");
+            bool isJenScene = currentSceneName.Contains("MinigameResize");
+            //bool isJenScene = currentSceneName.Contains("JenScene");
             historyButtonObject.SetActive(isJenScene);
+            minigameButtonObject.SetActive(isJenScene);
         }
 
         dialogueRunner = DialogueRunner.FindRunner(this);
@@ -404,6 +410,15 @@ public class CyberdeckController : MonoBehaviour
         {
             bool isActive = historyOverlayPanel.activeSelf;
             historyOverlayPanel.SetActive(!isActive);
+        }
+    }
+
+    public void ToggleMinigameOverlay()
+    {
+        if (minigameOverlayPanel != null)
+        {
+            bool isActive = minigameOverlayPanel.activeSelf;
+            minigameOverlayPanel.SetActive(!isActive);
         }
     }
 
