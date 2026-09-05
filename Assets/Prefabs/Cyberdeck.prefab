@@ -3522,7 +3522,12 @@ MonoBehaviour:
   homeStates: []
   messageStates: []
   messagesNotificationDot: {fileID: 0}
+  exitButton: {fileID: 0}
+  chatDialogueView: {fileID: 0}
   cyberdeckParentCanvas: {fileID: 0}
+  historyButtonObject: {fileID: 0}
+  historyOverlayPanel: {fileID: 0}
+  tabParent: {fileID: 0}
 --- !u!1 &4801995455947196391
 GameObject:
   m_ObjectHideFlags: 0
@@ -3848,7 +3853,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 491, y: -193.33}
-  m_SizeDelta: {x: 161.0058, y: 79}
+  m_SizeDelta: {x: 194.66667, y: 106.666664}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1843497005431584449
 CanvasRenderer:
@@ -7041,8 +7046,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 359, y: -190.69324}
-  m_SizeDelta: {x: 92.6068, y: 79}
+  m_AnchoredPosition: {x: 359, y: -195.76}
+  m_SizeDelta: {x: 118.666664, y: 106.666664}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8320478041511872539
 CanvasRenderer:
