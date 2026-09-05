@@ -23,7 +23,7 @@ public class DialogueHistory : MonoBehaviour
     {
         string lineText = text;
         
-        if (!string.IsNullOrEmpty(characterName))
+        if (!string.IsNullOrEmpty(characterName) && !text.StartsWith(characterName))
         {
             lineText = $"<b>{characterName}:</b> {lineText}";
         }
