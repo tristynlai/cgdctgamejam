@@ -25,8 +25,20 @@ public class DialogueHistory : MonoBehaviour
         
         if (!string.IsNullOrEmpty(characterName))
         {
-            lineText = $"<b>{characterName}:</b> {lineText}";
+            string prefix = characterName + ":";
+            if (lineText.StartsWith(prefix, System.StringComparison.OrdinalIgnoreCase))
+            {
+                lineText = lineText.Substring(prefix.Length).TrimStart();
+            }
+
+            string hexColor = GetColorForCharacter(characterName);
+            lineText = $"<b><color={hexColor}>{characterName.ToUpper()}</color></b>\n{lineText}";    
         }
+        /*if (!string.IsNullOrEmpty(characterName) && !text.StartsWith(characterName))
+        {
+            //lineText = $"<b>{characterName}:</b> {lineText}";
+            lineText = $"<b><color=#C87CE8>{characterName.ToUpper()}</color></b>\n{text}";
+        }*/
 
         AddLineToHistory(lineText);
     }
@@ -43,6 +55,23 @@ public class DialogueHistory : MonoBehaviour
         {
             Canvas.ForceUpdateCanvases();
             historyScrollRect.verticalNormalizedPosition = 0f;
+        }
+    }
+
+    private string GetColorForCharacter(string charName)
+    {
+        string nameLower = charName.Trim().ToLower();
+
+        switch (nameLower)
+        {
+            case "val":
+                return "#C87CE8";
+            case "luna":
+                return "#5BC0EB";
+            case "kaya":
+                return "#FDE74C";
+            default:
+                return "#FFFFFF";
         }
     }
 }
