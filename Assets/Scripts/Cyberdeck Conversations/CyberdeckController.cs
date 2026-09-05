@@ -39,6 +39,7 @@ public class CyberdeckController : MonoBehaviour
 
     [Header("History Overlay")]
     [SerializeField] private GameObject historyOverlayPanel;
+    [SerializeField] private GameObject tabParent;
 
     private void Awake()
     {
@@ -366,6 +367,11 @@ public class CyberdeckController : MonoBehaviour
         if (historyOverlayPanel != null)
         {
             historyOverlayPanel.SetActive(false);
+            selectTab(0);
+            if (tabParent != null)
+            {
+                tabParent.SetActive(true);
+            }
         }
 
         if (chatDialogueView != null)
@@ -402,8 +408,29 @@ public class CyberdeckController : MonoBehaviour
     {
         if (historyOverlayPanel != null)
         {
-            bool isActive = historyOverlayPanel.activeSelf;
-            historyOverlayPanel.SetActive(!isActive);
+            bool isActive = !historyOverlayPanel.activeSelf;
+            historyOverlayPanel.SetActive(isActive);
+
+            if (tabParent != null)
+            {
+                tabParent.SetActive(!isActive);
+            }
+
+            if (pageTabs != null)
+            {
+                foreach (GameObject content in pageTabs)
+                {
+                    if (content != null)
+                    {
+                        content.SetActive(!isActive);
+                    }
+                }
+            }
+
+            if (!isActive)
+            {
+                selectTab(0); 
+            }
         }
     }
 
