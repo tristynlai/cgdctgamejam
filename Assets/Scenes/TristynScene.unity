@@ -2898,7 +2898,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 0
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
@@ -3611,8 +3611,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VideoToDialogue
   videoPlayer: {fileID: 966572536}
   dialogueRunner: {fileID: 1797402697}
+  videoFileName: Cinematic.mp4
+  prepareTimeout: 15
   fadeOverlay: {fileID: 789737204}
-  fadeOutDuration: 2
+  fadeOutDuration: 0.75
   fadeInDuration: 5
   dialogueUI: {fileID: 47000151}
   startingNode: Beginning
@@ -4919,6 +4921,9 @@ MonoBehaviour:
   exitButton: {fileID: 465727604}
   chatDialogueView: {fileID: 45186736}
   cyberdeckParentCanvas: {fileID: 1836157859}
+  historyButtonObject: {fileID: 0}
+  historyOverlayPanel: {fileID: 0}
+  tabParent: {fileID: 0}
 --- !u!223 &1868669978
 Canvas:
   m_ObjectHideFlags: 0

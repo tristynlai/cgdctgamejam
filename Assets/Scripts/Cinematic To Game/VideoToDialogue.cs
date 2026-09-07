@@ -9,6 +9,12 @@ public class VideoToDialogue : MonoBehaviour
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private DialogueRunner dialogueRunner;
 
+    [Header("Video Source")]
+    [Tooltip("Filename inside Assets/StreamingAssets. Must match exactly, including extension.")]
+    [SerializeField] private string videoFileName = "Cinematic.mp4";
+    [Tooltip("If the video hasn't started within this many seconds, skip to dialogue.")]
+    [SerializeField] private float prepareTimeout = 15f;
+
     [Header("Fade Function")]
     [SerializeField] private CanvasGroup fadeOverlay;
     [SerializeField] private float fadeOutDuration = 2f; 
@@ -19,6 +25,9 @@ public class VideoToDialogue : MonoBehaviour
 
     [Header("Dialogue Node")]
     [SerializeField] private string startingNode = "Beginning";
+
+    private bool videoStarted = false;
+    private bool sequenceStarted = false;
 
     private void Awake()
     {
@@ -46,17 +55,50 @@ public class VideoToDialogue : MonoBehaviour
         if (videoPlayer != null)
         {
             videoPlayer.Stop();
+
+            // WebGL cannot use VideoClip assets. Play from StreamingAssets over URL,
+            // which also works in the editor and in desktop builds.
+            videoPlayer.source = VideoSource.Url;
+            videoPlayer.url = Application.streamingAssetsPath + "/" + videoFileName;
+
             videoPlayer.prepareCompleted += OnVideoPrepared;
+            videoPlayer.errorReceived += OnVideoError;
             videoPlayer.Prepare();
+
+            StartCoroutine(PrepareTimeoutWatchdog());
+        }
+        else
+        {
+            // No video player wired up at all: player moves forward to dialogue immediately.
+            BeginStoryboardSequence();
         }
     }
 
     private void OnVideoPrepared(VideoPlayer vp)
     {
         videoPlayer.prepareCompleted -= OnVideoPrepared;
-        
+
+        videoStarted = true;
         videoPlayer.Play();
         StartCoroutine(WaitForVideoPlayback());
+    }
+
+    private void OnVideoError(VideoPlayer vp, string message)
+    {
+        Debug.LogError("Cinematic video error: " + message + " (url: " + vp.url + ")");
+        BeginStoryboardSequence();
+    }
+
+    private IEnumerator PrepareTimeoutWatchdog()
+    {
+        yield return new WaitForSeconds(prepareTimeout);
+
+        if (!videoStarted)
+        {
+            Debug.LogWarning("Cinematic did not start within " + prepareTimeout
+                + "s. Skipping to dialogue.");
+            BeginStoryboardSequence();
+        }
     }
 
     private IEnumerator WaitForVideoPlayback()
@@ -88,11 +130,25 @@ public class VideoToDialogue : MonoBehaviour
         {
             videoPlayer.loopPointReached -= OnVideoFinished;
             videoPlayer.prepareCompleted -= OnVideoPrepared;
+            videoPlayer.errorReceived -= OnVideoError;
         }
     }
 
     private void OnVideoFinished(VideoPlayer vp)
     {
+        BeginStoryboardSequence();
+    }
+
+    // Guarded so the handoff to dialogue can only ever happen once, no matter
+    // whether it was triggered by the video finishing, an error, or the watchdog.
+    private void BeginStoryboardSequence()
+    {
+        if (sequenceStarted)
+        {
+            return;
+        }
+
+        sequenceStarted = true;
         StartCoroutine(ExecuteStoryboardSequence());
     }
 
@@ -131,7 +187,7 @@ public class VideoToDialogue : MonoBehaviour
                 fadeOverlay.alpha = Mathf.Lerp(startAlpha, targetAlpha, time / duration);
                 yield return null;
             }
-            
+
             fadeOverlay.alpha = targetAlpha;
         }
     }
