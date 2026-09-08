@@ -17,14 +17,20 @@ public class VideoToDialogue : MonoBehaviour
 
     [Header("Fade Function")]
     [SerializeField] private CanvasGroup fadeOverlay;
-    [SerializeField] private float fadeOutDuration = 2f; 
-    [SerializeField] private float fadeInDuration = 5f; 
+    [SerializeField] private float fadeOutDuration = 2f;
+    [SerializeField] private float fadeInDuration = 5f;
 
     [Header("UI Elements")]
-    [SerializeField] private GameObject dialogueUI; 
+    [SerializeField] private GameObject dialogueUI;
 
     [Header("Dialogue Node")]
     [SerializeField] private string startingNode = "Beginning";
+
+    [Header("Skip Button")]
+    [Tooltip("The skip button object. Hidden until the video is actually playing.")]
+    [SerializeField] private GameObject skipButton;
+    [SerializeField] private float skipButtonDelay = 3f;
+    [SerializeField] private float skipFadeDuration = 0.4f;
 
     private bool videoStarted = false;
     private bool sequenceStarted = false;
@@ -33,12 +39,17 @@ public class VideoToDialogue : MonoBehaviour
     {
         if (fadeOverlay != null)
         {
-            fadeOverlay.alpha = 1f; 
+            fadeOverlay.alpha = 1f;
         }
 
         if (dialogueUI != null)
         {
             dialogueUI.SetActive(false);
+        }
+
+        if (skipButton != null)
+        {
+            skipButton.SetActive(false);
         }
 
         if (videoPlayer != null && videoPlayer.targetTexture != null)
@@ -81,6 +92,7 @@ public class VideoToDialogue : MonoBehaviour
         videoStarted = true;
         videoPlayer.Play();
         StartCoroutine(WaitForVideoPlayback());
+        StartCoroutine(ShowSkipButtonAfterDelay());
     }
 
     private void OnVideoError(VideoPlayer vp, string message)
@@ -101,6 +113,28 @@ public class VideoToDialogue : MonoBehaviour
         }
     }
 
+    private IEnumerator ShowSkipButtonAfterDelay()
+    {
+        yield return new WaitForSeconds(skipButtonDelay);
+
+        if (!sequenceStarted && skipButton != null)
+        {
+            skipButton.SetActive(true);
+        }
+    }
+
+    // Public so the skip button's OnClick can call it from the inspector.
+    public void SkipCinematic()
+    {
+        // Stop first so the audio cuts immediately rather than playing under the fade.
+        if (videoPlayer != null)
+        {
+            videoPlayer.Stop();
+        }
+
+        BeginStoryboardSequence(true);
+    }
+
     private IEnumerator WaitForVideoPlayback()
     {
         while (videoPlayer != null && !videoPlayer.isPlaying)
@@ -112,7 +146,7 @@ public class VideoToDialogue : MonoBehaviour
 
         if (fadeOverlay != null)
         {
-            yield return StartCoroutine(Fade(1f, 0f, fadeOutDuration)); 
+            yield return StartCoroutine(Fade(1f, 0f, fadeOutDuration));
         }
     }
 
@@ -141,7 +175,7 @@ public class VideoToDialogue : MonoBehaviour
 
     // Guarded so the handoff to dialogue can only ever happen once, no matter
     // whether it was triggered by the video finishing, an error, or the watchdog.
-    private void BeginStoryboardSequence()
+    private void BeginStoryboardSequence(bool skipped = false)
     {
         if (sequenceStarted)
         {
@@ -149,19 +183,28 @@ public class VideoToDialogue : MonoBehaviour
         }
 
         sequenceStarted = true;
-        StartCoroutine(ExecuteStoryboardSequence());
+
+        if (skipButton != null)
+        {
+            skipButton.SetActive(false);
+        }
+
+        float outDuration = skipped ? skipFadeDuration : fadeOutDuration;
+        float inDuration = skipped ? skipFadeDuration : fadeInDuration;
+
+        StartCoroutine(ExecuteStoryboardSequence(outDuration, inDuration));
     }
 
-    private IEnumerator ExecuteStoryboardSequence()
+    private IEnumerator ExecuteStoryboardSequence(float outDuration, float inDuration)
     {
-        yield return StartCoroutine(Fade(0f, 1f, fadeOutDuration));
+        yield return StartCoroutine(Fade(0f, 1f, outDuration));
 
         if (videoPlayer != null)
         {
-            videoPlayer.gameObject.SetActive(false); 
+            videoPlayer.gameObject.SetActive(false);
         }
 
-        yield return StartCoroutine(Fade(1f, 0f, fadeInDuration));
+        yield return StartCoroutine(Fade(1f, 0f, inDuration));
 
         if (dialogueUI != null)
         {
