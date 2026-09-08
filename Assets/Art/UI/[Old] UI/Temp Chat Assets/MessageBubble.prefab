@@ -231,8 +231,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\t"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a53ae1e4540dd41dabc340f5e6350c6f, type: 2}
-  m_sharedMaterial: {fileID: -3709850356883901280, guid: a53ae1e4540dd41dabc340f5e6350c6f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -267,6 +267,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -659,4 +660,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minimumWidth: 180
-  minimumHeight: 125
+  minimumHeight: 100
