@@ -7,6 +7,7 @@
 <<camera Understory>>
 <<fadeIn 2>>
 <<place Luna_Neutral>>
+<<bike Luna_Neutral on>>
 <<expression Luna_Neutral arms_neutral>>
 Luna: Come on, you stupid SL0P app. Show me the big offers!
 <<expression Luna_Neutral annoyed>>
