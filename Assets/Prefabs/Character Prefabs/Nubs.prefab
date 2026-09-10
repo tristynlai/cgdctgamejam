@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 478, y: -100}
-  m_SizeDelta: {x: 421, y: 940}
+  m_SizeDelta: {x: 1200, y: 2048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6222597589554324179
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 9004985149374680108, guid: 7e77e6b1a2fd2214eb2ba0e6718e7469, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f3dc185eb62c154e9757b78f4e9b88a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -127,7 +127,7 @@ MonoBehaviour:
   - name: arms_worried
     sprite: {fileID: 21300000, guid: adf42cf0982b0d844802b7956f6bef11, type: 3}
   - name: confused
-    sprite: {fileID: 7144922111400190768, guid: 930f077cd128e5148b3acdd594a0c320, type: 3}
+    sprite: {fileID: 21300000, guid: 930f077cd128e5148b3acdd594a0c320, type: 3}
   - name: anger_evolution
     sprite: {fileID: 21300000, guid: 6ef7e4a7773db480ca959a86a8166450, type: 3}
   - name: error_evolution
@@ -159,3 +159,4 @@ MonoBehaviour:
   - name: wave_worried
     sprite: {fileID: 21300000, guid: b9134c8b78bc04d4387e505eb1474c63, type: 3}
   faceImage: {fileID: 2096402523216245403}
+  bikeObject: {fileID: 0}
