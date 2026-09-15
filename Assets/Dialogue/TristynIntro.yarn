@@ -8,12 +8,12 @@
 <<fadeIn 2>>
 <<place Luna_Neutral>>
 <<bike Luna_Neutral on>>
-<<expression Luna_Neutral arms_neutral>>
+<<expression Luna_Neutral arms_cyberdeck>>
 Luna: Come on, you stupid SL0P app. Show me the big offers!
-<<expression Luna_Neutral annoyed>>
+<<expression Luna_Neutral arms_cyberdeck_annoyed>>
 Luna: (Kaya is gonna kill me if I skip out on rent again. Just one big delivery gig should help me break even…)
 <<playSFX notification>>
-<<expression Luna_Neutral surprised>>
+<<expression Luna_Neutral arms_cyberdeck_surprise>>
 <<show_notification 0>>
 Luna: (Huh? It’s a new customer rating on the SL0P app. I better tap it and check it out…)
 <<jump BR>>
@@ -23,7 +23,7 @@ title: BR
 ---
 ////////// We need to remove the asset of Luna leaning on her motorbike before we slide in Luna’s character sprite from the left.
 <<place Luna_Neutral>>
-<<expression Luna_Neutral annoyed>>
+<<expression Luna_Neutral arms_cyberdeck_annoyed>>
 Luna: You've got to be joking.
 Luna: (I have an option to respond…)
 -> Don't respond and close the app
