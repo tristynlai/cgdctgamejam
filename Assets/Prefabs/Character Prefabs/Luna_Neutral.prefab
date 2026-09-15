@@ -219,6 +219,12 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 2f151ce9854464f2182b8acb2e6502af, type: 3}
   - name: arms_shy
     sprite: {fileID: 21300000, guid: c0b65665b060b6746956ffdee643a138, type: 3}
+  - name: arms_cyberdeck
+    sprite: {fileID: 21300000, guid: fe3fec3c7c1664d819f752a46a227968, type: 3}
+  - name: arms_cyberdeck_surprise
+    sprite: {fileID: 21300000, guid: 453c24acd059c4b4fb1e119cbfd5fc34, type: 3}
+  - name: arms_cyberdeck_annoyed
+    sprite: {fileID: 21300000, guid: 3a14387ceb36f4db78566094a85dc8b0, type: 3}
   faceImage: {fileID: 1231748651660897690}
   bikeObject: {fileID: 4981294093968955896}
 --- !u!95 &3799246627055187804
