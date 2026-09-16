@@ -826,7 +826,7 @@ Luna: Great, glad we got it all figured out or whatever. I'm just ready to rot f
 <<expression Luna_Neutral arms_cyberdeck>>
 <<wait 1>>
 <<playSFX notification>>
-<<expression Luna_Neutral arms_surprised>>
+<<expression Luna_Neutral arms_cyberdeck_surprise>>
 Luna: <i>Two notifications pop onto my screen.</i>
 Luna: <i>The first one is about an incomplete delivery order.</i>
 Luna: <i>The second one is information about my now-suspended account on the SL0P app.</i>
