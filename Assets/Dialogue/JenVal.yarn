@@ -150,11 +150,12 @@ Luna: <i>If it wasn't for my shitty situation, I'd be just like her.</i>
 Luna: <i>Or WITH her? Hm, which is it…?</i>
 // SFX cyberdeck notification ping
 <<playSFX notification>>
-<<expression Luna_Neutral arms_neutral>> 
+<<expression Luna_Neutral arms_cyberdeck>>
 Luna: Jackpot.
 Luna: <i>A big offer on the SL0P app finally lands on my screen.</i>
 Luna: <i>I quickly accept the offer. It reveals the coordinates of my delivery order's pickup location.</i>
 Luna: Time to roll.
+<<expression Luna_Neutral neutral>>
 // Luna leaves
 <<playSFX lunaMotorcycle>>
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
@@ -571,7 +572,7 @@ Nubs: Because nobody can resist my adorable form! I was designed to be disarming
 Luna: Ugh. It's Luna, okay?
 // SFX cyberdeck notification ping
 <<playSFX notification>>
-<<expression Luna_Neutral arms_neutral>>
+<<expression Luna_Neutral arms_cyberdeck>>
 <<expression Nubs confused>>
 Luna: <i>A notification flashes on my homescreen. My current delivery status for Nubs changes from “Pick up” to “Delivery on the way.” The notification reveals where to drop him off.</i>
 Luna: <i>It's in Root Town.</i>
@@ -579,10 +580,13 @@ Luna: <i>I tap on the notification and try to find more information about the re
 Luna: (Why would someone want a cute little BOMB roaming free in the streets…?)
 // SFX cyberdeck notification ping
 <<playSFX notification>>
+<<expression Luna_Neutral arms_cyberdeck_surprise>>
 Luna: <i>More delivery offers from the SL0P app appear on my cyberdeck. The rates are double what they usually are.</i>
+<<expression Luna_Neutral arms_cyberdeck>>
 Luna: (Might as well squeeze another job in before riding back home…)
 
 -> Choose the offer with a lower tip and easier dropoff
+    <<expression Luna_Neutral neutral>>
     Luna: <i>I hop back onto my motorbike and pat the faded cushion on the back.</i>
     Luna: Hop on, lil guy.
     Nubs: Are you taking me back to AGENTS?
@@ -614,6 +618,7 @@ Luna: (Might as well squeeze another job in before riding back home…)
             <<expression Luna_Neutral annoyed>>
 -> Choose the offer with a higher tip and harder dropoff
     <<set $bigJob = true>>
+    <<expression Luna_Neutral neutral>>
     Luna: <i>I hop back onto my motorbike and pat the faded cushion on the back.</i>
     Luna: Hop on, lil guy.
     Nubs: Are you taking me back to AGENTS?
@@ -636,6 +641,7 @@ Luna: (Might as well squeeze another job in before riding back home…)
     -> Tell the truth and explain your situation
         <<set $tellTruth = true>>
         <<set $goodend += 1>>
+        <<expression Luna_Neutral neutral>>
         Luna: Look, I'm short on rent and need to complete this task so my roommate doesn’t kick me out.
         Luna: What if I pretend to drop you off in Root Town, then take you back to the nearest AGENTS facility? That way, we both get what we want.
         <<expression Nubs happy>>
