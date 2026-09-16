@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 537, y: -11}
-  m_SizeDelta: {x: 1038, y: 944}
+  m_SizeDelta: {x: 1200, y: 2048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2832317718577989770
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 9004985149374680108, guid: 7e77e6b1a2fd2214eb2ba0e6718e7469, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e77e6b1a2fd2214eb2ba0e6718e7469, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -119,3 +119,4 @@ MonoBehaviour:
   - name: angry
     sprite: {fileID: 21300000, guid: 9c7a201dd4a12324a8541fcfae352103, type: 3}
   faceImage: {fileID: 5844322047634297474}
+  bikeObject: {fileID: 0}

@@ -823,16 +823,18 @@ Nubs: !!!
 Luna: Great, glad we got it all figured out or whatever. I'm just ready to rot for the next three days…
 // Play two SFX notification pings
 <<playSFX notification>>
+<<expression Luna_Neutral arms_cyberdeck>>
 <<wait 1>>
 <<playSFX notification>>
-<<expression Luna_Neutral arms_surprised>>
+<<expression Luna_Neutral arms_cyberdeck_surprise>>
 Luna: <i>Two notifications pop onto my screen.</i>
 Luna: <i>The first one is about an incomplete delivery order.</i>
 Luna: <i>The second one is information about my now-suspended account on the SL0P app.</i>
-<<expression Luna_Neutral arms_neutral>>
+<<expression Luna_Neutral arms_cyberdeck>>
 Luna: (Just as Maxx promised…)
 Luna: (Looks like I've gotta find another way to make money.)
-Luna: (Let's just hope the part about AGENTS finding out where I live doesn’t come true…)
+<<expression Luna_Neutral arms_neutral>>
+Luna: (Let's hope the part about AGENTS finding out where I live doesn’t come true…)
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
 <<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
 <<pose Kaya_Neutral SceneSample_KayaFadeOut>>
