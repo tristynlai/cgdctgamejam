@@ -253,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 87028413711276922, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -43
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 145764926311469338, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
       propertyPath: dialogueRunner
@@ -453,7 +453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5314469223710389186, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -226
+      value: -213
       objectReference: {fileID: 0}
     - target: {fileID: 5324464937029681462, guid: d1c818064113144e7a7f7f3cb7f7f9a0, type: 3}
       propertyPath: m_SortingOrder
@@ -4990,7 +4990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6401511282505520761, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6566746105828659401, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
       propertyPath: m_AnchorMax.y
