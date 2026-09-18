@@ -10,7 +10,6 @@ Luna: The only thing I need is a big offer so I can get the hell home.
 <<playSFX valMotorcycle>>
 <<expression Luna_Neutral arms_surprised>>
 Luna: <i>I recognize those tires. And the baddie who rides on them.</i>
-Luna: <i>Stay cool.<i>
 <<place Val>>
 <<bike Val on>>
 Val: Luna! Finally, someone without a corporate T-shirt. Have you been making bank today?
@@ -19,11 +18,15 @@ Luna: H-Hey, Val. No, not yet. Still getting the low-tipping vegans and high-str
 Luna: <i>I hold my breath as Val walks over. She laughs and it's a bright, bubbly sound that goes straight to my heart while her hand goes straight to my head for a gentle pat.</i>
 <<expression Val flirty>>
 Val: I'm sure things will turn up by nighttime. All the overworked techies get the late-night munchies.
-Luna: <i>God, she's amazing. She always knows what to say.</i>
-Luna: <i>But it's kinda weird to see Root Town's corner store queen on this side of town. And so late at night...</i>
+Luna: (God, she's amazing. She always knows what to say.)
+Luna: (It’s kinda weird to see Root Town's corner store queen on this side of town. And so late at night…)
 <<expression Val neutral>>
+Luna: (But this is my chance to finally talk to her! And maybe figure out who’s her ideal type…)
 Val: Something on your mind?
-Luna: <i>BE. COOL.</i>
+Luna: (BE COOL.)
+<<declare $knowsRedHint = false>>
+<<declare $knowsGreenHint = false>>
+<<declare $knowsBlueHint = false>>
 <<jump ValChoices>>
 ===
 
@@ -48,24 +51,40 @@ Val: So, you know how factory models are made for smooth highways, right? B-o-r-
 <<expression Val neutral>>
 Val: That’s why I reinforced the frame with carbon weave and mag-alloy ribs. Because where we live in Root Town, we need to handle abandoned traincars, vines, and everything in between.
 <<expression Val flirty>>
-Val: I cracked my first prototype trying to jump a crumbling overpass!
+Val: I even cracked my first prototype trying to jump a crumbling overpass!
 Luna: (I’ve unleashed a gearhead beast. There’s no end to this conversation.)
-
 
 ->  Let her continue.
     <<set $goodend += 1>>
-    Val: The engine's got a custom plasma injector, dual cooling loops, and a torque map I programmed myself.
     <<expression Val neutral>>
-    Val: Transmission shifts before I even think about it. And the drivetrain is pieced together from three junkyards, one estate auction, and a favor I still owe.
+    Val: But 12 prototypes later, and I’ve finally found my forever bike. The electrical's my favorite part. Every sensor, every light…I wired those by hand.
+    <<set $knowsGreenHint = true>>
+    Val: It took me three tries to get the order right. No matter what gizmo you’re wiring up, <b>green should be the one you save until the very end</b>. 
     <<expression Val flirty>>
-    Val: But the electrical's my favorite part. Every sensor, every light…I wired those by hand. The original harness was one pothole away from becoming fireworks!
-    <<expression Val neutral>>
-    Val: See, that's the thing. Corporate bikes are built to last until the warranty expires.
-    <<expression Val flirty>>
-    Val: But mine's built to survive. She'll outrun anything that's fresh off the showroom floor!
-    Luna: <i>She rambles on for ten more minutes about her motorbike. And I love every second of it.</i>
-    // Return to the original question node in Val, but remove this question since the player completed it.
-    <<expression Val neutral>>
+    Val: Hook it up too early and the whole system’s gonna go haywire as soon as you turn on the engine!
+    Luna: (Interesting. Should I listen to more?)
+     -> Yes. Go off, queen!
+        Luna: Anything else I should watch out for? 
+        <<set $knowsBlueHint = true>>
+        <<expression Val neutral>>
+        Val: Oh YES. <b>Blue before yellow, too.</b> THAT one I learned the hard way. Did it backwards once and I dumped a full charge into my cooling loop. 
+        Val: It cost me a week—and most of my eyebrows!
+        Val: See, that's the thing. Corporate bikes are built to last until the warranty expires.
+        <<expression Val flirty>>
+        Val: But mine's built to survive. She'll outrun anything that's fresh off the showroom floor!
+        Luna: <i>She rambles on for ten more minutes about her motorbike. And I love every second of it.</i>
+        // Return to the original question node in Val, but remove this question since the player completed it.
+        <<expression Val neutral>>
+     -> Nah, I've heard enough.
+        <<expression Luna_Neutral neutral>>
+        Luna: Thanks. I’ll keep that tip about green wires for safe-keeping. 
+        <<expression Val flirty>>
+        Val: You bet! I can go on for hours about it. 
+        <<expression Luna_Neutral arms_neutral>>
+        Luna: (I know.)
+        <<expression Val neutral>>
+        Val: Now, what did you need again?
+        // Return to the original question node in Val, but remove this question since the player completed it.
 ->  Cut it short.
     <<expression Luna_Neutral arms_neutral>>
     <<expression Val neutral>>
@@ -85,11 +104,32 @@ Val: But if you think that'll land you a discount at the shop, then you'll need 
 <<expression Luna_Neutral arms_shy>>
 Luna: L-Like what?
 <<expression Val neutral>>
-Val: Like getting your hands on a flux ring. They’re the first thing to get swiped off a new bike because it’s so expensive—and so shiny to the city creatures.
+Val: Like getting your hands on a <b>flux ring</b>. They’re the first thing to get swiped off a new bike because it’s so expensive—and so shiny to the city creatures.
 Val: If you get one, I can hook you up with something.
 <<expression Val flirty>>
 Val: Something REAL nice~
 Luna: !!!
+Luna: Well, I guess while we’re on the topic…
+
+-> What’s your ideal type?
+   <<expression Luna_Neutral shy>>
+   Val: Asking me directly? Wow, you’re so bold, Luna!
+   Val: But that’s what I like.
+   Val: Someone who’s bold, fiery, and daring. 
+   <<expression Val neutral>>
+   <<set $knowsRedHint = true>>
+   Val: Like daring enough to try and <b>unlock a flux ring with any color other than red</b>. 
+   Val: Because that’s the <b>color you always start with</b>. 
+   <<expression Val flirty>>
+   Val: Unless you dare to get zapped!
+   <<expression Luna_Neutral arms_shy>>
+   Luna: (Time to look up some deadly motorcycle tricks…and where to find a flux ring.) 
+-> Nevermind.
+   Luna: (I’m getting cold feet. Plus, she went back to talking about her shop and motorcycle parts. I don’t wanna be creepy…)
+   <<expression Val neutral>>
+   Val: What’s up?
+   Luna: N-Nothing.
+   Luna: (All I need is a flux ring to impress her…)
 <<expression Val neutral>>
 // Return to the original question node in Val, but remove this question since the player completed it.
 ===
@@ -203,10 +243,13 @@ Luna: (Looks expensive—and like a real part I could use to upgrade my shitty b
 title: Cybergull
 ---
 <<declare $withCog = true>>
+<<declare $puzzleSolved = false>>
+<<declare $hasFluxRing = false>>
+Luna: <i>I take a step closer to look at the cog. There’s a few wires and a lock attached to it.</i>
 // SFX of gull noise, short version
 <<playSFX caw>>
-Luna: <i>The cybergull’s wings flap furiously as he screeches, almost like a warning.</i>
-Luna: (But damn, this guy is a TANK! And FERAL! Do I risk it?)
+Luna: <i>But the cybergull’s wings flap furiously as he screeches, almost like a warning.</i>
+Luna: (Damn, this guy is a TANK! And FERAL! Do I risk it?)
 
 -> Help the cybergull
     <<set $goodend += 1>>
@@ -215,47 +258,118 @@ Luna: (But damn, this guy is a TANK! And FERAL! Do I risk it?)
     Luna: If you bite me, you die. 
     Luna: <i>There’s a glint through the gull’s glasses, and I can feel his scarred eye tracking me as I tip-toe towards him.</i>
     Luna: Nice…mutant…seagull…thing…
-    Luna: <i>I squat down to his level and reach my arm out to grab the gear.</i>
+    Luna: <i>I squat down to his level and start moving closer.</i>
     // SFX of gull noise, short version
     <<playSFX caws>>
     <<expression Luna_Neutral surprised>>
     Luna: <i>The cybergull instinctively recoils, his webbed feet digging into the handle of his extremely shiny knife.</i>
     <<expression Luna_Neutral neutral>>
     Luna: B-Bro! I don’t have all day. Do you wanna become roadkill or not?!
-    Luna: <i>He puffs his chest before he reluctantly holds still. I manage to wriggle the piece off his beefy neck.</i>
+    Luna: <i>He puffs his chest before he reluctantly holds still.</i>
     <<pose CyberSeagull SceneSample_CybergullFadeOut>>
-    <<wait 1>>
-    <<exit CyberSeagull>>
-    <<place CyberSeagull>>
-    <<expression CyberSeagull cogless>>
-    Luna: <i>The gull ruffles his feathers to collect himself. Then, he stares into my soul.</i> 
-    <<expression Luna_Neutral surprised>>
-    Luna: (Is he…aura farming?)
-    <<pose CyberSeagull SceneSample_CybergullFadeOut>>
-    <<wait 1>>
-    <<exit CyberSeagull>>
-    Luna: <i>But then, he flies away.</i>
-    <<expression Luna_Neutral arms_neutral>>
-    Luna: You’re welcome.
-    Luna: <i>I tuck the flux ring away for safe-keeping.</i>
     <<pose Luna_Neutral SceneSample_LunaFadeOut>>
     <<wait 1>>
+    <<exit CyberSeagull>>
     <<exit Luna_Neutral>>
+    <<fadeOut 2>>
+    // Pause the main story and enter puzzle mode with a Yarn command
+    // <<wait_for_wire_puzzle>>
+    // Unpause when the puzzle outcome is finished and then jump to a logic node
+    // I'm using <<jump PuzzleState>> for now to continue the story. Until we hook up the puzzle, we'll always fail.
+    <<jump PuzzleState>>
 -> Don’t help the cybergull
     <<set $badend += 1>>
     <<expression Luna_Neutral arms_neutral>>
     Luna: I can’t risk getting rabies, or whatever chemical disease you have.
-    Luna: <i>The cybergull scowls as I walk past him and look around to see what package I need to pick up around this disgusting trashpile.</i> 
-    Luna: <i>A grudge brews from beyond the gull’s glasses.</i> 
+    Luna: <i>The cybergull scowls as I walk past him and look around to see what package I need to pick up around this disgusting trashpile.</i>
+    Luna: <i>He hobbles away and stumbles through the trash as the cog weighs him down with each webbed step.</i>
+    Luna: <i>A grudge brews from beyond the gull’s glasses.</i>
     <<pose Luna_Neutral SceneSample_LunaFadeOut>>
     <<pose CyberSeagull SceneSample_CybergullFadeOut>>
     <<wait 1>>
     <<exit CyberSeagull>>
     <<exit Luna_Neutral>>
+    <<fadeOut 2>>
+    <<jump TransporterPod>>
+===
+
+
+title: PuzzleState
+---
+<<if $puzzleSolved == false>>
+   <<jump FluxRingGotAway>>
+<<else>>
+   <<jump FluxRingSuccess>>
+<<endif>>
+===
+
+
+title: FluxRingGotAway
+---
+<<place Luna_Neutral>>
+<<expression Luna_Neutral angry>>
+<<place CyberSeagull>>
+<<expression CyberSeagull cog>>
+<<playSFX caws>>
+Luna: <i>The gull has had enough with my attempts. I can feel him staring at me through his sunglasses.</i>
+Luna: What doesn’t kill you makes you stronger, I guess…?
+<<pose CyberSeagull SceneSample_CybergullFadeOut>>
+<<wait 1>>
+<<exit CyberSeagull>>
+Luna: <i>He decides to hobble away, the cog weighing him down with each webbed step.</i>
+<<expression Luna_Neutral arms_angry>>
+Luna: Guess he can’t take a joke.
+// If player completed the Poor_Flirting node, then show the below
+<<if visited("Poor_Flirting") == true>>
+Luna: But damn, I missed out on getting a flux ring. I’ll have to impress Val another way.
+<<endif>>
+Luna: Well it’s not my problem anymore. Somebody else’s, maybe.
+<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<wait 1>>
+<<exit Luna_Neutral>>
 <<fadeOut 2>>
-<<wait 2>>
 <<jump TransporterPod>>
 ===
+
+
+title: FluxRingSuccess
+---
+<<set $withCog = false>>
+<<place Luna_Neutral>>
+<<expression Luna_Neutral happy>>
+<<place CyberSeagull>>
+<<expression CyberSeagull cogless>>
+// If player completed the Poor_Flirting node, then show the below
+<<if visited("Poor_Flirting") == true>>
+Luna: <i>The gull ruffles his feathers to collect himself, free from the trap that weighed him down. The flux ring is now nestled in the palm of my hand.</i>
+Luna: (My precious.)
+Luna: (I can’t wait to show this to Val. Now she <i>has</i> to give me something REAL nice…)
+Luna: <i>I can feel the cybergull staring at me. It feels like he’s peering into my soul.</i>
+<<endif>>
+<<if visited("Poor_Flirting") == false>>
+// If else, show:
+Luna: <i>The gull ruffles his feathers to collect himself, free from the trap that weighed him down. The shiny cog is now nestled in the palm of my hand.</i>
+Luna: <i>I notice an engraving in the cog. It says <b>”flux ring”</b>.</i>
+Luna: (That must be what this part is called. Whatever it is, Val’s gonna be stoked to install this in my bike!)
+Luna: <i>Suddenly, I feel the cybergull staring into my soul.</i>
+<<endif>> 
+<<expression Luna_Neutral surprised>>
+Luna: (Is he…aura farming?)
+<<pose CyberSeagull SceneSample_CybergullFadeOut>>
+<<wait 1>>
+<<exit CyberSeagull>>
+Luna: <i>But then, he flies away.</i>
+<<expression Luna_Neutral arms_neutral>>
+Luna: You’re welcome.
+<<set $hasFluxRing = true>>
+Luna: <i>I tuck the flux ring away for safe-keeping.</i>
+<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<wait 1>>
+<<exit Luna_Neutral>>
+<<fadeOut 2>>
+<<jump TransporterPod>>
+===
+
 
 title: TransporterPod
 ---
@@ -265,9 +379,10 @@ title: TransporterPod
 <<fadeIn 2>>
 <<place Luna_Neutral>>
 <<expression Luna_Neutral arms_neutral>>
-Luna: <i>I finally notice a transporter pod branded with the AGENTS logo sitting by the dumpster. It's an odd place to leave something so brand-spanking new.</i>
+Luna: <i>Turns out the cybergull had been blocking the view of my package: a transporter pod with the AGENTS logo stamped across it.</i>
+Luna: <i>It’s an odd place to leave something so brand-spanking new.</i>
 <<expression Luna_Neutral surprised>>
-Luna: <i>The pod rattles on the rubble. Usually, food deliveries don't involve LIVING CREATURES!</i>
+Luna: <i>The pod suddenly rattles on the rubble. Usually, food deliveries don't involve LIVING CREATURES!</i>
 
 -> Put it on the motorcycle
     <<expression Luna_Neutral neutral>>
