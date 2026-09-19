@@ -419,7 +419,7 @@ title: BridgeResolution
 ---
 // Play Ascension Mellow music track
 <<playMusic ascensionMellow>>
-<<camera Bridge>>
+<<camera BridgeRootTown>>
 <<fadeIn 2>>
 <<if $withCog == true>>
 <<place Luna_Neutral>>
