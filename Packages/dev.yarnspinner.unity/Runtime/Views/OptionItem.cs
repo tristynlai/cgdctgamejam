@@ -89,6 +89,8 @@ namespace Yarn.Unity
 
         private void ApplyStyle(InternalAppearance style)
         {
+            if (_option == null) return;
+
             Color newColour = style.colour;
             Sprite newSprite = style.sprite;
             if (!Option.IsAvailable)
@@ -179,8 +181,7 @@ namespace Yarn.Unity
             base.Select();
         }
 
-
-    public override void OnPointerDown(PointerEventData eventData)
+        public override void OnPointerDown(PointerEventData eventData)
         {
             base.OnPointerDown(eventData);
             if (IsInteractable())
@@ -197,5 +198,17 @@ namespace Yarn.Unity
                 ApplyStyle(IsHighlighted ? selected : normal);
             }
         }
-}
+
+        public override UnityEngine.UI.Selectable FindSelectableOnUp()
+        {
+            var next = base.FindSelectableOnUp();
+            return next != null ? next : this;
+        }
+
+        public override UnityEngine.UI.Selectable FindSelectableOnDown()
+        {
+            var next = base.FindSelectableOnDown();
+            return next != null ? next : this;
+        }
     }
+}

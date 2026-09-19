@@ -214,6 +214,8 @@ namespace Yarn.Unity
             // Start waiting 
             CancelSourceWhenDialogueCancelled().Forget();
 
+            List<OptionItem> activeOptions = new List<OptionItem>();
+
             for (int i = 0; i < dialogueOptions.Length; i++)
             {
                 var optionView = optionViews[i];
@@ -230,6 +232,19 @@ namespace Yarn.Unity
 
                 optionView.OnOptionSelected = selectedOptionCompletionSource;
                 optionView.completionToken = completionCancellationSource.Token;
+
+                activeOptions.Add(optionView);
+            }
+
+            for (int i = 0; i < activeOptions.Count; i++)
+            {
+                var nav = activeOptions[i].navigation;
+                nav.mode = UnityEngine.UI.Navigation.Mode.Explicit;
+
+                nav.selectOnUp = (i > 0) ? activeOptions[i - 1] : activeOptions[i];
+                nav.selectOnDown = (i < activeOptions.Count - 1) ? activeOptions[i + 1] : activeOptions[i];
+
+                activeOptions[i].navigation = nav;
             }
 
             // There is a bug that can happen where in-between option items being configured one can be selected
@@ -239,9 +254,9 @@ namespace Yarn.Unity
             // otherwise select the first non-deactivated one
             // because at this point now all of them are configured they will all get the select/deselect message
             int optionIndexToSelect = -1;
-            for (int i = 0; i < optionViews.Count; i++)
+            for (int i = 0; i < activeOptions.Count; i++)
             {
-                var view = optionViews[i];
+                var view = activeOptions[i];
                 if (!view.isActiveAndEnabled)
                 {
                     continue;
@@ -261,10 +276,6 @@ namespace Yarn.Unity
                 {
                     optionIndexToSelect = i;
                 }
-            }
-            if (optionIndexToSelect > -1)
-            {
-                optionViews[optionIndexToSelect].Select();
             }
 
             // Update the last line, if one is configured
@@ -334,6 +345,12 @@ namespace Yarn.Unity
             {
                 canvasGroup.interactable = true;
                 canvasGroup.blocksRaycasts = true;
+            }
+
+            // Select the option after the UI is fully interactive and visible
+            if (optionIndexToSelect > -1)
+            {
+                activeOptions[optionIndexToSelect].Select();
             }
 
             // Wait for a selection to be made, or for the task to be completed.
