@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 64960c1fd12954e50ac2f897635cacf7
+guid: 9a2da99e333b443158c4d535a1121374
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6741850596844988574
-    second: Cyberdeck_Luna_0
+      213: 6848003215297190954
+    second: cg_roottown_girlsapartment_lunanubs_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cyberdeck_Luna_0
+      name: cg_roottown_girlsapartment_lunanubs_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2312
-        height: 1666
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2679c4e1a922072a0800000000000000
-      internalID: -6741850596844988574
+      spriteID: a2c958c54aef80f50800000000000000
+      internalID: 6848003215297190954
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cyberdeck_Luna_0: -6741850596844988574
+      cg_roottown_girlsapartment_lunanubs_0: 6848003215297190954
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
