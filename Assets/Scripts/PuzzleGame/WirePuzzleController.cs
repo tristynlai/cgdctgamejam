@@ -326,4 +326,19 @@ public class WirePuzzleController : MonoBehaviour
             advancer.enabled = active;
         }
     }
+
+    public void OnRecallButtonClicked()
+    {
+        CyberdeckController cyberdeck = Resources.FindObjectsOfTypeAll<CyberdeckController>()[0];
+        
+        if (cyberdeck != null)
+        {
+            cyberdeck.OpenCyberdeckGeneral();
+            cyberdeck.ToggleHistoryOverlay();
+        }
+        else
+        {
+            Debug.LogError("CyberdeckController not found in the scene!");
+        }
+    }
 }
