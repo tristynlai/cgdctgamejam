@@ -272,10 +272,7 @@ Luna: (Damn, this guy is a TANK! And FERAL! Do I risk it?)
     <<exit CyberSeagull>>
     <<exit Luna_Neutral>>
     <<fadeOut 2>>
-    // Pause the main story and enter puzzle mode with a Yarn command
-    // <<wait_for_wire_puzzle>>
-    // Unpause when the puzzle outcome is finished and then jump to a logic node
-    // I'm using <<jump PuzzleState>> for now to continue the story. Until we hook up the puzzle, we'll always fail.
+    <<wait_for_wire_puzzle>>
     <<jump PuzzleState>>
 -> Don’t help the cybergull
     <<set $badend += 1>>
@@ -306,6 +303,8 @@ title: PuzzleState
 
 title: FluxRingGotAway
 ---
+<<camera Alleyway>>
+<<fadeIn 2>>
 <<place Luna_Neutral>>
 <<expression Luna_Neutral angry>>
 <<place CyberSeagull>>
@@ -334,6 +333,8 @@ Luna: Well it’s not my problem anymore. Somebody else’s, maybe.
 
 title: FluxRingSuccess
 ---
+<<camera Alleyway>>
+<<fadeIn 2>>
 <<set $withCog = false>>
 <<place Luna_Neutral>>
 <<expression Luna_Neutral happy>>
