@@ -35,6 +35,17 @@ public class WirePuzzleController : MonoBehaviour
     [SerializeField] private Sprite redLampSprite;
     [SerializeField] private Sprite greenLampSprite;
 
+    [Header("Wire Sprites")]
+    [SerializeField] private Sprite redLitSprite;
+
+    [Header("Audio / SFX")]
+    [SerializeField] private AudioSource sfxAudioSource;
+    [SerializeField] private AudioClip gullCrySSfx; 
+    [SerializeField] private AudioClip gullCryMSfx; 
+    [SerializeField] private AudioClip gullFlapSfx;
+    [SerializeField] private AudioClip lockdownSfx;
+    [SerializeField] private AudioClip accessGrantedSfx;
+
     [Header("Yarn Things")]
     [SerializeField] private DialogueRunner dialogueRunner;
     [SerializeField] private VisualNovel visualNovel;
@@ -47,6 +58,8 @@ public class WirePuzzleController : MonoBehaviour
     private bool isFinished = false;
 
     private Color defaultTextColor;
+
+    private Dictionary<Transform, Sprite> originalLitSprites = new Dictionary<Transform, Sprite>();
 
     private void Awake()
     {
@@ -67,6 +80,22 @@ public class WirePuzzleController : MonoBehaviour
         if (puzzleCanvas != null)
         {
             puzzleCanvas.SetActive(false);
+        }
+
+        if (wireContainer != null)
+        {
+            foreach (Transform wireObj in wireContainer)
+            {
+                Transform litChild = wireObj.Find("Lit");
+                if (litChild != null)
+                {
+                    var img = litChild.GetComponent<Image>();
+                    if (img != null && img.sprite != null)
+                    {
+                        originalLitSprites[wireObj] = img.sprite;
+                    }
+                }
+            }
         }
     }
 
@@ -108,7 +137,7 @@ public class WirePuzzleController : MonoBehaviour
 
         SetState("SYSTEM: LOCKED - 3 ATTEMPTS REMAINING", panelDefault, statusDefaultSprite, defaultTextColor);
         SetLampState("LOCKED", redLampSprite);
-        SetBark("It’s definitely some sort of code…");
+        SetBark("It’s definitely some sort of sequence. Better be careful where I touch...");
         ResetAllWires();
         
         if (visualNovel != null)
@@ -131,17 +160,17 @@ public class WirePuzzleController : MonoBehaviour
         {
             SetWireLit(wireColor, true);
 
-            if (currentStep == 0) SetBark("Now we’re getting somewhere.");
-            else if (currentStep == 1) SetBark("Ok getting closer….");
-            else if (currentStep == 2) SetBark("Come on... so close");
-            else if (currentStep == 3) SetBark("YES! The flux ring drops from the gull’s neck and he flies away");
+            if (currentStep == 0) SetBark("That seems right. Now what’s next?");
+            else if (currentStep == 1) SetBark("Good, I’m getting closer.");
+            else if (currentStep == 2) SetBark("Yes! Come on...");
+            else if (currentStep == 3) SetBark("Hell yeah! This flux ring is mine.");
 
             currentStep++;
-            //Debug.Log($"Correct wire clicked: {wireColor}. Step {currentStep}/4");
 
             if (currentStep >= correctSequence.Count)
             {
                 SetLampState("UNLOCKED", greenLampSprite);
+                PlaySFX(accessGrantedSfx);
                 TriggerFinishState(true, true, "$puzzleSolved", true, "$hasFluxRing", true, "$gullOwesLuna", true, "ACCESS GRANTED", panelWin, statusWinSprite, Color.green);
             }
         }
@@ -150,24 +179,35 @@ public class WirePuzzleController : MonoBehaviour
             failCount++;
             dialogueRunner.VariableStorage.SetValue("$wire_fails", failCount);
 
-            //Debug.Log($"Wrong wire clicked: {wireColor}. Fail count: {failCount}");
-
             if (failCount == 1)
             {
-                SetBark("The cybergull is screeching in pain... I need to be more careful");
-                StartCoroutine(HandleErrorSequence("ERROR: TWO MORE ATTEMPTS", "SYSTEM: LOCKED - 2 ATTEMPTS REMAINING", panelError, statusErrorSprite));
+                SetBark("Shit, that wasn’t right. I think Val mentioned something about expensive parts? Maybe I should try and recall what she said...");
+                PlaySFX(gullCrySSfx);
+                PlaySFX(gullFlapSfx);
+                StartCoroutine(HandleErrorSequence("ERROR: TWO MORE ATTEMPTS", "SYSTEM LOCKED: 2 ATTEMPTS REMAINING", panelError, statusErrorSprite, "Let's try again—and not piss off the cybergull."));
             }
             else if (failCount == 2)
             {
-                SetBark("The cybergull is freaking out... I think Val mentioned something about flux rings when we were talking...");
-                StartCoroutine(HandleErrorSequence("ERROR:ONE MORE ATTEMPT", "SYSTEM: LOCKED - 1 ATTEMPTS REMAINING", panelError, statusErrorSprite));
+                SetBark("The cybergull is freaking out! I need to lock in.");
+                PlaySFX(gullCryMSfx);
+                PlaySFX(gullFlapSfx);
+                StartCoroutine(HandleErrorSequence("ERROR:ONE MORE ATTEMPT", "SYSTEM LOCKED: 1 ATTEMPT REMAINING", panelError, statusErrorSprite, "One more chance to crack this damn thing."));
             }
             else if (failCount >= 3)
             {
-                SetBark("Damn, I missed my chance to help him. The cybergull panics and scrambles away from me into the dark…");
+                SetBark("Damn, the system locked me out. I better not touch it anymore.");
                 SetLampState("LOCKED DOWN", redLampSprite);
+                PlaySFX(lockdownSfx);
                 TriggerFinishState(false, false, "$puzzleSolved", false, "$gullOwesLuna", false, null, false, "SEQUENCE FAILED: SYSTEM LOCKDOWN", panelFail, statusFailSprite, Color.red);
             }
+        }
+    }
+
+    private void PlaySFX(AudioClip clip)
+    {
+        if (sfxAudioSource != null && clip != null)
+        {
+            sfxAudioSource.PlayOneShot(clip);
         }
     }
 
@@ -272,6 +312,30 @@ public class WirePuzzleController : MonoBehaviour
             if (litChild != null)
             {
                 litChild.gameObject.SetActive(isLit);
+                var img = litChild.GetComponent<Image>();
+                if (img != null && originalLitSprites.ContainsKey(wireObj))
+                {
+                    img.sprite = originalLitSprites[wireObj];
+                }
+            }
+        }
+    }
+
+    private void FlashAllWiresRed()
+    {
+        if (wireContainer == null) return;
+
+        foreach (Transform wireObj in wireContainer)
+        {
+            Transform litChild = wireObj.Find("Lit");
+            if (litChild != null)
+            {
+                litChild.gameObject.SetActive(true);
+                var img = litChild.GetComponent<Image>();
+                if (img != null && redLitSprite != null)
+                {
+                    img.sprite = redLitSprite;
+                }
             }
         }
     }
@@ -286,18 +350,29 @@ public class WirePuzzleController : MonoBehaviour
             if (litChild != null)
             {
                 litChild.gameObject.SetActive(false);
+                var img = litChild.GetComponent<Image>();
+                if (img != null && originalLitSprites.ContainsKey(wireObj))
+                {
+                    img.sprite = originalLitSprites[wireObj];
+                }
             }
         }
     }
 
-    private IEnumerator HandleErrorSequence(string errorMsg, string nextCountdownMsg, Sprite errorSprite, Sprite statusErrorSp)
+    private IEnumerator HandleErrorSequence(string errorMsg, string nextCountdownMsg, Sprite errorSprite, Sprite statusErrorSp, string resetBarkMsg)
     {
         isProcessingError = true;
+        
+        FlashAllWiresRed();
         SetState(errorMsg, errorSprite, statusErrorSp, Color.red);
         
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(2.5f);
+
+        currentStep = 0;
+        ResetAllWires();
 
         SetState(nextCountdownMsg, panelDefault, statusDefaultSprite, defaultTextColor);
+        SetBark(resetBarkMsg);
         isProcessingError = false;
     }
 
