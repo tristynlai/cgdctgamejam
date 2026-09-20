@@ -272,6 +272,14 @@ Luna: (Damn, this guy is a TANK! And FERAL! Do I risk it?)
     <<exit CyberSeagull>>
     <<exit Luna_Neutral>>
     <<fadeOut 2>>
+    <<camera CybergullCG>>
+    <<fadeIn 2>>
+    Luna: <i>As I take a closer look, I notice etchings imprinted onto the cog, a set of live wires, and a glowing red button.</i>
+    Luna: Looks like some kind of locking mechanism...
+    Luna: Maybe I need to turn on the wires in a certain order?
+    Luna: I better be careful...
+    <<fadeOut 2>>
+    <<wait 1>>
     <<wait_for_wire_puzzle>>
     <<jump PuzzleState>>
 -> Don’t help the cybergull
@@ -314,6 +322,7 @@ Luna: <i>The gull has had enough with my attempts. I can feel him staring at me 
 Luna: What doesn’t kill you makes you stronger, I guess…?
 <<pose CyberSeagull SceneSample_CybergullFadeOut>>
 <<wait 1>>
+<<playSFX caws>>
 <<exit CyberSeagull>>
 Luna: <i>He decides to hobble away, the cog weighing him down with each webbed step.</i>
 <<expression Luna_Neutral arms_angry>>
@@ -358,6 +367,7 @@ Luna: <i>Suddenly, I feel the cybergull staring into my soul.</i>
 Luna: (Is he…aura farming?)
 <<pose CyberSeagull SceneSample_CybergullFadeOut>>
 <<wait 1>>
+<<playSFX caws>>
 <<exit CyberSeagull>>
 Luna: <i>But then, he flies away.</i>
 <<expression Luna_Neutral arms_neutral>>
