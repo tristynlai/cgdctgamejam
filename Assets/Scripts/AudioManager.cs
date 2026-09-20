@@ -11,6 +11,8 @@ public class AudioEntry
 
 public class AudioManager : MonoBehaviour
 {
+    private static AudioManager instance;
+
     [Header("Audio Files")]
     // These lists are what you will actually see and fill out in the Unity Inspector
     [SerializeField] private List<AudioEntry> music = new List<AudioEntry>();
@@ -21,8 +23,27 @@ public class AudioManager : MonoBehaviour
     private Dictionary<string, AudioClip> musicDictionary = new Dictionary<string, AudioClip>();
     private Dictionary<string, AudioClip> sfxDictionary = new Dictionary<string, AudioClip>();
 
+    private AudioSource persistentMusicSource;
+
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        persistentMusicSource = GetComponent<AudioSource>();
+        if (persistentMusicSource == null)
+        {
+            persistentMusicSource = gameObject.AddComponent<AudioSource>();
+        }
+
         // When the game starts, this loop copies all the music from your Inspector List 
         // into the Dictionary for lightning-fast lookups.
         foreach (var entry in music)
@@ -42,6 +63,19 @@ public class AudioManager : MonoBehaviour
     {
         if (musicDictionary.TryGetValue(name, out AudioClip clip))
         {
+            if (persistentMusicSource != null)
+            {
+                if (persistentMusicSource.clip != clip)
+                {
+                    persistentMusicSource.clip = clip;
+                    persistentMusicSource.Play();
+                }
+                else if (!persistentMusicSource.isPlaying)
+                {
+                    persistentMusicSource.Play();
+                }
+            }
+
             return clip; // Found it! Send the audio clip back.
         }
 
