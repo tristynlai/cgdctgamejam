@@ -138,6 +138,7 @@ title: PressingVal
 ---
 <<expression Luna_Neutral arms_neutral>>
 Luna: <i>Past her super good looks and chipper tone, I notice she's a little out of breath. Her eyes shift back to her motorbike.</i>
+<<expression Val worried>>
 Luna: (Is she hiding something…?)
 
 -> Ignore it
@@ -155,7 +156,7 @@ Luna: (Is she hiding something…?)
     <<expression Luna_Neutral arms_neutral>>  
     Luna: But your shop's IN Root Town. And aren’t you supposed to be open right now? You wouldn’t close the shop and come to Frisscity unless it was something important.
     Luna: Is that the 'secret?'
-    <<expression Val serious>>
+    <<expression Val worried>>
     Val: …
     Luna: <i>The silence that washes over us is painful. Something is off.</i>
     <<expression Val flirty>>
@@ -168,11 +169,12 @@ Luna: (Is she hiding something…?)
 
 title: TheOffer
 ---
-<<expression Val serious>>
+<<expression Val worried_onphone>>
 Luna: <i>Val's attention is suddenly stolen by her phone. She smears her thumb across her screen, makes a couple of taps, then hops back onto her motorbike.</i>
 <<expression Luna_Neutral neutral>>
 <<expression Val neutral>>
 Val: Sorry, gotta jet! Root Town needs their soda pop.
+<<expression Val flirty>>
 Val: Stop by tonight, if you’re free. I’ll be open.
 // SFX motorcycle engine turning on
 <<playSFX valMotorcycle>>
