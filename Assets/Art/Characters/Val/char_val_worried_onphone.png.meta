@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2c4813fe264b6c54c84c4744ab70bdbe
+guid: f400ff8cc399e4441adc64ec64340ddf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8931884285673452393
-    second: char_val_flirty_0
+      213: -5414908995378058801
+    second: char_val_worried_onphone_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char_val_flirty_0
+      name: char_val_worried_onphone_0
       rect:
         serializedVersion: 2
-        x: 37
+        x: 52
         y: 0
-        width: 1131
+        width: 1116
         height: 2037
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 963b5764f6d64fb70800000000000000
-      internalID: 8931884285673452393
+      spriteID: fc96c6745f06ad4b0800000000000000
+      internalID: -5414908995378058801
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      char_val_flirty_0: 8931884285673452393
+      char_val_worried_onphone_0: -5414908995378058801
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

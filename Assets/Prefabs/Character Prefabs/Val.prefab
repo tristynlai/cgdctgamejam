@@ -36,9 +36,9 @@ RectTransform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.6, y: 0.5}
   m_AnchoredPosition: {x: 535, y: -80}
-  m_SizeDelta: {x: 1323, y: 2037}
+  m_SizeDelta: {x: 1200, y: 2048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8951839129265946840
 CanvasRenderer:
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -626016994845543117, guid: a19cb11890a3d75418d4e35c29a2752e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a19cb11890a3d75418d4e35c29a2752e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -114,11 +114,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   expressions:
   - name: neutral
-    sprite: {fileID: -5937304214518909853, guid: 5d26078877a1045f5b40b689708d1781, type: 3}
+    sprite: {fileID: 21300000, guid: 5d26078877a1045f5b40b689708d1781, type: 3}
   - name: flirty
-    sprite: {fileID: 8931884285673452393, guid: 045670a72d112440887608ce39e6a135, type: 3}
+    sprite: {fileID: 21300000, guid: 045670a72d112440887608ce39e6a135, type: 3}
   - name: serious
-    sprite: {fileID: -7018569358158547895, guid: 7d54738a16d134763bd4f88f3b47d891, type: 3}
+    sprite: {fileID: 21300000, guid: 7d54738a16d134763bd4f88f3b47d891, type: 3}
+  - name: worried
+    sprite: {fileID: 21300000, guid: e40edbc85b6ad49308924bf5e7d991dd, type: 3}
+  - name: worried_onphone
+    sprite: {fileID: 21300000, guid: f400ff8cc399e4441adc64ec64340ddf, type: 3}
   faceImage: {fileID: 4909417022639879863}
   bikeObject: {fileID: 9140587408173552271}
 --- !u!1 &9140587408173552271
