@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
 {
     private static AudioManager instance;
 
+    public static AudioManager Instance => instance;
+
     [Header("Audio Files")]
     // These lists are what you will actually see and fill out in the Unity Inspector
     [SerializeField] private List<AudioEntry> music = new List<AudioEntry>();
@@ -34,6 +36,9 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
+            // Keep the first persistent manager, but merge any missing entries from
+            // scene-local duplicates so later scenes can extend the catalog.
+            instance.MergeMissingEntriesFrom(this);
             Destroy(gameObject);
             return;
         }
@@ -55,6 +60,40 @@ public class AudioManager : MonoBehaviour
         foreach (var entry in sfx)
         {
             sfxDictionary[entry.name] = entry.clip;
+        }
+    }
+
+    private void MergeMissingEntriesFrom(AudioManager other)
+    {
+        if (other == null)
+        {
+            return;
+        }
+
+        foreach (var entry in other.music)
+        {
+            if (entry == null || string.IsNullOrEmpty(entry.name) || entry.clip == null)
+            {
+                continue;
+            }
+
+            if (!musicDictionary.ContainsKey(entry.name))
+            {
+                musicDictionary[entry.name] = entry.clip;
+            }
+        }
+
+        foreach (var entry in other.sfx)
+        {
+            if (entry == null || string.IsNullOrEmpty(entry.name) || entry.clip == null)
+            {
+                continue;
+            }
+
+            if (!sfxDictionary.ContainsKey(entry.name))
+            {
+                sfxDictionary[entry.name] = entry.clip;
+            }
         }
     }
 

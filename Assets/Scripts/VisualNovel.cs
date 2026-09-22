@@ -18,6 +18,7 @@ public class VisualNovel : MonoBehaviour {
 
     //For the Audio Manager
     [SerializeField] private AudioManager audioManager;
+    private bool hasWarnedMissingAudioManager = false;
 
     //For the Dialogue to Be Paused
     [SerializeField] private LineAdvancer lineAdvancer;
@@ -71,6 +72,29 @@ public class VisualNovel : MonoBehaviour {
 
         //Show Dialogue box - will need this for the cyberdeck later
         dialogueRunner.AddCommandHandler("showDialogue", ShowDialogue);
+
+        ResolveAudioManager();
+    }
+
+    private void ResolveAudioManager()
+    {
+        if (audioManager != null)
+        {
+            return;
+        }
+
+        audioManager = AudioManager.Instance;
+
+        if (audioManager == null)
+        {
+            audioManager = FindFirstObjectByType<AudioManager>();
+        }
+
+        if (audioManager == null && !hasWarnedMissingAudioManager)
+        {
+            Debug.LogWarning("No active AudioManager found for VisualNovel audio commands.");
+            hasWarnedMissingAudioManager = true;
+        }
     }
 
     // moves camera to camera location {location} in the scene
@@ -128,6 +152,12 @@ public class VisualNovel : MonoBehaviour {
     // plays background music {musicName}
     private void PlayMusic(string musicName) {
         musicName = musicName.Trim(); 
+
+        ResolveAudioManager();
+        if (audioManager == null || musicSource == null)
+        {
+            return;
+        }
         
         AudioClip clip = audioManager.GetMusic(musicName);
         
@@ -141,6 +171,12 @@ public class VisualNovel : MonoBehaviour {
     // plays sound effect {sfxName}
     private void PlaySFX(string sfxName) {
         sfxName = sfxName.Trim();
+
+        ResolveAudioManager();
+        if (audioManager == null || sfxSource == null)
+        {
+            return;
+        }
         
         AudioClip clip = audioManager.GetSFX(sfxName);
         
