@@ -5167,6 +5167,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6401511282505520761, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1868669979}
+    - targetCorrespondingSourceObject: {fileID: 6401511282505520761, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1868669980}
     - targetCorrespondingSourceObject: {fileID: 4801995455947196391, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
       insertIndex: -1
       addedObject: {fileID: 45186736}
@@ -5212,6 +5215,11 @@ MonoBehaviour:
   historyButtonObject: {fileID: 0}
   historyOverlayPanel: {fileID: 0}
   tabParent: {fileID: 0}
+--- !u!1 &1868669977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4577922850729099330, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
+  m_PrefabInstance: {fileID: 1868669974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!223 &1868669978
 Canvas:
   m_ObjectHideFlags: 0
@@ -5253,6 +5261,38 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1868669980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836157859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284cca96343834806aecfcfb6130545b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialHighlighter
+  messagesButton: {fileID: 1868669981}
+  settingsButton: {fileID: 1868669977}
+  historyButton: {fileID: 1868669982}
+  minigameButton: {fileID: 1868669983}
+  exitButton: {fileID: 465727604}
+--- !u!1 &1868669981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4674566998340966139, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
+  m_PrefabInstance: {fileID: 1868669974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1868669982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5002323385729764565, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
+  m_PrefabInstance: {fileID: 1868669974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1868669983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9000373946502191719, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
+  m_PrefabInstance: {fileID: 1868669974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1876182443
 GameObject:
   m_ObjectHideFlags: 0

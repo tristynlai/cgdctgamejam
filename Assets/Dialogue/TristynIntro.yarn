@@ -80,12 +80,18 @@ Luna: can you walk me thru it again?
 Nat: Yes! I'd LOVE to UwU
 Nat: Welcome to your very own <b>cyberdeck</b>! It's like your phone, BUT BETTER hehe
 Nat: You’re on the <b>Messages</b> screen! Sort through spam, news, and VERY important messages from me.
+<<highlight_tab messages>>
 Nat: <b>Settings</b> lets you tweak things like sound. You can also <b>quit the game</b> from Settings.
+<<highlight_tab settings>>
 Nat: <b>History</b> lets you snoop through old conversations. (It tracks your inner thoughts, too.)
+<<highlight_tab history>>
 Luna: umm that's creepy?
 Nat: Wait waittt I also made a cute little <b>mini-game</b> just for you! Click on the lil monster icon to play it.
+<<highlight_tab minigame>>
 Nat: And when you’re done? Click <b>Exit</b>! You can always come back here by clicking the CYBERDECK 3000 logo.
+<<highlight_tab exit>>
 Luna: thanks. and yea it made sense. can i go back to work now?
+<<clear_highlights>>
 Nat: Of course! Holler if you need anything, roomie <3
 <<wait_for_cyberdeck_exit>>
 <<enable_cyberdeck_exit>>
