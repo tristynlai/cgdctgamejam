@@ -356,6 +356,10 @@ title: Influencer
 <<playMusic luxuryApt>>
 <<camera Lobby>>
 <<fadeIn 1>>
+<<place Luna_Neutral>>
+<<expression Luna_Neutral arms_delivery>>
+<<place CompanionNubs>>
+<<expression CompanionNubs neutral>>
 Luna: <i>The delivery takes me to the Meridian District, home to the tech zillionaires and their corporate grifters.</i>
 Luna: <i> I haul a catering order through the bulletproof glass doors of a luxury apartment and trudge past the security robots in the lobby. They don't press the elevator button for me.</i>
 Luna: <i>Because they know I don’t belong here.</i>
@@ -363,22 +367,24 @@ Luna: <i>Because they know I don’t belong here.</i>
 <<camera PenthouseClosed>>
 <<fadeIn 1>>
 <<place Luna_Neutral>>
-<<expression Luna_Neutral arms_neutral>>
+<<expression Luna_Neutral arms_delivery>>
 <<place CompanionNubs>>
 <<expression CompanionNubs neutral>>
 Luna: <i>I'm taken to the top floor and eventually find the apartment number that matches the one on my screen. I press a button on their intercom's sleek glass pad.</i>
 Luna: <i>Then I wait.</i>
-<<expression Luna_Neutral arms_annoyed>>
+<<expression Luna_Neutral arms_delivery_annoyed>>
 Luna: <i>…And wait.</i>
 
 -> Continue to wait
     <<expression CompanionNubs angry>>
     Nubs: How long do you intend to dally at the door?!
     <<expression CompanionNubs wave_worried>>
-    <<expression Luna_Neutral surprised>>
+    <<expression Luna_Neutral arms_delivery_dropped>>
+    <<pose Luna_Neutral BagSpill>>
+    <<wait 1>>
     Nubs: Ah!
     Luna: <i>His tail thwacks one of the bags and it falls over. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
-    <<expression Luna_Neutral annoyed>>
+  <<expression Luna_Neutral arms_delivery_dropped>>
     Luna: Shit.
     Luna: <i>I try to blot the mess away with a wad of napkins I found hidden in one of the other bags. Now it looks worse, like a muddy mess.</i>
     <<expression CompanionNubs arms_worried>>
@@ -386,6 +392,7 @@ Luna: <i>…And wait.</i>
     Luna: …      
 -> Press the button again
     <<set $goodend += 1>>
+    <<expression Luna_Neutral arms_annoyed>>
     Luna: I don't have all day, diva.
     Nubs: Ah. So the owners of this abode are female versions of a hustler?
     <<expression Luna_Neutral shy_annoyed>>
@@ -394,7 +401,9 @@ Luna: <i>…And wait.</i>
     Luna: <i>I press the button again on the glass interface. Time's ticking, and I can feel the little creature's beady little eyes on my back. I know what I promised him.</i>
     Nubs: How long do you intend to dally at the door?!
     <<expression CompanionNubs wave_worried>>
-    <<expression Luna_Neutral surprised>>
+        <<expression Luna_Neutral arms_delivery_dropped>>
+    <<pose Luna_Neutral BagSpill>>
+        <<wait 1>>
     Nubs: Ah!
     Luna: <i>His tail thwacks one of the bags and it falls over. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
     <<expression Luna_Neutral annoyed>>
@@ -410,6 +419,8 @@ Luna: <i>…And wait.</i>
     <<expression CompanionNubs wave_worried>>
     <<expression Luna_Neutral surprised>>
     Nubs: Ah!
+    <<expression Luna_Neutral arms_delivery_dropped>>
+    <<pose Luna_Neutral BagSpill>>
     Luna: <i>The creature's tail thwacks one of the bags and it falls over. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
     <<expression Luna_Neutral annoyed>>
     Luna: Shit.
