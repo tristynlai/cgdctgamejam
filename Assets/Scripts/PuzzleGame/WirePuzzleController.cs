@@ -45,6 +45,7 @@ public class WirePuzzleController : MonoBehaviour
     [SerializeField] private AudioClip gullFlapSfx;
     [SerializeField] private AudioClip lockdownSfx;
     [SerializeField] private AudioClip accessGrantedSfx;
+    [SerializeField] private AudioClip wireTouchSfx;
 
     [Header("Yarn Things")]
     [SerializeField] private DialogueRunner dialogueRunner;
@@ -155,6 +156,8 @@ public class WirePuzzleController : MonoBehaviour
     public void OnWireClicked(string wireColor)
     {
         if (dialogueRunner == null || isProcessingError || isFinished) return;
+
+                PlaySFX(wireTouchSfx);
 
         if (correctSequence[currentStep] == wireColor)
         {
@@ -330,7 +333,7 @@ public class WirePuzzleController : MonoBehaviour
             Transform litChild = wireObj.Find("Lit");
             if (litChild != null)
             {
-                litChild.gameObject.SetActive(true);
+                litChild.gameObject.SetActive(true); 
                 var img = litChild.GetComponent<Image>();
                 if (img != null && redLitSprite != null)
                 {

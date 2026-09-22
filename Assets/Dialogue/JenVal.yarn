@@ -15,6 +15,7 @@ Luna: <i>I recognize those tires. And the baddie who rides on them.</i>
 Val: Luna! Finally, someone without a corporate T-shirt. Have you been making bank today?
 <<expression Luna_Neutral arms_shy>>
 Luna: H-Hey, Val. No, not yet. Still getting the low-tipping vegans and high-strung snobs. Y'know how it is.
+<<expression Val laugh>>
 Luna: <i>I hold my breath as Val walks over. She laughs and it's a bright, bubbly sound that goes straight to my heart while her hand goes straight to my head for a gentle pat.</i>
 <<expression Val flirty>>
 Val: I'm sure things will turn up by nighttime. All the overworked techies get the late-night munchies.
@@ -59,7 +60,7 @@ Luna: (I’ve unleashed a gearhead beast. There’s no end to this conversation.
     <<expression Val neutral>>
     Val: But 12 prototypes later, and I’ve finally found my forever bike. The electrical's my favorite part. Every sensor, every light…I wired those by hand.
     <<set $knowsGreenHint = true>>
-    Val: It took me three tries to get the order right. No matter what gizmo you’re wiring up, <b>green should be the one you save until the very end</b>. 
+    Val: It took me three tries to get the order right. No matter what gizmo you’re wiring up, green should be the one you save until the very end. 
     <<expression Val flirty>>
     Val: Hook it up too early and the whole system’s gonna go haywire as soon as you turn on the engine!
     Luna: (Interesting. Should I listen to more?)
@@ -67,7 +68,7 @@ Luna: (I’ve unleashed a gearhead beast. There’s no end to this conversation.
         Luna: Anything else I should watch out for? 
         <<set $knowsBlueHint = true>>
         <<expression Val neutral>>
-        Val: Oh YES. <b>Blue before yellow, too.</b> THAT one I learned the hard way. Did it backwards once and I dumped a full charge into my cooling loop. 
+        Val: Oh YES. Blue before yellow, too. THAT one I learned the hard way. Did it backwards once and I dumped a full charge into my cooling loop. 
         Val: It cost me a week—and most of my eyebrows!
         Val: See, that's the thing. Corporate bikes are built to last until the warranty expires.
         <<expression Val flirty>>
@@ -104,7 +105,7 @@ Val: But if you think that'll land you a discount at the shop, then you'll need 
 <<expression Luna_Neutral arms_shy>>
 Luna: L-Like what?
 <<expression Val neutral>>
-Val: Like getting your hands on a <b>flux ring</b>. They’re the first thing to get swiped off a new bike because it’s so expensive—and so shiny to the city creatures.
+Val: Like getting your hands on a flux ring. They’re the first thing to get swiped off a new bike because it’s so expensive—and so shiny to the city creatures.
 Val: If you get one, I can hook you up with something.
 <<expression Val flirty>>
 Val: Something REAL nice~
@@ -118,8 +119,8 @@ Luna: Well, I guess while we’re on the topic…
    Val: Someone who’s bold, fiery, and daring. 
    <<expression Val neutral>>
    <<set $knowsRedHint = true>>
-   Val: Like daring enough to try and <b>unlock a flux ring with any color other than red</b>. 
-   Val: Because that’s the <b>color you always start with</b>. 
+   Val: Like daring enough to try and unlock a flux ring with any color other than red. 
+   Val: Because that’s the color you always start with. 
    <<expression Val flirty>>
    Val: Unless you dare to get zapped!
    <<expression Luna_Neutral arms_shy>>
@@ -137,8 +138,8 @@ Luna: Well, I guess while we’re on the topic…
 title: PressingVal
 ---
 <<expression Luna_Neutral arms_neutral>>
-Luna: <i>Past her super good looks and chipper tone, I notice she's a little out of breath. Her eyes shift back to her motorbike.</i>
 <<expression Val worried>>
+Luna: <i>Past her super good looks and chipper tone, I notice she's a little out of breath. Her eyes shift back to her motorbike.</i>
 Luna: (Is she hiding something…?)
 
 -> Ignore it
@@ -361,7 +362,7 @@ Luna: <i>I can feel the cybergull staring at me. It feels like he’s peering in
 <<if visited("Poor_Flirting") == false>>
 // If else, show:
 Luna: <i>The gull ruffles his feathers to collect himself, free from the trap that weighed him down. The shiny cog is now nestled in the palm of my hand.</i>
-Luna: <i>I notice an engraving in the cog. It says <b>”flux ring”</b>.</i>
+Luna: <i>I notice an engraving in the cog. It says ”flux ring”.</i>
 Luna: (That must be what this part is called. Whatever it is, Val’s gonna be stoked to install this in my bike!)
 Luna: <i>Suddenly, I feel the cybergull staring into my soul.</i>
 <<endif>> 
