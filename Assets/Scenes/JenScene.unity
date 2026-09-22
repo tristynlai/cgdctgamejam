@@ -1166,6 +1166,7 @@ MonoBehaviour:
   gullFlapSfx: {fileID: 8300000, guid: 4adbefcf9e9954a56a22559dcccc0cb7, type: 3}
   lockdownSfx: {fileID: 8300000, guid: cbda55c702edf42048219a07abc36415, type: 3}
   accessGrantedSfx: {fileID: 8300000, guid: 42f2b65b4d8524a759ffe91d1548cae2, type: 3}
+  wireTouchSfx: {fileID: 8300000, guid: e4df3c4a9969c46c1bc139d7d27cd081, type: 3}
   dialogueRunner: {fileID: 490507773}
   visualNovel: {fileID: 1660351815}
 --- !u!4 &216042278
@@ -1675,7 +1676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: startNode
-      value: Alleyway
+      value: Val
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: yarnProject
