@@ -396,6 +396,8 @@ title: TransporterPod
 Luna: <i>Turns out the cybergull had been blocking the view of my package: a transporter pod with the AGENTS logo stamped across it.</i>
 Luna: <i>It’s an odd place to leave something so brand-spanking new.</i>
 <<expression Luna_Neutral surprised>>
+<<pose NubsPod PodRattle>>
+<<playSFX podRattle>>
 Luna: <i>The pod suddenly rattles on the rubble. Usually, food deliveries don't involve LIVING CREATURES!</i>
 
 -> Put it on the motorcycle

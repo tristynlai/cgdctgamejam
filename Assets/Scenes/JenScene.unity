@@ -4731,6 +4731,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 4209402ed7507a548bbb38c362348f97, type: 3}
   - name: tiresScreech
     clip: {fileID: 8300000, guid: 96fee5dc733211b4a809bab4e305ddef, type: 3}
+  - name: podRattle
+    clip: {fileID: 8300000, guid: 4fb040f97414941b8991eb60aed73224, type: 3}
 --- !u!4 &1378181040
 Transform:
   m_ObjectHideFlags: 0
