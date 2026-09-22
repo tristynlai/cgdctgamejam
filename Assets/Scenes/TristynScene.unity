@@ -4005,6 +4005,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1876182445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1562571224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7964826828260677923, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
+  m_PrefabInstance: {fileID: 1868669974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1562571231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562571224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcee261385dbc4d7581239a438dcf5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhoneChatClick
 --- !u!1 &1605956965
 GameObject:
   m_ObjectHideFlags: 0
@@ -5153,6 +5170,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4801995455947196391, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
       insertIndex: -1
       addedObject: {fileID: 45186736}
+    - targetCorrespondingSourceObject: {fileID: 7964826828260677923, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1562571231}
   m_SourcePrefab: {fileID: 100100000, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
 --- !u!224 &1868669975 stripped
 RectTransform:
