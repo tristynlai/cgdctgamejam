@@ -127,7 +127,7 @@ MonoBehaviour:
   - name: arms_worried
     sprite: {fileID: 21300000, guid: adf42cf0982b0d844802b7956f6bef11, type: 3}
   - name: confused
-    sprite: {fileID: 21300000, guid: 930f077cd128e5148b3acdd594a0c320, type: 3}
+    sprite: {fileID: 21300000, guid: 6f97ee6ee53b693478d22f2fc1cb3cdd, type: 3}
   - name: anger_evolution
     sprite: {fileID: 21300000, guid: 6ef7e4a7773db480ca959a86a8166450, type: 3}
   - name: error_evolution

@@ -527,7 +527,7 @@ title: LilGuyReaction
 ---
 <<place Luna_Neutral>>
 <<expression Luna_Neutral arms_neutral>>
-<<camera Alleyway>>
+<<camera AlleywayClear>>
 <<fadeIn 2>>
 // If player chose to Kick it around, show:
 <<if visited("KickPod") == true>>
