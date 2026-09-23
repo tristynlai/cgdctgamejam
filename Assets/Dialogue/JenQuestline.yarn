@@ -383,7 +383,7 @@ Luna: <i>…And wait.</i>
     <<pose Luna_Neutral BagSpill>>
     <<wait 1>>
     Nubs: Ah!
-    Luna: <i>His tail thwacks one of the bags and it falls over. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
+    Luna: <i>His tail thwacks the bag out of my hand and it falls to the floor. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
   <<expression Luna_Neutral arms_delivery_dropped>>
     Luna: Shit.
     Luna: <i>I try to blot the mess away with a wad of napkins I found hidden in one of the other bags. Now it looks worse, like a muddy mess.</i>
@@ -405,7 +405,7 @@ Luna: <i>…And wait.</i>
     <<pose Luna_Neutral BagSpill>>
         <<wait 1>>
     Nubs: Ah!
-    Luna: <i>His tail thwacks one of the bags and it falls over. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
+    Luna: <i>His tail thwacks the bag out of my hand and it falls to the floor. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
     <<expression Luna_Neutral annoyed>>
     Luna: Shit.
     Luna: <i>I try to blot the mess away with a wad of napkins I found hidden in one of the other bags. Now it looks worse, like a muddy mess.</i>
@@ -421,10 +421,10 @@ Luna: <i>…And wait.</i>
     Nubs: Ah!
     <<expression Luna_Neutral arms_delivery_dropped>>
     <<pose Luna_Neutral BagSpill>>
-    Luna: <i>The creature's tail thwacks one of the bags and it falls over. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
+    Luna: <i>The creature's tail thwacks the bag out of my hand and it falls to the floor. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
     <<expression Luna_Neutral annoyed>>
     Luna: Shit.
-    Luna: <i>I try to blot the mess away with a wad of napkins I found hidden in one of the other bags. Now it looks worse, like a muddy mess.</i>
+    Luna: <i>I try to blot the mess away with a wad of napkins that came with the order. Now it looks worse, like a muddy mess.</i>
     <<expression CompanionNubs arms_worried>>
     Luna: <i>Nubs stands and watches as I try to clean up his mess. He obviously wants to say something, but I don't let him.</i>
     Luna: Let's just get out of here.
