@@ -102,19 +102,6 @@ public class AudioManager : MonoBehaviour
     {
         if (musicDictionary.TryGetValue(name, out AudioClip clip))
         {
-            if (persistentMusicSource != null)
-            {
-                if (persistentMusicSource.clip != clip)
-                {
-                    persistentMusicSource.clip = clip;
-                    persistentMusicSource.Play();
-                }
-                else if (!persistentMusicSource.isPlaying)
-                {
-                    persistentMusicSource.Play();
-                }
-            }
-
             return clip; // Found it! Send the audio clip back.
         }
 
