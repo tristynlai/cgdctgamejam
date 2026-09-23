@@ -2,9 +2,9 @@
 ---
 <<playMusic frisscityCalm>>
 <<camera Understory>>
-<<fadeIn 2>>
 <<place Luna_Neutral>>
 <<bike Luna_Neutral on>>
+<<fadeIn 2>>
 <<expression Luna_Neutral arms_neutral>>
 Luna: The only thing I need is a big offer so I can get the hell home.
 <<playSFX valMotorcycle>>
@@ -205,8 +205,8 @@ Luna: Time to roll.
 <<wait 1>>
 <<exit Luna_Neutral>>
 <<fadeOut 2>>
-<<bike Luna_Neutral off>>
 <<wait 2>>
+<<bike Luna_Neutral off>>
 <<jump Alleyway>>
 ===
 
@@ -412,6 +412,7 @@ Luna: <i>The pod suddenly rattles on the rubble. Usually, food deliveries don't 
     Luna: <i>Which can only mean one thing.</i>
     Luna: (This delivery is…meant for me? But why?)
     Luna: (Why does this pod have my DNA…?)
+    <<pose Luna_Neutral SceneSample_LunaFadeOut>>
     <<wait 1>>
     <<exit Luna_Neutral>>
     <<exit NubsPod>>
@@ -445,6 +446,7 @@ Luna: <i>Which can only mean one thing.</i>
 Luna: (This delivery is…meant for me? But why?)
 Luna: (Why does this pod have my DNA…?)
 Luna: <i>And what kind of monster did I just unleash?</i>
+<<pose Luna_Neutral SceneSample_LunaFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
 <<exit NubsPod>>
@@ -492,6 +494,7 @@ Luna: <i>I glance at the pod's markings again. It's from AGENTS—the very compa
     Luna: <i>Which can only mean one thing.</i>
     Luna: (This delivery is…meant for me? But why?)
     Luna: (Why does this pod have my DNA…?)
+    <<pose Luna_Neutral SceneSample_LunaFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
 <<exit NubsPod>>
