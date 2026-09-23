@@ -1,5 +1,6 @@
 ﻿title: Questline
 ---
+<<declare $leavesEarly = false>>
 <<if $bigJob == false>>
     <<jump DivorcedDad>>
 <<else>>
@@ -350,9 +351,9 @@ Luna: It's actually pretty cute.</i>
 // You can find this node in the Climax.yarn tab
 ===
 
-
 title: Influencer
 ---
+<<set $leavesEarly = false>>
 <<playMusic luxuryApt>>
 <<camera Lobby>>
 <<fadeIn 1>>
@@ -375,79 +376,76 @@ Luna: <i>Then I wait.</i>
 <<expression Luna_Neutral arms_delivery_annoyed>>
 Luna: <i>…And wait.</i>
 
+// ---------- THE OPTIONS ----------
+
 -> Continue to wait
     <<expression CompanionNubs angry>>
     Nubs: How long do you intend to dally at the door?!
-    <<expression CompanionNubs wave_worried>>
-    <<expression Luna_Neutral arms_delivery_dropped>>
-    <<pose Luna_Neutral BagSpill>>
-    <<wait 1>>
-    Nubs: Ah!
-    Luna: <i>His tail thwacks the bag out of my hand and it falls to the floor. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
-  <<expression Luna_Neutral arms_delivery_dropped>>
-    Luna: Shit.
-    Luna: <i>I try to blot the mess away with a wad of napkins I found hidden in one of the other bags. Now it looks worse, like a muddy mess.</i>
-    <<expression CompanionNubs arms_worried>>
-    Nubs: Oops.
-    Luna: …      
 -> Press the button again
     <<set $goodend += 1>>
-    <<expression Luna_Neutral arms_annoyed>>
+    <<expression Luna_Neutral arms_delivery_annoyed>>
     Luna: I don't have all day, diva.
     Nubs: Ah. So the owners of this abode are female versions of a hustler?
-    <<expression Luna_Neutral shy_annoyed>>
     Luna: W-What?! No. Where are you even-? Ugh. Nevermind.
     <<expression CompanionNubs angry>>
     Luna: <i>I press the button again on the glass interface. Time's ticking, and I can feel the little creature's beady little eyes on my back. I know what I promised him.</i>
     Nubs: How long do you intend to dally at the door?!
-    <<expression CompanionNubs wave_worried>>
-        <<expression Luna_Neutral arms_delivery_dropped>>
-    <<pose Luna_Neutral BagSpill>>
-        <<wait 1>>
-    Nubs: Ah!
-    Luna: <i>His tail thwacks the bag out of my hand and it falls to the floor. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
-    <<expression Luna_Neutral annoyed>>
-    Luna: Shit.
-    Luna: <i>I try to blot the mess away with a wad of napkins I found hidden in one of the other bags. Now it looks worse, like a muddy mess.</i>
-    <<expression CompanionNubs arms_worried>>
-    Nubs: Oops.
-    Luna: …      
 -> Take a photo of the order and leave
     <<set $badend += 1>>
+    <<set $leavesEarly = true>>
+    <<expression Luna_Neutral annoyed>>
     Luna: I don't have time for this.
     Luna: <i>I snap a photo on the SL0P app to prove that I left the order at the correct location. I make sure to capture the apartment's number.</i>
-    <<expression CompanionNubs wave_worried>>
-    <<expression Luna_Neutral surprised>>
-    Nubs: Ah!
-    <<expression Luna_Neutral arms_delivery_dropped>>
-    <<pose Luna_Neutral BagSpill>>
-    Luna: <i>The creature's tail thwacks the bag out of my hand and it falls to the floor. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
-    <<expression Luna_Neutral annoyed>>
-    Luna: Shit.
-    Luna: <i>I try to blot the mess away with a wad of napkins that came with the order. Now it looks worse, like a muddy mess.</i>
-    <<expression CompanionNubs arms_worried>>
-    Luna: <i>Nubs stands and watches as I try to clean up his mess. He obviously wants to say something, but I don't let him.</i>
-    Luna: Let's just get out of here.
-    <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-    <<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
-    <<wait 1>>
-    <<exit Luna_Neutral>>
-    <<exit CompanionNubs>>
-    <<fadeOut 2>>
-    <<camera BlackImage>>
-    <<fadeIn 1>>
-    <<wait 2>>
-    Luna: <i>20 minutes later, I get a negative rating on the SL0P app AND a violation as the cherry on top. It notes the doormat stain as damaged property.</i>
-    Luna: <i>But who cares? A person who lives in this building is rich enough to buy anything without blinking an augmented eye…</i>
-    <<fadeOut 1>>
-    <<stopMusic>>
-    <<jump Bad_Outcome>>
 
-<<expression Luna_Neutral surprised>>
+// ---------- THE SPILL: runs once, whichever option was picked ----------
+
+<<expression CompanionNubs wave_worried>>
+<<expression Luna_Neutral arms_delivery_dropped>>
+<<pose Luna_Neutral BagSpill>>
+Nubs: Ah!
+Luna: <i>His arms knock the bag out of my hand and it falls to the floor. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
+<<expression Luna_Neutral annoyed>>
+Luna: Shit.
+Luna: <i>I try to blot the mess away with a wad of napkins I found hidden in one of the other bags. Now it looks worse, like a muddy mess.</i>
+<<expression CompanionNubs arms_worried>>
+Nubs: Oops.
+Luna: …
+
+// ---------- THE SPLIT ----------
+
+<<if $leavesEarly>>
+    <<jump Influencer_LeaveEarly>>
+<<endif>>
+
+<<expression Luna_Neutral annoyed>>
 <<expression CompanionNubs arms_neutral>>
 Luna: <i>The door clicks open.</i>
 <<jump Influencer_Continued>>
 ===
+
+
+// ---------- NEW NODE: the old ending of option three ----------
+
+title: Influencer_LeaveEarly
+---
+Luna: <i>Nubs stands and watches as I try to clean up his mess. He obviously wants to say something, but I don't let him.</i>
+Luna: Let's just get out of here.
+<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
+<<wait 1>>
+<<exit Luna_Neutral>>
+<<exit CompanionNubs>>
+<<fadeOut 2>>
+<<camera BlackImage>>
+<<fadeIn 1>>
+<<wait 2>>
+Luna: <i>20 minutes later, I get a negative rating on the SL0P app AND a violation as the cherry on top. It notes the doormat stain as damaged property.</i>
+Luna: <i>But who cares? A person who lives in this building is rich enough to buy anything without blinking an augmented eye…</i>
+<<fadeOut 1>>
+<<stopMusic>>
+<<jump Bad_Outcome>>
+===
+
 
 title: Influencer_Continued
 ---
