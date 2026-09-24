@@ -4,8 +4,8 @@
 <<camera Understory>>
 <<place Luna_Neutral>>
 <<bike Luna_Neutral on>>
-<<fadeIn 2>>
 <<expression Luna_Neutral arms_neutral>>
+<<fadeIn 2>>
 Luna: The only thing I need is a big offer so I can get the hell home.
 <<playSFX valMotorcycle>>
 <<expression Luna_Neutral arms_surprised>>
@@ -347,12 +347,12 @@ Luna: Well it’s not my problem anymore. Somebody else’s, maybe.
 title: FluxRingSuccess
 ---
 <<camera Alleyway>>
-<<fadeIn 2>>
-<<set $withCog = false>>
 <<place Luna_Neutral>>
 <<expression Luna_Neutral happy>>
 <<place CyberSeagull>>
 <<expression CyberSeagull cogless>>
+<<fadeIn 2>>
+<<set $withCog = false>>
 // If player completed the Poor_Flirting node, then show the below
 <<if visited("Poor_Flirting") == true>>
 Luna: <i>The gull ruffles his feathers to collect himself, free from the trap that weighed him down. The flux ring is now nestled in the palm of my hand.</i>
@@ -391,9 +391,9 @@ title: TransporterPod
 <<camera AlleywayClear>>
 <<place NubsPod>>
 <<expression NubsPod closed>>
-<<fadeIn 2>>
 <<place Luna_Neutral>>
 <<expression Luna_Neutral arms_neutral>>
+<<fadeIn 2>>
 Luna: <i>Turns out the cybergull had been blocking the view of my package: a transporter pod with the AGENTS logo stamped across it.</i>
 Luna: <i>It’s an odd place to leave something so brand-spanking new.</i>
 <<expression Luna_Neutral surprised>>
@@ -786,7 +786,7 @@ Luna: (Might as well squeeze another job in before riding back home…)
         <<expression Luna_Neutral annoyed>>
 <<playSFX lunaMotorcycle>>
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-<<pose Nubs SceneSample_NubsFadeOut>>
+<<pose Nubs NubsFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
 <<exit Nubs>>
