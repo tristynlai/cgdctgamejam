@@ -58,6 +58,11 @@ public class TutorialHighlighter : MonoBehaviour
 
         if (target != null)
         {
+            if (target == messagesButton || target == settingsButton)
+            {
+                target.SetActive(true);
+            }
+
             currentlyHighlighted = target;
             activeGlowCoroutine = StartCoroutine(PulseGlowAndBrighten(target));
         }
@@ -83,12 +88,20 @@ public class TutorialHighlighter : MonoBehaviour
         if (currentlyHighlighted != null)
         {
             currentlyHighlighted.transform.localScale = Vector3.one;
+
+            if (currentlyHighlighted == messagesButton || currentlyHighlighted == settingsButton)
+            {
+                currentlyHighlighted.SetActive(false);
+            }
+
             currentlyHighlighted = null;
         }
     }
 
     private IEnumerator PulseGlowAndBrighten(GameObject obj)
     {
+        yield return null;
+
         Transform t = obj.transform;
         Vector3 originalScale = Vector3.one;
         Vector3 targetScale = originalScale * 1.1f;
