@@ -526,9 +526,8 @@ Queenie: Ohmigods, fam! Look at this cute cyberpet!
 <<expression Luna_Neutral surprised>> 
 Luna: (Shit! I can't have her livestream a damn war machine to millions of people!)
 <<expression Luna_Neutral shy_annoyed>> 
-<<expression CompanionNubs confused>>
-Luna: N-No cameras! He's…he's got a location tracker on him! So everyone will know where you live!
 <<expression CompanionNubs loading>>
+Luna: N-No cameras! He's…he's got a location tracker on him! So everyone will know where you live!
 Nubs: I do. I can begin broadcasting our coordinates right now…
 <<expression Influencer annoyed>>
 Queenie: What the-?! 
@@ -639,7 +638,9 @@ title: Queenie_Ideas
     <<set $sample = 1>>
     ///////////////Show the item asset: beauty sample addressed to Kaya
     Queenie: Done.
+    <<place BeautySample>>
     Luna: <i>I take the beauty product from her porcelain hands and slip it into my back pocket.</i>
+      <<exit BeautySample>>
     Queenie: So now I know Kaya. But who is my hella mysterious and wise midnight delivery girl?
     Luna: It's Luna.
     <<expression CompanionNubs arms_happy>>
