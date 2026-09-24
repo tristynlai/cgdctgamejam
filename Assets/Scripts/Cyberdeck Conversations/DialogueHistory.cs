@@ -64,12 +64,30 @@ public class DialogueHistory : MonoBehaviour
 
         switch (nameLower)
         {
+            case "incompetent director":
+                return "#6AB13A";
             case "val":
-                return "#C87CE8";
-            case "luna":
-                return "#5BC0EB";
+                return "#BB3DBC";
+            case "nat":
+                return "#7F35C7";
+            case "nubs":
+                return "#3DADFF";
+            case "queenie":
+                return "#E2629B";
+            case "maxx":
+                return "#00FFF6";
+            case "blank":
+                return "#989898";
+            case "benji":
+                return "#015693";
             case "kaya":
-                return "#FDE74C";
+                return "#FBB322";
+            case "luna":
+                return "#FF0000";
+            case "cybergull":
+                return "#EFF235";
+            case "the big bad":
+                return "#6379C1";
             default:
                 return "#FFFFFF";
         }
