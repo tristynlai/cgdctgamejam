@@ -213,6 +213,7 @@ Luna: Time to roll.
 title: Alleyway
 ---
 <<camera Alleyway>>
+<<playMusic mysteriousPuzzle>>
 <<fadeIn 2>>
 <<place Luna_Neutral>>
 <<expression Luna_Neutral neutral>>
@@ -506,6 +507,7 @@ title: MeetLilGuy
 ---
 // Fade in to show the CG with the transporter pod opened and Lil Guy revealed. Let’s NOT call in character sprites.
 <<camera LilGuyCG>>
+<<playMusic wanderingat3am>>
 <<fadeIn 2>>
 <<wait 2>>
 Luna: <i>The pod sheds its protective packaging and reveals a creature in a large glass container.</i>
