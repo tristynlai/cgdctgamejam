@@ -4957,6 +4957,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 35ae054ea2853fe4c9a3d10eb57a236a, type: 3}
   - name: titleTheme
     clip: {fileID: 8300000, guid: 3deacd6db6c2944b0848b56e1566aa4b, type: 3}
+  - name: mysteriousPuzzle
+    clip: {fileID: 8300000, guid: b96d85cc23130445f826e5eecd4a7fbe, type: 3}
+  - name: wanderingat3am
+    clip: {fileID: 8300000, guid: 2ef3a90ca46af4e469f1980cd6b1eab7, type: 3}
   sfx:
   - name: notification
     clip: {fileID: 8300000, guid: d4a92af5bacd04bf09b5d7fa9e3da19e, type: 3}
