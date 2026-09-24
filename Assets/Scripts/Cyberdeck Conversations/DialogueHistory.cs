@@ -70,6 +70,8 @@ public class DialogueHistory : MonoBehaviour
                 return "#BB3DBC";
             case "nat":
                 return "#7F35C7";
+            case "t.a.b":
+                return "#3DADFF";
             case "nubs":
                 return "#3DADFF";
             case "queenie":
