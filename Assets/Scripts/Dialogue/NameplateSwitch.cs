@@ -48,7 +48,17 @@ public class NameplateSwitch : MonoBehaviour
         if (currentText == lastSeenName) return;
 
         lastSeenName = currentText;
-        UpdateSprite(lastSeenName);
+
+        string searchName = currentText;
+        
+        if (currentText.StartsWith("???_"))
+        {
+            searchName = currentText.Substring(4); 
+            
+            yarnNameText.text = "???"; 
+        }
+
+        UpdateSprite(searchName);
     }
 
     private void UpdateSprite(string currentName)

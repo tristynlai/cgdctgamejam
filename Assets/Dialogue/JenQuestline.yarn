@@ -23,7 +23,7 @@ Luna: <i>The glass lobby doors swing open, and I step inside to search for the o
 Luna: <i>A man in an outdated puffer vest and overpriced pants immediately walks over, waving at me.</i>
 <<place Dad_Neutral>>
 <<expression Dad_Neutral neutral>>
-???: Delivery for Benji?
+???_Benji: Delivery for Benji?
 Luna: Yeah.
 <<expression CompanionNubs neutral>>
 <<expression Dad_Neutral happy>>
@@ -464,10 +464,10 @@ title: Influencer_Continued
 <<expression Influencer neutral>>
 Luna: <i>A woman with impeccable hair stands in the doorway. I notice a bead wedged in between her eyes and realize it’s an AGENTS implant.</i>
 <<expression Influencer happy>>
-???: Heyo, fam! My catering order from SL0P just arrived. Powered by AGENTS, of course! I always try to shop local and support real human labor in our economy~!
+???_Queenie: Heyo, fam! My catering order from SL0P just arrived. Powered by AGENTS, of course! I always try to shop local and support real human labor in our economy~!
 Luna: Her followers get to see the bags—and the stain on her doormat—before she does.
 <<expression Influencer annoyed>>
-???: ...
+???_Queenie: ...
 <<set $badend += 1>>
 <<expression Luna_Neutral arms_neutral>>
 Luna: (I feel like I've seen her before. But where…)
@@ -475,14 +475,14 @@ Luna: (I feel like I've seen her before. But where…)
 -> Ask if she's been in an ad before
     <<set $goodend += 1>>
     <<expression Influencer happy>>
-    ???: Are you talking about my downtown billboard in the beauty district? Or maybe my limited-edition cosmetic line in collaboration with Mr. Bae-zos 2.0?
+    ???_Queenie: Are you talking about my downtown billboard in the beauty district? Or maybe my limited-edition cosmetic line in collaboration with Mr. Bae-zos 2.0?
     Luna: <i>She moves her cyberphone so that I'm viewable to her live audience, which makes me freeze in place.</i>
     <<expression Luna_Neutral arms_annoyed>>
-    ???: Look, everyone! My delivery gal is a Queenie fan! Part of the royal fam.
+    ???_Queenie: Look, everyone! My delivery gal is a Queenie fan! Part of the royal fam.
     Luna: (“Fan?” Hell no. I didn't ask to be on someone's livestream…)
 -> Ask for her name, using the delivery as an excuse
     <<expression Influencer happy>>
-    ???: It’s Queenie! Ohmigods, you’ve never heard of me before!?
+    ???_Queenie: It’s Queenie! Ohmigods, you’ve never heard of me before!?
     Luna: <i>She moves her cyberphone so that I'm viewable to her audience, which makes me freeze in place.</i>
     <<expression Luna_Neutral arms_annoyed>>
     Queenie: Can you believe this, my royal fam? My delivery girl doesn't know who I am!
@@ -490,11 +490,11 @@ Luna: (I feel like I've seen her before. But where…)
 -> Just take a photo and leave
     <<set $badend += 1>>
     <<expression Influencer annoyed>> 
-    ???: Hey! No photos!
+    ???_Queenie: Hey! No photos!
     Luna: It’s a photo of the FOOD, not you. If I don't take one, I get fired.
     <<expression Luna_Neutral arms_neutral>>
     Luna: Or do you not support “human labor”?
-    ???: Rrrgh!
+    ???_Queenie: Rrrgh!
     Luna: <i>I hear notifications and reaction noises ping from the woman's phone. Before I can give her followers more tea, I turn around and make my way back down to the lobby.</i>
     <<expression CompanionNubs arms_worried>>
     Nubs: I'm not sure that was a good idea…
