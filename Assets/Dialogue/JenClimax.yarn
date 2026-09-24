@@ -83,7 +83,7 @@ title: LilGuy_Day
         <<stopMusic>>
         <<expression Luna_Neutral surprised>>
         <<expression Nubs arms_neutral>>
-        ???: You deserve JAIL TIME.
+        ???_Maxx: You deserve JAIL TIME.
 <<endif>>
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
 <<pose Nubs SceneSample_NubsFadeOut>>
@@ -107,7 +107,7 @@ title: MaxxIntro
 <<place Maxx>>
 <<expression Maxx neutral>>
 <<wait 1>>
-???: Straight to jail.
+???_Maxx: Straight to jail.
 <<expression Luna_Neutral arms_annoyed>>
 Luna: <i>A douchebag with an augmented glass jaw rolls up next to me on his bulky motorbike. The thing has been customized to bits to show off—and not to drive.</i>
 Luna: <i>I press my weight deeper into my motorbike, ready to bounce at any moment.</i>
