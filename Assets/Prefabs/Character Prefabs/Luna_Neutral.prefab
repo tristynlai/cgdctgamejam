@@ -307,6 +307,12 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 610dc212e683f4600aaef39801e93b83, type: 3}
   - name: arms_delivery_dropped
     sprite: {fileID: 21300000, guid: 62ef91bd19deb47e8a26ee79ced9e0b4, type: 3}
+  - name: arms_delivery_benji
+    sprite: {fileID: 21300000, guid: 546f079c4202a415ba5ad281f6bc969d, type: 3}
+  - name: arms_delivery_surprise
+    sprite: {fileID: 21300000, guid: 03ea7fb97f5e34a5bb72ae577b2cb70d, type: 3}
+  - name: arms_delivery_benji_annoyed
+    sprite: {fileID: 21300000, guid: ad8518593316540bfa1c35d95bd4137c, type: 3}
   faceImage: {fileID: 1231748651660897690}
   bikeObject: {fileID: 4981294093968955896}
 --- !u!95 &3799246627055187804

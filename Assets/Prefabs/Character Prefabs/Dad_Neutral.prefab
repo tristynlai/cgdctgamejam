@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 631, y: -85}
-  m_SizeDelta: {x: 1055, y: 2018}
+  m_SizeDelta: {x: 1200, y: 2048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7966481276468694928
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 216696147124767370, guid: cc6496d8855cb4be8b8c704e33839b38, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc6496d8855cb4be8b8c704e33839b38, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -113,9 +113,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   expressions:
   - name: neutral
-    sprite: {fileID: 216696147124767370, guid: cc6496d8855cb4be8b8c704e33839b38, type: 3}
+    sprite: {fileID: 21300000, guid: cc6496d8855cb4be8b8c704e33839b38, type: 3}
   - name: happy
-    sprite: {fileID: -2706448426169035124, guid: 323a97e8eac08489c999c105a981d3da, type: 3}
+    sprite: {fileID: 21300000, guid: 323a97e8eac08489c999c105a981d3da, type: 3}
   - name: annoyed
-    sprite: {fileID: -4184868570760043709, guid: f404f67ac9eb74f448ce77cf93f744e3, type: 3}
+    sprite: {fileID: 21300000, guid: f404f67ac9eb74f448ce77cf93f744e3, type: 3}
+  - name: delivery
+    sprite: {fileID: 21300000, guid: 2747860baaf21401ebe968c0bb17bed6, type: 3}
+  - name: delivery_neutral
+    sprite: {fileID: 21300000, guid: 21acef4bb6c0b45b3954b510eede6405, type: 3}
+  - name: delivery_annoyed
+    sprite: {fileID: 21300000, guid: 2181f8bd5990b4b7186040c74ad8341e, type: 3}
+  - name: delivery_happy
+    sprite: {fileID: 21300000, guid: 2865a1bb4eda444ffb97b4265010ea63, type: 3}
+  - name: cringe
+    sprite: {fileID: 21300000, guid: 59b25b5e20c1e4496b4c5586baecd9e8, type: 3}
+  - name: delivery_cringe
+    sprite: {fileID: 21300000, guid: ce78157e7adae407f8a971b28acac833, type: 3}
+  - name: delivery_nofood
+    sprite: {fileID: 21300000, guid: ea8399fb7a883455f90eb727a45de84c, type: 3}
   faceImage: {fileID: 6819647134089841446}
+  bikeObject: {fileID: 0}

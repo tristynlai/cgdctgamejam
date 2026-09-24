@@ -14,7 +14,7 @@ title: DivorcedDad
 <<camera Lobby>>
 <<fadeIn 2>>
 <<place Luna_Neutral>>
-<<expression Luna_Neutral neutral>>
+<<expression Luna_Neutral arms_delivery_benji>>
 Luna: <i>The delivery takes me to the Meridian District, home to the tech zillionaires and their corporate grifters. I approach a high-end luxury apartment tower and feel its tinted windows judge me as I park my motorbike right outside the entrance.</i> 
 <<place CompanionNubs>>
 <<expression CompanionNubs wave_worried>>
@@ -26,21 +26,24 @@ Luna: <i>A man in an outdated puffer vest and overpriced pants immediately walks
 ???: Delivery for Benji?
 Luna: Yeah.
 <<expression CompanionNubs neutral>>
+<<expression Dad_Neutral happy>>
 Benji: Hey, you're from Root Town, right? 
 Luna: <i>He points at my motorbike's decal outside, which is a large gnarled tree. The symbol of Root Town.</i>
-<<expression Luna_Neutral arms_neutral>>
 Luna: (The guy’s got some crazy vision with those glasses…) 
-<<expression Dad_Neutral happy>>
+<<expression Dad_Neutral cringe>>
 Benji: I'm from Root Town, too. HELLA!
-<<expression Luna_Neutral arms_annoyed>>
+<<expression Luna_Neutral arms_delivery_benji_annoyed>>
 Luna: (And he’s hella cringe.)
+<<expression Luna_Neutral arms_annoyed>>
+<<expression Dad_Neutral delivery>>
 Luna: <i>I shove the order into the man’s hands and mark my order as complete on the SL0P app without another word.</i>
 Luna: <i>But he lingers in the lobby.</i>
 Luna: (It feels like he's REALLY desperate to say something, but has no one to say it to.)
 
+
 -> Ignore him and leave
     <<set $badend += 1>>
-    <<expression Dad_Neutral annoyed>>
+    <<expression Dad_Neutral delivery_annoyed>>
     <<expression CompanionNubs worried>>
     Luna: <i>I turn around and leave. A job's a job, and I finished it.</i>
     <<playSFX lunaMotorcycle>>
@@ -64,27 +67,29 @@ Luna: (It feels like he's REALLY desperate to say something, but has no one to s
     <<jump Bad_Outcome>>
 -> Stare at him, expecting him to talk
     <<set $goodend += 1>>
-    <<expression Dad_Neutral happy>>
+    <<expression Dad_Neutral delivery_happy>>
     Benji: Giving me the Gen Z stare, huh?
-    Luna: No one says that. That's like 40 years old.
-    Luna: (Which is probably how old he is. Or even older.)
+    <<expression Luna_Neutral annoyed>>
+    Luna: Must have learned it from my Gen Z grandma. That line's like 40 years old, by the way.
+    Luna: (Which is probably how old he is... Or even older.)
     Luna: What do you want?
     Benji: Oh, you’ve got time? Awesome! I'm glad the SL0P app still hires humans and gives their employees—er, contractors—paid breaks.
-    Luna: We don’t. And time's ticking.
+    Luna: <i>We don’t. And time's ticking.</i>
 
+<<expression Dad_Neutral delivery_cringe>>
 Benji: I just HAVE to tell someone. I'm going to get my first AGENTS implant tomorrow! I’m going all-in on eye surgery. Not even the best AGENTS glasses can beat an implant’s eyesight. 
 Luna: (So that’s why his vision was so creepy good…)
 Benji: My doc said I should be on an all-liquid diet for best results. But tomorrow, I'll be a new man who can finally stop eating sad soups!
+<<expression Dad_Neutral delivery_nofood>>
 Luna: <i>He opens his delivery bag and frowns.</i>
 <<set $badend += 1>>
-<<expression Dad_Neutral annoyed>>
 Benji: Hey, what gives!? Where’s my side order of ion kelp crystals!?
 <<expression CompanionNubs happy>>
 <<expression Luna_Neutral arms_annoyed>>
-Luna: <i>I look down at my feet, where Nubs is. Glowing green goop is smeared across his screen.</i>
+Luna: <i>I look at Nubs, who looks suspiciously full all of a sudden.</i>
 <<expression CompanionNubs worried>>
 Nubs: Oops.
-Luna: (How does he even eat?)
+Luna: (How does he even eat... and when did he sneak that out of the bag?)
 <<jump DivorcedDad_Surgery>>
 ===
 
@@ -94,14 +99,15 @@ Luna: <i>The man isn't happy—and I can't afford another violation on the SL0P 
 Luna: (He was yapping about his dumb surgery. Maybe I can distract him…)
 
 -> Ask him about the AGENTS implant
+    <<expression Luna_Neutral neutral>>
     Luna: Why are you getting the surgery?
-    <<expression Dad_Neutral neutral>>
+     <<expression Dad_Neutral delivery_cringe>>
     Benji: Yes, my surgery!
 -> Congratulate him sarcastically
     <<set $goodend += 1>>
     <<expression Luna_Neutral neutral_shy>>
     Luna: Congrats. I'm sure your surgery will be SO life-changing…
-    <<expression Dad_Neutral happy>>
+    <<expression Dad_Neutral delivery_cringe>>
     Benji: Thank you! I'm excited for it, too.
     <<expression CompanionNubs arms_happy>>
     Nubs: …
@@ -134,9 +140,9 @@ Luna: (He was yapping about his dumb surgery. Maybe I can distract him…)
     <<jump Bad_Outcome>>
 Benji: I'm getting it because all the guys I work with already have something augmented.
 Benji: They got their hands done to type faster, or their brains to sync directly with the company’s internal systems. Plus, I’ll finally be able to ditch the glasses and look less chopped.
-Luna: (Who’s gonna tell him…)
+Luna: (Who’s gonna tell him… and why does he keep using slang from decades ago?)
 Benji: This is a dream job. Everyone in Root Town wants to be me.
-<<expression Dad_Neutral annoyed>>
+<<expression Dad_Neutral delivery_annoyed>>
 Benji: But I need to keep up. I can't fall behind.
 <<jump DivorcedDad_Questions>>
 ===
@@ -148,22 +154,24 @@ title: DivorcedDad_Questions
     <<expression Luna_Neutral arms_neutral>>
     Benji: More implants means more clients, which means more money.
     Luna: And that eventually leads to…?
+    <<expression DadNeutral delivery_cringe>>
     Benji: Financial freedom! And the time to finally do whatever I want. Heck, I might even become the CEO of my own company!
     Benji: AGENTS take 75% of what I make, though…
-    <<expression Dad_Neutral happy>>
-    Benji: But that's late-stage capitalism, baby!
+    <<expression Dad_Neutral delivery_happy>>
+    Benji: But that's late-stage capitalism, baby. You gotta pay to play!
     Luna: (He doesn’t need surgery. He’s already delusional.)
-    <<expression Dad_Neutral neutral>>
+    <<expression Dad_Neutral delivery_cringe>>
     //Return to the set of the questions in this mode, but remove this question or block it out since the player has already received the answer for this question.
     <<jump DivorcedDad_Questions>>
 -> Where did you work in Root Town?
+    <<expression Dad_Neutral delivery_neutral>>
     Benji: You know the story. A low-paying sales job with grueling work hours.
     Benji: But once I got this job at AGENTS, everything changed. I got relocated to this swanky tower, free food, and a personal droid that chauffeurs me to and from the office.
     Benji: It was all just for me, though. The contract didn't include my family. Just 80 hour days, seven days a week. I thought it'd pay off.
     Benji: Not quick enough, though. Divorce papers were mailed to my apartment within months of starting at AGENTS.
         -> You would put work before family? Yikes…
             <<set $badend += 1>>
-            <<expression Dad_Neutral annoyed>>
+             <<expression Dad_Neutral delivery_annoyed>>
             Benji: You're one to talk. You don't have a wife and kid.
             Luna: Pretty rude to assume, unc.
             Benji: It felt like it was worth the cost. But now…
@@ -176,9 +184,8 @@ title: DivorcedDad_Questions
             Benji: At the time, yes. 
             Benji: But now…
 -> Where do you work now? <<once>>
-    <<expression Dad_Neutral neutral>>
+    <<expression Dad_Neutral delivery_neutral>>
     Benji: I work for AGENTS. It'd be weird if I didn't stand by the product I work for, right? It's like a rite of passage.
-    <<expression Dad_Neutral neutral>>
     //Return to the set of the questions in this mode, but remove this question or block it out since the player has already received the answer for this question.
     <<jump DivorcedDad_Questions>>
 
@@ -190,7 +197,7 @@ Luna: <i>I hear his voice crack, then taper off into the dead air between us.</i
 title: HelpBenji
 ---
 <<declare $timetime = 0>>
-<<expression Dad_Neutral neutral>>
+<<expression Dad_Neutral delivery_neutral>>
 Benji: Everything I'm doing now…it was to spend more time with them.
 Benji: You wouldn't understand…
 
@@ -201,9 +208,9 @@ Benji: You wouldn't understand…
     Luna: (Look at me, talking about choices with an ultra-rich sellout. Like I'm one to talk…)
 -> Hope your kid is proud of you for selling your soul.
     <<set $badend += 1>>
-    <<expression Dad_Neutral annoyed>>
+    <<expression Dad_Neutral delivery_annoyed>>
     <<expression CompanionNubs arms_worried>>
-    Benji: Fuck off! I hope you rot like the rest of Root Town.
+    Benji: Screw you! I hope you rot like the rest of Root Town.
     Nubs: I'm not sure that was a good idea…
     Luna: Whatever. The last thing Root Town needs is a traitor and a sellout.
     // Motorcycle SFX sound
@@ -385,9 +392,11 @@ Luna: <i>…And wait.</i>
     <<set $goodend += 1>>
     <<expression Luna_Neutral arms_delivery_annoyed>>
     Luna: I don't have all day, diva.
+    <<expression Luna_Neutral arms_delivery_surprise>>
     Nubs: Ah. So the owners of this abode are female versions of a hustler?
     Luna: W-What?! No. Where are you even-? Ugh. Nevermind.
     <<expression CompanionNubs angry>>
+    <<expression Luna_Neutral arms_delivery_annoyed>>
     Luna: <i>I press the button again on the glass interface. Time's ticking, and I can feel the little creature's beady little eyes on my back. I know what I promised him.</i>
     Nubs: How long do you intend to dally at the door?!
 -> Take a photo of the order and leave
