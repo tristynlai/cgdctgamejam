@@ -4172,6 +4172,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 4209402ed7507a548bbb38c362348f97, type: 3}
   - name: tiresScreech
     clip: {fileID: 8300000, guid: 96fee5dc733211b4a809bab4e305ddef, type: 3}
+  - name: bubblePop
+    clip: {fileID: 8300000, guid: bf4ce1546b1444ddcae51cdcba7fa912, type: 3}
+  - name: cyberdeckOpen
+    clip: {fileID: 8300000, guid: 174578a42bf3e4c50b650d805ab2fd89, type: 3}
+  - name: cyberdeckClose
+    clip: {fileID: 8300000, guid: 2440d568f411f4490b673470e5b92af0, type: 3}
 --- !u!4 &1403699021
 Transform:
   m_ObjectHideFlags: 0

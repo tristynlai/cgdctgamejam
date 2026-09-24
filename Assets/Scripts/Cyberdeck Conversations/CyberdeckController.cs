@@ -218,6 +218,22 @@ public class CyberdeckController : MonoBehaviour
         selectTab(1);
     }
 
+    private void PlayCyberdeckSFX(string sfxName)
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioClip clip = AudioManager.Instance.GetSFX(sfxName);
+            if (clip != null)
+            {
+                GameObject tempAudio = new GameObject("TempCyberdeckAudio");
+                AudioSource source = tempAudio.AddComponent<AudioSource>();
+                source.spatialBlend = 0f; 
+                source.PlayOneShot(clip);
+                Destroy(tempAudio, clip.length);
+            }
+        }
+    }
+
     public void OpenCyberdeck()
     {
         if (cyberdeckParentCanvas != null)
@@ -228,6 +244,8 @@ public class CyberdeckController : MonoBehaviour
         {
             gameObject.SetActive(true);
         }
+        
+        PlayCyberdeckSFX("cyberdeckOpen");
         UpdateChatViewRegistration();
     }
 
@@ -239,6 +257,8 @@ public class CyberdeckController : MonoBehaviour
         }
 
         isWaitingForExit = false;
+
+        PlayCyberdeckSFX("cyberdeckClose");
 
         if (chatDialogueView != null)
         {
@@ -352,6 +372,7 @@ public class CyberdeckController : MonoBehaviour
             gameObject.SetActive(true);
         }
 
+        PlayCyberdeckSFX("cyberdeckOpen");
         UpdateChatViewRegistration();
     }
 
@@ -363,6 +384,8 @@ public class CyberdeckController : MonoBehaviour
         }
 
         isWaitingForExit = false;
+
+        PlayCyberdeckSFX("cyberdeckClose");
 
         if (historyOverlayPanel != null)
         {

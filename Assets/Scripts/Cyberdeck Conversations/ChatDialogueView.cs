@@ -79,6 +79,20 @@ public class ChatDialogueView : DialoguePresenterBase
         var bubble = Instantiate(prefab, bubbleContainer);
         bubble.ShowText(line.TextWithoutCharacterName.Text);
 
+        /* For Alyssa to review if keep or not!
+        if (AudioManager.Instance != null)
+        {
+            AudioClip bubbleSfx = AudioManager.Instance.GetSFX("bubblePop"); 
+            if (bubbleSfx != null)
+            {
+                GameObject tempAudio = new GameObject("TempBubbleAudio");
+                AudioSource source = tempAudio.AddComponent<AudioSource>();
+                source.spatialBlend = 0f;
+                source.PlayOneShot(bubbleSfx);
+                Destroy(tempAudio, bubbleSfx.length);
+            }
+        }*/
+
         Canvas.ForceUpdateCanvases();
         var scrollRect = bubbleContainer.GetComponentInParent<UnityEngine.UI.ScrollRect>();
         if (scrollRect != null)
