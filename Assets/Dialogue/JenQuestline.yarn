@@ -48,8 +48,8 @@ Luna: (It feels like he's REALLY desperate to say something, but has no one to s
     Luna: <i>I turn around and leave. A job's a job, and I finished it.</i>
     <<playSFX lunaMotorcycle>>
     <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-    <<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
-    <<pose Dad_Neutral SceneSample_DadFadeOut>>
+    <<pose CompanionNubs CompanionNubsFadeOut>>
+    <<pose Dad_Neutral DadFadeOut>>
     <<wait 1>>
     <<exit Luna_Neutral>>
     <<exit CompanionNubs>>
@@ -121,8 +121,8 @@ Luna: (He was yapping about his dumb surgery. Maybe I can distract him…)
     Luna: <i>I scoop up the creature and put him back on my motorbike. I ride away, leaving the deadbeat customer in a cloud of smoke to choke on.</i>
     Luna: <i>Because fuck AGENTS.</i>
     <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-    <<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
-    <<pose Dad_Neutral SceneSample_DadFadeOut>>
+    <<pose CompanionNubs CompanionNubsFadeOut>>
+    <<pose Dad_Neutral DadFadeOut>>
     <<wait 1>>
     <<exit Luna_Neutral>>
     <<exit CompanionNubs>>
@@ -217,8 +217,8 @@ Benji: You wouldn't understand…
     <<playSFX lunaMotorcycle>>
     Luna: <i>I rev my bike's engine and ride off with Nubs.</i>
     <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-    <<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
-    <<pose Dad_Neutral SceneSample_DadFadeOut>>
+    <<pose CompanionNubs CompanionNubsFadeOut>>
+    <<pose Dad_Neutral DadFadeOut>>
     <<wait 1>>
     <<exit Luna_Neutral>>
     <<exit CompanionNubs>>
@@ -269,8 +269,8 @@ Luna: G-Gotta go!
 <<playSFX lunaMotorcycle>>
 Luna: <i>I scoop up Nubs, dump him onto my motorbike, and ride off into the night.</i>
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-<<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
-<<pose Dad_Neutral SceneSample_DadFadeOut>>
+<<pose CompanionNubs CompanionNubsFadeOut>>
+<<pose Dad_Neutral DadFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
 <<exit CompanionNubs>>
@@ -440,7 +440,7 @@ title: Influencer_LeaveEarly
 Luna: <i>Nubs stands and watches as I try to clean up his mess. He obviously wants to say something, but I don't let him.</i>
 Luna: Let's just get out of here.
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-<<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
+<<pose CompanionNubs CompanionNubsFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
 <<exit CompanionNubs>>
@@ -500,8 +500,8 @@ Luna: (I feel like I've seen her before. But where…)
     Nubs: I'm not sure that was a good idea…
     Luna: Let's just get out of here.
     <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-    <<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
-    <<pose Influencer SceneSample_InfluencerFadeOut>>
+    <<pose CompanionNubs CompanionNubsFadeOut>>
+    <<pose Influencer InfluencerFadeOut>>
     <<wait 1>>
     <<exit Luna_Neutral>>
     <<exit CompanionNubs>>
@@ -683,7 +683,7 @@ title: Queenie_Ideas
     <<expression Luna_Neutral arms_annoyed>>     
     Luna: You live in a penthouse suite where everything's delivered to your door. And you STILL can't take cancel culture? It's giving privileged sob story.
     Queenie: Get out of my face. We're done.
-    <<pose Influencer SceneSample_InfluencerFadeOut>>
+    <<pose Influencer InfluencerFadeOut>>
     <<wait 1>>
     <<exit Influencer>>
     <<camera PenthouseClosed>>
@@ -692,7 +692,7 @@ title: Queenie_Ideas
     Nubs: I don’t think that was a good idea…
     Luna: <i>I ignore the creature and instead snap a photo of the delivery because I need to prove that I did it correctly. A job's a job.</i>
     <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-    <<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
+    <<pose CompanionNubs CompanionNubsFadeOut>>
     <<wait 1>>
     <<exit Luna_Neutral>>
     <<exit CompanionNubs>>
@@ -706,8 +706,8 @@ title: Queenie_Ideas
     <<jump Bad_Outcome>>
 
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-<<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
-<<pose Influencer SceneSample_InfluencerFadeOut>>
+<<pose CompanionNubs CompanionNubsFadeOut>>
+<<pose Influencer InfluencerFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
 <<exit CompanionNubs>>

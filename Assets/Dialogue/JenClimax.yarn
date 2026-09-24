@@ -189,7 +189,7 @@ title: MaxxChoices
     <<playSFX lunaMotorcycle>>
     Luna: <i>And with that, I start hauling ass back to Root Town.</i>
     <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-    <<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
+    <<pose CompanionNubs CompanionNubsFadeOut>>
     <<wait 1>> 
     <<exit Luna_Neutral>>
     <<exit CompanionNubs>>
@@ -208,7 +208,7 @@ title: MaxxChoices
     <<expression Maxx intrigued>>
     Maxx: Thanks, but you're not my type.
     <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-    <<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
+    <<pose CompanionNubs CompanionNubsFadeOut>>
     <<wait 1>>
     <<exit Luna_Neutral>>
     <<exit CompanionNubs>>
@@ -229,7 +229,7 @@ Maxx: Didn't think I'd need to use this…
 <<wait 1>>
 // Play Beep SFX
 <<playSFX beep>>
-<<pose Maxx SceneSample_MaxxFadeOut>>
+<<pose Maxx MaxxFadeOut>>
 <<wait 1>>
 <<exit Maxx>>
 <<fadeOut 2>>
@@ -256,8 +256,8 @@ Maxx: To the scrapyard, pillbug!
 Nubs: !!!
 <<expression CompanionNubs agents>>
 Nubs: …
-<<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
-<<pose Maxx SceneSample_MaxxFadeOut>>
+<<pose CompanionNubs CompanionNubsFadeOut>>
+<<pose Maxx MaxxFadeOut>>
 <<wait 1>>
 <<exit Maxx>>
 <<exit CompanionNubs>>
@@ -376,14 +376,14 @@ Luna: Not yet.
 // SFX motorcycle tires
 <<playSFX tiresScreech>>
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-<<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
+<<pose CompanionNubs CompanionNubsFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
 <<exit CompanionNubs>>
 Luna: <i>I veer off, making a hard left turn onto another highway onramp. It's the turn only a Root Town local would know.</i>
 Maxx: Dammit!
 Luna: <i>Maxx doesn't make the turn in time and continues straight…right into the growing horde of cybergulls.</i>
-<<pose Maxx SceneSample_MaxxFadeOut>>
+<<pose Maxx MaxxFadeOut>>
 <<wait 1>>
 <<exit Maxx>>
 <<fadeOut 2>>
@@ -836,8 +836,8 @@ Luna: (Looks like I've gotta find another way to make money.)
 <<expression Luna_Neutral arms_neutral>>
 Luna: (Let's hope the part about AGENTS finding out where I live doesn’t come true…)
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-<<pose CompanionNubs SceneSample_CompanionNubsFadeOut>>
-<<pose Kaya_Neutral SceneSample_KayaFadeOut>>
+<<pose CompanionNubs CompanionNubsFadeOut>>
+<<pose Kaya_Neutral KayaFadeOut>>
 <<pose Nat SceneSample_NatFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
