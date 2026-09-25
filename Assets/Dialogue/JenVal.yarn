@@ -98,7 +98,7 @@ Luna: (I’ve unleashed a gearhead beast. There’s no end to this conversation.
 
 title: Poor_Flirting
 ---
-<<expression Val neutral>>
+<<expression Val laugh>>
 <<expression Luna_Neutral shy>>
 Luna: <i>Val is beaming, which makes me blush redder than that damn belladonna apple.</i>
 Val: That's so sweet! You're cute.
