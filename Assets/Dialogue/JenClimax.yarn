@@ -426,6 +426,7 @@ title: BridgeResolution
 <<fadeIn 2>>
 <<if $withCog == true>>
 <<place Luna_Neutral>>
+<<pose Luna_Neutral LunaFadeIn_BridgeBike>>
 <<expression Luna_Neutral neutral>>
 <<place CompanionNubs>>
 <<expression CompanionNubs agents>>
@@ -596,7 +597,6 @@ Luna: Me too.
 <<pose Nubs SceneSample_NubsFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
-<<bike Luna_Neutral off>>
 <<exit Nubs>>
 <<fadeOut 2>>
 <<stopMusic>>
