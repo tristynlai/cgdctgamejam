@@ -51,7 +51,7 @@ title: Bike_Backstory
 Val: So, you know how factory models are made for smooth highways, right? B-o-r-i-n-g!
 <<expression Val neutral>>
 Val: That’s why I reinforced the frame with carbon weave and mag-alloy ribs. Because where we live in Root Town, we need to handle abandoned traincars, vines, and everything in between.
-<<expression Val flirty>>
+<<expression Val laugh>>
 Val: I even cracked my first prototype trying to jump a crumbling overpass!
 Luna: (I’ve unleashed a gearhead beast. There’s no end to this conversation.)
 
@@ -61,7 +61,7 @@ Luna: (I’ve unleashed a gearhead beast. There’s no end to this conversation.
     Val: But 12 prototypes later, and I’ve finally found my forever bike. The electrical's my favorite part. Every sensor, every light…I wired those by hand.
     <<set $knowsGreenHint = true>>
     Val: It took me three tries to get the order right. No matter what gizmo you’re wiring up, green should be the one you save until the very end. 
-    <<expression Val flirty>>
+    <<expression Val laugh>>
     Val: Hook it up too early and the whole system’s gonna go haywire as soon as you turn on the engine!
     Luna: (Interesting. Should I listen to more?)
      -> Yes. Go off, queen!
@@ -69,7 +69,9 @@ Luna: (I’ve unleashed a gearhead beast. There’s no end to this conversation.
         <<set $knowsBlueHint = true>>
         <<expression Val neutral>>
         Val: Oh YES. Blue before yellow, too. THAT one I learned the hard way. Did it backwards once and I dumped a full charge into my cooling loop. 
+        <<expression Val laugh>>
         Val: It cost me a week—and most of my eyebrows!
+        <<expression Val neutral>>
         Val: See, that's the thing. Corporate bikes are built to last until the warranty expires.
         <<expression Val flirty>>
         Val: But mine's built to survive. She'll outrun anything that's fresh off the showroom floor!
@@ -96,11 +98,12 @@ Luna: (I’ve unleashed a gearhead beast. There’s no end to this conversation.
 
 title: Poor_Flirting
 ---
-<<expression Val flirty>>
+<<expression Val laugh>>
 <<expression Luna_Neutral shy>>
 Luna: <i>Val is beaming, which makes me blush redder than that damn belladonna apple.</i>
 Val: That's so sweet! You're cute.
 Luna: (C-Cute!?)
+<<expression Val flirty>>
 Val: But if you think that'll land you a discount at the shop, then you'll need to try harder~
 <<expression Luna_Neutral arms_shy>>
 Luna: L-Like what?
@@ -114,7 +117,9 @@ Luna: Well, I guess while we’re on the topic…
 
 -> What’s your ideal type?
    <<expression Luna_Neutral shy>>
+   <<expression Val laugh>>
    Val: Asking me directly? Wow, you’re so bold, Luna!
+   <<expression Val flirty>>
    Val: But that’s what I like.
    Val: Someone who’s bold, fiery, and daring. 
    <<expression Val neutral>>
@@ -204,9 +209,9 @@ Luna: Time to roll.
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
+<<bike Luna_Neutral off>>
 <<fadeOut 2>>
 <<wait 2>>
-<<bike Luna_Neutral off>>
 <<jump Alleyway>>
 ===
 

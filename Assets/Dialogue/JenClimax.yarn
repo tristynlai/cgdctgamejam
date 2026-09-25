@@ -292,8 +292,7 @@ title: LilGuyBrainwashed
 ---
 // Play Deadroom track
 <<playMusic deadroom>>
-<<camera BridgeFight>>
-<<camera Bridge>>
+<<camera BridgeBattle>>
 <<fadeIn 2>>
 <<wait 1>>
 Luna: <i>I speed my way onto The Bridge, weaving around self-driving cars and corporate megabuses that shuttle underpaid workers back home.</i>
@@ -597,6 +596,7 @@ Luna: Me too.
 <<pose Nubs SceneSample_NubsFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
+<<bike Luna_Neutral off>>
 <<exit Nubs>>
 <<fadeOut 2>>
 <<stopMusic>>
