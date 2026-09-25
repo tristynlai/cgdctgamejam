@@ -296,6 +296,7 @@ title: DivorcedDad_Good_Outcome
 Luna: <i>I wrap up my delivery job with Nubs and make my way over to The Bridge.</i>
 Luna: <i>The shadow of Root Town lingers in the distance across the ocean.</i>
 <<place Luna_Neutral>>
+<<pose Luna_Neutral LunaFadeIn_BridgeBike>>
 <<expression Luna_Neutral neutral>>
 <<place Nubs>>
 <<expression Nubs neutral>>
