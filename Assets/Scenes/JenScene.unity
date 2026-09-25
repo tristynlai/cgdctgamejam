@@ -5124,6 +5124,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: b96d85cc23130445f826e5eecd4a7fbe, type: 3}
   - name: wanderingat3am
     clip: {fileID: 8300000, guid: 2ef3a90ca46af4e469f1980cd6b1eab7, type: 3}
+  - name: cyberpunkStakeout
+    clip: {fileID: 8300000, guid: 9d11af849bc8b461789d845081c35330, type: 3}
   sfx:
   - name: notification
     clip: {fileID: 8300000, guid: d4a92af5bacd04bf09b5d7fa9e3da19e, type: 3}
@@ -5153,6 +5155,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 96fee5dc733211b4a809bab4e305ddef, type: 3}
   - name: podRattle
     clip: {fileID: 8300000, guid: 4fb040f97414941b8991eb60aed73224, type: 3}
+  - name: kickPod
+    clip: {fileID: 8300000, guid: 265124436d505434e95cd94aa8fa0b7e, type: 3}
 --- !u!4 &1378181040
 Transform:
   m_ObjectHideFlags: 0

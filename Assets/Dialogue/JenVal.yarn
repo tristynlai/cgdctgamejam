@@ -209,9 +209,9 @@ Luna: Time to roll.
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
+<<bike Luna_Neutral off>>
 <<fadeOut 2>>
 <<wait 2>>
-<<bike Luna_Neutral off>>
 <<jump Alleyway>>
 ===
 
