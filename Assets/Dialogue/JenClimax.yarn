@@ -85,7 +85,7 @@ title: LilGuy_Day
         <<expression Nubs arms_neutral>>
         ???_Maxx: You deserve JAIL TIME.
 <<endif>>
-<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<pose Luna_Neutral LunaFadeOut_BridgeBike>>
 <<pose Nubs SceneSample_NubsFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
@@ -101,10 +101,12 @@ title: MaxxIntro
 <<camera Bridge>>
 <<fadeIn 2>>
 <<place Luna_Neutral>>
+<<pose Luna_Neutral LunaFadeIn_BridgeBike>>
 <<expression Luna_Neutral surprised>>
 <<place CompanionNubs>>
 <<expression CompanionNubs arms_neutral>>
 <<place Maxx>>
+<<bike Maxx on>>
 <<expression Maxx neutral>>
 <<wait 1>>
 ???_Maxx: Straight to jail.
@@ -188,7 +190,7 @@ title: MaxxChoices
     // Motorcycle SFX sound
     <<playSFX lunaMotorcycle>>
     Luna: <i>And with that, I start hauling ass back to Root Town.</i>
-    <<pose Luna_Neutral SceneSample_LunaFadeOut>>
+    <<pose Luna_Neutral LunaFadeOut_BridgeBike>>
     <<pose CompanionNubs CompanionNubsFadeOut>>
     <<wait 1>> 
     <<exit Luna_Neutral>>
@@ -207,7 +209,7 @@ title: MaxxChoices
 -> Flirt and distract him before you make a run for it.
     <<expression Maxx intrigued>>
     Maxx: Thanks, but you're not my type.
-    <<pose Luna_Neutral SceneSample_LunaFadeOut>>
+    <<pose Luna_Neutral LunaFadeOut_BridgeBike>>
     <<pose CompanionNubs CompanionNubsFadeOut>>
     <<wait 1>>
     <<exit Luna_Neutral>>
@@ -265,7 +267,7 @@ Luna: <i>I block out the gigachad's cackling as he rides away with the city’s 
 Luna: <i>I sigh, turning to look at Frisscity’s glistening cityscape one last time before I ride off as if nothing ever happened.</i>
 Luna: <i>Because nothing did.</i>
 Luna: <i>Tonight was just another night of trying to survive.</i>
-<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<pose Luna_Neutral LunaFadeOut_BridgeBike>>
 <<wait 1>>
 <<exit Luna_Neutral>>
 // Fully dismiss the dialogue box at this point
@@ -290,13 +292,14 @@ title: LilGuyBrainwashed
 ---
 // Play Deadroom track
 <<playMusic deadroom>>
-// Show the Bridge environment bridge asset, TBD if we’ll have an on the bridge background asset or not!
+<<camera BridgeFight>>
 <<camera Bridge>>
 <<fadeIn 2>>
 <<wait 1>>
 Luna: <i>I speed my way onto The Bridge, weaving around self-driving cars and corporate megabuses that shuttle underpaid workers back home.</i>
 Luna: <i>It's just a few more miles before I reach Root Town, where Frisscity's high-tech gadgets lose signal—and hold no power over me.</i>
 <<place Luna_Neutral>>
+<<pose Luna_Neutral LunaFadeIn_BridgeBike>>
 <<expression Luna_Neutral neutral>>
 <<place CompanionNubs>>
 <<expression CompanionNubs agents>>
@@ -363,6 +366,7 @@ Luna: (This could actually be my key to ditching Maxx for good!)
 <<playSFX maxxMotorcycle>>
 <<expression Luna_Neutral surprised>>
 <<place Maxx>>
+<<bike Maxx on>>
 <<expression Maxx intrigued>>
 Luna: <i>Suddenly I hear tires screeching and then, in a blink of an eye, I see Maxx riding right beside me on his shining stallion of iron garbage.</i>
 Maxx: Boo.
@@ -375,7 +379,7 @@ Maxx: Why aren’t you pulling over? I GOT you. You’re going to JAIL!
 Luna: Not yet.
 // SFX motorcycle tires
 <<playSFX tiresScreech>>
-<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<pose Luna_Neutral LunaFadeOut_BridgeBike>>
 <<pose CompanionNubs CompanionNubsFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
@@ -503,7 +507,7 @@ Nubs: R-Right. This was all just a monetary transaction. Of course…
 Luna: Today's been a huge pain in the ass…
 Luna: (And a reminder of how much I hate Frisscity.)
 Luna: Let’s just get this over with.
-<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<pose Luna_Neutral LunaFadeOut_BridgeBike>>
 <<pose Nubs SceneSample_NubsFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
@@ -589,7 +593,7 @@ Nubs: It's…different.
 <<expression Luna_Neutral arms_happy>>
 Nubs: But I think it looks cooler from this side.
 Luna: Me too.
-<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<pose Luna_Neutral LunaFadeOut_BridgeBike>>
 <<pose Nubs SceneSample_NubsFadeOut>>
 <<wait 1>>
 <<exit Luna_Neutral>>
@@ -835,7 +839,7 @@ Luna: (Just as Maxx promised…)
 Luna: (Looks like I've gotta find another way to make money.)
 <<expression Luna_Neutral arms_neutral>>
 Luna: (Let's hope the part about AGENTS finding out where I live doesn’t come true…)
-<<pose Luna_Neutral SceneSample_LunaFadeOut>>
+<<pose Luna_Neutral LunaFadeOut_BridgeBike>>
 <<pose CompanionNubs CompanionNubsFadeOut>>
 <<pose Kaya_Neutral KayaFadeOut>>
 <<pose Nat SceneSample_NatFadeOut>>

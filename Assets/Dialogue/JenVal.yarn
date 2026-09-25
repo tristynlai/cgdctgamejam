@@ -213,7 +213,7 @@ Luna: Time to roll.
 title: Alleyway
 ---
 <<camera Alleyway>>
-<<playMusic mysteriousPuzzle>>
+<<playMusic cyberpunkStakeout>>
 <<fadeIn 2>>
 <<place Luna_Neutral>>
 <<expression Luna_Neutral neutral>>
@@ -429,6 +429,7 @@ title: KickPod
 ---
 <<set $badend += 1>>
 <<expression Luna_Neutral annoyed>>
+<<playSFX kickPod>>
 Luna: Fuck AGENTS!
 Luna: <i>It feels good to stick it to the tech overlords, even if it's just damaging their property.</i> 
 Luna: <i>The thing inside the pod yelps, but I don't care.</i>

@@ -154,7 +154,7 @@ title: DivorcedDad_Questions
     <<expression Luna_Neutral arms_neutral>>
     Benji: More implants means more clients, which means more money.
     Luna: And that eventually leads to…?
-    <<expression DadNeutral delivery_cringe>>
+    <<expression Dad_Neutral delivery_cringe>>
     Benji: Financial freedom! And the time to finally do whatever I want. Heck, I might even become the CEO of my own company!
     Benji: AGENTS take 75% of what I make, though…
     <<expression Dad_Neutral delivery_happy>>
@@ -244,17 +244,17 @@ Benji: You wouldn't understand…
     Luna: But that doesn't mean you can't take back time now. That's a choice.
     Nubs: Luna…
     Benji: And life is full of choices…
-    <<expression Dad_Neutral happy>>
+    <<expression Dad_Neutral delivery_happy>>
     Benji: Dang, you're one wise delivery driver! Have you ever considered becoming a life coach?
     <<expression Luna_Neutral shy_neutral>>
     Luna: I'd probably make millions if it was this easy.
     Luna: (But it's true. This gig job is a choice…and it might not be too late to change it up.)
-    <<expression Dad_Neutral neutral>>
+    <<expression Dad_Neutral delivery_neutral>>
     Benji: I'm gonna call my ex-wife tonight. Hear my daughter's voice. It's time to start making up for all that lost time.
 
 Benji: Thanks for listening to an old, uncool guy.
 Nubs: …
-<<expression Dad_Neutral happy>>
+<<expression Dad_Neutral delivery_happy>>
 <<expression Luna_Neutral surprised>>
 Benji: Oh! Is that a talking cyberpet?
 <<expression CompanionNubs wave_angry>>
@@ -262,7 +262,7 @@ Nubs: I am not a pet! I am a super secret weap—!
 <<expression Luna_Neutral shy_happy>>
 Luna: Y-Yeah, he’s a pet! Did you know they're gonna let pets speak 25 different languages soon?
 Nubs: Hey! That's proprietary information!
-<<expression Dad_Neutral neutral>>
+<<expression Dad_Neutral delivery_neutral>>
 Benji: Where have I heard that before? Was it in an internal post at AGENTS…?
 Luna: G-Gotta go!
 // Motorcycle SFX sound
@@ -411,6 +411,8 @@ Luna: <i>…And wait.</i>
 <<expression CompanionNubs wave_worried>>
 <<expression Luna_Neutral arms_delivery_dropped>>
 <<pose Luna_Neutral BagSpill>>
+<<wait .9>>
+<<playSFX dropBag>>
 Nubs: Ah!
 Luna: <i>His arms knock the bag out of my hand and it falls to the floor. Green slush oozes out from the bag and stains a very expensive-looking doormat.</i>
 <<expression Luna_Neutral annoyed>>
@@ -429,6 +431,7 @@ Luna: …
 <<expression Luna_Neutral annoyed>>
 <<expression CompanionNubs arms_neutral>>
 Luna: <i>The door clicks open.</i>
+<<playSFX doorClick>>
 <<jump Influencer_Continued>>
 ===
 
@@ -731,6 +734,7 @@ title: Influencer_Good_Outcome
 Luna: <i>I wrap up my delivery job with Nubs and make my way over to The Bridge.</i>
 Luna: <i>The shadow of Root Town lingers in the distance across the ocean.</i>
 <<place Luna_Neutral>>
+<<pose Luna_Neutral LunaFadeIn_BridgeBike>>
 <<expression Luna_Neutral neutral>>
 <<place Nubs>>
 <<expression Nubs neutral>>
@@ -803,6 +807,7 @@ title: Bad_Outcome
 Luna: <i>I wrap up my delivery job and make my way over to The Bridge. The shadow of Root Town lingers in the distance across the ocean.</i>
 ////////////////// Show new phone message opportunities by showing the new notification status on the cyberdeck’s NATIO 3000 logo
 <<place Luna_Neutral>>
+<<pose Luna_Neutral LunaFadeIn_BridgeBike>>
 <<expression Luna_Neutral arms_neutral>>
 <<place Nubs>>
 <<expression Nubs neutral>>
