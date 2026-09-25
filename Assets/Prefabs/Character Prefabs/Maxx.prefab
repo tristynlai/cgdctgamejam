@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -434, y: -95}
+  m_AnchoredPosition: {x: -526.1, y: -432.7}
   m_SizeDelta: {x: 1024, y: 559}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1705164055864220950
@@ -220,4 +220,4 @@ MonoBehaviour:
   - name: annoyed
     sprite: {fileID: 3901385305276082748, guid: 897e1254070bb4c4eb9623b3400a2251, type: 3}
   faceImage: {fileID: 2332771711766440289}
-  bikeObject: {fileID: 0}
+  bikeObject: {fileID: 5239941028552345663}
