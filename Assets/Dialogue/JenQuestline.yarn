@@ -478,7 +478,7 @@ Luna: (I feel like I've seen her before. But where…)
 -> Ask if she's been in an ad before
     <<set $goodend += 1>>
     <<expression Influencer happy>>
-    ???_Queenie: Are you talking about my downtown billboard in the beauty district? Or maybe my limited-edition cosmetic line in collaboration with Mr. Bae-zos 2.0?
+    ???_Queenie: Are you talking about my downtown billboard in the Beauty District? Or maybe my limited-edition cosmetic line in collaboration with Mr. Suckerberg 2.0?
     Luna: <i>She moves her cyberphone so that I'm viewable to her live audience, which makes me freeze in place.</i>
     <<expression Luna_Neutral arms_annoyed>>
     ???_Queenie: Look, everyone! My delivery gal is a Queenie fan! Part of the royal fam.
