@@ -211,6 +211,28 @@ Luna: Time to roll.
 <<jump Alleyway>>
 ===
 
+title: Rent
+---
+<<wait 0.5>>
+// A is Kaya (@KAYATOAST) and B is Luna (@LUNETTE), the player
+Kaya: helllooooo! rent is due tomorrow. don’t forget!
+-> waiting for one last big order. then i’ll pay up!
+      <<set $goodend += 1>>
+     Kaya: phew, thanks…that’s great to hear! and that's a good strategy.
+-> how much is rent again?
+     Kaya: smh
+     Kaya: it’s 1,500 baecoins…and don’t forget this time!
+-> buzz off or i might get into an accident
+     <<set $badend += 1>>
+     Luna: i can’t be found texting and driving
+     Kaya: WOW, you’re one to talk about rules!!
+     Kaya: you don’t even wear a helmet
+     Kaya: look, i just need you to come thru this time. 
+
+Kaya: i need your share by tomorrow morning 
+Kaya: or our landlord might really kick us out this time!
+===
+
 title: Alleyway
 ---
 <<camera Alleyway>>
