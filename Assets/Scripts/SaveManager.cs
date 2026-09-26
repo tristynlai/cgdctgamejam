@@ -141,15 +141,15 @@ public class SaveManager : MonoBehaviour
         {
             if (dialogueRunner.IsDialogueRunning)
             {
-                data.savedNode = !string.IsNullOrEmpty(lastPassedCheckpoint) ? lastPassedCheckpoint : currentYarnNode;
-                
+                data.savedNode = lastPassedCheckpoint;
+
                 if (string.IsNullOrEmpty(data.savedNode))
                 {
                     data.savedNode = dialogueRunner.startNode;
                 }
             }
 
-            Debug.Log($"[SaveManager] Saving Node: {data.savedNode} in Scene: {data.savedScene}");
+            Debug.Log($"[SaveManager] Saving Checkpoint Node: {data.savedNode} in Scene: {data.savedScene}");
 
             InMemoryVariableStorage varStorage = dialogueRunner.VariableStorage as InMemoryVariableStorage;
             if (varStorage != null)
@@ -188,5 +188,18 @@ public class SaveManager : MonoBehaviour
     public bool HasSaveData()
     {
         return PlayerPrefs.HasKey(SAVE_KEY);
+    }
+
+    public void SaveAndQuitToMainMenu()
+    {
+        SaveGame();
+
+        DialogueRunner dialogueRunner = FindObjectOfType<DialogueRunner>();
+        if (dialogueRunner != null && dialogueRunner.IsDialogueRunning)
+        {
+            dialogueRunner.Stop();
+        }
+
+        SceneManager.LoadScene("MainMenuScene");
     }
 }
