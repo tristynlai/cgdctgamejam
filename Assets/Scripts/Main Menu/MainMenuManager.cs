@@ -10,8 +10,9 @@ public class MainMenuManager : MonoBehaviour
     public Canvas SettingsMenu;
     public Canvas CreditsMenu;
     public Canvas LoadGameMenu;
-    //[SerializeField] int sceneToLoad;
-    //[SerializeField] int saveTransferValue;
+
+    [Header("Save System")]
+    public Button continueButton;
 
     void Start()
     {
@@ -24,8 +25,13 @@ public class MainMenuManager : MonoBehaviour
          if (LoadGameMenu != null) {
                 LoadGameMenu.gameObject.SetActive(false);
          }
-    }
 
+         SaveManager saveManager = FindObjectOfType<SaveManager>();
+         if (continueButton != null && saveManager != null)
+         {
+             continueButton.interactable = saveManager.HasSaveData();
+         }
+    }
 
     public void StartGame()
     {
@@ -33,24 +39,14 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("IntroScene");
     }
 
-
-    /*
-    public void LoadGame()
+    public void ContinueGame()
     {
-        saveTransferValue = PlayerPrefs.GetInt("LoadState");
-        if (saveTransferValue > 0)
+        SaveManager saveManager = FindObjectOfType<SaveManager>();
+        if (saveManager != null && saveManager.HasSaveData())
         {
-            //buttonClick.Play();
-            StartCoroutine(LoadScene());
+            saveManager.LoadGame();
         }
     }
-    */
-
-    /*IEnumerator LoadScene()
-    {
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(1);
-    }*/
 
     public void EnterSettingsMenu()
     {
@@ -75,7 +71,6 @@ public class MainMenuManager : MonoBehaviour
 
     public void ExitGame()
     {
-        // Will need a quit confirmation menu
         Application.Quit();
     }
 

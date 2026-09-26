@@ -16,7 +16,23 @@ public class SaveModeController : MonoBehaviour
         }
     }
 
-    public void ShowConfirmation()
+    public void SaveGameAndConfirm()
+    {
+        SaveManager saveManager = FindObjectOfType<SaveManager>();
+        
+        if (saveManager != null)
+        {
+            saveManager.SaveGame();
+        }
+        else
+        {
+            Debug.LogError("SaveManager not found in the scene!");
+        }
+
+        ShowConfirmation();
+    }
+
+    private void ShowConfirmation()
     {
         if (confirmationImage == null) return;
 
