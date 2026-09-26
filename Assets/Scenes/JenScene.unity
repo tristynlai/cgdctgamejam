@@ -4239,6 +4239,10 @@ PrefabInstance:
     - target: {fileID: 2691305449847865263, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1151651134}
+    - target: {fileID: 2691305449847865263, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: selectTab
       objectReference: {fileID: 0}
     - target: {fileID: 3045851061045914128, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
       propertyPath: m_Transition
@@ -4275,6 +4279,10 @@ PrefabInstance:
     - target: {fileID: 3203420306586250713, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1151651134}
+    - target: {fileID: 3203420306586250713, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: selectTab
       objectReference: {fileID: 0}
     - target: {fileID: 3575636352874759437, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
       propertyPath: m_IsActive
@@ -4520,6 +4528,7 @@ PrefabInstance:
     - {fileID: 2321714709468061196, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
     m_RemovedGameObjects:
     - {fileID: 267536091228655976, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
+    - {fileID: 5563597082294406621, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4693648536617370704, guid: a036699ad655b44bda331d8a4b550b15, type: 3}
       insertIndex: 4
