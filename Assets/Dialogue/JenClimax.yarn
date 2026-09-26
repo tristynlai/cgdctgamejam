@@ -297,29 +297,27 @@ title: LilGuyBrainwashed
 <<wait 1>>
 Luna: <i>I speed my way onto The Bridge, weaving around self-driving cars and corporate megabuses that shuttle underpaid workers back home.</i>
 Luna: <i>It's just a few more miles before I reach Root Town, where Frisscity's high-tech gadgets lose signal—and hold no power over me.</i>
-<<place Luna_Neutral>>
-<<pose Luna_Neutral LunaFadeIn_BridgeBike>>
-<<expression Luna_Neutral neutral>>
-<<place CompanionNubs>>
-<<expression CompanionNubs agents>>
+<<place Luna_Riding>>
+<<pose Luna_Riding SceneSample_LunaFadeIn>>
 Nubs: …
-<<expression Luna_Neutral surprised>>
+<<expression Luna_Riding worried>>
 Luna: W-What the hell?!
 Luna: Nubs!? Hey! Wake up!
 Luna: <i>A hypnotic swirl dominates Nubs's screenface. His body freezes in place, clinging onto the nape of my neck as I race past another bus.</i>
 Luna: <i>The more I stare at the spiral, the more I feel…enticed by it.</i>
 Luna: <i>I quickly blink the sensation away, shaking my head and turning back to the road I’m racing down.</i>
-<<expression Luna_Neutral neutral>>
+<<expression Luna_Riding neutral>>
 Luna: (I can’t look at that thing. It’s like it’s drilling a hole into my mind…)
 Luna: <i>Suddenly, a new voice takes over Nubs.</i>
 // Do NOT call Maxx’s sprite to appear
 Maxx: There you are.
-<<expression Luna_Neutral annoyed>>
+<<expression Luna_Riding worried>>
 Luna: (Shit, he can track me…?!)
 // Play SFX Maxx motorcycle sound
 <<playSFX maxxMotorcycle>>
 A motor mixed with ego and neon particles roars behind me in the distance.
 Maxx: Won't be long before I catch up. 
+<<expression Luna_Riding neutral>>
 Luna: <i>My breath stalls. Sweat starts beading at the back of my neck.</i>
 Luna: (I knew there was a cost to shoving it to AGENTS and that overgrown gigachad.)
 Luna: (But I'm totally fucking screwed!)
@@ -332,7 +330,7 @@ title: Cybergulls
 ---
 // Play SFX Cybergull M 
 <<playSFX caws>>
-<<expression Luna_Neutral surprised>>
+<<expression Luna_Riding surprised>>
 Luna: !!!
 Luna: <i>The squawk of a cybergull splits the sky. I look up, keeping my foot on the accelerator.</i>
 <<if $withCog == true>>
@@ -357,38 +355,32 @@ Luna: <i>He lets out another loud, electrifying battle cry that rings out across
 <<exit CyberSeagull>>
 Luna: <i>Shadows materialize in the distance, and I begin to see a whole horde of cybergulls flap towards us.</i>
 Luna: (HE’S A GANG LEADER?!?!)
-<<expression Luna_Neutral neutral>>
+<<expression Luna_Riding neutral>>
 Luna: (Wait…)
 Luna: <i>The Bridge is a prime roost for cybergulls, who love to swoop down and swipe whatever shines the brightest.</i>
 Luna: (This could actually be my key to ditching Maxx for good!)
 // Play SFX Maxx motorcycle sound
 <<playSFX maxxMotorcycle>>
-<<expression Luna_Neutral surprised>>
-<<place Maxx>>
-<<bike Maxx on>>
-<<expression Maxx intrigued>>
+<<expression Luna_Riding surprised>>
+<<place Maxx_Riding>>
 Luna: <i>Suddenly I hear tires screeching and then, in a blink of an eye, I see Maxx riding right beside me on his shining stallion of iron garbage.</i>
 Maxx: Boo.
-<<expression Luna_Neutral annoyed>>
+<<expression Luna_Riding neutral>>
 Luna: …
 Luna: <i>We're both speeding down the road, neck and neck.</i>
-<<expression Maxx annoyed>>
 Maxx: Why aren’t you pulling over? I GOT you. You’re going to JAIL!
-<<expression Luna_Neutral neutral>>
 Luna: Not yet.
 // SFX motorcycle tires
 <<playSFX tiresScreech>>
-<<pose Luna_Neutral LunaFadeOut_BridgeBike>>
-<<pose CompanionNubs CompanionNubsFadeOut>>
+<<pose Luna_Riding SceneSample_LunaFadeOut>>
 <<wait 1>>
-<<exit Luna_Neutral>>
-<<exit CompanionNubs>>
+<<exit Luna_Riding>>
 Luna: <i>I veer off, making a hard left turn onto another highway onramp. It's the turn only a Root Town local would know.</i>
 Maxx: Dammit!
 Luna: <i>Maxx doesn't make the turn in time and continues straight…right into the growing horde of cybergulls.</i>
-<<pose Maxx MaxxFadeOut>>
+<<pose Maxx_Riding MaxxFadeOut>>
 <<wait 1>>
-<<exit Maxx>>
+<<exit Maxx_Ridingx>>
 <<fadeOut 2>>
 <<jump Cybergull_CG>>
 ===
@@ -839,7 +831,7 @@ Luna: (Just as Maxx promised…)
 Luna: (Looks like I've gotta find another way to make money.)
 <<expression Luna_Neutral arms_neutral>>
 Luna: (Let's hope the part about AGENTS finding out where I live doesn’t come true…)
-<<pose Luna_Neutral LunaFadeOut_BridgeBike>>
+<<pose Luna_Neutral SceneSample_LunaFadeOut>>
 <<pose CompanionNubs CompanionNubsFadeOut>>
 <<pose Kaya_Neutral KayaFadeOut>>
 <<pose Nat SceneSample_NatFadeOut>>
