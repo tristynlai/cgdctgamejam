@@ -41,6 +41,9 @@ public class CyberdeckController : MonoBehaviour
     [SerializeField] private GameObject historyOverlayPanel;
     [SerializeField] private GameObject tabParent;
 
+    [Header("Minigame")]
+    [SerializeField] private GameObject minigamePanel;
+
     private void Awake()
     {
 
@@ -453,6 +456,36 @@ public class CyberdeckController : MonoBehaviour
             if (!isActive)
             {
                 selectTab(0); 
+            }
+        }
+    }
+
+    public void ToggleMinigame()
+    {
+        if (minigamePanel != null)
+        {
+            bool isActive = !minigamePanel.activeSelf;
+            minigamePanel.SetActive(isActive);
+
+            if (tabParent != null)
+            {
+                tabParent.SetActive(!isActive);
+            }
+
+            if (pageTabs != null)
+            {
+                foreach (GameObject content in pageTabs)
+                {
+                    if (content != null)
+                    {
+                        content.SetActive(!isActive);
+                    }
+                }
+            }
+            
+            if (!isActive)
+            {
+                selectTab(0);
             }
         }
     }
