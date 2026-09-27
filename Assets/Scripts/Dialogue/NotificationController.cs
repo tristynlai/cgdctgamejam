@@ -115,6 +115,12 @@ public class NotificationController : MonoBehaviour
         }
 
         currentNotificationState = -1;
+
+        VisualNovel visualNovel = FindObjectOfType<VisualNovel>();
+        if (visualNovel != null)
+        {
+            visualNovel.PauseDialogue(false);
+        }
     }
 
     public void OnCyberdeckClosed()

@@ -71,6 +71,11 @@ public class CyberdeckController : MonoBehaviour
     private void OnEnable()
     {
         activeLineAdvancers = FindObjectsByType<LineAdvancer>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+
+        if (currentStateIndex == 1)
+        {
+            return;
+        }
         
         foreach (var advancer in activeLineAdvancers)
         {
