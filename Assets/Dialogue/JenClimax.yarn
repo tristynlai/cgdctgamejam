@@ -706,13 +706,18 @@ Nat: Just let me see…
 <<exit Luna_Neutral>>
 <<exit CompanionNubs>>
 <<fadeOut 2>>
+<<stopMusic>>
+<<wait 1>>
 <<playSFX reset>>
+<<wait 1>>
 <<jump RoommateDiscussion>>
 ===
 
 
 title: RoommateDiscussion
 ---
+<<playMusic loungeLizards>>
+<<camera GirlsApt>>
 <<fadeIn 2>>
 <<place Luna_Neutral>>
 <<expression Luna_Neutral neutral>>
