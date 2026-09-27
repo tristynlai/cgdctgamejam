@@ -412,6 +412,7 @@ Luna: <i>I tuck the flux ring away for safe-keeping.</i>
 title: TransporterPod
 ---
 <<camera AlleywayClear>>
+<<playMusic cyberpunkStakeout>>
 <<place NubsPod>>
 <<expression NubsPod closed>>
 <<place Luna_Neutral>>
