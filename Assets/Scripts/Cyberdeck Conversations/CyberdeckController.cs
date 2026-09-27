@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Yarn.Unity;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class CyberdeckController : MonoBehaviour
 {
@@ -86,7 +87,7 @@ public class CyberdeckController : MonoBehaviour
         
         if (!isCyberdeckOpen && !isWaitingForExit)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 if (dialogueRunner != null && dialogueRunner.IsDialogueRunning)
                 {
