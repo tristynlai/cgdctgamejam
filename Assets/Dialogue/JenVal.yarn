@@ -202,11 +202,9 @@ Luna: Time to roll.
 // Luna leaves
 <<playSFX lunaMotorcycle>>
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-<<wait 1.5>>
+<<wait 1>>
 <<exit Luna_Neutral>>
-<<bike Luna_Neutral off>>
-<<fadeOut 2>>
-<<wait 2>>
+<<fadeOut 1>>
 
 <<jump Alleyway>>
 ===
@@ -361,7 +359,7 @@ Luna: But damn, I missed out on getting a flux ring. I’ll have to impress Val 
 <<endif>>
 Luna: Well it’s not my problem anymore. Somebody else’s, maybe.
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-<<wait 1>>
+<<wait 2.5>>
 <<exit Luna_Neutral>>
 <<fadeOut 2>>
 <<jump TransporterPod>>
