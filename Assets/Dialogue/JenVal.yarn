@@ -202,11 +202,9 @@ Luna: Time to roll.
 // Luna leaves
 <<playSFX lunaMotorcycle>>
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-<<wait 1.5>>
+<<wait 1>>
 <<exit Luna_Neutral>>
-<<bike Luna_Neutral off>>
-<<fadeOut 2>>
-<<wait 2>>
+<<fadeOut 1>>
 
 <<jump Alleyway>>
 ===
@@ -280,7 +278,6 @@ Luna: (Damn, this guy is a TANK! And FERAL! Do I risk it?)
 
 -> Help the cybergull
     <<set $goodend += 1>>
-    <<set $withCog = false>>
     <<expression Luna_Neutral neutral>>
     Luna: If you bite me, you die. 
     Luna: <i>There’s a glint through the gull’s glasses, and I can feel his scarred eye tracking me as I tip-toe towards him.</i>
@@ -310,6 +307,7 @@ Luna: (Damn, this guy is a TANK! And FERAL! Do I risk it?)
     <<wait_for_wire_puzzle>>
     <<jump PuzzleState>>
 -> Don’t help the cybergull
+    <<set $withCog = true>>
     <<set $badend += 1>>
     <<expression Luna_Neutral arms_neutral>>
     Luna: I can’t risk getting rabies, or whatever chemical disease you have.
@@ -338,6 +336,7 @@ title: PuzzleState
 
 title: FluxRingGotAway
 ---
+<<set $withCog = true>>
 <<camera Alleyway>>
 <<fadeIn 2>>
 <<place Luna_Neutral>>
@@ -360,7 +359,7 @@ Luna: But damn, I missed out on getting a flux ring. I’ll have to impress Val 
 <<endif>>
 Luna: Well it’s not my problem anymore. Somebody else’s, maybe.
 <<pose Luna_Neutral SceneSample_LunaFadeOut>>
-<<wait 1>>
+<<wait 2.5>>
 <<exit Luna_Neutral>>
 <<fadeOut 2>>
 <<jump TransporterPod>>
