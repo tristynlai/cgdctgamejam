@@ -3,7 +3,6 @@
 <<declare $goodend = 0>>
 <<declare $badend = 0>>
 <<playMusic frisscityCalm>>
-//This needs to be updated with the correct location
 <<camera Understory>>
 <<fadeIn 2>>
 <<place Luna_Neutral>>
@@ -15,9 +14,10 @@ Luna: (Kaya is gonna kill me if I skip out on rent again. Just one big delivery 
 <<playSFX notification>>
 <<expression Luna_Neutral arms_cyberdeck_surprise>>
 <<show_notification 0>>
-Luna: (Huh? It’s a new customer rating on the SL0P app. I better tap it and check it out…)
+Luna: (Huh? Someone actually rated me on the SL0P app?)
 <<jump BR>>
 ===
+
 
 title: BR
 ---
@@ -25,40 +25,35 @@ title: BR
 <<expression Luna_Neutral arms_cyberdeck_annoyed>>
 Luna: You've got to be joking.
 Luna: (I have an option to respond…)
+
 -> Don't respond and close the app
-    <<set $goodend += 1>>
-    Luna: Ugh, whatever.
-    <i>I close the app because these people aren’t worth my time.</i>
-    <i>Frisscity is home to the ultra-rich who eat up trends, get hooked up with the latest AGENTS tech stack, and want to discover the next worst thing for society.</i>
-    //////////<<show SceneSampleEvents Luna shyAnnnoyed>>
-    <i>They're fake freaks. And they don't tip.</i>
-    <i>I don't wanna deal with them any more than I have to. Frisscity's just where I work. I can't wait for this day to be over so I can get back to my real life in Root Town.</i>
-    <<jump CyberdeckT>>
+   <<set $goodend += 1>>
+   <<expression Luna_Neutral arms_cyberdeck>>
+   Luna: Ugh, whatever.
+   <i>I can't wait for this day to be over so I can get back to Root Town.</i>
+   <<jump CyberdeckT>>
 -> Give the reviewer a 1-star rating
-    ///////<<show SceneSampleEvents Luna lunaHappy>>
-    Luna: Heh, shove it.
-    <i>I give Karen a 1-star rating right back, noting how her fruitarian and vegan preferences were never mentioned in the app.</i>
-    ////////<<show SceneSampleEvents Luna lunaNeutral>>
-    <i>I'm waiting for the day everyone in Frisscity finally decides to upload their brains to the cloud. If the AGENTS founder does it, I'm sure they’ll do it.</i> 
-    <i>But me? I’d never fall for a capitalist trick like that.</i>
-    <i>Me and Root Town refuse to integrate with AGENTS technology. Life outside of AGENTS and Frisscity is hard, but it's real. And it's home.</i>
-    <<jump CyberdeckT>>
+   <<expression Luna_Neutral arms_cyberdeck>>
+   Luna: Heh, shove it.
+   <i>I give Karen a 1-star rating right back, noting how her fruitarian and vegan preferences were never mentioned in the app.</i>
+   <<expression Luna_Neutral arms_cyberdeck_annoyed>>
+   <i>I'm waiting for the day everyone in Frisscity finally decides to upload their brains to the cloud. If the AGENTS founder does it, I'm sure they’ll do it, too.</i>
+   <<jump CyberdeckT>>
 -> Doxx their address on an online forum for SL0P drivers
     <<set $badend += 1>>
-    <i>Instead of leaving them a review, I do much worse. I post their address on a public online forum and warn fellow drivers from Root Town not to take delivery orders from them.</i>
-    ///////<<show SceneSampleEvents Luna lunaHappyArms>>
-    Luna: Now all of SL0P will know what you have done. Good luck getting your stupid apples and cheese.
-    ////////<<show SceneSampleEvents Luna lunaAnnoyedArms>>
-    <i>This is the shit I put up with in Frisscity. I break my back for baecoins for people who chase trends and chase surgeries to get hooked up with the latest AGENTS technology.</i>
-    <i>But me? I refuse to be augmented.</i>
-    <i>I wish Frisscity would just disappear.</i>
+    <<expression Luna_Neutral arms_cyberdeck>>
+    Luna: Good luck getting your stupid apples and cheese delivered.
+    <<expression Luna_Neutral arms_cyberdeck_annoyed>>
+    <i>This is the thanks I get. Breaking my back for people who chase trends and get hooked up with the latest AGENTS technology.</i>
+    <i>I just wish Frisscity would just disappear.</i>
     <<jump CyberdeckT>>
 ===
+
 
 title: CyberdeckT
 ---
 <<playSFX notification>>
-//Luna with lunaAnnoyedArms
+<<expression Luna_Neutral arms_cyberdeck_annoyed>>
 <<show_notification 1>>
 Luna: Now what?
 //<<fadeIn 2>>
@@ -66,31 +61,31 @@ Luna: Now what?
 <<jump Tutorial_Chat>>
 ===
 
+
 title: Tutorial_Chat
 ---
 <<wait 0.5>>
-
 Nat: Hiiii, it's your fave roomie!! ^.^ How’s your night going?
-Luna: like slop 
+Luna: like slop
 Nat: Oh no! I hope you don't think this device I made you is slop too ToT
-Luna: chill out, Nat! i like it. but idk how it's different from my old phone tho.
+Luna: chill out Nat! i like it. idk how it's different from my old phone.
 Nat: Hmm have you tried the other features I programmed into it?
 Luna: no
-Luna: can you walk me thru it again?
-Nat: Yes! I'd LOVE to UwU
+Luna: can you walk me through it again?
+Nat: Yes! I'd LOVE to ^.^
 Nat: Welcome to your very own <b>cyberdeck</b>! It's like your phone, BUT BETTER hehe
 Nat: You’re on the <b>Messages</b> screen! Sort through spam, news, and VERY important messages from me.
 <<highlight_tab messages>>
 Nat: <b>Settings</b> lets you tweak things like sound. You can also <b>quit the game</b> from Settings.
 <<highlight_tab settings>>
-Nat: <b>History</b> lets you snoop through old conversations. (It tracks your inner thoughts, too.)
+Nat: <b>History</b> lets you snoop through old conversations. (It even tracks your inner thoughts.)
 <<highlight_tab history>>
 Luna: umm that's creepy?
-Nat: Wait waittt I also made a cute little <b>mini-game</b> just for you! Click on the lil monster icon to play it.
+Nat: Wait waittt I also made a cute little <b>mini-game</b> just for you! Click on the little monster icon to play it.
 <<highlight_tab minigame>>
 Nat: And when you’re done? Click <b>Exit</b>! You can always come back here by clicking the CYBERDECK 3000 logo.
 <<highlight_tab exit>>
-Luna: thanks. and yea it made sense. can i go back to work now?
+Luna: thanks. and yeah it made sense. can i go back to work now?
 <<clear_highlights>>
 Nat: Of course! Holler if you need anything, roomie <3
 <<wait_for_cyberdeck_exit>>
