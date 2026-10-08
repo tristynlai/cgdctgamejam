@@ -32,20 +32,20 @@ Luna: (I have an option to respond…)
    Luna: Ugh, whatever.
    <i>I can't wait for this day to be over so I can get back to Root Town.</i>
    <<jump CyberdeckT>>
--> Give the reviewer a 1-star rating
+-> Give Karen a 1-star rating
    <<expression Luna_Neutral arms_cyberdeck>>
    Luna: Heh, shove it.
-   <i>I give Karen a 1-star rating right back, noting how her fruitarian and vegan preferences were never mentioned in the app.</i>
+   <i>I also block her, noting how her fruitarian and vegan preferences were never mentioned in the app.</i>
    <<expression Luna_Neutral arms_cyberdeck_annoyed>>
-   <i>I'm waiting for the day everyone in Frisscity finally decides to upload their brains to the cloud. If the AGENTS founder does it, I'm sure they’ll do it, too.</i>
+   Luna: Congrats on being my 100th blocked customer.
    <<jump CyberdeckT>>
 -> Doxx their address on an online forum for SL0P drivers
     <<set $badend += 1>>
     <<expression Luna_Neutral arms_cyberdeck>>
-    Luna: Good luck getting your stupid apples and cheese delivered.
-    <<expression Luna_Neutral arms_cyberdeck_annoyed>>
-    <i>This is the thanks I get. Breaking my back for people who chase trends and get hooked up with the latest AGENTS technology.</i>
-    <i>I just wish Frisscity would just disappear.</i>
+    Luna: Good luck getting your stupid apples and cheese delivered again.
+    <i>Likes start to trickle in on my post.</i>
+    <i>Someone says they hope SL0P customers augment themselves so they never have to eat again.</i>
+    <i>I reply that I hope they mod themselves out of existence. And take SL0P down with them.</i>
     <<jump CyberdeckT>>
 ===
 
@@ -67,7 +67,7 @@ title: Tutorial_Chat
 <<wait 0.5>>
 Nat: Hiiii, it's your fave roomie!! ^.^ How’s your night going?
 Luna: like slop
-Nat: Oh no! I hope you don't think this device I made you is slop too ToT
+Nat: Oh no! I hope you don't think this device I made you is slop, too...
 Luna: chill out Nat! i like it. idk how it's different from my old phone.
 Nat: Hmm have you tried the other features I programmed into it?
 Luna: no
