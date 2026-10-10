@@ -9,20 +9,17 @@
 Luna: The only thing I need is a big offer so I can get the hell home.
 <<playSFX valMotorcycle>>
 <<expression Luna_Neutral arms_surprised>>
-Luna: <i>I recognize those tires. And the baddie who rides on them.</i>
+Luna: <i>I recognize that bike. And the baddie who rides it.</i>
 <<place Val>>
 <<bike Val on>>
 Val: Luna! Finally, someone without a corporate T-shirt. Have you been making bank today?
 <<expression Luna_Neutral arms_shy>>
-Luna: H-Hey, Val. No, not yet. Still getting the low-tipping vegans and high-strung snobs. Y'know how it is.
+Luna: H-Hey, Val. No, not yet. Still getting the low-tipping vegans and high-strung snobs.
 <<expression Val laugh>>
-Luna: <i>I hold my breath as Val walks over. She laughs and it's a bright, bubbly sound that goes straight to my heart while her hand goes straight to my head for a gentle pat.</i>
-<<expression Val flirty>>
-Val: I'm sure things will turn up by nighttime. All the overworked techies get the late-night munchies.
-Luna: (God, she's amazing. She always knows what to say.)
-Luna: (It’s kinda weird to see Root Town's corner store queen on this side of town. And so late at night…)
+Val: I'm sure things will turn up. All the overworked techies get the late-night munchies!
+Luna: (It’s weird to see Val on this side of town…)
 <<expression Val neutral>>
-Luna: (But this is my chance to finally talk to her! And maybe figure out who’s her ideal type…)
+Luna: (But this is my chance to talk to her! And maybe figure out her ideal type…)
 Val: Something on your mind?
 Luna: (BE COOL.)
 <<declare $knowsRedHint = false>>
@@ -31,76 +28,85 @@ Luna: (BE COOL.)
 <<jump ValChoices>>
 ===
 
+
 title: ValChoices
 ---
 -> Nice bike. How did you mod it? <<once>>
-    <<detour Bike_Backstory>>
-    <<jump ValChoices>>
+   <<detour Bike_Backstory>>
+   <<jump ValChoices>>
 -> You look...nice. <<once>>
-    <<detour Poor_Flirting>>
-    <<jump ValChoices>>
+   <<detour Poor_Flirting>>
+   <<jump ValChoices>>
 -> What are you doing here?
-    <<expression Val flirty>>
-    Val: A Root Town business owner never reveals her secrets!
-    <<jump PressingVal>>
+   <<expression Val flirty>>
+   Val: A corner store queen never reveals her secrets!
+   <<jump PressingVal>>
 ===
+
 
 title: Bike_Backstory
 ---
+<<expression Val laugh>>
+Val: Well, aren’t you sweet? I reinforced the frame with carbon weave and mag-alloy ribs to handle abandoned traincars, vines, and anything Root Town might throw at you.
 <<expression Val flirty>>
-Val: So, you know how factory models are made for smooth highways, right? B-o-r-i-n-g!
-<<expression Val neutral>>
-Val: That’s why I reinforced the frame with carbon weave and mag-alloy ribs. Because where we live in Root Town, we need to handle abandoned traincars, vines, and everything in between.
-<<expression Val flirty>>
-Val: I even cracked my first prototype trying to jump a crumbling overpass!
+Val: But what’s <i>under</i> the hood is my favorite part. Every sensor, every light…I wired those by hand.
+<<expression Luna_Neutral arms_neutral>>
 Luna: (I’ve unleashed a gearhead beast. There’s no end to this conversation.)
 
+
 ->  Let her continue.
-    <<set $goodend += 1>>
-    <<expression Val neutral>>
-    Val: But 12 prototypes later, and I’ve finally found my forever bike. The electrical's my favorite part. Every sensor, every light…I wired those by hand.
-    <<set $knowsGreenHint = true>>
-    Val: It took me three tries to get the order right. No matter what gizmo you’re wiring up, green should be the one you save until the very end. 
-    <<expression Val flirty>>
-    Val: Hook it up too early and the whole system’s gonna go haywire as soon as you turn on the engine!
-    Luna: (Interesting. Should I listen to more?)
-     -> Yes. Go off, queen!
-        Luna: Anything else I should watch out for? 
-        <<set $knowsBlueHint = true>>
-        <<expression Val neutral>>
-        Val: Oh YES. Blue before yellow, too. THAT one I learned the hard way. Did it backwards once and I dumped a full charge into my cooling loop. 
-        Val: It cost me a week—and most of my eyebrows!
-        Val: See, that's the thing. Corporate bikes are built to last until the warranty expires.
-        <<expression Val flirty>>
-        Val: But mine's built to survive. She'll outrun anything that's fresh off the showroom floor!
-        Luna: <i>She rambles on for ten more minutes about her motorbike. And I love every second of it.</i>
-        // Return to the original question node in Val, but remove this question since the player completed it.
-        <<expression Val neutral>>
-     -> Nah, I've heard enough.
-        <<expression Luna_Neutral neutral>>
-        Luna: Thanks. I’ll keep that tip about green wires for safe-keeping. 
-        <<expression Val flirty>>
-        Val: You bet! I can go on for hours about it. 
-        <<expression Luna_Neutral arms_neutral>>
-        Luna: (I know.)
-        <<expression Val neutral>>
-        Val: Now, what did you need again?
-        // Return to the original question node in Val, but remove this question since the player completed it.
+   <<set $goodend += 1>>
+   <<expression Val neutral>>
+   Luna: How’d you wire it up?
+   <<expression Val laugh>>
+   Val: Mostly trial and error…and a whole lotta luck! 
+   <<set $knowsGreenHint = true>>
+   <<expression Val neutral>>
+   Val: I found out the hard way that a green wire is the one you should save until the very end.
+   <<expression Val flirty>>
+   Val: Hook it up too early and the whole system’s gonna go haywire!
+   Luna: (Interesting. Should I listen to more?)
+    -> Yes. Go off, queen!
+       Luna: Anything else I should watch out for?
+       <<set $knowsBlueHint = true>>
+       <<expression Val neutral>>
+       Val: Oh, <i>yes</i>. Hook up a blue wire before a yellow one.
+       <<expression Val laugh>>
+       Val: Did it backwards once and it almost cost me my eyebrows!
+       Luna: Yikes.
+       <<expression Val flirty>>
+       Val: Were you listening? This information isn’t cheap, y’know!
+       <<expression Luna_Neutral arms_shy>>
+       Luna: O-Of course I was!
+       Luna: (I was…right?)
+       // Return to the original question node in Val, but remove this question since the player completed it.
+       <<expression Val neutral>>
+    -> Nah, I've heard enough.
+       <<expression Luna_Neutral neutral>>
+       Luna: Thanks. I’ll keep that tip about green wires for safe-keeping.
+       <<expression Val flirty>>
+       Val: You bet! I can go on for hours about it.
+       <<expression Luna_Neutral arms_neutral>>
+       Luna: (I know.)
+       <<expression Val neutral>>
+       Val: Now, what did you need again?
+       // Return to the original question node in Val, but remove this question since the player completed it.
 ->  Cut it short.
-    <<expression Luna_Neutral arms_neutral>>
-    <<expression Val neutral>>
-    Luna: I'll hit you up the next time I wanna upgrade my bike. Y'know. For dumb deliveries.
-    Val: O-Oh. Of course.
-    // Return to the original question node in Val, but remove this question since the player completed it.
+   <<expression Luna_Neutral arms_neutral>>
+   <<expression Val neutral>>
+   Luna: I'll hit you up the next time I wanna upgrade my bike for dumb deliveries.
+   Val: Oh. Of course.
+   // Return to the original question node in Val, but remove this question since the player completed it.
 ===
+
 
 title: Poor_Flirting
 ---
-<<expression Val flirty>>
+<<expression Val laugh>>
 <<expression Luna_Neutral shy>>
-Luna: <i>Val is beaming, which makes me blush redder than that damn belladonna apple.</i>
 Val: That's so sweet! You're cute.
-Luna: (C-Cute!?)
+Luna: (Cute!?)
+<<expression Val flirty>>
 Val: But if you think that'll land you a discount at the shop, then you'll need to try harder~
 <<expression Luna_Neutral arms_shy>>
 Luna: L-Like what?
@@ -112,69 +118,74 @@ Val: Something REAL nice~
 Luna: !!!
 Luna: Well, I guess while we’re on the topic…
 
+
 -> What’s your ideal type?
-   <<expression Luna_Neutral shy>>
-   Val: Asking me directly? Wow, you’re so bold, Luna!
-   Val: But that’s what I like.
-   Val: Someone who’s bold, fiery, and daring. 
-   <<expression Val neutral>>
-   <<set $knowsRedHint = true>>
-   Val: Like daring enough to try and unlock a flux ring with any color other than red. 
-   Val: Because that’s the color you always start with. 
-   <<expression Val flirty>>
-   Val: Unless you dare to get zapped!
-   <<expression Luna_Neutral arms_shy>>
-   Luna: (Time to look up some deadly motorcycle tricks…and where to find a flux ring.) 
+  <<expression Luna_Neutral shy>>
+  <<expression Val laugh>>
+  Val: Wow, you’re so bold, Luna!
+  <<expression Val flirty>>
+  Val: But that’s what I like.
+  Val: Someone who’s bold, fiery, and daring.
+  <<expression Val neutral>>
+  <<set $knowsRedHint = true>>
+  Val: Like daring enough to try and unlock a flux ring’s wiring with any color other than red.
+  <<expression Val flirty>>
+  Val: Unless you dare to get zapped!
+  <<expression Luna_Neutral arms_shy>>
+  Luna: (Time to find a flux ring.)
 -> Nevermind.
-   Luna: (I’m getting cold feet. Plus, she went back to talking about her shop and motorcycle parts. I don’t wanna be creepy…)
-   <<expression Val neutral>>
-   Val: What’s up?
-   Luna: N-Nothing.
-   Luna: (All I need is a flux ring to impress her…)
+  Luna: (Nah, I don’t wanna be creepy…)
+  <<expression Val neutral>>
+  Val: What’s up?
+  Luna: N-Nothing.
+  Luna: (All I need is a flux ring to impress her…)
 <<expression Val neutral>>
 // Return to the original question node in Val, but remove this question since the player completed it.
 ===
+
 
 title: PressingVal
 ---
 <<expression Luna_Neutral arms_neutral>>
 <<expression Val worried>>
-Luna: <i>Past her super good looks and chipper tone, I notice she's a little out of breath. Her eyes shift back to her motorbike.</i>
+Val: …
 Luna: (Is she hiding something…?)
 
+
 -> Ignore it
-    <<set $badend += 1>>
-    Luna: (It's nothing. She's probably picking up items to take back to her shop.)
-    Luna: (Kinda sucks that our town still depends on Frisscity for supplies. But a business is a business, I guess.)
-    Val: You’re so lost in thought that I’m feeling left out. Let me guess…    
-    <<expression Val flirty>>
-    Val: You’re thinking about me~?
-    <<expression Luna_Neutral arms_shy>>    
-    Luna: W-What!? N-no! Ugh, it's nothing.
-    Luna: <i>Anything I noticed before has completely vanished.</i>
+   <<set $badend += 1>>
+   Luna: (She's probably just picking up items to take back to her shop.)
+   <<expression Val neutral>>
+   Val: You’re so lost in thought that I’m feeling left out. Let me guess…   
+   <<expression Val flirty>>
+   Val: You’re thinking about me?
+   <<expression Luna_Neutral arms_shy>>   
+   Luna: W-What!? No! Ugh, it’s nothing.
+   <<expression Val worried_onphone>>
+   Luna: <i>Anything I noticed before has completely vanished.</i>
 -> Press her
-    <<set $goodend += 1>>
-    <<expression Luna_Neutral arms_neutral>>  
-    Luna: But your shop's IN Root Town. And aren’t you supposed to be open right now? You wouldn’t close the shop and come to Frisscity unless it was something important.
-    Luna: Is that the 'secret?'
-    <<expression Val worried>>
-    Val: …
-    Luna: <i>The silence that washes over us is painful. Something is off.</i>
-    <<expression Val flirty>>
-    Val: Boooo, you got me! My glass skin soda pop actually comes from a vendor in Frisscity.
-    <<expression Val neutral>>
-    Val: You probably think I’m a sellout to Frisscity. But my regulars keep buying the stuff. And when demand is high, well…you gotta feed into it!
-    Luna: (Val’s back to all smiles. But I still feel like she’s hiding something.)
+   <<set $goodend += 1>>
+   <<expression Luna_Neutral arms_neutral>> 
+   Luna: But your shop's IN Root Town. Aren’t you supposed to be open right now? You wouldn’t close the shop and come to Frisscity unless it was something important.
+   Luna: Or is that the 'secret?'
+   <<expression Val worried>>
+   Val: …
+   <<expression Val laugh>>
+   Val: Boooo, you got me! My glass skin soda pop actually comes from a vendor in Frisscity.
+   <<expression Val neutral>>
+   Val: You probably think I’m a sellout. But my regulars love it. And when demand is high, well…you gotta feed into it!
+   <<expression Val worried_onphone>>
+   Val: And speaking of customers…
+   <<wait 1>>
 <<jump TheOffer>>
 ===
 
+
 title: TheOffer
 ---
-<<expression Val worried_onphone>>
-Luna: <i>Val's attention is suddenly stolen by her phone. She smears her thumb across her screen, makes a couple of taps, then hops back onto her motorbike.</i>
 <<expression Luna_Neutral neutral>>
 <<expression Val neutral>>
-Val: Sorry, gotta jet! Root Town needs their soda pop.
+Val: Sorry, gotta jet! Root Town needs their glass skin soda.
 <<expression Val flirty>>
 Val: Stop by tonight, if you’re free. I’ll be open.
 // SFX motorcycle engine turning on
@@ -184,13 +195,30 @@ Val: Stop by tonight, if you’re free. I’ll be open.
 <<wait 1>>
 <<exit Val>>
 Luna: There she goes…
-Luna: <i>Val is everything I want to be. Independent, spunky. And good with her hands, too.</i>
-<<expression Luna_Neutral arms_shy>> 
-Luna: <i>Uh. In the nicest, non-creepiest way possible.</i>
-<<expression Luna_Neutral arms_neutral>> 
+Luna: <i>Val is everything I want to be.</i>
+<<expression Luna_Neutral arms_neutral>>
 Luna: <i>If it wasn't for my shitty situation, I'd be just like her.</i>
-<<expression Luna_Neutral arms_shy>> 
+<<expression Luna_Neutral arms_shy>>
 Luna: <i>Or WITH her? Hm, which is it…?</i>
+<<expression Luna_Neutral surprised>>
+Luna: Huh?
+//////// Show an art asset of a ripped and dearly beloved page of a biker gal zine, similar to how we show Queenie’s beauty item?
+Luna: Looks like a zine page.
+<<expression Luna_Neutral arms_neutral>>
+Luna: (A very gearhead zine.)
+Luna: Let’s see what it says…
+<<if $knowsGreenHint == true>>
+Luna: <i>"Last goes green…"</i>
+<<endif>>
+<<if $knowsBlueHint == true>>
+Luna: <i>"Blue before yellow…"</i>
+<<endif>>
+<<if $knowsRedHint == true>>
+Luna: <i>"And red comes first…"</i>
+<<endif>>
+Luna: It’s covered in notes. I can’t make out anything on the page. 
+<<expression Luna_Neutral arms_shy>>
+Luna: (I’ll give it back to Val the next time I see her.)
 // SFX cyberdeck notification ping
 <<playSFX notification>>
 <<expression Luna_Neutral arms_cyberdeck>>
@@ -205,9 +233,9 @@ Luna: Time to roll.
 <<wait 1>>
 <<exit Luna_Neutral>>
 <<fadeOut 1>>
-
 <<jump Alleyway>>
 ===
+
 
 title: Rent
 ---
